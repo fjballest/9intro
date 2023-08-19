@@ -1,0 +1,24 @@
+#!/bin/rc
+
+#	p=echo { cp (progs/ src/)^$p.c ; mkprogs src/$p.c }
+#	
+if (~ $#* 0){
+	echo usage: $0 prog...
+	exit 'usage'
+}
+for (p in $*){
+	if (test -e $p) @{
+	echo .P1
+	echo .ps -1
+	echo .ti -1i
+	echo .B
+	echo .BX $p | sed 's|src/||'
+	echo .ps +1
+	echo .CW
+	echo .ps -2
+	echo .vs .15i
+	sed 's/\\/\\e/g' $p
+	echo .ps +2
+	echo .P2
+	} > $p.ms
+}

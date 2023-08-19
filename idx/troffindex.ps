@@ -1,0 +1,2141 @@
+%!PS
+%%Version: 3.3
+%%DocumentFonts: (atend)
+%%Pages: (atend)
+%%EndComments
+%
+% Version 3.3 prologue for troff files.
+%
+
+/#copies 1 store
+/aspectratio 1 def
+/formsperpage 1 def
+/landscape false def
+/linewidth .3 def
+/magnification 1 def
+/margin 0 def
+/orientation 0 def
+/resolution 720 def
+/rotation 1 def
+/xoffset 0 def
+/yoffset 0 def
+
+/roundpage true def
+/useclippath true def
+/pagebbox [0 0 612 792] def
+
+/R  /Times-Roman def
+/I  /Times-Italic def
+/B  /Times-Bold def
+/BI /Times-BoldItalic def
+/H  /Helvetica def
+/HI /Helvetica-Oblique def
+/HB /Helvetica-Bold def
+/HX /Helvetica-BoldOblique def
+/CW /Courier def
+/CO /Courier def
+/CI /Courier-Oblique def
+/CB /Courier-Bold def
+/CX /Courier-BoldOblique def
+/PA /Palatino-Roman def
+/PI /Palatino-Italic def
+/PB /Palatino-Bold def
+/PX /Palatino-BoldItalic def
+/Hr /Helvetica-Narrow def
+/Hi /Helvetica-Narrow-Oblique def
+/Hb /Helvetica-Narrow-Bold def
+/Hx /Helvetica-Narrow-BoldOblique def
+/KR /Bookman-Light def
+/KI /Bookman-LightItalic def
+/KB /Bookman-Demi def
+/KX /Bookman-DemiItalic def
+/AR /AvantGarde-Book def
+/AI /AvantGarde-BookOblique def
+/AB /AvantGarde-Demi def
+/AX /AvantGarde-DemiOblique def
+/NR /NewCenturySchlbk-Roman def
+/NI /NewCenturySchlbk-Italic def
+/NB /NewCenturySchlbk-Bold def
+/NX /NewCenturySchlbk-BoldItalic def
+/ZD /ZapfDingbats def
+/ZI /ZapfChancery-MediumItalic def
+/S  /S def
+/S1 /S1 def
+/GR /Symbol def
+
+/inch {72 mul} bind def
+/min {2 copy gt {exch} if pop} bind def
+
+/setup {
+	counttomark 2 idiv {def} repeat pop
+
+	landscape {/orientation 90 orientation add def} if
+	/scaling 72 resolution div def
+	linewidth setlinewidth
+	1 setlinecap
+
+	pagedimensions
+	xcenter ycenter translate
+	orientation rotation mul rotate
+	width 2 div neg height 2 div translate
+	xoffset inch yoffset inch neg translate
+	margin 2 div dup neg translate
+	magnification dup aspectratio mul scale
+	scaling scaling scale
+
+	/Symbol /S Sdefs cf
+	/Times-Roman /S1 S1defs cf
+	0 0 moveto
+} def
+
+/pagedimensions {
+	useclippath userdict /gotpagebbox known not and {
+		/pagebbox [clippath pathbbox newpath] def
+		roundpage currentdict /roundpagebbox known and {roundpagebbox} if
+	} if
+	pagebbox aload pop
+	4 -1 roll exch 4 1 roll 4 copy
+	landscape {4 2 roll} if
+	sub /width exch def
+	sub /height exch def
+	add 2 div /xcenter exch def
+	add 2 div /ycenter exch def
+	userdict /gotpagebbox true put
+} def
+
+/pagesetup {
+	/page exch def
+	currentdict /pagedict known currentdict page known and {
+		page load pagedict exch get cvx exec
+	} if
+} def
+
+/decodingdefs [
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg /y exch def counttomark 2 idiv {y moveto show} repeat}
+	{neg moveto {2 index stringwidth pop sub exch div 0 32 4 -1 roll widthshow} repeat}
+	{neg moveto {spacewidth sub 0.0 32 4 -1 roll widthshow} repeat}
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg setfunnytext}
+] def
+
+/setdecoding {/t decodingdefs 3 -1 roll get bind def} bind def
+
+/w {neg moveto show} bind def
+/m {neg dup /y exch def moveto} bind def
+/done {/lastpage where {pop lastpage} if} def
+
+/f {
+	dup /font exch def findfont exch
+	dup /ptsize exch def scaling div dup /size exch def scalefont setfont
+	linewidth ptsize mul scaling 10 mul div setlinewidth
+	/spacewidth ( ) stringwidth pop def
+} bind def
+
+/changefont {
+	/fontheight exch def
+	/fontslant exch def
+	currentfont [
+		1 0
+		fontheight ptsize div fontslant sin mul fontslant cos div
+		fontheight ptsize div
+		0 0
+	] makefont setfont
+} bind def
+
+/sf {f} bind def
+
+/cf {
+	dup length 2 idiv
+	/entries exch def
+	/chtab exch def
+	/newfont exch def
+
+	findfont dup length 1 add dict
+	/newdict exch def
+	{1 index /FID ne {newdict 3 1 roll put} {pop pop} ifelse} forall
+
+	newdict /Metrics entries dict put
+	newdict /Metrics get
+	begin
+		chtab aload pop
+		1 1 entries {pop def} for
+		newfont newdict definefont pop
+	end
+} bind def
+
+%
+% A few arrays used to adjust reference points and character widths in some
+% of the printer resident fonts. If square roots are too high try changing
+% the lines describing /radical and /radicalex to,
+%
+%	/radical	[0 -75 550 0]
+%	/radicalex	[-50 -75 500 0]
+%
+% Move braceleftbt a bit - default PostScript character is off a bit.
+%
+
+/Sdefs [
+	/bracketlefttp		[201 500]
+	/bracketleftbt		[201 500]
+	/bracketrighttp		[-81 380]
+	/bracketrightbt		[-83 380]
+	/braceleftbt		[203 490]
+	/bracketrightex		[220 -125 500 0]
+	/radical		[0 0 550 0]
+	/radicalex		[-50 0 500 0]
+	/parenleftex		[-20 -170 0 0]
+	/integral		[100 -50 500 0]
+	/infinity		[10 -75 730 0]
+] def
+
+/S1defs [
+	/underscore		[0 80 500 0]
+	/endash			[7 90 650 0]
+] def
+%
+% Tries to round clipping path dimensions, as stored in array pagebbox, so they
+% match one of the known sizes in the papersizes array. Lower left coordinates
+% are always set to 0.
+%
+
+/roundpagebbox {
+    7 dict begin
+	/papersizes [8.5 inch 11 inch 14 inch 17 inch] def
+
+	/mappapersize {
+		/val exch def
+		/slop .5 inch def
+		/diff slop def
+		/j 0 def
+		0 1 papersizes length 1 sub {
+			/i exch def
+			papersizes i get val sub abs
+			dup diff le {/diff exch def /j i def} {pop} ifelse
+		} for
+		diff slop lt {papersizes j get} {val} ifelse
+	} def
+
+	pagebbox 0 0 put
+	pagebbox 1 0 put
+	pagebbox dup 2 get mappapersize 2 exch put
+	pagebbox dup 3 get mappapersize 3 exch put
+    end
+} bind def
+
+%%EndProlog
+%%BeginSetup
+mark
+/resolution 720 def
+setup
+2 setdecoding
+%%EndSetup
+%%Page: 0 1
+/saveobj save def
+mark
+1 pagesetup
+10 R f
+(Computing Science Technical Report No. 128)5 1848 1 1956 3000 t
+12 B f
+(Tools for Printing Indexes)3 1346 1 2207 3270 t
+10 I f
+(Jon L. Bentley)2 574 1 2593 3510 t
+(Brian W. Kernighan)2 814 1 2473 3630 t
+(AT&T Bell Laboratories)2 985 1 2387 3750 t
+(Murray Hill, New Jersey 07974)4 1268 1 2246 3870 t
+10 R f
+(October, 1986)1 571 1 720 6240 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 0 1
+%%Page: 0 2
+/saveobj save def
+mark
+2 pagesetup
+12 B f
+(Tools for Printing Indexes)3 1346 1 2207 1230 t
+10 I f
+(Jon L. Bentley)2 574 1 2593 1470 t
+(Brian W. Kernighan)2 814 1 2473 1590 t
+(AT&T Bell Laboratories)2 985 1 2387 1770 t
+(Murray Hill, New Jersey 07974)4 1268 1 2246 1890 t
+(ABSTRACT)2643 2450 w
+10 R f
+( programs for processing and printing the index for a)9 2182(This paper describes a set of)5 1168 2 1330 2710 t
+( index terms and page numbers.)5 1300( input is a set of lines containing)7 1346( The)1 212(book or a manual.)3 742 4 1080 2830 t
+( do)1 132(\(Disclaimer: these programs)2 1143 2 1080 2950 t
+10 I f
+(not)2387 2950 w
+10 R f
+( The)1 212(help with the original creation of index terms!\))7 1921 2 2547 2950 t
+( occurrences of the same terms, compress runs of page numbers,)10 2571(programs collect multiple)2 1029 2 1080 3070 t
+( from ``book index''\), and sort them into proper)8 1948(create permutations \(e.g., ``index, book'')4 1652 2 1080 3190 t
+( programs can cope with embedded formatting commands \(size and)9 2721( The)1 207(alphabetic order.)1 672 3 1080 3310 t
+(font changes, etc.\) and with roman numerals.)6 1799 1 1080 3430 t
+( short)1 237(The implementation uses an unusual software style: a long pipeline of)10 2907 2 1330 3586 t
+10 I f
+(awk)4511 3586 w
+10 R f
+( structure makes the programs easy to adapt or augment to meet the spe-)13 2964(programs. This)1 636 2 1080 3706 t
+( programs were intended to be used)6 1509( The)1 220( arise in many indexes.)4 978(cial requirements that)2 893 4 1080 3826 t
+(with)1080 3946 w
+10 I f
+(troff)1283 3946 w
+10 R f
+(, but can be used with T)6 957 1 1464 3946 t
+(E)2406 3966 w
+(X or)1 180 1 2452 3946 t
+10 I f
+(monk)2657 3946 w
+10 R f
+([1] with minor changes.)3 954 1 2881 3946 t
+(October, 1986)1 571 1 720 4426 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 0 2
+%%Page: 1 3
+/saveobj save def
+mark
+3 pagesetup
+12 B f
+(Tools for Printing Indexes)3 1346 1 2207 1230 t
+10 I f
+(Jon L. Bentley)2 574 1 2593 1470 t
+(Brian W. Kernighan)2 814 1 2473 1590 t
+(AT&T Bell Laboratories)2 985 1 2387 1770 t
+(Murray Hill, New Jersey 07974)4 1268 1 2246 1890 t
+10 B f
+( an Index)2 401(1. Making)1 459 2 720 2310 t
+10 R f
+( the)1 160( first is deciding on)4 820( The)1 217(There are two major tasks to making an index for a book or manual.)13 2873 4 970 2466 t
+( is hard)2 310( This)1 236( can readily find what they are looking for.)8 1774(proper indexing terms, so that users of the index)8 2000 4 720 2586 t
+( more than help with a rough first draft.)8 1602(intellectual work if done well, and no mechanical aid is likely to do)12 2718 2 720 2706 t
+( paper have between them indexed half a dozen books and as many programmer manu-)14 3550(The authors of this)3 770 2 720 2826 t
+(als, and have never found a substitute for a lot of thought.)11 2305 1 720 2946 t
+( and print a properly sorted and)6 1265(The second task is, given a set of terms and page numbers, to produce)13 2805 2 970 3102 t
+( item into a single list of page num-)8 1422( includes collecting multiple instances of an index)7 2008( This)1 229(formatted index.)1 661 4 720 3222 t
+(bers:)720 3342 w
+9 R f
+( 17, 18, 19, 25, 26)5 657( 1,)1 137(book index)1 403 3 1080 3522 t
+10 R f
+(permuting index terms:)2 933 1 720 3702 t
+9 R f
+( 17, 18, 19, 25, 26)5 657( 1,)1 137(index, book)1 426 3 1080 3882 t
+10 R f
+(compressing runs of adjacent page numbers:)5 1777 1 720 4062 t
+9 R f
+( 17-19, 25-26)2 489( 1,)1 137(book index)1 403 3 1080 4242 t
+10 R f
+(sorting correctly in the face of strange characters and formatting commands:)10 3048 1 720 4422 t
+9 CW f
+(ps -a)1 239 1 1080 4602 t
+9 R f
+(34, 91)1 226 1 1365 4602 t
+9 CW f
+(ps)1080 4722 w
+9 R f
+(command 34)1 491 1 1211 4722 t
+9 CW f
+(.ps)1080 4842 w
+9 R f
+(command,)1265 4842 w
+9 CW f
+(troff)1666 4842 w
+9 R f
+(301)1982 4842 w
+9 CW f
+(PS1)1080 4962 w
+9 R f
+( 82)1 113( 36,)1 159(shell variable)1 483 3 1265 4962 t
+10 R f
+(and a host of similar details.)5 1127 1 720 5142 t
+( addressed)1 428(This second task \320 mechanical but remarkably time-consuming if not mechanized \320 is)12 3642 2 970 5298 t
+(by the family of programs described here.)6 1671 1 720 5418 t
+( issues are cosmetic: for)4 999( Some)1 288(The precise task to be performed depends on the style of the index.)12 2783 3 970 5574 t
+(example, which of the following styles is desired?)7 2003 1 720 5694 t
+9 R f
+( iii, 26.)2 257( ii,)1 119(index term,)1 411 3 1080 5874 t
+( iii, 26)2 234( ii,)1 119(index term)1 388 3 1080 5994 t
+( 26)1 113( ii-iii,)1 224(index term)1 388 3 1080 6114 t
+10 R f
+( and includes)2 533( example incorporates a glossary, allows hierarchical entries,)7 2444( This)1 230(Other issues are deeper.)3 958 4 720 6294 t
+10 I f
+(see)4913 6294 w
+10 R f
+(and)720 6414 w
+10 I f
+(see also)1 319 1 889 6414 t
+10 R f
+(cross-references:)1233 6414 w
+9 R f
+(Insertion: Adding a new element, 168-223.)5 1551 1 1080 6594 t
+(into arrays, 169.)2 587 1 1149 6714 t
+(into binary trees,)2 609 1 1149 6834 t
+9 I f
+(see)1781 6834 w
+9 R f
+(Trees.)1919 6834 w
+(into linked lists, 200-215,)3 925 1 1149 6954 t
+9 I f
+(see also)1 288 1 2097 6954 t
+9 R f
+(Sequences.)2408 6954 w
+10 R f
+( build a number of)4 798( way is to)3 428( One)1 230(How should a program deal with such a multitude of choices?)10 2614 4 970 7170 t
+( approach solves many problems,)4 1374( This)1 238( flags.)1 254(options into a large program, controlled perhaps by various)8 2454 4 720 7290 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 1 3
+%%Page: 2 4
+/saveobj save def
+mark
+4 pagesetup
+10 R f
+(- 2 -)2 166 1 2797 480 t
+( if we)2 239( And)1 228(but it requires a great deal of complex code, since the various options have subtle interactions.)15 3853 3 720 840 t
+(hadn't foreseen your particular problem, you might find it hard to modify the code.)13 3320 1 720 960 t
+( package provides)2 734( Our)1 212( problem of proliferating options.)4 1363(We have taken an alternate approach to the)7 1761 4 970 1116 t
+( correctly\) but neglects exotic features \(format-)6 1925(basic services \(permuting terms, compressing runs, sorting)6 2395 2 720 1236 t
+( simple package is sufficient for pro-)6 1517( The)1 213( hierarchies, cross references\).)3 1232(ting options, glossary definitions,)3 1358 4 720 1356 t
+( with more complex needs, must modify the programs; the tools are organized)12 3121( Users)1 278(ducing simple indexes.)2 921 3 720 1476 t
+(as a long pipeline of short)5 1035 1 720 1596 t
+10 I f
+(awk)1780 1596 w
+10 R f
+(programs to make this easy.)4 1118 1 1974 1596 t
+( the package in its current form; nonprogrammers will)8 2283(The next two sections describe how to use)7 1787 2 970 1752 t
+( and modification, and)3 917( 4 and 5 discuss implementation)5 1321( Sections)1 396(probably not want to read past Section 3.)7 1686 4 720 1872 t
+(Section 6 contains remarks on the style of programming.)8 2267 1 720 1992 t
+10 B f
+( Use)1 180(2. Typical)1 448 2 720 2232 t
+10 R f
+( can be done completely by)5 1125( This)1 234( of index terms and page numbers.)6 1414(The first step is to prepare a list)7 1297 4 970 2388 t
+( the document is guaranteed to be in its final form, by transcribing the terms and page numbers into a)19 4039(hand if)1 281 2 720 2508 t
+( satisfactory way, however, is to include in the machine-readable form of a document com-)14 3790( more)1 240(file. A)1 290 3 720 2628 t
+( index terms and their computed page numbers to be emitted when the document is)14 3458(mands that cause the)3 862 2 720 2748 t
+( example, with)2 591(formatted. For)1 602 2 720 2868 t
+10 I f
+(troff)1938 2868 w
+10 R f
+(, a call of the macro)5 792 1 2119 2868 t
+10 CW f
+(.ix)2936 2868 w
+10 R f
+(can be used:)2 493 1 3141 2868 t
+9 CW f
+(This paper describes a set of programs for processing and printing)10 3564 1 1008 3028 t
+(the index for a book)4 1080 1 1008 3128 t
+(.ix book index)2 756 1 1008 3228 t
+( input is ...)3 702( The)1 270(or a manual.)2 648 3 1008 3328 t
+10 R f
+(The)720 3508 w
+10 CW f
+(.ix)909 3508 w
+10 R f
+(macro is not part of the standard macro packages like)9 2212 1 1123 3508 t
+10 CW f
+(-mm)3370 3508 w
+10 R f
+(or)3585 3508 w
+10 CW f
+(-ms)3703 3508 w
+10 R f
+(; fortunately its definition is)4 1157 1 3883 3508 t
+(short:\262)720 3628 w
+9 CW f
+(.de ix)1 324 1 1008 3788 t
+( \\\\n%)1 378(.tm ix: \\\\$1 \\\\$2 \\\\$3 \\\\$4 \\\\$5 \\\\$6 \\\\$7 \\\\$8 \\\\$9)10 2808 2 1008 3888 t
+(..)1008 3988 w
+10 R f
+( page number to be written on)6 1246(This causes the \(up to nine\) words of the index term, a tab, and the current)15 3074 2 720 4168 t
+10 I f
+(troff)720 4288 w
+10 R f
+( string ``)2 352( The)1 209('s standard error output.)3 971 3 901 4288 t
+10 CW f
+(ix:)2433 4288 w
+10 R f
+( can later be separated)4 897('' is added to the front so index terms)8 1530 2 2613 4288 t
+( some of)2 372( [Warning:)1 474( else that might have been printed on the error output.)10 2284(from anything)1 582 4 720 4408 t
+10 I f
+(troff)4471 4408 w
+10 R f
+('s special)1 388 1 4652 4408 t
+(characters don't come through)3 1216 1 720 4528 t
+10 CW f
+(.tm)1961 4528 w
+10 R f
+(commands at all and others come through in strange ways.])9 2374 1 2166 4528 t
+(The index output is captured in a file, say)8 1656 1 970 4684 t
+10 CW f
+(ix.raw)2651 4684 w
+10 R f
+(, by redirecting file 2 \()5 898 1 3011 4684 t
+10 CW f
+(stderr)3909 4684 w
+10 R f
+(\):)4269 4684 w
+9 CW f
+(troff -ms ... >t.out 2>ix.raw)4 1566 1 1008 4844 t
+10 R f
+(\(Typical documents also use)3 1167 1 720 5024 t
+10 I f
+(refer)1921 5024 w
+10 R f
+(,)2123 5024 w
+10 I f
+(pic)2182 5024 w
+10 R f
+(,)2312 5024 w
+10 I f
+(tbl)2371 5024 w
+10 R f
+(,)2485 5024 w
+10 I f
+(eqn)2544 5024 w
+10 R f
+( raw output is processed by the)6 1297( The)1 215( in a pipeline.\))3 607(, etc.,)1 225 4 2696 5024 t
+(program)720 5144 w
+10 CW f
+(make.index)1083 5144 w
+10 R f
+(:)1683 5144 w
+9 CW f
+(make.index ix.raw >index.body)2 1566 1 1008 5304 t
+10 R f
+(Each line written to)3 785 1 720 5484 t
+10 CW f
+(index.body)1530 5484 w
+10 R f
+(is preceded by a call to macro)6 1191 1 2155 5484 t
+10 CW f
+(.XX)3371 5484 w
+10 R f
+( to format it.)3 503(, which can be used later)5 986 2 3551 5484 t
+(In addition, a call to the)5 1004 1 720 5604 t
+10 CW f
+(.YY)1760 5604 w
+10 R f
+( the alphabet; after)3 775(macro is generated before each new letter of)7 1845 2 1976 5604 t
+10 I f
+(azure)4631 5604 w
+10 R f
+(and)4896 5604 w
+(before)720 5724 w
+10 I f
+(Babbage)999 5724 w
+10 R f
+(,)1362 5724 w
+10 CW f
+(.YY)1412 5724 w
+10 R f
+(is called with the two arguments)5 1296 1 1617 5724 t
+10 CW f
+(b)2938 5724 w
+10 R f
+(and)3023 5724 w
+10 CW f
+(B)3192 5724 w
+10 R f
+(.)3252 5724 w
+(The complete index is generated by a later)7 1693 1 970 5880 t
+10 I f
+(troff)2688 5880 w
+10 R f
+(run:)2894 5880 w
+9 CW f
+(troff -ms index.head index.body >index.out)4 2268 1 1008 6040 t
+10 R f
+(The standard file)2 686 1 720 6220 t
+10 CW f
+(index.head)1436 6220 w
+10 R f
+(contains default definitions of the)4 1363 1 2066 6220 t
+10 CW f
+(.XX)3460 6220 w
+10 R f
+(and)3671 6220 w
+10 CW f
+(.YY)3846 6220 w
+10 R f
+(macros, plus other com-)3 983 1 4057 6220 t
+( a normal six-)3 576( file is set up to produce a three-column index on)10 2048( This)1 237(mands to set multiple columns, etc.)5 1459 4 720 6340 t
+(inch page width, using the)4 1076 1 720 6460 t
+10 CW f
+(.MC)1827 6460 w
+10 R f
+(macro of the)2 516 1 2038 6460 t
+10 CW f
+(-ms)2585 6460 w
+10 R f
+( you use some other macro package,)6 1491( If)1 122(macro package.)1 631 3 2796 6460 t
+(you will have to change this file.)6 1307 1 720 6580 t
+( \(although those books)3 938(The books [2] and [3] illustrate the style of index produced by this program)13 3132 2 970 6736 t
+(used earlier versions\).)2 878 1 720 6856 t
+8 S1 f
+(__________________)720 6956 w
+8 R f
+(\262 The version of the)4 653 1 720 7056 t
+8 CW f
+(.ix)1396 7056 w
+8 R f
+( terms contained within)3 761(macro in the appendix is slightly more complicated so as to handle index)12 2356 2 1563 7056 t
+(diverted text like floating keeps.)4 1026 1 720 7156 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 2 4
+%%Page: 3 5
+/saveobj save def
+mark
+5 pagesetup
+10 R f
+(- 3 -)2 166 1 2797 480 t
+10 B f
+( of Index Terms)3 680(3. Input)1 365 2 720 840 t
+10 R f
+( language is used within arguments to the)7 1776(A simple)1 380 2 970 996 t
+10 CW f
+(.ix)3168 996 w
+10 R f
+(macro to control fonts, permutations of)5 1650 1 3390 996 t
+( general form of an indexing entry is)7 1461( The)1 205(phrases, and order of sorting.)4 1164 3 720 1116 t
+9 CW f
+(.ix this is a phrase)4 1080 1 1008 1276 t
+10 R f
+(which, if it occurs on page 97, will be written in the)11 2067 1 720 1456 t
+10 CW f
+(ix.raw)2812 1456 w
+10 R f
+(file as)1 241 1 3197 1456 t
+9 CW f
+( \(tab\)97)1 594(this is a phrase)3 864 2 1008 1616 t
+10 R f
+(This will subsequently be converted into four entries by rotating the phrase around each blank:)14 3783 1 720 1796 t
+9 CW f
+( 97)1 324(this is a phrase)3 864 2 1008 1956 t
+( 97)1 270(phrase, this is a)3 918 2 1008 2056 t
+( 97)1 270(a phrase, this is)3 918 2 1008 2156 t
+( 97)1 270(is a phrase, this)3 918 2 1008 2256 t
+10 R f
+(The character)1 544 1 720 2436 t
+10 CW f
+(\304)1289 2436 w
+10 R f
+(is translated to a blank, so it may be used to control the automatic rotation:)14 2984 1 1374 2436 t
+9 CW f
+(.ix this\304is\304a phrase)2 1080 1 1008 2596 t
+10 R f
+(will eventually produce)2 943 1 720 2776 t
+9 CW f
+( 97)1 324(this is a phrase)3 864 2 1008 2936 t
+( 97)1 270(phrase, this is a)3 918 2 1008 3036 t
+10 R f
+( be collected and merged)4 1001(If there are multiple occurrences of an indexing phrase on adjacent pages, they will)13 3319 2 720 3216 t
+(to appear as, for example, 97, 99, 108-110.)7 1713 1 720 3336 t
+( sorted before arabic page numbers.)5 1423( are)1 171(Page numbers in lower case roman numerals \(i, ii, iii, ...\))10 2269 3 970 3492 t
+(Within the words of an index phrase, the following special constructs are recognized:)12 3407 1 970 3648 t
+10 CW f
+(\304)2036 3828 w
+10 R f
+(will print as blank)3 725 1 2546 3828 t
+10 CW f
+([)2036 3948 w
+10 I f
+(...)2096 3948 w
+10 CW f
+(])2171 3948 w
+10 R f
+(will print ... in)3 573 1 2546 3948 t
+10 CW f
+(CW font)1 420 1 3144 3948 t
+({)2036 4068 w
+10 I f
+(...)2096 4068 w
+10 CW f
+(})2171 4068 w
+10 R f
+(will print ... in)3 573 1 2546 4068 t
+10 I f
+(italics)3144 4068 w
+10 CW f
+(_[)2036 4188 w
+10 I f
+(,)2156 4188 w
+10 CW f
+(_])2241 4188 w
+10 R f
+(literal)2546 4188 w
+10 CW f
+([)2804 4188 w
+10 R f
+(,)2864 4188 w
+10 CW f
+(])2914 4188 w
+(_{)2036 4308 w
+10 I f
+(,)2156 4308 w
+10 CW f
+(_})2241 4308 w
+10 R f
+(literal)2546 4308 w
+10 CW f
+({)2804 4308 w
+10 R f
+(,)2864 4308 w
+10 CW f
+(})2914 4308 w
+(%)2036 4428 w
+10 R f
+(explicit sort key follows)3 969 1 2546 4428 t
+10 CW f
+(_%)2036 4548 w
+10 R f
+(literal)2546 4548 w
+10 CW f
+(%)2804 4548 w
+(istart)2036 4668 w
+10 R f
+(start a range of page numbers)5 1177 1 2546 4668 t
+10 CW f
+(iend)2036 4788 w
+10 R f
+(end a range)2 459 1 2546 4788 t
+(For example,)1 527 1 720 4968 t
+9 CW f
+(.ix [pr]\304[-]{n} command)2 1242 1 1008 5128 t
+(.ix [_[\303{...}_]] regular\304expression)2 1890 1 1008 5228 t
+(.ix [printf] [_%d] specification)3 1728 1 1008 5328 t
+10 R f
+(produces)720 5508 w
+10 CW f
+(%d)1080 5688 w
+10 R f
+(specification,)1225 5688 w
+10 CW f
+(printf)1785 5688 w
+([\303)1080 5808 w
+10 I f
+(...)1200 5808 w
+10 CW f
+(])1275 5808 w
+10 R f
+(regular expression)1 734 1 1360 5808 t
+(command,)1080 5928 w
+10 CW f
+(pr -)1 205 1 1524 5928 t
+10 I f
+(n)1729 5928 w
+10 CW f
+(pr -)1 205 1 1080 6048 t
+10 I f
+(n)1285 6048 w
+10 R f
+(command)1360 6048 w
+10 CW f
+(printf %d)1 505 1 1080 6168 t
+10 R f
+(specification)1610 6168 w
+(regular expression,)1 759 1 1080 6288 t
+10 CW f
+([\303)1864 6288 w
+10 I f
+(...)1984 6288 w
+10 CW f
+(])2059 6288 w
+10 R f
+(specification,)1080 6408 w
+10 CW f
+(printf %d)1 505 1 1640 6408 t
+10 R f
+(Only the specific nesting)3 1011 1 720 6588 t
+10 CW f
+([{}])1761 6588 w
+10 R f
+( is also no way to print a literal \304)9 1350( There)1 287(currently works for font changes.)4 1347 3 2031 6588 t
+10 S f
+(_)4974 6588 w
+10 R f
+(.)5015 6588 w
+(Proper handling of)2 749 1 720 6708 t
+10 S f
+(_)1494 6708 w
+10 R f
+(\304)1544 6708 w
+10 S f
+(_ _)1 83 1 1494 6708 t
+10 R f
+(is left as an exercise; see Section 5.)7 1408 1 1602 6708 t
+( entry like ``)3 526(You may want to produce an)5 1201 2 970 6864 t
+10 I f
+(large subject 19-35)2 797 1 2697 6864 t
+10 R f
+( Two)1 243('', to indicate a range of pages.)6 1295 2 3502 6864 t
+(special)720 6984 w
+10 CW f
+(.ix)1022 6984 w
+10 R f
+(entries can be used to define the range:)7 1554 1 1227 6984 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 3 5
+%%Page: 4 6
+/saveobj save def
+mark
+6 pagesetup
+10 R f
+(- 4 -)2 166 1 2797 480 t
+9 CW f
+(.ix istart large subject)3 1296 1 1008 820 t
+9 R f
+(.. on the first page)4 653 1 2466 820 t
+9 CW f
+(.ix iend large subject)3 1188 1 1008 920 t
+9 R f
+(.. on the last page)4 633 1 2466 920 t
+10 R f
+( control commands listed)3 1053( The)1 220( key.)1 209(Sorting is normally performed with the index term as the sort)10 2588 4 970 1136 t
+( affect the order of sorting, as are troff font changes like)11 2243(above are removed from the sort key so they do not)10 2077 2 720 1256 t
+10 CW f
+(\\f\(CW)720 1376 w
+10 R f
+(and)1045 1376 w
+10 CW f
+(\\fI)1214 1376 w
+10 R f
+(, size changes like)3 726 1 1394 1376 t
+10 CW f
+(\\s8)2145 1376 w
+10 R f
+(and)2350 1376 w
+10 CW f
+(\\s-3)2519 1376 w
+10 R f
+(, and other miscellany.)3 907 1 2759 1376 t
+(If the sort order isn't what you want, you may force a sort key by using the)16 2992 1 970 1532 t
+10 CW f
+(%...)3987 1532 w
+10 R f
+(construct:)4252 1532 w
+9 CW f
+(.ix any string%explicit sort key)4 1728 1 1008 1692 t
+10 R f
+(as in)1 186 1 720 1872 t
+9 CW f
+(.ix T\\v'.17m'\\h'-.12m'E\\h'-.12m'\\v'-.17m'X%TEX)1 2484 1 1008 2032 t
+10 R f
+(\(Notice that no space precedes the)5 1365 1 720 2212 t
+10 CW f
+(%)2110 2212 w
+10 R f
+(.\))2170 2212 w
+( complicated keys, you will have to study the program)9 2233(If you use)2 411 2 970 2368 t
+10 I f
+(gen.key)3646 2368 w
+10 R f
+(to use explicit keys effec-)4 1053 1 3987 2368 t
+( string that starts with)4 867( instance, that program controls grouping by prepending a single space to a)12 3010(tively. For)1 443 3 720 2488 t
+(a number and prepending two spaces to a string that starts with punctuation.)12 3038 1 720 2608 t
+10 B f
+( of Operation)2 572(4. Principles)1 553 2 720 2848 t
+10 R f
+( consists of a host of small)6 1091(The indexer)1 483 2 970 3004 t
+10 I f
+(awk)2574 3004 w
+10 R f
+(programs, intentionally kept separate for easy modifica-)6 2267 1 2773 3004 t
+( processed by)2 547( example, roman numeral page numbers are)6 1766(tion. For)1 373 3 720 3124 t
+10 I f
+(deroman)3433 3124 w
+10 R f
+(and)3823 3124 w
+10 I f
+(reroman.)3994 3124 w
+10 R f
+(These programs)1 642 1 4398 3124 t
+(can only count up to)4 820 1 720 3244 t
+10 I f
+(xxx)1566 3244 w
+10 R f
+( you want to count beyond)5 1073(, however, so you must make a simple change to them if)11 2261 2 1706 3244 t
+( the other hand, if you don't have any roman-numeral pages, you don't need)13 3080(30. On)1 300 2 720 3364 t
+10 I f
+(deroman)4127 3364 w
+10 R f
+(and)4517 3364 w
+10 I f
+(reroman)4688 3364 w
+10 R f
+(at all.)1 222 1 720 3484 t
+( index terms so as to)5 864(The basic strategy is to sort once to bring together all occurrences of identical)13 3206 2 970 3640 t
+( sorting in the face of bizarre font controls and the like is achieved by)14 2800( Correct)1 352(combine their page numbers.)3 1168 3 720 3760 t
+( creates the proper order; the)5 1213(prefixing a sort key to each line such that sorting on that key)12 2575 2 720 3880 t
+10 CW f
+(%)4547 3880 w
+10 R f
+(command)4646 3880 w
+(allows you to override the default sort key.)7 1714 1 720 4000 t
+(The shell file)2 527 1 970 4156 t
+10 I f
+(make.index)1522 4156 w
+10 R f
+(controls the process:)2 821 1 2006 4156 t
+9 CW f
+(make.index ix.raw ... >index.out)3 1728 1 1008 4316 t
+10 R f
+(The specific programs are, in order,)5 1426 1 720 4496 t
+10 CW f
+(doclean)1229 4676 w
+10 R f
+(strip excess spaces before the tabs, remove non-)7 1917 1 2219 4676 t
+10 CW f
+(ix:)4136 4676 w
+10 R f
+(lines)4341 4676 w
+10 CW f
+(deroman)1229 4796 w
+10 R f
+(map roman numerals to arabic)4 1214 1 2219 4796 t
+10 CW f
+(range.prep)1229 4916 w
+10 R f
+(prepare to sort \(handle)3 900 1 2219 4916 t
+10 CW f
+(istart)3144 4916 w
+10 R f
+(/)3504 4916 w
+10 CW f
+(iend)3532 4916 w
+10 R f
+(\))3772 4916 w
+10 CW f
+(range.sort)1229 5036 w
+10 R f
+(sort by string then page number)5 1268 1 2219 5036 t
+10 CW f
+(range.collapse)1229 5156 w
+10 R f
+(resolve)2219 5156 w
+10 CW f
+(istart)2532 5156 w
+10 R f
+(/)2892 5156 w
+10 CW f
+(iend)2920 5156 w
+10 R f
+(and merge runs of page numbers)5 1305 1 3185 5156 t
+10 CW f
+(reroman)1229 5276 w
+10 R f
+(put arabic numerals back into roman)5 1461 1 2219 5276 t
+10 CW f
+(num.collapse)1229 5396 w
+10 R f
+(put many number pairs onto one line)6 1471 1 2219 5396 t
+10 CW f
+(rotate)1229 5516 w
+10 R f
+(make rotated copies of each line)5 1288 1 2219 5516 t
+10 CW f
+(gen.key)1229 5636 w
+10 R f
+(generate a sort key, if one wasn't provided)7 1701 1 2219 5636 t
+10 CW f
+(final.sort)1229 5756 w
+10 R f
+(sort using the key)3 708 1 2219 5756 t
+10 CW f
+(format)1229 5876 w
+10 R f
+(do font and size changes, etc.)5 1172 1 2219 5876 t
+( The)1 206( useful.)1 295(A few implementation details may prove)5 1634 3 970 6092 t
+10 I f
+(awk)3131 6092 w
+10 R f
+(programs rely on features in the)5 1277 1 3326 6092 t
+10 I f
+(awk)4629 6092 w
+10 R f
+(inter-)4824 6092 w
+( your)1 208( If)1 116(preter released in mid-1985 [4].)4 1266 3 720 6212 t
+10 I f
+(awk)2335 6212 w
+10 R f
+(gets a syntax error on this program)6 1392 1 2529 6212 t
+9 CW f
+(awk '{ gsub\(/A-Z/, ""\) }')4 1350 1 1008 6372 t
+10 R f
+( temporary)1 444( ``pipeline'' actually uses)3 1041( The)1 213(to remove capital letters, you must install an up-to-date version.)9 2622 4 720 6552 t
+(files)720 6672 w
+10 I f
+(foo0)929 6672 w
+10 R f
+(,)1115 6672 w
+10 I f
+(foo1)1177 6672 w
+10 R f
+(,)1363 6672 w
+10 I f
+(...)1425 6672 w
+10 R f
+(to connect the stages \(some systems have a small limit on the number of filters in a)16 3495 1 1545 6672 t
+( a VAX-)2 353( On)1 177( are also useful for debugging\), and deletes the files at the end.)12 2560(pipeline; the intermediate files)3 1230 4 720 6792 t
+(11/750,)720 6912 w
+10 CW f
+(make.index)1068 6912 w
+10 R f
+( total)1 222(takes a few minutes for a medium-sized book \(500 distinct entries, 1500)11 3105 2 1713 6912 t
+(entries\).)720 7032 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 4 6
+%%Page: 5 7
+/saveobj save def
+mark
+7 pagesetup
+10 R f
+(- 5 -)2 166 1 2797 480 t
+10 B f
+( and Whistles)2 579(5. Bells)1 331 2 720 840 t
+10 R f
+( additional features, you will have to build them)8 2006( you want)2 414( If)1 126(Our programs produce a basic index.)5 1524 4 970 996 t
+(yourself by adding to or adapting our tools.)7 1732 1 720 1116 t
+(To illustrate the process, we'll consider a simple addition: ``)9 2408 1 970 1272 t
+10 I f
+(see)3378 1272 w
+10 R f
+('' references of the form)4 973 1 3505 1272 t
+(secondary)1080 1452 w
+10 I f
+(see)1534 1452 w
+10 R f
+(primary)1686 1452 w
+(\(The examples in the introduction also illustrate a)7 1998 1 720 1632 t
+10 I f
+(see also)1 321 1 2745 1632 t
+10 R f
+(reference to follow a list of page numbers; we'll)8 1947 1 3093 1632 t
+( The)1 205(leave that as an exercise.\))4 1021 2 720 1752 t
+10 I f
+(see)1971 1752 w
+10 R f
+(references are contained in the file)5 1375 1 2123 1752 t
+10 CW f
+(see.terms)3523 1752 w
+10 R f
+(in the format)2 516 1 4088 1752 t
+(secondary\(tab\)primary)1080 1932 w
+( have an)2 342(The general strategy is to)4 1025 2 720 2112 t
+10 I f
+(awk)2117 2112 w
+10 R f
+(program massage that file into a suitable format, then merge it into)11 2724 1 2316 2112 t
+(the existing pipeline.)2 836 1 720 2232 t
+( The)1 205(Here are the implementation details.)4 1450 2 970 2388 t
+10 CW f
+(make.index)2650 2388 w
+10 R f
+(command is replaced by:)3 1001 1 3275 2388 t
+9 CW f
+(doclean ix.raw | deroman | range.prep | range.sort |)8 2808 1 1008 2548 t
+(range.collapse | reroman | num.collapse |)5 2214 1 1278 2648 t
+(rotate | gen.key | final.sort >junk.regular)5 2322 1 1278 2748 t
+(sort see.terms | see.prep >junk.see)4 1890 1 1008 2848 t
+(sort -m junk.see junk.regular | format >index.body)6 2700 1 1008 2948 t
+(rm junk.regular junk.see)2 1296 1 1008 3048 t
+10 R f
+(The)720 3228 w
+10 I f
+(see)904 3228 w
+10 R f
+(terms are sorted, processed by)4 1221 1 1060 3228 t
+10 CW f
+(see.prep)2310 3228 w
+10 R f
+( into the larger file by)5 893(, then merged)2 554 2 2790 3228 t
+10 CW f
+(sort)4267 3228 w
+10 R f
+('s)4507 3228 w
+10 CW f
+(-m)4609 3228 w
+10 R f
+(option.)4759 3228 w
+(The program)1 518 1 720 3348 t
+10 CW f
+(see.prep)1263 3348 w
+10 R f
+(requires two lines of)3 818 1 1768 3348 t
+10 I f
+(awk)2611 3348 w
+10 R f
+(:)2780 3348 w
+9 CW f
+(awk ' BEGIN { FS = "\\t" })7 1350 1 1008 3508 t
+({ print $1 "\\t" $1 "\\t\\\\fIsee\\\\fP " $2 } ')9 2268 1 1008 3608 t
+10 R f
+( puts ``)2 295(This program uses the secondary term as the sort key and as the term itself; it)15 3162 2 720 3788 t
+10 I f
+(see)4177 3788 w
+10 R f
+(primary term'' in)2 705 1 4335 3788 t
+( simple construction assumes that the)5 1531( This)1 236( page numbers\).)2 656(the third field \(which is normally occupied by)7 1897 4 720 3908 t
+(terms contain no formatting commands; if they do, you must pipe them through)12 3185 1 720 4028 t
+10 CW f
+(gen.key)3930 4028 w
+10 R f
+(as well.)1 305 1 4375 4028 t
+( alter the)2 367(If you desire a minor cosmetic change to the style of the index, you will probably have to)17 3703 2 970 4184 t
+10 I f
+(troff)720 4304 w
+10 R f
+(commands in the header file)4 1143 1 930 4304 t
+10 CW f
+(index.head)2101 4304 w
+10 R f
+( tastes run to ragged-right columns in the short lines)9 2106(. Our)1 233 2 2701 4304 t
+(of an index; if you prefer aligned columns, remove the)9 2215 1 720 4424 t
+10 CW f
+(.na)2964 4424 w
+10 R f
+( prepared for some funny line fill-)6 1388(line \(and be)2 479 2 3173 4424 t
+(ing\). The)1 398 1 720 4544 t
+10 CW f
+(.YY)1150 4544 w
+10 R f
+( the new letter of the alphabet between letter breaks, to show how)12 2691(macro in that file places)4 987 2 1362 4544 t
+( prefer just to leave a small space, so we define)10 1881( We)1 188(that might be done.)3 772 3 720 4664 t
+10 CW f
+(.YY)3586 4664 w
+10 R f
+(as)3791 4664 w
+9 CW f
+( header between letters of the alphabet)6 2106( \\")1 324(.de YY)1 324 3 1008 4824 t
+(.sp 1.5)1 378 1 1008 4924 t
+(..)1008 5024 w
+10 R f
+(For more radical stylistic changes, you may have to modify the)10 2522 1 720 5204 t
+10 CW f
+(format)3267 5204 w
+10 R f
+(program as well.)2 668 1 3652 5204 t
+( suite is hierarchical indexes, which can be arbitrarily com-)9 2460(The most obvious missing piece in our)6 1610 2 970 5360 t
+(plex:)720 5480 w
+9 R f
+(book)1080 5660 w
+(composition 23)1 581 1 1126 5780 t
+(indexing 45-54)1 571 1 1126 5900 t
+(automatic 50)1 491 1 1172 6020 t
+(manual 48)1 401 1 1172 6140 t
+(production 67)1 526 1 1126 6260 t
+10 R f
+( them \(or vice versa\).)4 930(Our tools do not supply hierarchies because the indexes in our books don't use)13 3390 2 720 6440 t
+(Rather, we achieve a similar effect by careful use of rotation of phrases:)12 2872 1 720 6560 t
+9 R f
+( 12-14, 140-148)2 579(search 1-10,)1 464 2 1080 6740 t
+( 16, 18)2 249( 12-13,)1 279(search, binary)1 506 3 1080 6860 t
+( 121, 142-143, 145-146)3 850( 90,)1 159(search, hash)1 441 3 1080 6980 t
+( 18, 46)2 249( 12,)1 159(search, sequential)1 641 3 1080 7100 t
+10 R f
+( recommend a two-level hierarchy, in which the primary)8 2325(If you really want a hierarchical index, we)7 1745 2 970 7316 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 5 7
+%%Page: 6 8
+/saveobj save def
+mark
+8 pagesetup
+10 R f
+(- 6 -)2 166 1 2797 480 t
+(and secondary keys are explicitly identified in the input, perhaps as)10 2687 1 720 840 t
+(.ix primary term, secondary term)4 1314 1 1080 1020 t
+( from word strings is)4 837(\(More than two levels is hard and not too useful; deducing primary and secondary keys)14 3483 2 720 1200 t
+( get by with changing only the)6 1234( implementation can probably)3 1208( Your)1 259(a hit-and-miss operation.\))2 1037 4 720 1320 t
+10 CW f
+(format)4486 1320 w
+10 R f
+(pro-)4874 1320 w
+(gram and the)2 521 1 720 1440 t
+10 CW f
+(index.head)1266 1440 w
+10 R f
+(file; you will probably need a new macro)7 1644 1 1891 1440 t
+10 CW f
+(.ZZ)3560 1440 w
+10 R f
+(for secondary terms.)2 817 1 3765 1440 t
+( feel that the list ``5, 6, 7'')7 1079( They)1 259( of adjacent page numbers.)4 1088(Some people don't want to collapse runs)6 1644 4 970 1596 t
+( lengthy discussion.)2 804(implies three scattered references on those pages, while the sequence ``5-7'' implies a)12 3516 2 720 1716 t
+(If you are in that camp, you must provide the ranges explicitly using)12 2793 1 720 1836 t
+10 CW f
+(istart)3543 1836 w
+10 R f
+(and)3933 1836 w
+10 CW f
+(iend)4108 1836 w
+10 R f
+(commands, then)1 661 1 4379 1836 t
+(modify the program)2 799 1 720 1956 t
+10 CW f
+(range.collapse)1544 1956 w
+10 R f
+(to avoid merging adjacent page numbers.)5 1647 1 2409 1956 t
+( it)1 87( As)1 167(The programs do not deal directly with complicated material like mathematics in index terms.)13 3816 3 970 2112 t
+(stands, these can be handled best by explicit sort keys, which is probably adequate if there are not too many)19 4320 1 720 2232 t
+(such items.)1 450 1 720 2352 t
+( were designed to work with)5 1144(Although our tools)2 758 2 970 2508 t
+10 I f
+(troff)2899 2508 w
+10 R f
+(, it is straightforward to adapt them to other doc-)9 1960 1 3080 2508 t
+(ument production systems, such as)4 1427 1 720 2628 t
+10 I f
+(monk)2181 2628 w
+10 R f
+(or T)1 178 1 2439 2628 t
+(E)2602 2648 w
+( is to produce an analog of the)7 1262( first part of the job)5 819(X. The)1 311 3 2648 2628 t
+10 CW f
+(.ix)720 2748 w
+10 R f
+( example,)1 394( For)1 195( index terms and page numbers.)5 1300(macro to emit)2 565 4 930 2748 t
+10 CW f
+(\\index{)3415 2748 w
+10 I f
+(term)3835 2748 w
+10 CW f
+(})4018 2748 w
+10 R f
+(in LAT)1 303 1 4109 2748 t
+(E)4397 2768 w
+(X [5] is essen-)3 597 1 4443 2748 t
+(tially identical to our)3 851 1 720 2868 t
+10 CW f
+(.ix)1601 2868 w
+10 R f
+(macro, while)1 526 1 1811 2868 t
+10 I f
+(monk)2367 2868 w
+10 R f
+(uses)2621 2868 w
+10 CW f
+(|index\()2823 2868 w
+10 I f
+(term)3243 2868 w
+10 CW f
+(\))3426 2868 w
+10 R f
+( must then modify)3 746(. You)1 252 2 3486 2868 t
+10 CW f
+(doclean)4513 2868 w
+10 R f
+(to)4962 2868 w
+( loose ends and)3 688(sweep up any)2 591 2 720 2988 t
+10 CW f
+(format)2049 2988 w
+10 R f
+(to produce output of the right form; the rest of the pipe is)12 2581 1 2459 2988 t
+( using a mechanism like)4 982( last job is to incorporate the resulting output into the document,)11 2621(unchanged. Your)1 717 3 720 3108 t
+10 CW f
+(index.head)720 3228 w
+10 R f
+(.)1320 3228 w
+(We have also used the)4 896 1 970 3384 t
+10 CW f
+(.ix)1892 3384 w
+10 R f
+( macro)1 276( A)1 124( of contents.)2 495(macro to generate text and page numbers for tables)8 2047 4 2098 3384 t
+(for producing section heads, for instance, might be augmented to produce lines of the form)14 3627 1 720 3504 t
+9 CW f
+(.ix CONTENTS)1 648 1 1008 3664 t
+9 I f
+( Title)1 188( Section)1 311(Section Number)1 578 3 1710 3664 t
+10 R f
+( table-of-contents items from index terms and prepares them in a format)11 2996(A subsequent program separates)3 1324 2 720 3844 t
+(suitable for)1 452 1 720 3964 t
+10 I f
+(troff)1197 3964 w
+10 R f
+( is why doclean)3 624(. \(This)1 286 2 1378 3964 t
+10 S f
+(_ ______)1 310 1 1978 3964 t
+10 R f
+(filters out lines that contain the string ``)7 1585 1 2313 3964 t
+10 CW f
+(CONTENTS)3898 3964 w
+10 R f
+(''.\))4378 3964 w
+( such)1 213( In)1 138( done late in the game, under intense time pressure.)9 2094(As a final observation, indexing is often)6 1625 4 970 4120 t
+( in using)2 357(circumstances, there is no disgrace)4 1416 2 720 4240 t
+10 I f
+(sed)2524 4240 w
+10 R f
+(or even \(as a last resort\) a text editor to fix up things that)13 2344 1 2696 4240 t
+(just don't work right.)3 850 1 720 4360 t
+10 B f
+( on Programming Style)3 991(6. Comments)1 585 2 720 4600 t
+10 R f
+( first)1 192( The)1 211( programs started more than a decade ago.)7 1726(This is the third version of a family of indexing)9 1941 4 970 4756 t
+(and second versions used a pipeline of C programs and increasingly complicated)11 3434 1 720 4876 t
+10 I f
+(sed)4198 4876 w
+10 R f
+(scripts and)1 449 1 4383 4876 t
+10 I f
+(sort)4876 4876 w
+10 R f
+( As)1 165( sorting order; they are sketched in the index of [6].)10 2094(options in a largely unsuccessful attempt to control)7 2061 3 720 4996 t
+( years, the programs degraded into write-only code, penetrable only with)10 2995(capabilities were added over the)4 1325 2 720 5116 t
+(substantial effort.)1 699 1 720 5236 t
+(Our motivation to build the current suite of)7 1752 1 970 5392 t
+10 I f
+(awk)2751 5392 w
+10 R f
+(programs was preparing the index to Reference [2].)7 2090 1 2950 5392 t
+( different from those processed by the existing programs: it had no font)12 3110(That index was substantially)3 1210 2 720 5512 t
+( but it did employ other niceties,)6 1333(changes \(which contributed greatly to the complexity of the C programs\),)10 2987 2 720 5632 t
+( we spent a)3 470( than modifying the existing suite,)5 1412( Rather)1 325(such as ranges of pages and breaks between letters.)8 2113 4 720 5752 t
+(few hours building a single-shot)4 1288 1 720 5872 t
+10 I f
+(awk)2033 5872 w
+10 R f
+(pipeline for the task \(37 lines of)6 1276 1 2227 5872 t
+10 I f
+(awk)3528 5872 w
+10 R f
+(in 6 programs\).)2 613 1 3722 5872 t
+( built the current indexing suite, which is a functional superset of its two pre-)14 3105(Several months later we)3 965 2 970 6028 t
+( index to a manual, and to whom we had)9 1701( worked with a colleague who was preparing the)8 2014(decessors. We)1 605 3 720 6148 t
+( the new code, debugged it, added several necessary features, and pro-)11 2890( wrote)1 259( We)1 195(described the prototype.)2 976 4 720 6268 t
+( final version of the C program, the initial)8 1668( The)1 205( week.)1 260(vided initial documentation, all within a)5 1605 4 720 6388 t
+10 I f
+(awk)4483 6388 w
+10 R f
+(program,)4677 6388 w
+(and the final)2 499 1 720 6508 t
+10 I f
+(awk)1244 6508 w
+10 R f
+(program are summarized in Table 1.)5 1452 1 1438 6508 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 6 8
+%%Page: 7 9
+/saveobj save def
+mark
+9 pagesetup
+10 R f
+(- 7 -)2 166 1 2797 480 t
+9 S f
+(_ _________________________________________________________________)1 2942 1 1409 890 t
+(_ _________________________________________________________________)1 2942 1 1409 910 t
+9 R f
+(P)1409 1000 w
+7 R f
+(ROGRAM)1459 1000 w
+9 R f
+(C P)1 133 1 2300 1000 t
+7 R f
+(ROTOTYPE)2433 1000 w
+9 R f
+(A)2933 1000 w
+7 R f
+(WK)2998 1000 w
+9 R f
+(P)3137 1000 w
+7 R f
+(ROTOTYPE)3187 1000 w
+9 R f
+(A)3687 1000 w
+7 R f
+(WK)3752 1000 w
+9 R f
+(P)3891 1000 w
+7 R f
+(RODUCTION)3941 1000 w
+9 S f
+(_ _________________________________________________________________)1 2942 1 1409 1010 t
+9 CW f
+(doclean)1409 1110 w
+9 R f
+( 11)1 1347(3 sed)1 188 2 2500 1110 t
+9 CW f
+(deroman)1409 1210 w
+9 R f
+( 17)1 799( 7)1 548(7 sed)1 188 3 2500 1210 t
+9 CW f
+(range.prep)1409 1310 w
+9 R f
+(9)3990 1310 w
+9 CW f
+(range.sort)1409 1410 w
+9 R f
+(4 sh)1 148 1 3990 1410 t
+9 CW f
+(range.collapse)1409 1510 w
+9 R f
+(43)3945 1510 w
+9 CW f
+(reroman)1409 1610 w
+9 R f
+( 22)1 799( 10)1 548(4 sed)1 188 3 2500 1610 t
+9 CW f
+(num.collapse)1409 1710 w
+9 R f
+( 12)1 799( 4)1 608(49 C)1 173 3 2455 1710 t
+9 CW f
+(rotate)1409 1810 w
+9 R f
+( 21)1 799( 6)1 608(60 C)1 173 3 2455 1810 t
+9 CW f
+(gen.key)1409 1910 w
+9 R f
+( 34)1 1347(18 sed)1 233 2 2455 1910 t
+9 CW f
+(final.sort)1409 2010 w
+9 R f
+( sh)1 103( 4)1 696( sh)1 103( 1)1 588(1 sh)1 148 5 2500 2010 t
+9 CW f
+(format)1409 2110 w
+9 R f
+( 47)1 799( 10)1 548(30 sed)1 233 3 2455 2110 t
+9 S f
+(_ _________________________________________________________________)1 2942 1 1409 2120 t
+9 R f
+( 224)1 799( 37)1 691( 172)1 723(Total Lines)1 413 4 1409 2220 t
+9 S f
+( \347)1 -2119(_ _________________________________________________________________)1 2942 2 1409 2230 t
+(\347)2232 2170 w
+(\347)2232 2080 w
+(\347)2232 1990 w
+(\347)2232 1900 w
+(\347)2232 1810 w
+(\347)2232 1720 w
+(\347)2232 1630 w
+(\347)2232 1540 w
+(\347)2232 1450 w
+(\347)2232 1360 w
+(\347)2232 1270 w
+(\347)2232 1180 w
+(\347)2232 1090 w
+(\347)2232 1000 w
+(\347)2865 2230 w
+(\347)2865 2170 w
+(\347)2865 2080 w
+(\347)2865 1990 w
+(\347)2865 1900 w
+(\347)2865 1810 w
+(\347)2865 1720 w
+(\347)2865 1630 w
+(\347)2865 1540 w
+(\347)2865 1450 w
+(\347)2865 1360 w
+(\347)2865 1270 w
+(\347)2865 1180 w
+(\347)2865 1090 w
+(\347)2865 1000 w
+(\347)3619 2230 w
+(\347)3619 2170 w
+(\347)3619 2080 w
+(\347)3619 1990 w
+(\347)3619 1900 w
+(\347)3619 1810 w
+(\347)3619 1720 w
+(\347)3619 1630 w
+(\347)3619 1540 w
+(\347)3619 1450 w
+(\347)3619 1360 w
+(\347)3619 1270 w
+(\347)3619 1180 w
+(\347)3619 1090 w
+(\347)3619 1000 w
+10 R f
+( of Source Code)3 646( Lines)1 272(Table 1.)1 327 3 2257 2460 t
+( C suite, for instance, did not have sepa-)8 1643( The)1 210(Table 1 has been massaged to compare incomparables.)7 2217 3 970 2676 t
+(rate programs for deroman)3 1087 1 720 2796 t
+10 S f
+(_______)1458 2796 w
+10 R f
+(and reroman)1 508 1 1839 2796 t
+10 S f
+(_ ______)1 332 1 2015 2796 t
+10 R f
+(; it performed those tasks in its)6 1269 1 2347 2796 t
+10 I f
+(sed)3647 2796 w
+10 R f
+(-script versions of gen.key)3 1077 1 3788 2796 t
+10 S f
+(_ ______)1 313 1 4552 2796 t
+10 R f
+(and)4896 2796 w
+(format)720 2916 w
+10 S f
+(_ _____)1 266 1 720 2916 t
+10 R f
+( C suite did not)4 632( The)1 210( on the C programs shortly.\))5 1152( details)1 290( \(More)1 303(, so we redistributed the line counts.)6 1467 6 986 2916 t
+( entered explicitly by the user in the first)8 1660(support ranges, which were)3 1115 2 720 3036 t
+10 I f
+(awk)3525 3036 w
+10 R f
+(system, so neither prototype had)4 1316 1 3724 3036 t
+( prototype)1 409( The)1 206(the three programs that compute ranges.)5 1607 3 720 3156 t
+10 I f
+(awk)2968 3156 w
+10 R f
+( were)1 220(programs performed no font changes, but)5 1657 2 3163 3156 t
+(careful with roman numerals.)3 1175 1 720 3276 t
+(The final)1 367 1 970 3432 t
+10 I f
+(awk)1366 3432 w
+10 R f
+( than the prototype, due to improvements in several important)9 2515(suite is six times longer)4 961 2 1564 3432 t
+(dimensions.)720 3552 w
+( programs support computed ranges, font changes, and several other additions.)10 3136(Functionality. The)1 764 2 970 3708 t
+( error message is produced when a range was started but not ended, for instance.)14 3208(Error-checking. An)1 800 2 970 3864 t
+( is maintained for a wide class of invalid inputs, such as huge roman numer-)14 3113(Bomb-proofing. Sanity)1 957 2 970 4020 t
+(als.)970 4140 w
+( ranging from more sophisticated algorithms to)6 2056(Performance. Improvements)1 1189 2 970 4296 t
+10 I f
+(awk)4269 4296 w
+10 R f
+(coding tricks)1 548 1 4492 4296 t
+(reduced the run time of some individual filters by an order of magnitude.)12 2915 1 970 4416 t
+( first version was much)4 960( this may stretch the imagination of some readers, the)9 2190(Readability. Although)1 920 3 970 4572 t
+( of the 224 lines are comments.\))6 1284( \(Fifty)1 278(less readable than the code presented in the appendix.)8 2142 3 970 4692 t
+( Improv-)1 378( a single-shot prototype, but do matter in a production program.)10 2552(These issues were not important in)5 1390 3 720 4848 t
+(ing the C prototype might well also increase its length by a factor of six.)14 2889 1 720 4968 t
+(The essence of the final suite is a long pipeline of short)11 2260 1 970 5124 t
+10 I f
+(awk)3260 5124 w
+10 R f
+( A)1 128( approach?)1 440( that a good)3 484(programs. Is)1 529 4 3459 5124 t
+( a very effective decomposition for this task: each program follows the pipe philoso-)13 3453(pipeline proved to be)3 867 2 720 5244 t
+( are)1 147( We)1 189( and is only slightly muddled by the format of its input and output.)13 2675(phy of performing one task well,)5 1309 4 720 5364 t
+( for producing an index for)5 1113(familiar with one monolithic program)4 1542 2 720 5484 t
+10 I f
+(troff)3407 5484 w
+10 R f
+(books; it is 350 lines of prototype-)6 1420 1 3620 5484 t
+( into a large number of small)6 1226( the job)2 322( Fragmenting)1 572(quality C \(and makes use of several system utilities\).)8 2200 4 720 5604 t
+( for indexing, where there is a)6 1206(pieces makes it easy to add or change pieces; this seems especially important)12 3114 2 720 5724 t
+( a)1 78( \(For)1 231( part for speed.)3 625( also leaves open the possibility of recoding some critical)9 2361( It)1 119(wide variety of styles.)3 906 6 720 5844 t
+(discussion of decomposition strategies applied to making a)7 2357 1 720 5964 t
+9 R f
+(KWIC)3102 5964 w
+10 R f
+(index, a simpler problem, see [7].\))5 1375 1 3367 5964 t
+(For ease of implementation, the)4 1272 1 970 6120 t
+10 I f
+(awk)2268 6120 w
+10 R f
+(language is a substantial improvement over C:)6 1860 1 2463 6120 t
+10 I f
+(awk)4349 6120 w
+10 R f
+(is much bet-)2 496 1 4544 6120 t
+( is an order-of-)3 637( There)1 296( string handling, pattern matching and arithmetic.)6 2060(ter suited to the combination of)5 1327 4 720 6240 t
+( and lines of)3 572(magnitude difference between lines of C code)6 1990 2 720 6360 t
+10 I f
+(awk)3334 6360 w
+10 R f
+(code for the prototype versions of)5 1485 1 3555 6360 t
+(num.collapse)720 6480 w
+10 S f
+(_ __________)1 530 1 720 6480 t
+10 R f
+(and rotate)1 400 1 1279 6480 t
+10 S f
+(_ ____)1 227 1 1452 6480 t
+10 R f
+( shorter)1 305( The)1 208( be typical for tasks of this nature.)7 1380(; this ratio appears to)4 854 4 1679 6480 t
+10 I f
+(awk)4454 6480 w
+10 R f
+(version is)1 389 1 4651 6480 t
+( create insidious errors if its output is)7 1632( automatic process can)3 966( \(Any)1 275(also much closer to being correct.)5 1447 4 720 6600 t
+( one instance, the index entry for)6 1311( For)1 189(accepted blindly.)1 683 3 720 6720 t
+10 CW f
+(kill -3)1 385 1 2928 6720 t
+10 R f
+(in the index of Reference [1] was rendered)7 1702 1 3338 6720 t
+(as)720 6840 w
+10 CW f
+(kill iv)1 402 1 845 6840 t
+10 R f
+( trying to infer the combination of circumstances that caused this)10 2771(; the reader might enjoy)4 1022 2 1247 6840 t
+(gaffe.\))720 6960 w
+(Performance does suffer in the)4 1232 1 970 7116 t
+10 I f
+(awk)2229 7116 w
+10 R f
+( index to Reference [1] \(1770 input lines\) takes 109)9 2087(version. The)1 527 2 2426 7116 t
+( factor of two is)4 644( This)1 231( version and 234 seconds with the new one on a VAX-11/750.)11 2518(seconds with the old C)4 927 4 720 7236 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 7 9
+%%Page: 8 10
+/saveobj save def
+mark
+10 pagesetup
+10 R f
+(- 8 -)2 166 1 2797 480 t
+( run times of the new programs and the size of)10 1902( The)1 210( program that is run only occasionally.)6 1570(acceptable for a)2 638 4 720 840 t
+(the data flowing between them are presented in this profile:)9 2376 1 720 960 t
+9 CW f
+( chars)1 432(lines words)1 648 2 1008 1080 t
+(times program)1 972 1 2088 1140 t
+( 53483)1 432(1770 6606)1 648 2 1008 1200 t
+( doclean)1 756(18.1u 1.2s 21r)2 756 2 1818 1260 t
+( 33568)1 432(1681 4276)1 648 2 1008 1320 t
+( deroman)1 756(8.1u 1.2s 10r)2 702 2 1872 1380 t
+( 33688)1 432(1681 4276)1 648 2 1008 1440 t
+( range.prep)1 918(12.4u 1.5s 16r)2 756 2 1818 1500 t
+( 35369)1 432(1681 4276)1 648 2 1008 1560 t
+( range.sort)1 918(19.6u 1.4s 23r)2 756 2 1818 1620 t
+( 35369)1 432(1681 4276)1 648 2 1008 1680 t
+( range.collapse)1 1134(26.5u 1.8s 33r)2 756 2 1818 1740 t
+( 32978)1 432(1639 4203)1 648 2 1008 1800 t
+( reroman)1 756(9.0u 1.3s 11r)2 702 2 1872 1860 t
+( 32858)1 432(1639 4174)1 648 2 1008 1920 t
+( num.collapse)1 1026(11.3u 1.3s 15r)2 756 2 1818 1980 t
+( 25680)1 432(1161 3464)1 648 2 1008 2040 t
+( rotate)1 702(21.8u 1.6s 25r)2 756 2 1818 2100 t
+( 45142)1 432(1825 7141)1 648 2 1008 2160 t
+( gen.key)1 756(27.4u 1.9s 32r)2 756 2 1818 2220 t
+(1825 11722 74292)2 1080 1 1008 2280 t
+( final.sort)1 918(18.2u 1.8s 26r)2 756 2 1818 2340 t
+(1825 11722 74292)2 1080 1 1008 2400 t
+( format)1 702(43.8u 2.6s 51r)2 756 2 1818 2460 t
+( 66443)1 432(3675 9029)1 648 2 1008 2520 t
+10 R f
+(Here is a similar profile of the C prototype:)8 1731 1 720 2700 t
+9 CW f
+( chars)1 432(lines words)1 648 2 1008 2820 t
+(times program)1 972 1 2088 2880 t
+( 53483)1 432(1770 6606)1 648 2 1008 2940 t
+( -f doclean_deroman)2 1026( sed)1 540( 6r)1 216(5.2u 0.7s)1 486 4 1872 3000 t
+( 37181)1 432(1770 4836)1 648 2 1008 3060 t
+( rotate)1 702( 5r)1 216(3.7u 0.5s)1 486 3 1872 3120 t
+(3028 10296 76409)2 1080 1 1008 3180 t
+( -f gen.key)2 594( sed)1 540(22.6u 1.5s 25r)2 756 3 1818 3240 t
+(2595 10836 65629)2 1080 1 1008 3300 t
+( final.sort)1 918(41.0u 2.9s 58r)2 756 2 1818 3360 t
+(2595 10836 65629)2 1080 1 1008 3420 t
+( num.collapse)1 1026( 7r)1 216(3.5u 0.6s)1 486 3 1872 3480 t
+( 51227)1 432(1793 8664)1 648 2 1008 3540 t
+( -f format_reroman)2 972( sed)1 540(23.8u 2.9s 47r)2 756 3 1818 3600 t
+( 65303)1 432(3586 8855)1 648 2 1008 3660 t
+10 R f
+( input file as input to two programs with slightly differ-)10 2256(\(The file sizes are close but not equal: we used one)10 2064 2 720 3840 t
+(ent functionality.\))1 716 1 720 3960 t
+10 B f
+(Acknowledgments)720 4200 w
+10 R f
+( Kowalski, Doug McIlroy, Ravi Sethi, Chris Van Wyk and Pamela)10 2767(We are grateful to Al Aho, Ted)6 1303 2 970 4356 t
+( Zave also gave us much help with shaking down the current pro-)12 2624( Pamela)1 345( paper.)1 272(Zave for comments on this)4 1079 4 720 4476 t
+( Sethi provided the)3 758(gram. Ravi)1 469 2 720 4596 t
+10 CW f
+(.ix)1972 4596 w
+10 R f
+(macro in the appendix.)3 915 1 2177 4596 t
+10 B f
+(References)720 4836 w
+10 R f
+( S. L. and Kowalski, T. J.,)6 1116(1. Murrel,)1 552 2 720 5064 t
+10 I f
+( the UNIX System: Using Monk 0.3)6 1484(Typing Documents on)2 901 2 2425 5064 t
+10 R f
+(, Bell)1 230 1 4810 5064 t
+(Laboratories internal memorandum \(December 10, 1985\).)5 2314 1 970 5184 t
+( W. Kernighan and Rob Pike,)5 1179(2. Brian)1 472 2 720 5340 t
+10 I f
+(The Unix Programming Environment,)3 1521 1 2396 5340 t
+10 R f
+(Prentice-Hall \(1984\).)1 848 1 3942 5340 t
+( L. Bentley,)2 472(3. Jon)1 389 2 720 5496 t
+10 I f
+(Programming Pearls,)1 872 1 1606 5496 t
+10 R f
+(Addison-Wesley \(1986\).)1 987 1 2503 5496 t
+( Pro-)1 201( Pattern Scanning and)3 883( A)1 125( V. Aho, Brian W. Kernighan, and Peter J. Weinberger, ``AWK:)10 2601(4. Alfred)1 510 5 720 5652 t
+(cessing Language \(User's Manual\),'' CSTR 118 \(June 1985\).)7 2459 1 970 5772 t
+( Lamport,)1 394(5. Leslie)1 494 2 720 5928 t
+10 I f
+(LATEX: A Document Preparation System,)4 1690 1 1633 5928 t
+10 R f
+(Addison-Wesley \(1986\).)1 987 1 3348 5928 t
+( W. Kernighan and P. J. Plauger,)6 1309(6. Brian)1 472 2 720 6084 t
+10 I f
+(Software Tools,)1 629 1 2526 6084 t
+10 R f
+(Addison-Wesley \(1976\).)1 987 1 3180 6084 t
+( criteria to be used in decomposing systems into modules,'')9 2457( L. Parnas, ``On the)4 819(7. David)1 494 3 720 6240 t
+10 I f
+(Communica-)4524 6240 w
+(tions of the ACM)3 681 1 970 6360 t
+10 B f
+(15)1676 6360 w
+10 R f
+(\(12\), pp. 1053-1058 \(December 1972\).)4 1549 1 1776 6360 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 8 10
+%%Page: 9 11
+/saveobj save def
+mark
+11 pagesetup
+10 R f
+(- 9 -)2 166 1 2797 480 t
+10 B f
+( Programs)1 446(Appendix: The)1 668 2 720 840 t
+10 R f
+( are avail-)2 400(This appendix lists the programs verbatim in the order in which they are used; the programs)15 3670 2 970 996 t
+( in square brackets)3 745( Fields)1 295( first, a summary of the commands.)6 1415( But)1 195(able from the authors.)3 876 5 720 1116 t
+10 CW f
+([])4271 1116 w
+10 R f
+(are optional.)1 499 1 4416 1116 t
+7 CW f
+(doclean)1008 1272 w
+( \(blanks and tab\) number)4 1008(Input: string)1 588 2 1218 1332 t
+(Output: string \(tab\) number)3 1134 1 1218 1392 t
+(deroman)1008 1452 w
+( \(tab\) arab or roman)4 840(Input: string)1 588 2 1218 1512 t
+(Output: string \(tab\) arab)3 1050 1 1218 1572 t
+(Roman numeral n is replaced by arab n-1000 \(i.e., iii -> -997\))11 2604 1 1218 1632 t
+(range.prep)1008 1692 w
+( string \(tab\) number)3 840(Input: [istart/iend])1 882 2 1218 1752 t
+(Output: string \(tab\) [b/e] \(tab\) number)5 1638 1 1218 1812 t
+(range.sort)1008 1872 w
+(Sort by $1 \(string\), $2 \(string\), then $3 \(number\))8 2100 1 1218 1932 t
+(range.collapse)1008 1992 w
+( \(tab\) [b/e] \(tab\) number)4 1050(Input: string)1 588 2 1218 2052 t
+(Output: string \(tab\) num [\(space\) num])5 1596 1 1218 2112 t
+(reroman)1008 2172 w
+( \(tab\) arab1 [\(space\) arab2])4 1176(Input: string)1 588 2 1218 2232 t
+(Output: string \(tab\) roman1 [-roman2])4 1554 1 1218 2292 t
+(num.collapse)1008 2352 w
+( \(tab\) roman1 [-roman2])3 966(Input: string)1 588 2 1218 2412 t
+(Output: string \(tab\) numlist)3 1176 1 1218 2472 t
+(rotate)1008 2532 w
+( [%optional sort key] \(tab\) numlist)5 1470(Input: string)1 588 2 1218 2592 t
+(Output: rotations of string \(1/line\) \(tab\) [key] \(tab\) numlist)8 2604 1 1218 2652 t
+(gen.key)1008 2712 w
+( \(tab\) [opt explicit key] \(tab\) numlist)6 1638(Input: string)1 588 2 1218 2772 t
+(Output: sort key \(tab\) string \(tab\) numlist)6 1806 1 1218 2832 t
+(final.sort)1008 2892 w
+(Sort by $1 \(string\) folded to lower case)7 1680 1 1218 2952 t
+(format)1008 3012 w
+( key \(tab\) string \(tab\) numlist)5 1302(Input: sort)1 504 2 1218 3072 t
+(Output: troff format, commands interpreted)4 1764 1 1218 3132 t
+8 R f
+(ix.macro:)720 3452 w
+7 CW f
+(.de ix)1 252 1 1008 3512 t
+( \\\\n%)1 336(.ie '\\\\n\(.z'' .tm ix: \\\\$1 \\\\$2 \\\\$3 \\\\$4 \\\\$5 \\\\$6 \\\\$7 \\\\$8 \\\\$9)12 2772 2 1008 3572 t
+(.el \\\\!.ix \\\\$1 \\\\$2 \\\\$3 \\\\$4 \\\\$5 \\\\$6 \\\\$7 \\\\$8 \\\\$9)10 2310 1 1008 3632 t
+(..)1008 3692 w
+8 R f
+(index.head:)720 3932 w
+7 CW f
+(.\\" This version is for the -ms macro package.)8 1932 1 1008 3992 t
+(.\\" if you use -mm, you will want to change .SH)10 1974 1 1008 4052 t
+(.\\" to some form of .HU "heading", and .LP to .P 0.)11 2142 1 1008 4112 t
+(.\\" the number registers PS and VS are different too.)9 2226 1 1008 4172 t
+(.)1008 4232 w
+(.)1008 4292 w
+( page number for first page; set it to taste)9 1848( \\")1 420(.pn 999)1 294 3 1008 4352 t
+( this macro precedes each index term)6 1512( \\")1 462(.de XX)1 252 3 1008 4412 t
+( break)1 336(.br \\")1 504 2 1008 4472 t
+( first line of each entry)5 1050( outdent)1 420( \\")1 168(.ti -.2i)1 336 4 1008 4532 t
+( two lines for typical entry)5 1176( need)1 294( \\")1 504(.ne 2)1 210 4 1008 4592 t
+(..)1008 4652 w
+( header between letters of the alphabet)6 1638( \\")1 462(.de YY)1 252 3 1008 4712 t
+( 1.5 lines)2 420( space)1 336( \\")1 420(.sp 1.5)1 294 4 1008 4772 t
+( 3 lines on this page)5 882( need)1 294( \\")1 504(.ne 3)1 210 4 1008 4832 t
+( next output line)3 714( center)1 378(.ce \\")1 504 3 1008 4892 t
+( the letter)2 462( print)1 336( \\")1 168(- \\\\$1 -)2 336 4 1008 4952 t
+( .5 line)2 336( space)1 336( \\")1 462(.sp .5)1 252 4 1008 5012 t
+(..)1008 5072 w
+( provide heading)2 672(.SH \\")1 504 2 1008 5132 t
+(Index)1008 5192 w
+( text is coming)3 630(.LP \\")1 504 2 1008 5252 t
+( index looks better in small type)6 1386( \\")1 168(.nr PS 8)2 336 3 1008 5312 t
+( small spacing)2 588( and)1 252( \\")1 168(.nr VS 9)2 336 4 1008 5372 t
+( 3 columns with default-size page)5 1386( \\")1 168(.MC 1.9i)1 336 3 1008 5432 t
+( no-adjust gives ragged right lines)5 1470(.na \\")1 504 2 1008 5492 t
+( outdent first line by 0.2 inches)6 1386( \\")1 420(.in .2i)1 294 3 1008 5552 t
+( don't hyphenate)2 672( \\")1 504(.hy 0)1 210 3 1008 5612 t
+8 R f
+(make.index:)720 5852 w
+7 CW f
+(doclean $* >foo1)2 672 1 1008 5912 t
+(deroman foo1 >foo2)2 756 1 1008 5972 t
+(range.prep foo2 >foo3)2 882 1 1008 6032 t
+(range.sort foo3 >foo4)2 882 1 1008 6092 t
+(range.collapse foo4 >foo5)2 1050 1 1008 6152 t
+(reroman foo5 >foo6)2 756 1 1008 6212 t
+(num.collapse foo6 >foo7)2 966 1 1008 6272 t
+(rotate foo7 >foo8)2 714 1 1008 6332 t
+(gen.key foo8 >foo9)2 756 1 1008 6392 t
+(final.sort foo9 >junk.regular)2 1218 1 1008 6452 t
+(see.prep see.terms | gen.key | final.sort >junk.see)6 2142 1 1008 6572 t
+(sort -mfd junk.see junk.regular | format >junk.all)6 2100 1 1008 6632 t
+(cat index.head junk.all)2 966 1 1008 6692 t
+(# rm foo* junk*)3 630 1 1008 6812 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 9 11
+%%Page: 10 12
+/saveobj save def
+mark
+12 pagesetup
+8 R f
+(- 10 -)2 172 1 2614 460 t
+(doclean:)720 780 w
+7 CW f
+(awk ' # doclean)3 630 1 1008 840 t
+( \(blanks and tab\) number)4 1008( string)1 336(# Input:)1 420 3 1008 900 t
+( string \(tab\) number)3 840(# Output:)1 462 2 1008 960 t
+( FS = OFS = "\\t" })6 756(BEGIN {)1 714 2 1008 1080 t
+($0 !\304 /\303ix: / { print "doclean: non index line: " $0 | "cat 1>&2"; next })16 3066 1 1008 1140 t
+( next } # CONT. marks table of contents stuff)9 1890(/CONTENTS/ {)1 630 2 1008 1200 t
+({ sub\(/\303ix: /, "", $1\) # rm leading "ix: ")9 1764 1 1470 1320 t
+( rm trailing blanks)3 798( #)1 168(sub\(/ +$/, "", $1\))3 756 3 1428 1380 t
+(print)1428 1440 w
+(})1470 1500 w
+(' $*)1 168 1 1008 1560 t
+8 R f
+( output of a)3 392(Piping the)1 334 2 970 1736 t
+8 CW f
+(print)1725 1736 w
+8 R f
+(statement through)1 581 1 1994 1736 t
+8 CW f
+(cat 1>&2)1 365 1 2604 1736 t
+8 R f
+(is an)1 157 1 2998 1736 t
+8 I f
+(awk)3184 1736 w
+8 R f
+(idiom for sending output to the standard)6 1332 1 3348 1736 t
+(error.)720 1816 w
+(deroman:)720 1996 w
+7 CW f
+(awk ' # deroman)3 630 1 1008 2056 t
+( \(tab\) [arab or roman])4 924( string)1 336(# Input:)1 420 3 1008 2116 t
+( string \(tab\) [arab])3 840(# Output:)1 462 2 1008 2176 t
+( numeral n is replaced by arab n-1000 \(e.g., iii -> -997\))11 2394(# Roman)1 420 2 1008 2296 t
+( FS = OFS = "\\t")5 672(BEGIN {)1 672 2 1008 2356 t
+(# set a["i"] = 1, a["ii"] = 2, ...)8 1428 1 1512 2416 t
+( ii iii iv v vi vii viii ix x")9 1260( "i)1 210(s =)1 126 3 1512 2476 t
+(s = s " xi xii xiii xiv xv xvi xvii xviii xix xx")13 2058 1 1512 2536 t
+(s = s " xxi xxii xxiii xxiv xxv xxvi xxvii xxviii xxix xxx")13 2478 1 1512 2596 t
+(n = split\(s, b, " "\))5 840 1 1512 2656 t
+(for \(i = 1; i <= n; i++\) a[b[i]] = i)10 1512 1 1512 2716 t
+(})1428 2776 w
+( if \($2 in a\) $2 = -1000 + a[$2])9 1344($2\304/\303[ivxlc]+$/ {)1 882 2 1008 2836 t
+(else print "deroman: bad number: " $0 | "cat 1>&2")9 2100 1 1512 2896 t
+(})1428 2956 w
+({ print })2 378 1 1428 3016 t
+(' $*)1 168 1 1008 3076 t
+8 R f
+(This program uses)2 600 1 970 3252 t
+8 I f
+(awk)1596 3252 w
+8 R f
+('s strings and)2 436 1 1731 3252 t
+8 CW f
+(split)2193 3252 w
+8 R f
+(command to initialize the array)4 1016 1 2459 3252 t
+8 CW f
+(a)3501 3252 w
+8 R f
+( later)1 167(; this idiom is used in several)6 964 2 3549 3252 t
+(programs.)720 3332 w
+(range.prep:)720 3512 w
+7 CW f
+(awk ' # range.prep)3 756 1 1008 3572 t
+( string \(tab\) number)3 840( [istart/iend])1 630(# Input:)1 420 3 1008 3632 t
+( string \(tab\) [b/e] \(tab\) number)5 1344(# Output:)1 462 2 1008 3692 t
+( FS = OFS = "\\t" })6 756(BEGIN {)1 672 2 1008 3812 t
+({ f2 = "" })4 462 1 1428 3872 t
+($1 \304 /\303%begin/ { f2 = "b"; sub\(/\303%begin */, "", $1\) })11 2226 1 1008 3932 t
+( f2 = "e"; sub\(/\303%end */, "", $1\) })8 1470( {)1 168($1 \304 /\303%end/)2 504 3 1008 3992 t
+({ print $1, f2, $2 })5 840 1 1428 4052 t
+(' $*)1 168 1 1008 4112 t
+8 R f
+(range.sort:)720 4352 w
+7 CW f
+(# range.sort)1 504 1 1008 4412 t
+( string \(tab\) [b/e] \(tab\) number)5 1344(# Input/Output:)1 714 2 1008 4472 t
+( by $1 \(string\), $3 \(number\), then $2 \(string\))8 1932(# Sort)1 336 2 1008 4532 t
+( version doesn't work with page numbers like 4-56)8 2058(# this)1 294 2 1008 4652 t
+( +0 -1 +2n +1 -2 $*)6 798( ')1 210(sort -u '-t)2 462 3 1008 4772 t
+8 R f
+(range.collapse:)720 5012 w
+7 CW f
+(awk ' # range.collapse)3 924 1 1008 5072 t
+( \(tab\) [b/e] \(tab\) number)4 1050( string)1 336(# Input:)1 420 3 1008 5132 t
+( string \(tab\) num [\(space\) num])5 1302(# Output:)1 462 2 1008 5192 t
+(function error\(s\) {)2 798 1 1008 5252 t
+(print "range.collapse: " s " near pp " rlo "-" rhi | "cat 1>&2")13 2646 1 1218 5312 t
+(})1008 5372 w
+(function printoldrange\(\) {)2 1092 1 1008 5432 t
+(if \(range == 1\) { error\("no %end for " term\); rhi = "XXX" })13 2478 1 1218 5492 t
+(if \(NR > 1\) {)4 546 1 1218 5552 t
+(if \(rlo == rhi\))3 630 1 1428 5612 t
+(print term, rlo)2 630 1 1638 5672 t
+(else)1428 5732 w
+(print term, \(rlo " " rhi\))5 1050 1 1638 5792 t
+(})1218 5852 w
+(rlo = rhi = $3 # bounds of current range)9 1680 1 1218 5912 t
+(})1008 5972 w
+( FS = OFS = "\\t" })6 756(BEGIN {)1 714 2 1008 6092 t
+( term = $1; range = 0 })7 966( printoldrange\(\);)1 882( {)1 210($1 != term)2 420 4 1008 6152 t
+( \(range == 1\) { range = 0; rhi = $3 })11 1554( { if)2 546($2 == "e")2 378 3 1008 6212 t
+(else { printoldrange\(\); error\("no %begin for " term\); rlo = "XXX" })11 2814 1 1428 6272 t
+(next)1428 6332 w
+(})1470 6392 w
+($3 <= rhi + 1 { rhi = $3})8 1050 1 1008 6452 t
+( + 1 { if \(range == 0\) printoldrange\(\) })9 1680( rhi)1 210($3 >)1 168 3 1008 6512 t
+( \(range == 1\) error\("multiple %begin for " term\); range = 1 })12 2562( { if)2 546($2 == "b")2 378 3 1008 6572 t
+( \(NR == 1\) NR = 2; printoldrange\(\) })8 1512( if)1 210(END {)1 504 3 1008 6632 t
+(' $*)1 168 1 1008 6692 t
+8 R f
+(This program would be much shorter without error checking.)8 1947 1 970 6868 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 10 12
+%%Page: 11 13
+/saveobj save def
+mark
+13 pagesetup
+8 R f
+(- 11 -)2 172 1 2614 460 t
+(reroman:)720 780 w
+7 CW f
+(awk ' # reroman)3 630 1 1008 840 t
+( \(tab\) arab1 [\(space\) arab2])4 1176( string)1 336(# Input:)1 420 3 1008 900 t
+( string \(tab\) roman1 [-roman2])4 1260(# Output:)1 462 2 1008 960 t
+( FS = OFS = "\\t")5 672(BEGIN {)1 462 2 1008 1080 t
+(# set a[1] = "i", a[2] = "ii", ...)8 1428 1 1302 1140 t
+( ii iii iv v vi vii viii ix x")9 1260( "i)1 210(s =)1 126 3 1302 1200 t
+(s = s " xi xii xiii xiv xv xvi xvii xviii xix xx")13 2058 1 1302 1260 t
+(s = s " xxi xxii xxiii xxiv xxv xxvi xxvii xxviii xxix xxx")13 2478 1 1302 1320 t
+(split\(s, a, " "\))3 672 1 1302 1380 t
+(})1218 1440 w
+( n = split\($2, b, " "\))6 924( {)1 210($2 < 0)2 252 3 1008 1500 t
+(for \(i = 1; i <= n; i++\) {)8 1092 1 1302 1560 t
+(if \(b[i] >= 0\) continue)4 966 1 1428 1620 t
+(j = 1000 + b[i])4 630 1 1428 1680 t
+(if \(j in a\) b[i] = a[j])6 966 1 1428 1740 t
+( "cat 1>&2")2 462( |)1 126(else print "reroman: bad number: " $0)6 1554 3 1428 1800 t
+(})1302 1860 w
+($2 = b[1])2 378 1 1302 1920 t
+(if \(n > 1\) $2 = b[1] " " b[2])9 1218 1 1302 1980 t
+(})1218 2040 w
+({ print })2 378 1 1218 2100 t
+(' $*)1 168 1 1008 2160 t
+8 R f
+(num.collapse:)720 2400 w
+7 CW f
+(awk ' # num.collapse)3 840 1 1008 2460 t
+( \(tab\) roman1 [-roman2])3 966( string)1 336(# Input:)1 420 3 1008 2520 t
+( string \(tab\) numlist)3 882(# Output:)1 462 2 1008 2580 t
+( FS = OFS = "\\t" })6 756(BEGIN {)1 462 2 1008 2700 t
+( use - if there is no en dash)8 1218( #)1 126({ sub\(/ /, "\\\\\(en", $2\) })5 1050 3 1218 2820 t
+( p = $1)3 294( {)1 168($1 != p)2 294 3 1008 2940 t
+(if \(NR > 1\) printf "\\n")5 966 1 1302 3000 t
+(printf "%s\\t%s", $1, $2)3 966 1 1302 3060 t
+(next)1302 3120 w
+(})1218 3180 w
+({ printf " %s", $2 })5 840 1 1218 3240 t
+( if \(NR > 0\) printf "\\n" })7 1092(END {)1 252 2 1008 3300 t
+(' $*)1 168 1 1008 3360 t
+8 R f
+(The variable p)2 459 1 970 3536 t
+8 S f
+(_)1389 3536 w
+8 R f
+( output uses space as a separator between numbers in the list.)11 1943( The)1 164(is the previous value.)3 676 3 1449 3536 t
+(rotate:)720 3716 w
+7 CW f
+(awk ' # rotate)3 588 1 1008 3776 t
+( [%key sort key] \(tab\) numlist)5 1260( string)1 336(# Input:)1 420 3 1008 3836 t
+( several rotations of string \(tab\) [key] \(tab\) numlist\(with commas\))9 2814(# Output:)1 462 2 1008 3896 t
+( FS = OFS = "\\t" })6 756(BEGIN {)1 504 2 1008 4016 t
+({ # convert page page page into page, page, page)9 2016 1 1260 4136 t
+(# ought to be in num.collapse)5 1218 1 1344 4196 t
+( commas between page numbers)4 1176( #)1 294(gsub\(/ /, ", ", $2\))4 798 3 1428 4256 t
+(})1260 4316 w
+(/ %key / { i = index\($1, " %key "\))9 1428 1 1008 4436 t
+(print substr\($1, 1, i-1\), substr\($1, i+6\), $2)6 1890 1 1344 4496 t
+(next)1344 4556 w
+(})1260 4616 w
+({ print $1, "", $2)4 756 1 1260 4676 t
+(i = 1)2 210 1 1344 4736 t
+(while \(\(j = index\(substr\($1, i+1\), " "\)\) > 0\) {)9 1974 1 1344 4796 t
+(i += j)2 252 1 1428 4856 t
+(printf\("%s, %s\\t\\t%s\\n", substr\($1, i+1\), substr\($1, 1, i-1\), $2\))7 2730 1 1428 4916 t
+(})1344 4976 w
+(})1260 5036 w
+(' $*)1 168 1 1008 5096 t
+8 R f
+(The tricky code in the last)5 828 1 970 5272 t
+8 CW f
+(while)1818 5272 w
+8 R f
+(loop makes quite a difference in run time.)7 1328 1 2078 5272 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 11 13
+%%Page: 12 14
+/saveobj save def
+mark
+14 pagesetup
+8 R f
+(- 12 -)2 172 1 2614 460 t
+(gen.key:)720 780 w
+7 CW f
+(awk ' # gen.key)3 630 1 1008 840 t
+( \(tab\) [opt explicit key] \(tab\) numlist)6 1638( string)1 336(# Input:)1 420 3 1008 900 t
+( sort key \(tab\) string \(tab\) numlist)6 1512(# Output:)1 462 2 1008 960 t
+( = OFS = "\\t" })5 630( FS)1 210(BEGIN {)1 294 3 1008 1080 t
+($2 == "" { # generate key if none specified)9 1806 1 1008 1200 t
+($2 = $1)2 294 1 1218 1260 t
+(# Remove these troff commands:)4 1260 1 1218 1320 t
+(gsub\(/\\\\f\\\(..|\\\\f.|\\\\s[+-][0-9]|\\\\s[0-9][0-9]?/, "", $2\))2 2352 1 1218 1380 t
+(# Def 1: keep blanks, letters, digits only)7 1764 1 1218 1440 t
+( ]+/, "", $2\))3 546(# gsub\(/[\303a-zA-Z0-9)1 924 2 1218 1500 t
+(# Def 2: remove index commands []{}, and % before literals)10 2436 1 1218 1560 t
+(# quote character is %, space character is \304)8 1848 1 1218 1620 t
+(quoted = 0)2 420 1 1218 1680 t
+( hide literals in Q)4 798( #)1 126(if \($2 \304 /%/\) {)4 630 3 1218 1740 t
+(quoted = 1)2 420 1 1428 1800 t
+( $2\))1 168(gsub\(/%%/, "QQ0QQ",)1 840 2 1428 1860 t
+(gsub\(/%\\[/, "QQ1QQ", $2\))2 1008 1 1428 1920 t
+(gsub\(/%\\]/, "QQ2QQ", $2\))2 1008 1 1428 1980 t
+(gsub\(/%\\{/, "QQ3QQ", $2\))2 1008 1 1428 2040 t
+(gsub\(/%\\}/, "QQ4QQ", $2\))2 1008 1 1428 2100 t
+( $2\))1 168(gsub\(/%\304/, "QQ5QQ",)1 840 2 1428 2160 t
+(})1218 2220 w
+( troff escape)2 546( #)1 462(gsub\(/%e/, "\\\\", $2\))2 840 3 1218 2280 t
+(gsub\(/\304/, " ", $2\))3 756 1 1218 2340 t
+( remove font-changing []{} and %, \304)6 1470( #)1 168(gsub\(/[%\\[\\]\\{\\}]/, "", $2\))2 1134 3 1218 2400 t
+( replace literals)2 714( #)1 126(if \(quoted\) {)2 546 3 1218 2460 t
+(gsub\(/QQ0QQ/, "%", $2\))2 924 1 1428 2520 t
+(gsub\(/QQ1QQ/, "[", $2\))2 924 1 1428 2580 t
+(gsub\(/QQ2QQ/, "]", $2\))2 924 1 1428 2640 t
+(gsub\(/QQ3QQ/, "{", $2\))2 924 1 1428 2700 t
+(gsub\(/QQ4QQ/, "}", $2\))2 924 1 1428 2760 t
+(gsub\(/QQ5QQ/, "\304", $2\))2 924 1 1428 2820 t
+(})1218 2880 w
+(if \($2 \304 /\303[\303a-zA-Z]+$/\) # pure punctuation goes first)8 2268 1 1218 2940 t
+( $2)1 126( ")1 126($2 = ")2 252 3 1428 3000 t
+( leading digits come next)4 1050( #)1 336(else if \($2 \304 /\303[0-9]/\))4 966 3 1218 3060 t
+($2 = " " $2)4 462 1 1428 3120 t
+(# otherwise whatever final.sort does)4 1512 1 2058 3180 t
+(})1008 3240 w
+({ print $2, $1, $3 })5 840 1 1218 3360 t
+(' $*)1 168 1 1008 3420 t
+8 R f
+( Defini-)1 270( in the string; that is commented out.)7 1174(Under Definition 1, the sort key consists of all alphanumeric characters)10 2266 3 970 3596 t
+(tion 2 is active; it tries to remove formatting commands.)9 1788 1 720 3676 t
+(final.sort:)720 3856 w
+7 CW f
+(# final.sort)1 504 1 1008 3916 t
+( sort key \(tab\) string \(tab\) numlist)6 1512(# Input/Output:)1 714 2 1008 3976 t
+( by $1 \(string\))3 630(# Sort)1 336 2 1008 4036 t
+(###sort -fd $*)2 588 1 1008 4156 t
+( +0fd -1 -t' ' +0f -1 $*)7 1008( ')1 126(sort -t')1 336 3 1008 4216 t
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 12 14
+%%Page: 13 15
+/saveobj save def
+mark
+15 pagesetup
+8 R f
+(- 13 -)2 172 1 2614 460 t
+(format:)720 780 w
+7 CW f
+(awk ' # format)3 588 1 1008 840 t
+( key \(tab\) string \(tab\) numlist)5 1302( sort)1 252(# Input:)1 420 3 1008 900 t
+( troff format, commands interpreted)4 1470(# Output:)1 462 2 1008 960 t
+( = "\\t")2 294( FS)1 210(BEGIN {)1 294 3 1008 1080 t
+(s = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz ")4 2520 1 1218 1140 t
+(# set upper["a"] = "A")4 924 1 1218 1200 t
+(for \(i = 1; i <= 27; i++\) upper[substr\(s,i+27,1\)] = substr\(s,i,1\))10 2730 1 1218 1260 t
+( ="a")1 210( lower["A"])1 504(# set lower["a"] =)3 756 3 1218 1320 t
+(for \(i = 1; i <= 27; i++\) {)8 1134 1 1218 1380 t
+(lower[substr\(s,i,1\)] = substr\(s,i+27,1\))2 1638 1 1428 1440 t
+(lower[substr\(s,i+27,1\)] = substr\(s,i+27,1\))2 1764 1 1428 1500 t
+(})1218 1560 w
+(})1008 1620 w
+({ # mark change between letters with .YY)7 1680 1 1008 1680 t
+(# find first non-punctuation char)4 1386 1 1218 1740 t
+(for \(i = 1; \(c = substr\($1,i,1\)\) != ""; i++\))9 1848 1 1218 1800 t
+(if \(c \304 /[a-zA-Z0-9 ]/\))4 966 1 1428 1860 t
+(break)1638 1920 w
+(this = c)2 336 1 1218 1980 t
+(if \(!\(this in lower\)\) lower[this] = " ")7 1638 1 1218 2040 t
+(this = lower[this])2 756 1 1218 2100 t
+(if \(this != last && this != " "\))8 1344 1 1218 2160 t
+(print ".YY", this, upper[last=this])3 1470 1 1428 2220 t
+(quoted = 0)2 420 1 1218 2280 t
+(# interpret font change language)4 1344 1 1092 2400 t
+( discard sort key, leave term .. numlist)7 1680( #)1 252( $3)1 126( ")1 126($0 = $2 ")3 378 5 1218 2520 t
+(if \($0 \304 /%/\) {)4 630 1 1218 2640 t
+(quoted = 1)2 420 1 1428 2700 t
+( $0\))1 168(gsub\(/%%/, "QQ0QQ",)1 840 2 1428 2760 t
+(gsub\(/%\\[/, "QQ1QQ", $0\))2 1008 1 1428 2820 t
+(gsub\(/%\\]/, "QQ2QQ", $0\))2 1008 1 1428 2880 t
+(gsub\(/%\\{/, "QQ3QQ", $0\))2 1008 1 1428 2940 t
+(gsub\(/%\\}/, "QQ4QQ", $0\))2 1008 1 1428 3000 t
+( $0\))1 168(gsub\(/%\304/, "QQ5QQ",)1 840 2 1428 3060 t
+(})1218 3120 w
+(gsub\(/%e/, "\\\\e", $0\) # %e -> \\e)6 1344 1 1218 3180 t
+( unpaddable spaces go away at last)6 1428( #)1 210(gsub\(/\304/, " ", $0\))3 756 3 1218 3240 t
+(if \(gsub\(/\\[/, "\\\\\\\\&\\\\f\(CW", $0\)\))3 1428 1 1218 3300 t
+( $0\))1 252(gsub\(/\\]/, "\\\\fP",)1 756 2 1428 3360 t
+( $0\)\))1 294(if \(gsub\(/\\{/, "\\\\f2",)2 924 2 1218 3420 t
+( $0\))1 252(gsub\(/\\}/, "\\\\fP",)1 756 2 1428 3480 t
+(if \(quoted\) {)2 546 1 1218 3540 t
+(gsub\(/%/, "", $0\))2 714 1 1428 3600 t
+(gsub\(/QQ0QQ/, "%", $0\))2 924 1 1428 3660 t
+(gsub\(/QQ1QQ/, "[", $0\))2 924 1 1428 3720 t
+(gsub\(/QQ2QQ/, "]", $0\))2 924 1 1428 3780 t
+(gsub\(/QQ3QQ/, "{", $0\))2 924 1 1428 3840 t
+(gsub\(/QQ4QQ/, "}", $0\))2 924 1 1428 3900 t
+(gsub\(/QQ5QQ/, "\304", $0\))2 924 1 1428 3960 t
+(})1218 4020 w
+(print ".XX"; printf "\\\\&%s\\n", $0)4 1386 1 1218 4080 t
+(})1008 4140 w
+(' $*)1 168 1 1008 4200 t
+8 R f
+(There is no good way to convert cases in)8 1300 1 970 4376 t
+8 I f
+(awk)2290 4376 w
+8 R f
+(.)2425 4376 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 13 15
+%%Trailer

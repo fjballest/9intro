@@ -1,0 +1,7 @@
+#!/bin/rc
+rfork e
+{
+	echo 'obase=16'
+	for (num in $*)
+		echo $num
+} | bc

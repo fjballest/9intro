@@ -1,0 +1,50 @@
+Planificacion tentativa para SO II y para FSO IT
+2 horas de teoria por semana.
+
+Semana	Tema	Practicas
+1	Normas	Intro/1
+2	Intro/2	C review
+3	
+4	
+5	
+6	
+7	
+8	
+9	
+10	
+11	
+12	
+13	
+14	
+
+Conceptos por semana
+
+1	Normas
+
+	normas
+	def. so. programas + maq. virtual + gestor
+	entrar/salir de Plan 9
+	usar rio
+	editar con acme
+	usar el manual
+
+	libro: 1.1 - 1.5
+
+	deberes:	abrir la cuenta
+	
+2	Intro
+	shell, comandos, argumentos, opciones
+	ls, touch, lc, cp, rm, mv
+	directorio, paths, dir. raiz., dir. actual, mkdir, chdir, cd
+	getwd
+
+	libro: 1.6
++
+	ejecutable, obj. comp.,
+	nm
+	shell, binario, comando, llamada al sistema
+	drivers
+
+	libro: 1.7 - 1.10
+
+	deberes: 1.5, 1.6, 1.7

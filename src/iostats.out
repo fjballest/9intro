@@ -1,0 +1,138 @@
+mount: can't open /srv/whale: '/srv/whale' does not exist
+version tag 65535 msize 8216 version '9P2000'
+Tattach tag 9 fid 426 afid -1 uname nemo aname 
+	Rattach tag 9 qid (0000000000000001 0 d)
+Twalk tag 9 fid 426 newfid 521 nwname 2 0:dev 1:pid 
+	file: 0x12a9e0 / name dev
+	file: 0x136610 dev name pid
+	Rwalk tag 9 nwqid 2 0:(0000000000000002 0 d) 1:(0000000000000003 0 ) 
+Twalk tag 9 fid 426 newfid 503 nwname 1 0:env 
+	file: 0x12a9e0 / name env
+	Rwalk tag 9 nwqid 1 0:(0000000000000004 75 d) 
+Twalk tag 9 fid 426 newfid 440 nwname 2 0:fd 1:0 
+	file: 0x12a9e0 / name fd
+	file: 0x136730 fd name 0
+	Rwalk tag 9 nwqid 2 0:(0000000000000005 0 d) 1:(0000000000000006 0 ) 
+Topen tag 9 fid 440 mode 0
+	slave: 475 Topen tag 9 fid 440 mode 0 b 1 p 475
+	open: /fd/0 0
+	open: fd 12
+	Ropen tag 9 qid (0000000000000006 0 ) iounit 8192 
+Twalk tag 9 fid 426 newfid 508 nwname 2 0:fd 1:1 
+	file: 0x12a9e0 / name fd
+	file: 0x136730 fd name 1
+	Rwalk tag 9 nwqid 2 0:(0000000000000005 0 d) 1:(0000000000000007 0 ) 
+Topen tag 9 fid 508 mode 1
+	slave: 475 Topen tag 9 fid 508 mode 1 b 1 p 475
+	open: /fd/1 1
+	open: fd 13
+	Ropen tag 9 qid (0000000000000007 0 ) iounit 8192 
+Twalk tag 9 fid 426 newfid 464 nwname 2 0:fd 1:2 
+	file: 0x12a9e0 / name fd
+	file: 0x136730 fd name 2
+	Rwalk tag 9 nwqid 2 0:(0000000000000005 0 d) 1:(0000000000000008 0 ) 
+Topen tag 9 fid 464 mode 1
+	slave: 475 Topen tag 9 fid 464 mode 1 b 1 p 475
+	open: /fd/2 1
+	open: fd 14
+	Ropen tag 9 qid (0000000000000008 0 ) iounit 8192 
+Twalk tag 9 fid 426 newfid 442 nwname 6 0:usr 1:nemo 2:doc 3:os 4:9intro 5:src 
+	file: 0x12a9e0 / name usr
+	file: 0x1368f0 usr name nemo
+	file: 0x136950 nemo name doc
+	file: 0x1369b0 doc name os
+	file: 0x136a10 os name 9intro
+	file: 0x136a70 9intro name src
+	Rwalk tag 9 nwqid 6 0:(0000000000000009 3299454 d) 1:(000000000000000a 3299463 d) 2:(000000000000000b 165569 d) 3:(000000000000000c 138097 d) 4:(000000000000000d 196786 d) 5:(000000000000000e 119226 d) 
+Twalk tag 9 fid 426 newfid 520 nwname 2 0:env 1:path 
+	file: 0x12a9e0 / name env
+	file: 0x1366d0 env name path
+	Rwalk tag 9 nwqid 2 0:(0000000000000004 75 d) 1:(000000000000000f 0 ) 
+Tclunk tag 9 fid 520
+	Rclunk tag 9
+Twalk tag 9 fid 442 newfid 520 nwname 1 0:mount 
+	file: 0x136ad0 src name mount
+	Rerror tag 9 ename '/usr/nemo/doc/os/9intro/src/mount' does not exist
+Twalk tag 9 fid 426 newfid 520 nwname 2 0:bin 1:mount 
+	file: 0x12a9e0 / name bin
+	file: 0x136b90 bin name mount
+	Rwalk tag 9 nwqid 2 0:(0000000000000010 37444 d) 1:(0000000000000011 429 ) 
+Topen tag 9 fid 520 mode 3
+	slave: 475 Topen tag 9 fid 520 mode 3 b 1 p 475
+	open: /bin/mount 3
+	open: fd 15
+	Ropen tag 9 qid (0000000000000011 429 ) iounit 8192 
+Tread tag 9 fid 520 offset 0 count 32
+	slave: 475 Tread tag 9 fid 520 offset 0 count 32 b 1 p 475
+	read: fd=15 32 bytes
+	Rread tag 9 count 32 '000001eb 00009f4d 00001364 00000420 00004ff6 0000144d 00000000 00001c16'
+Tread tag 9 fid 520 offset 0 count 4096
+	slave: 475 Tread tag 9 fid 520 offset 0 count 4096 b 1 p 475
+	read: fd=15 4096 bytes
+	Rread tag 9 count 4096 '000001eb 00009f4d 00001364 00000420 00004ff6 0000144d 00000000 00001c16 83ec288b 4c242c89 0c248b4c 2438894c 2404e87f 07000089 44242083 7c242000'
+Tread tag 9 fid 520 offset 40813 count 4096
+	slave: 475 Tread tag 9 fid 520 offset 40813 count 4096 b 1 p 475
+	read: fd=15 4096 bytes
+	Rread tag 9 count 4096 'df690000 00000000 00000000 00000000 00000000 00000000 fef1f0fa 7cb60000 7cb60000 00000000 84bf0000 00000000 00000000 84c70000 00000000 20090d0a'
+Twalk tag 9 fid 426 newfid 403 nwname 2 0:srv 1:whale 
+	file: 0x12a9e0 / name srv
+	file: 0x136c50 srv name whale
+	Rwalk tag 9 nwqid 1 0:(0000000000000012 0 d) 
+Tread tag 9 fid 520 offset 12288 count 4096
+	slave: 475 Tread tag 9 fid 520 offset 12288 count 4096 b 1 p 475
+	read: fd=15 4096 bytes
+	Rread tag 9 count 4096 '1c8b0139 d8750f8b 410483f8 0074f88b 410483c4 18c383c1 0839d172 e4e8d91d 00008b54 241cb934 c100008b 0183f800 74358b01 39d07525 8b018904 24894c24'
+Tread tag 9 fid 520 offset 8192 count 4096
+	slave: 475 Tread tag 9 fid 520 offset 8192 count 4096 b 1 p 475
+	read: fd=15 4096 bytes
+	Rread tag 9 count 4096 'dd442430 dd5c2420 8b742424 81e6ffff 0f0081ce 00001000 8b7c2420 8b442424 c1e81425 ff070000 bb330400 0029c331 ed31d283 fb007c76 83fb207d 5683fb00'
+Tread tag 9 fid 520 offset 44909 count 868
+	slave: 475 Tread tag 9 fid 520 offset 44909 count 868 b 1 p 475
+	read: fd=15 868 bytes
+	Rread tag 9 count 868 '6b206b65 79706174 7465726e 5d202f73 72762f73 65727669 63652064 6972205b 73706563 5d0a0075 73616765 00000000 00000000 7362726b 6d656d00 2f656e76'
+Tread tag 9 fid 520 offset 16384 count 4096
+	slave: 475 Tread tag 9 fid 520 offset 16384 count 4096 b 1 p 475
+	read: fd=15 4096 bytes
+	Rread tag 9 count 4096 'f8350f8c 53030000 8b842440 060000c6 44041800 81bc2430 06000003 fcffff0f 8dbc0000 008b8424 40060000 8984243c 0600008d 44241889 04248d84 24400600'
+Tread tag 9 fid 520 offset 4096 count 4096
+	slave: 475 Tread tag 9 fid 520 offset 4096 count 4096 b 1 p 475
+	read: fd=15 4096 bytes
+	Rread tag 9 count 4096 '4c245089 4c2404e8 05ffffff 8b6c242c 83f8000f 8c4c0100 008b4424 488b5008 89542440 8b442448 8b400c89 44243c8b 44245089 44242083 7c242000 7e780fb6'
+Twrite tag 9 fid 464 offset 0 count 58 'mount: can't open /srv/whale: '/srv/whale' does not exist
+'
+	slave: 475 Twrite tag 9 fid 464 offset 0 count 58 'mount: can't open /srv/whale: '/srv/whale' does not exist
+' b 1 p 475
+	write: 58 bytes fd=14
+	Rwrite tag 9 count 58
+Tclunk tag 9 fid 440
+	Rclunk tag 9
+Tclunk tag 9 fid 508
+	Rclunk tag 9
+Tclunk tag 9 fid 464
+	Rclunk tag 9
+Tclunk tag 9 fid 442
+	Rclunk tag 9
+Tclunk tag 9 fid 426
+	Rclunk tag 9
+Tclunk tag 9 fid 521
+	Rclunk tag 9
+Tclunk tag 9 fid 503
+	Rclunk tag 9
+
+read      25476 bytes, 441.9941 Kb/sec
+write     58 bytes, 15.16124 Kb/sec
+protocol  26890 bytes, 132.147 Kb/sec
+rpc       33 count
+
+Message    Count   Low  High  Time Averg          T       R
+version        1     1     1     1     1 ms       19       19 bytes
+attach         1     2     2     2     2 ms       23       20 bytes
+walk          10     3    43    97     9 ms      281      341 bytes
+open           4     3    10    22     5 ms       48       96 bytes
+read           8     3    17    56     7 ms      184    25564 bytes
+write          1     3     3     3     3 ms       81       11 bytes
+clunk          8     1     6    15     1 ms       88       56 bytes
+
+Opens    Reads  (bytes)   Writes  (bytes) File
+    1        0        0        1       58 (stderr)
+    1        8    25476        0        0 /bin/mount

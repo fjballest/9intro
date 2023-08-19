@@ -1,0 +1,2 @@
+#!/bin/rc
+awk '{ printf("%4d %s\n", NR, $0); }' $*

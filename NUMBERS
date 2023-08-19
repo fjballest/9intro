@@ -1,0 +1,59 @@
+1.1 .LE F You terminal provides you with a window system. Your files are not there.
+1.2 .LE F Your terminal after entering rio. Isn't it a clean window system?
+1.3 .LE F The rio menu for mouse button-3.
+1.4 .LE F Acme: used to edit, browse system files, and run commands.
+1.5 .LE F Some files that user Nemo can find in the system.
+1.1 .LE T Some control characters understood by most systems and programs.
+1.6 .LE F Specifying permissions as integers using octal numbers.
+1.7 .LE F System calls, user programs, and the system kernel.
+1.8 .LE F Your system kernel makes a remote procedure call to write a file in the file server.
+1.9 .LE F Executing commands.
+2.1 .LE F Three \f(CW/bin/rc\fP processes. But just one \f(CW/bin/rc\fP.
+2.2 .LE F Concurrent execution of multiple programs in the same system.
+2.3 .LE F Memory image for the \f(CWglobal\fP program.
+2.4 .LE F Process states and transitions between them.
+3.1 .LE F File descriptors point to files used for standard input, standard output, and standard error.
+3.2 .LE F File descriptors for the program after opening \f(CW/dev/cons\fP.
+3.3 .LE F The file offset for next operations is kept separate from the file descriptor.
+4.1 .LE F The call to fork creates a clone of the original process. Both proceed from there.
+4.2 .LE F The child has a copy of the file descriptors that the parent had.
+5.1 .LE F File descriptors before and after duplicating descriptor 3 into descriptor 0.
+5.2 .LE F Using a pipe to connect the output of \f(CWbroke\fP to the input of \f(CWrc\fP.
+5.3 .LE F A process using a pipe to send input to a command.
+5.4 .LE F A file descriptor posted at \f(CW/srv/echo\fP used to talk to a process through a pipe.
+5.5 .LE F The program \f(CWfaces\fP shows small faces for persons that sent email to us.
+5.6 .LE F A window running \f(CWstats\fP while the intensive polling program increased the load.
+5.7 .LE F The system load is not altered if the program sleeps between polls.
+5.8 .LE F The plumber provides ports, used to deliver messages to applications.
+6.1 .LE F The file interface for a network (protocol) in Plan 9. 
+7.1 .LE F A file name is a path to walk in the tree of files.
+7.2 .LE F The file tree reached through \f(CWtcp!whale!9fs\fP is mounted at \f(CW/n/whale\fP.
+7.3 .LE F New entry in mount table after mounting \f(CWtcp!whale!9fs\fP at \f(CW/n/whale\fP.
+7.4 .LE F Entries in the mount table after the bind  from \f(CW/n/other\fP to \f(CW/n/whale\fP. 
+7.5 .LE F Executing a bind on Acme does not seem to work. What is happening?
+7.6 .LE F Commands executed with \f(CWLocal\fP share their name space with Acme.
+7.7 .LE F A union mount. The mount entry after \f(CWbind -a other adir\fP. 
+7.8 .LE F Rio run in a Rio window. The inner rio runs at a CPU server, not at your terminal.
+9.1 .LE F Obtaining a file owner list using sort to merge two lists for \f(CWfs1\fP and \f(CWfs2\fP
+10.1 .LE F One interleaving of statements for the two processes (last version of the program).
+10.2 .LE F Incrementing a shared counter using an atomic increment operation. No races.
+10.3 .LE F Two processes using a shared resource protected by a spin lock.
+10.4 .LE F Same scenario, but using a lock that calls sleep to save processor time.
+10.5 .LE F Process structure for the ticker-tape panels application for the airport.
+10.6 .LE F Multiple readers make turns to read when using a queuing lock.
+10.7 .LE F Multiple readers may share the lock at the same time using a read/write lock.
+10.8 .LE F Two processes doing a rendezvous.
+10.9 .LE F The bounded buffer problem.
+11.1 .LE F Threads are flows of control implemented by a process.
+11.2 .LE F A call to \f(CWsleep\fP from a thread moves the entire process out of the processor.
+11.3 .LE F A ping pong with threads and channels.
+11.4 .LE F Process structure for the airport panels program, using threads.
+11.5 .LE F Process structure for the enhanced airport application.
+12.1 .LE F A write to the actual console may write to the screen even when rio is running.
+12.2 .LE F Two example windows for the slider application. One at 30%, another at 84%.
+12.3 .LE F Mounting rio creates a new window. In this one, no shell is running.
+12.4 .LE F Binding the files for the new window at \f(CW/dev\fP makes \f(CWstats\fP use it.
+13.1 .LE F After an attach Plan 9 has a fid number that refers to the file server's \f(CW/\fP file.
+13.2 .LE F Fids after walking to the file \f(CWx\fP in the file server.
+13.3 .LE F A 9P server process created by a call to \f(CWpostmountsrv\fP.
+14.1 .LE F A process relays messages to and from its \f(CWfactotum\fP to authenticate.

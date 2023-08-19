@@ -1,0 +1,4 @@
+#!/bin/rc
+{	echo 'ibase=16'
+	echo print $1 | tr a-f A-F
+} | bc

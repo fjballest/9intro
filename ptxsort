@@ -1,0 +1,1254 @@
+=================================================================== 
+1. DEFINITIONS 
+1. No right is granted to create derivative works of or 
+1.02 Lucent Public License Version 
+1.02, reproduced below, Lucent Public License, Version 
+2. GRANT OF RIGHTS 
+2. The printer fonts identified in subdirectory /sys/lib/ghostscript/font 
+2003, Lucent Technologies Inc. and others. All Rights Copyright (C) 
+2(a) and 2(b) above, Agreement. Except as expressly stated in Sections 
+2(b) above, Agreement. Except as expressly stated in Sections 2(a) and 
+2(b) shall terminate as of the date such rights granted under Section 
+3. REQUIREMENTS 
+3. The ghostscript program in the subdirectory /sys/src/cmd/gs is 
+3C, to characterization of the changes and/or accordance with Section 
+4. COMMERCIAL DISTRIBUTION 
+5. NO WARRANTY 
+6. DISCLAIMER OF LIABILITY 
+7. EXPORT CONTROL 
+8. GENERAL 
+A. Distributor may choose to distribute the Program in any form under 
+a. in the case of Lucent Technologies Inc. ("LUCENT"), the Original 
+a. it complies with the terms and conditions of this Agreement; 
+a) promptly In order to qualify, an Indemnified Contributor must: 
+a. Subject to the terms of this Agreement, each Contributor hereby 
+above, Agreement. Except as expressly stated in Sections 2(a) and 2(b) 
+ACCEPTANCE OF THIS AGREEMENT. PROGRAM CONSTITUTES RECIPIENT'S 
+ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS PUBLIC THE 
+accompanying this Agreement as released by LUCENT, including source 
+accordance with Section 3C, to characterization of the changes and/or 
+acquire that license before distributing the Program. to 
+acting on such Program by such Contributor itself or anyone 
+action arose. Each party waives more than one year after the cause of 
+action by the parties hereto, such provision shall be reformed to the 
+action under this Agreement party to this Agreement will bring a legal 
+actions brought by a third party claims, lawsuits and other legal 
+acts against the Indemnified Contributor to the extent caused by the 
+actual or alleged intellectual property infringement. relating to any 
+added by the Contributor, such addition of the Contribution is 
+added to the where such changes and/or additions to the Program were 
+addition, after a new Agreement under which it was received. In 
+addition, each Contributor must identify itself as the C. In 
+addition, if Recipient of the date such litigation is filed. In 
+addition of the Contribution is added by the Contributor, such 
+additions and/or changes Also, each Contributor must agree that the 
+additions as Contributions. 
+additions to the Program; ii. 
+additions to the Program were added to the where such changes and/or 
+administration regulations (and the with the United States export 
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. HEREUNDER, EVEN IF 
+affect the validity or enforceability of applicable law, it shall not 
+against and indemnify every Contributor ("Indemnified Contributor") 
+against a Contributor with If Recipient institutes patent litigation 
+against any entity (including a institutes patent litigation 
+against the Contributors related to those performance defend claims 
+against the Indemnified Contributor to the extent caused by the acts 
+agree that the additions and/or changes Also, each Contributor must 
+Agreement; a. it complies with the terms and conditions of this 
+agreement form, a copy of this Agreement or Distributor's own license 
+agreement: license 
+Agreement. license set forth in this 
+Agreement party to this Agreement will bring a legal action under this 
+AGREEMENT. PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS 
+Agreement and any licenses However, Recipient's obligations under this 
+Agreement and does not cure such failure in a reasonable period of 
+Agreement, and without further the remainder of the terms of this 
+("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE LICENSE 
+Agreement are iii. states that any provisions which differ from this 
+Agreement are reserved. expressly granted under this 
+Agreement as released by LUCENT, including source accompanying this 
+Agreement, each Contributor hereby a. Subject to the terms of this 
+Agreement, each Contributor hereby b. Subject to the terms of this 
+Agreement. Except as expressly stated in Sections 2(a) and 2(b) above, 
+Agreement from time to time. Each new version of the Agreement will be 
+Agreement, including all Contributors. 
+Agreement, including but not limited to exercise of rights under this 
+Agreement is governed by the laws of the State of New York and This 
+Agreement is invalid or unenforceable under If any provision of this 
+Agreement is published, Contributor may elect to version of the 
+AGREEMENT, NEITHER RECIPIENT NOR EXCEPT AS EXPRESSLY SET FORTH IN THIS 
+Agreement or Distributor's own license agreement form, a copy of this 
+Agreement or under its own license agreement, provided that: this 
+agreement, provided that: this Agreement or under its own license 
+Agreement shall terminate as Contributor to such Recipient under this 
+Agreement shall terminate if it All Recipient's rights under this 
+agreement, such c. if distributed under Distributor's own license 
+Agreement terminate, Recipient agrees to cease use rights under this 
+AGREEMENT, THE PROGRAM IS EXCEPT AS EXPRESSLY SET FORTH IN THIS 
+Agreement under which it was received. In addition, after a new 
+Agreement, whether expressly, by of any Contributor under this 
+Agreement will be Agreement from time to time. Each new version of the 
+Agreement will bring a legal action under this Agreement party to this 
+agrees that Recipient alone is responsible for compliance Recipient 
+agrees to cease use rights under this Agreement terminate, Recipient 
+agrees to defend such Distributor ("Commercial Distributor") hereby 
+Aladdin Free Public License, reproduced in the file covered by the 
+alleged intellectual property infringement. relating to any actual or 
+alleging that the Program cross-claim or counterclaim in a lawsuit) 
+allows originator of its Contribution in a manner that reasonably 
+alone and not by any other party. offered by that Contributor 
+alone is responsible for compliance Recipient agrees that Recipient 
+alone or when combined with the Program. 
+alone. Under this section, the Commercial Distributor would have to 
+also apply to the combination of the by a Contributor shall 
+Also, each Contributor must agree that the additions and/or changes 
+although each Contributor grants the c. Recipient understands that 
+always be distributed subject to the version of the Contributions) may 
+America. No the intellectual property laws of the United States of 
+AN"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY PROVIDED ON 
+(and the with the United States export administration regulations 
+and/or accordance with Section 3C, to characterization of the changes 
+and/or additions to the Program were added to the where such changes 
+and/or changes Also, each Contributor must agree that the additions 
+any. code, object code and documentation, if 
+ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, 
+ANY PROVIDED ON AN"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF 
+any actual or alleged intellectual property infringement. relating to 
+any, and such derivative works, in source code and Contributor, if 
+any claims or Losses obligations in this section do not apply to 
+any Contributor that the Program does not infringe the provided by 
+any Contributor to pay claims and warranties, and if a court requires 
+any Contributor under this Agreement, whether expressly, by of 
+ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, 
+any damages as a result, the Commercial Distributor must pay those 
+ANY DIRECT, INDIRECT, ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR 
+any entity (including a institutes patent litigation against 
+any. For to secure any other intellectual property rights needed, if 
+any form under A. Distributor may choose to distribute the Program in 
+any, in source code and object code form. The patent license granted 
+ANY LIABILITY FOR ANY DIRECT, INDIRECT, ANY CONTRIBUTORS SHALL HAVE 
+any liability to Recipient for claims brought by Contributor disclaims 
+any licenses However, Recipient's obligations under this Agreement and 
+any losses, damages and costs (collectively"Losses") arising from 
+any of the material terms or conditions of this fails to comply with 
+any other combinations which include the Contribution, nor to to (i) 
+any other countries). export control laws and regulation of 
+any other entity based on infringement of intellectual property rights 
+any other entity. Each patent or other intellectual property rights of 
+any other entity that has Contributed a "Contributor" means LUCENT and 
+any other intellectual property rights needed, if any. For to secure 
+any other party. offered by that Contributor alone and not by 
+any part "Program" means the Original Program and Contributions or 
+any part thereof. modifications to the Program, or 
+any patent licenses granted by that counterclaim in a lawsuit), then 
+any provision of this Agreement is invalid or unenforceable under If 
+any provisions which differ from this Agreement are iii. states that 
+any related settlement Commercial Distributor in, the defense and 
+any resulting litigation. its rights to a jury trial in 
+ANY RIGHTS GRANTED DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF 
+any such negotiations. The Indemnified Contributor may participate in 
+ANY THEORY OF WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON 
+any, to grant the copyright copyright rights in its Contribution, if 
+ANY USE, REPRODUCTION OR DISTRIBUTION OF THE LICENSE ("AGREEMENT"). 
+ANY WAY OUT OF THE USE OR NEGLIGENCE OR OTHERWISE) ARISING IN 
+anyone acting on such Program by such Contributor itself or 
+anyone who receives the Program under this "Recipient" means 
+applicable the risks and costs of program errors, compliance with 
+applicable law, it shall not affect the validity or enforceability of 
+applicable to software (including a cross-claim or respect to a patent 
+apply Patents. The patent license granted by a Contributor shall not 
+apply to any claims or Losses obligations in this section do not 
+apply to the combination of the by a Contributor shall also 
+appropriateness of using and responsible for determining the 
+arising from any losses, damages and costs (collectively"Losses") 
+ARISING IN ANY WAY OUT OF THE USE OR NEGLIGENCE OR OTHERWISE) 
+arose. Each party waives more than one year after the cause of action 
+associated with its distributing the Program and assumes all risks 
+assumes all risks associated with its distributing the Program and 
+assumes sole responsibility granted hereunder, each Recipient hereby 
+assurances are licenses to its Contributions set forth herein, no 
+at its own expense. claim 
+at the time the Contribution of that Contributor and the Program if, 
+aware of such noncompliance. If all Recipient's time after becoming 
+b) notify the Commercial Distributor in writing of such claim, and 
+B. Each Distributor must include the following in a conspicuous 
+b. if the Program is distributed in source code or other tangible 
+b. in the case of each Contributor, 
+b. Subject to the terms of this Agreement, each Contributor hereby 
+based on infringement of intellectual property rights any other entity 
+BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY PROVIDED ON AN"AS IS" 
+becoming aware of such noncompliance. If all Recipient's time after 
+before distributing the Program. to acquire that license 
+behalf, and the Contributor explicitly consents, in Contributor's 
+behalf of all Contributors all liability ii. effectively excludes on 
+behalf of all Contributors all warranties i. effectively disclaims on 
+below, Lucent Public License, Version 1.02, reproduced 
+B&H Inc. and Y&Y Inc. These directories contain material copyrights by 
+bring a legal action under this Agreement party to this Agreement will 
+brought by Contributor disclaims any liability to Recipient for claims 
+brought by a third party claims, lawsuits and other legal actions 
+business partners and the responsibilities with respect to end users, 
+but not limited to exercise of rights under this Agreement, including 
+(C) 2003, Lucent Technologies Inc. and others. All Rights Copyright 
+c. if distributed under Distributor's own license agreement, such 
+C. In addition, each Contributor must identify itself as the 
+c. Recipient understands that although each Contributor grants the 
+case of each Contributor, b. in the 
+case of Lucent Technologies Inc. ("LUCENT"), the Original a. in the 
+cause of action arose. Each party waives more than one year after the 
+CAUSED AND ON ANY THEORY OF WITHOUT LIMITATION LOST PROFITS), HOWEVER 
+caused by the acts against the Indemnified Contributor to the extent 
+causes such combination to be covered by the Licensed Contribution 
+cease use rights under this Agreement terminate, Recipient agrees to 
+certain Commercial distributors of software may accept 
+changes Also, each Contributor must agree that the additions and/or 
+changes and/or accordance with Section 3C, to characterization of the 
+changes and/or additions to the Program were added to the where such 
+changes to the Program, and i. 
+characterization of the changes and/or accordance with Section 3C, to 
+choose to distribute the Program in any form under A. Distributor may 
+claim, and b) notify the Commercial Distributor in writing of such 
+claim at its own expense. 
+claims against the Contributors related to those performance defend 
+claims and warranties, and if a court requires any Contributor to pay 
+claims and warranties are such Commercial Distributor's responsibility 
+claims brought by Contributor disclaims any liability to Recipient for 
+claims, lawsuits and other legal actions brought by a third party 
+claims licensable by a Contributor "Licensed Patents" mean patent 
+claims or Losses obligations in this section do not apply to any 
+claims, or offers warranties related to Product X, those performance 
+code and Contributor, if any, and such derivative works, in source 
+code and documentation, if any. code, object 
+code and object code form. The patent license granted any, in source 
+code form. object 
+code form. The patent license granted any, in source code and object 
+code, object code and documentation, if any. 
+code or other tangible b. if the Program is distributed in source 
+(collectively"Losses") arising from any losses, damages and costs 
+combination of the by a Contributor shall also apply to the 
+combination to be covered by the Licensed Contribution causes such 
+combinations of the Program with other software or itself (excluding 
+combinations which include the Contribution, nor to to (i) any other 
+combined with the Program. alone or when 
+commercial For example, a Distributor might include the Program in a 
+Commercial product offering, Product X. That Distributor is then a 
+COMMERCIAL DISTRIBUTION 4. 
+("Commercial Distributor") hereby agrees to defend such Distributor 
+Commercial Distributor in connection with its or omissions of such 
+Commercial Distributor in, the defense and any related settlement 
+Commercial Distributor in writing of such claim, and b) notify the 
+Commercial Distributor must pay those any damages as a result, the 
+Commercial Distributor then makes performance Distributor. If that 
+Commercial Distributor to control, and cooperate with the allow the 
+Commercial Distributor would have to alone. Under this section, the 
+Commercial distributors of software may accept certain 
+Commercial Distributor's responsibility claims and warranties are such 
+commercial product offering, Distributor includes the Program in a 
+commercial product offering should do so in a manner which does not 
+commercial product offering. The distribution of the Program in a 
+commercial use like. While this license is intended to facilitate the 
+compliance Recipient agrees that Recipient alone is responsible for 
+compliance with applicable the risks and costs of program errors, 
+complies with the terms and conditions of this Agreement; a. it 
+comply with any of the material terms or conditions of this fails to 
+conditions, express and implied, including warranties or and 
+CONDITIONS OF ANY PROVIDED ON AN"AS IS" BASIS, WITHOUT WARRANTIES OR 
+conditions of merchantability and fitness for a particular purpose; 
+conditions of this fails to comply with any of the material terms or 
+conditions of this Agreement; a. it complies with the terms and 
+conditions of title and non-infringement, and implied warranties or 
+CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY WARRANTIES OR 
+connection with its or omissions of such Commercial Distributor in 
+consents, in Contributor's behalf, and the Contributor explicitly 
+CONSEQUENTIAL DAMAGES (INCLUDING INCIDENTAL, SPECIAL, EXEMPLARY, OR 
+consequential damages, such as lost profits; and 
+conspicuous B. Each Distributor must include the following in a 
+CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT. PROGRAM 
+contain material copyrights by B&H Inc. and Y&Y Inc. These directories 
+continue and granted by Recipient relating to the Program shall 
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING LIABILITY, WHETHER IN 
+contributed, are intended to be a Contribution. Once a Contribution is 
+Contributed a "Contributor" means LUCENT and any other entity that has 
+Contribution. subsequent Recipients to identify the originator of the 
+Contribution which are necessarily infringed by the use or sale of its 
+Contribution causes such combination to be covered by the Licensed 
+Contribution, if any, to grant the copyright copyright rights in its 
+Contribution in a manner that reasonably allows originator of its 
+Contribution is added by the Contributor, such addition of the 
+Contribution is contributed, are intended to be a Contribution. Once a 
+"Contribution" means: 
+Contribution, nor to to (i) any other combinations which include the 
+Contribution of such publicly perform, distribute and sublicense the 
+Contribution of such Contributor, if import and otherwise transfer the 
+Contribution of that Contributor and the Program if, at the time the 
+Contribution. Once a Contribution is contributed, are intended to be a 
+Contribution to the Program. 
+Contributions. additions as 
+Contributions) may always be distributed subject to the version of the 
+Contributions of other Contributors. No hardware per se is (ii) 
+Contributions or any part "Program" means the Original Program and 
+Contributions set forth herein, no assurances are licenses to its 
+Contributions) under the new distribute the Program (including its 
+Contributor, b. in the case of each 
+Contributor "Licensed Patents" mean patent claims licensable by a 
+Contributor") against and indemnify every Contributor ("Indemnified 
+Contributor alone and not by any other party. offered by that 
+Contributor and the Program if, at the time the Contribution of that 
+Contributor disclaims any liability to Recipient for claims brought by 
+Contributor explicitly consents, in Contributor's behalf, and the 
+Contributor grants the c. Recipient understands that although each 
+Contributor hereby a. Subject to the terms of this Agreement, each 
+Contributor hereby b. Subject to the terms of this Agreement, each 
+Contributor, if import and otherwise transfer the Contribution of such 
+Contributor, if any, and such derivative works, in source code and 
+Contributor ("Indemnified Contributor") against and indemnify every 
+Contributor itself or anyone acting on such Program by such 
+Contributor may elect to version of the Agreement is published, 
+Contributor may participate in any such negotiations. The Indemnified 
+"Contributor" means LUCENT and any other entity that has Contributed a 
+Contributor must: a) promptly In order to qualify, an Indemnified 
+Contributor must agree that the additions and/or changes Also, each 
+Contributor must identify itself as the C. In addition, each 
+Contributor represents that to its knowledge it has sufficient d. Each 
+Contributor shall also apply to the combination of the by a 
+Contributor shall not apply Patents. The patent license granted by a 
+Contributor, such addition of the Contribution is added by the 
+Contributor that the Program does not infringe the provided by any 
+Contributor to pay claims and warranties, and if a court requires any 
+Contributor to such Recipient under this Agreement shall terminate as 
+Contributor to the extent caused by the acts against the Indemnified 
+Contributor under this Agreement, whether expressly, by of any 
+Contributor with If Recipient institutes patent litigation against a 
+Contributors. Agreement, including all 
+Contributors all liability ii. effectively excludes on behalf of all 
+Contributors all warranties i. effectively disclaims on behalf of all 
+Contributor's behalf, and the Contributor explicitly consents, in 
+Contributors. No hardware per se is (ii) Contributions of other 
+Contributors related to those performance defend claims against the 
+CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, ANY 
+Contributors. Therefore, if a create potential liability for 
+CONTROL 7. EXPORT 
+control, and cooperate with the allow the Commercial Distributor to 
+control laws and regulation of any other countries). export 
+cooperate with the allow the Commercial Distributor to control, and 
+copy of the Program; and is included with each 
+copy of this Agreement or Distributor's own license agreement form, a 
+COPYING, COPYRIGHT, or LICENSE files. 
+copyright copyright rights in its Contribution, if any, to grant the 
+copyright grants Recipient a non-exclusive, worldwide, royalty-free 
+Copyright (C) 2003, Lucent Technologies Inc. and others. All Rights 
+COPYRIGHT, or LICENSE files. COPYING, 
+copyright rights in its Contribution, if any, to grant the copyright 
+copyrights by B&H Inc. and Y&Y Inc. These directories contain material 
+costs (collectively"Losses") arising from any losses, damages and 
+costs of program errors, compliance with applicable the risks and 
+counterclaim in a lawsuit) alleging that the Program cross-claim or 
+counterclaim in a lawsuit), then any patent licenses granted by that 
+countries). export control laws and regulation of any other 
+court requires any Contributor to pay claims and warranties, and if a 
+covered by the Aladdin Free Public License, reproduced in the file 
+covered by the Licensed Contribution causes such combination to be 
+create derivative works of or 1. No right is granted to 
+create potential liability for Contributors. Therefore, if a 
+cross-claim or respect to a patent applicable to software (including a 
+cross-claim or counterclaim in a lawsuit) alleging that the Program 
+cure such failure in a reasonable period of Agreement and does not 
+d. Each Contributor represents that to its knowledge it has sufficient 
+damage to or loss of data, programs or equipment, and laws, 
+damages. 
+DAMAGES. HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH 
+damages and costs (collectively"Losses") arising from any losses, 
+damages as a result, the Commercial Distributor must pay those any 
+DAMAGES (INCLUDING INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+damages, including direct, indirect, special, incidental and for 
+damages, such as lost profits; and consequential 
+data, programs or equipment, and laws, damage to or loss of 
+date such rights granted under Section 2(b) shall terminate as of the 
+date such litigation is filed. In addition, if Recipient of the 
+defend such Distributor ("Commercial Distributor") hereby agrees to 
+defend claims against the Contributors related to those performance 
+defense and any related settlement Commercial Distributor in, the 
+DEFINITIONS 1. 
+Demibold, Lucida Typewriter, Lucida Sans Sans Italic, Lucida Sans 
+derivative works, in source code and Contributor, if any, and such 
+derivative works of or 1. No right is granted to create 
+derivative works of, publicly display, license to reproduce, prepare 
+determining the appropriateness of using and responsible for 
+differ from this Agreement are iii. states that any provisions which 
+DIRECT, INDIRECT, ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY 
+direct, indirect, special, incidental and for damages, including 
+directories contain material copyrights by B&H Inc. and Y&Y Inc. These 
+DISCLAIMER OF LIABILITY 6. 
+disclaims any liability to Recipient for claims brought by Contributor 
+disclaims on behalf of all Contributors all warranties i. effectively 
+display, license to reproduce, prepare derivative works of, publicly 
+distinguishing version number. The Program (including given a 
+distribute and sublicense the Contribution of such publicly perform, 
+distribute the Program in any form under A. Distributor may choose to 
+distribute the Program (including its Contributions) under the new 
+distribute the Program, it is Recipient's responsibility Recipient to 
+distributed in source code or other tangible b. if the Program is 
+distributed subject to the version of the Contributions) may always be 
+distributed under Distributor's own license agreement, such c. if 
+distributes the Program, "Distributor" means a Recipient that 
+distributing the Program. to acquire that license before 
+distributing the Program and assumes all risks associated with its 
+DISTRIBUTION 4. COMMERCIAL 
+DISTRIBUTION OF THE LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR 
+distribution of the Program as soon as reasonably practicable. and 
+distribution of the Program in a commercial product offering. The 
+DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED 
+Distributor ("Commercial Distributor") hereby agrees to defend such 
+Distributor") hereby agrees to defend such Distributor ("Commercial 
+Distributor. If that Commercial Distributor then makes performance 
+Distributor in connection with its or omissions of such Commercial 
+Distributor in, the defense and any related settlement Commercial 
+Distributor in writing of such claim, and b) notify the Commercial 
+Distributor includes the Program in a commercial product offering, 
+Distributor is then a Commercial product offering, Product X. That 
+Distributor may choose to distribute the Program in any form under A. 
+"Distributor" means a Recipient that distributes the Program, 
+Distributor might include the Program in a commercial For example, a 
+Distributor must include the following in a conspicuous B. Each 
+Distributor must pay those any damages as a result, the Commercial 
+Distributor then makes performance Distributor. If that Commercial 
+Distributor to control, and cooperate with the allow the Commercial 
+Distributor who includes the Program in a of the Program, the 
+Distributor would have to alone. Under this section, the Commercial 
+distributors of software may accept certain Commercial 
+Distributor's own license agreement form, a copy of this Agreement or 
+Distributor's own license agreement, such c. if distributed under 
+Distributor's responsibility claims and warranties are such Commercial 
+documentation, if any. code, object code and 
+does not commercial product offering should do so in a manner which 
+does not cure such failure in a reasonable period of Agreement and 
+does not infringe the provided by any Contributor that the Program 
+Each patent or other intellectual property rights of any other entity. 
+each Contributor, b. in the case of 
+each Contributor grants the c. Recipient understands that although 
+each Contributor hereby a. Subject to the terms of this Agreement, 
+each Contributor hereby b. Subject to the terms of this Agreement, 
+each Contributor must agree that the additions and/or changes Also, 
+each Contributor must identify itself as the C. In addition, 
+Each Contributor represents that to its knowledge it has sufficient d. 
+each copy of the Program; and is included with 
+Each Distributor must include the following in a conspicuous B. 
+Each new version of the Agreement will be Agreement from time to time. 
+Each party waives more than one year after the cause of action arose. 
+each Recipient hereby assumes sole responsibility granted hereunder, 
+Each Recipient is solely OR FITNESS FOR A PARTICULAR PURPOSE. 
+effectively disclaims on behalf of all Contributors all warranties i. 
+effectively excludes on behalf of all Contributors all liability ii. 
+EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY KIND, 
+elect to version of the Agreement is published, Contributor may 
+end users, business partners and the responsibilities with respect to 
+enforceability of applicable law, it shall not affect the validity or 
+enforceable. minimum extent necessary to make such provision valid and 
+entity based on infringement of intellectual property rights any other 
+entity. Each patent or other intellectual property rights of any other 
+entity (including a institutes patent litigation against any 
+entity that has Contributed a "Contributor" means LUCENT and any other 
+equipment, and laws, damage to or loss of data, programs or 
+errors, compliance with applicable the risks and costs of program 
+estoppel or otherwise. All rights in the Program not implication, 
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. HEREUNDER, 
+every Contributor ("Indemnified Contributor") against and indemnify 
+example, a Distributor might include the Program in a commercial For 
+example, if a third party patent license is required to allow 
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR 
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS 
+Except as expressly stated in Sections 2(a) and 2(b) above, Agreement. 
+exceptions: with the following notable 
+exceptions are marked in the file tree with Other, less notable 
+excludes on behalf of all Contributors all liability ii. effectively 
+(excluding combinations of the Program with other software or itself 
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING INCIDENTAL, SPECIAL, 
+EXERCISE OF ANY RIGHTS GRANTED DISTRIBUTION OF THE PROGRAM OR THE 
+exercise of rights under this Agreement, including but not limited to 
+exercising the rights and licenses or otherwise. As a condition to 
+expense. claim at its own 
+explicitly consents, in Contributor's behalf, and the Contributor 
+export administration regulations (and the with the United States 
+EXPORT CONTROL 7. 
+export control laws and regulation of any other countries). 
+express and implied, including warranties or and conditions, 
+EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY KIND, EITHER 
+expressly, by of any Contributor under this Agreement, whether 
+expressly granted under this Agreement are reserved. 
+EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR EXCEPT AS 
+EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS EXCEPT AS 
+expressly stated in Sections 2(a) and 2(b) above, Agreement. Except as 
+extent caused by the acts against the Indemnified Contributor to the 
+extent necessary to make such provision valid and enforceable. minimum 
+facilitate the commercial use like. While this license is intended to 
+fails to comply with any of the material terms or conditions of this 
+failure in a reasonable period of Agreement and does not cure such 
+file covered by the Aladdin Free Public License, reproduced in the 
+file /LICENSE.gpl. are subject to the GNU GPL, reproduced in the 
+file tree with Other, less notable exceptions are marked in the 
+filed. litigation is 
+filed. In addition, if Recipient of the date such litigation is 
+files. COPYING, COPYRIGHT, or LICENSE 
+fitness for a particular purpose; conditions of merchantability and 
+FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely OR 
+following in a conspicuous B. Each Distributor must include the 
+following notable exceptions: with the 
+fonts identified in subdirectory the screen imprinter 
+fonts identified in subdirectory /sys/lib/ghostscript/font 2. The printer 
+fonts (Lucida Sans Unicode, Lucida /lib/font/bit/lucida and printer 
+form. object code 
+form, a copy of this Agreement or Distributor's own license agreement 
+form. The patent license granted any, in source code and object code 
+form under A. Distributor may choose to distribute the Program in any 
+forth herein, no assurances are licenses to its Contributions set 
+forth in this Agreement. license set 
+FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR EXCEPT AS EXPRESSLY SET 
+FORTH IN THIS AGREEMENT, THE PROGRAM IS EXCEPT AS EXPRESSLY SET 
+Free Public License, reproduced in the file covered by the Aladdin 
+further the remainder of the terms of this Agreement, and without 
+ghostscript program in the subdirectory /sys/src/cmd/gs is 3. The 
+given a distinguishing version number. The Program (including 
+GNU GPL, reproduced in the file /LICENSE.gpl. are subject to the 
+governed by the laws of the State of New York and This Agreement is 
+GPL, reproduced in the file /LICENSE.gpl. are subject to the GNU 
+GRANT OF RIGHTS 2. 
+grant the copyright copyright rights in its Contribution, if any, to 
+granted any, in source code and object code form. The patent license 
+GRANTED DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS 
+granted by a Contributor shall not apply Patents. The patent license 
+granted by Recipient relating to the Program shall continue and 
+granted by that counterclaim in a lawsuit), then any patent licenses 
+granted hereunder, each Recipient hereby assumes sole responsibility 
+granted to create derivative works of or 1. No right is 
+granted under Section 2(b) shall terminate as of the date such rights 
+granted under this Agreement are reserved. expressly 
+grants Recipient a non-exclusive, worldwide, royalty-free copyright 
+grants Recipient a non-exclusive, worldwide, royalty-free patent 
+grants the c. Recipient understands that although each Contributor 
+hardware) infringes such Recipient's patent(s), then such Recipient's 
+hardware per se is (ii) Contributions of other Contributors. No 
+has Contributed a "Contributor" means LUCENT and any other entity that 
+has sufficient d. Each Contributor represents that to its knowledge it 
+has the right to modify this version. No one other than LUCENT 
+HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, ANY CONTRIBUTORS SHALL 
+have to alone. Under this section, the Commercial Distributor would 
+hereby a. Subject to the terms of this Agreement, each Contributor 
+hereby b. Subject to the terms of this Agreement, each Contributor 
+hereby agrees to defend such Distributor ("Commercial Distributor") 
+hereby assumes sole responsibility granted hereunder, each Recipient 
+herein, no assurances are licenses to its Contributions set forth 
+hereto, such provision shall be reformed to the action by the parties 
+hereunder. licensed 
+hereunder, each Recipient hereby assumes sole responsibility granted 
+HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+HOWEVER CAUSED AND ON ANY THEORY OF WITHOUT LIMITATION LOST PROFITS), 
+However, Recipient's obligations under this Agreement and any licenses 
+(i) any other combinations which include the Contribution, nor to to 
+i. changes to the Program, and 
+i. effectively disclaims on behalf of all Contributors all warranties 
+identified in subdirectory the screen imprinter fonts 
+identified in subdirectory /sys/lib/ghostscript/font 2. The printer fonts 
+identified in subdirectory /sys/lib/postscript/font. Typewriter83), 
+identify itself as the C. In addition, each Contributor must 
+identify the originator of the Contribution. subsequent Recipients to 
+if import and otherwise transfer the Contribution of such Contributor, 
+if a create potential liability for Contributors. Therefore, 
+if a court requires any Contributor to pay claims and warranties, and 
+if a third party patent license is required to allow example, 
+IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. HEREUNDER, EVEN 
+If all Recipient's time after becoming aware of such noncompliance. 
+if any. code, object code and documentation, 
+if any, and such derivative works, in source code and Contributor, 
+if any. For to secure any other intellectual property rights needed, 
+If any provision of this Agreement is invalid or unenforceable under 
+if any, to grant the copyright copyright rights in its Contribution, 
+if, at the time the Contribution of that Contributor and the Program 
+if distributed under Distributor's own license agreement, such c. 
+if it All Recipient's rights under this Agreement shall terminate 
+if Recipient of the date such litigation is filed. In addition, 
+If Recipient institutes patent litigation against a Contributor with 
+If that Commercial Distributor then makes performance Distributor. 
+if the Program is distributed in source code or other tangible b. 
+ii. additions to the Program; 
+(ii) Contributions of other Contributors. No hardware per se is 
+ii. effectively excludes on behalf of all Contributors all liability 
+iii. states that any provisions which differ from this Agreement are 
+implication, estoppel or otherwise. All rights in the Program not 
+implied, including warranties or and conditions, express and 
+IMPLIED INCLUDING, WITHOUT LIMITATION, ANY KIND, EITHER EXPRESS OR 
+implied warranties or conditions of title and non-infringement, and 
+import and otherwise transfer the Contribution of such Contributor, if 
+imprinter fonts identified in subdirectory the screen 
+in, the defense and any related settlement Commercial Distributor 
+Inc. These directories contain material copyrights by B&H Inc. and Y&Y 
+Inc. and others. All Rights Copyright (C) 2003, Lucent Technologies 
+Inc. and Y&Y Inc. These directories contain material copyrights by B&H 
+Inc. ("LUCENT"), the Original a. in the case of Lucent Technologies 
+incidental and for damages, including direct, indirect, special, 
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING 
+include the Contribution, nor to to (i) any other combinations which 
+include the following in a conspicuous B. Each Distributor must 
+include the Program in a commercial For example, a Distributor might 
+included with each copy of the Program; and is 
+includes the Program in a of the Program, the Distributor who 
+includes the Program in a commercial product offering, Distributor 
+(including given a distinguishing version number. The Program 
+(INCLUDING INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
+(INCLUDING LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+(including a institutes patent litigation against any entity 
+(including a cross-claim or respect to a patent applicable to software 
+including all Contributors. Agreement, 
+including but not limited to exercise of rights under this Agreement, 
+including direct, indirect, special, incidental and for damages, 
+(including its Contributions) under the new distribute the Program 
+(including revisions) of this LUCENT may publish new versions 
+including source accompanying this Agreement as released by LUCENT, 
+including warranties or and conditions, express and implied, 
+INCLUDING, WITHOUT LIMITATION, ANY KIND, EITHER EXPRESS OR IMPLIED 
+("Indemnified Contributor") against and indemnify every Contributor 
+Indemnified Contributor may participate in any such negotiations. The 
+Indemnified Contributor must: a) promptly In order to qualify, an 
+Indemnified Contributor to the extent caused by the acts against the 
+indemnify every Contributor ("Indemnified Contributor") against and 
+INDIRECT, ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, 
+indirect, special, incidental and for damages, including direct, 
+infringe the provided by any Contributor that the Program does not 
+infringed by the use or sale of its Contribution which are necessarily 
+infringement. relating to any actual or alleged intellectual property 
+infringement of intellectual property rights any other entity based on 
+infringes such Recipient's patent(s), then such Recipient's hardware) 
+institutes patent litigation against a Contributor with If Recipient 
+institutes patent litigation against any entity (including a 
+intellectual property Recipient receives no rights or licenses to the 
+intellectual property infringement. relating to any actual or alleged 
+intellectual property laws of the United States of America. No the 
+intellectual property rights any other entity based on infringement of 
+intellectual property rights needed, if any. For to secure any other 
+intellectual property rights of any other entity. Each patent or other 
+intended to be a Contribution. Once a Contribution is contributed, are 
+intended to facilitate the commercial use like. While this license is 
+interruption of operations. unavailability or 
+invalid or unenforceable under If any provision of this Agreement is 
+IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY PROVIDED ON AN"AS 
+Italic, Lucida Sans Demibold, Lucida Typewriter, Lucida Sans Sans 
+its distributing the Program and assumes all risks associated with 
+its or omissions of such Commercial Distributor in connection with 
+its Contribution which are necessarily infringed by the use or sale of 
+its Contribution, if any, to grant the copyright copyright rights in 
+its Contribution in a manner that reasonably allows originator of 
+its Contributions set forth herein, no assurances are licenses to 
+its Contributions) under the new distribute the Program (including 
+its knowledge it has sufficient d. Each Contributor represents that to 
+its own expense. claim at 
+its own license agreement, provided that: this Agreement or under 
+its rights to a jury trial in any resulting litigation. 
+itself as the C. In addition, each Contributor must identify 
+itself (excluding combinations of the Program with other software or 
+itself or anyone acting on such Program by such Contributor 
+jury trial in any resulting litigation. its rights to a 
+KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY 
+law, it shall not affect the validity or enforceability of applicable 
+laws and regulation of any other countries). export control 
+laws, damage to or loss of data, programs or equipment, and 
+laws of the State of New York and This Agreement is governed by the 
+laws of the United States of America. No the intellectual property 
+lawsuit) alleging that the Program cross-claim or counterclaim in a 
+lawsuit), then any patent licenses granted by that counterclaim in a 
+lawsuits and other legal actions brought by a third party claims, 
+legal action under this Agreement party to this Agreement will bring a 
+legal actions brought by a third party claims, lawsuits and other 
+less notable exceptions are marked in the file tree with Other, 
+LIABILITY 6. DISCLAIMER OF 
+liability ii. effectively excludes on behalf of all Contributors all 
+LIABILITY FOR ANY DIRECT, INDIRECT, ANY CONTRIBUTORS SHALL HAVE ANY 
+liability for Contributors. Therefore, if a create potential 
+LIABILITY, OR TORT (INCLUDING LIABILITY, WHETHER IN CONTRACT, STRICT 
+liability to Recipient for claims brought by Contributor disclaims any 
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+/lib/font/bit/lucida and printer fonts (Lucida Sans Unicode, Lucida 
+licensable by a Contributor "Licensed Patents" mean patent claims 
+license agreement: 
+license agreement form, a copy of this Agreement or Distributor's own 
+LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE 
+license agreement, provided that: this Agreement or under its own 
+license agreement, such c. if distributed under Distributor's own 
+license before distributing the Program. to acquire that 
+LICENSE files. COPYING, COPYRIGHT, or 
+license granted any, in source code and object code form. The patent 
+license granted by a Contributor shall not apply Patents. The patent 
+license is intended to facilitate the commercial use like. While this 
+license is required to allow example, if a third party patent 
+License, reproduced in the file covered by the Aladdin Free Public 
+license set forth in this Agreement. 
+license to reproduce, prepare derivative works of, publicly display, 
+license under Licensed Patents to make, use, sell, offer to sell, 
+License Version 1.02 Lucent Public 
+License, Version 1.02, reproduced below, Lucent Public 
+/LICENSE.afpl. 
+Licensed Contribution causes such combination to be covered by the 
+licensed hereunder. 
+"Licensed Patents" mean patent claims licensable by a Contributor 
+Licensed Patents to make, use, sell, offer to sell, license under 
+/LICENSE.gpl. are subject to the GNU GPL, reproduced in the file 
+licenses However, Recipient's obligations under this Agreement and any 
+licenses or otherwise. As a condition to exercising the rights and 
+licenses granted by that counterclaim in a lawsuit), then any patent 
+licenses to its Contributions set forth herein, no assurances are 
+licenses to the intellectual property Recipient receives no rights or 
+like. While this license is intended to facilitate the commercial use 
+LIMITATION, ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT 
+LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF WITHOUT 
+limited to exercise of rights under this Agreement, including but not 
+litigation. its rights to a jury trial in any resulting 
+litigation against a Contributor with If Recipient institutes patent 
+litigation against any entity (including a institutes patent 
+litigation is filed. 
+litigation is filed. In addition, if Recipient of the date such 
+location in the Program: 
+loss of data, programs or equipment, and laws, damage to or 
+Losses obligations in this section do not apply to any claims or 
+losses, damages and costs (collectively"Losses") arising from any 
+lost profits; and consequential damages, such as 
+LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF WITHOUT LIMITATION 
+LUCENT and any other entity that has Contributed a "Contributor" means 
+LUCENT has the right to modify this version. No one other than 
+LUCENT, including source accompanying this Agreement as released by 
+LUCENT may publish new versions (including revisions) of this 
+Lucent Public License Version 1.02 
+Lucent Public License, Version 1.02, reproduced below, 
+Lucent Technologies Inc. and others. All Rights Copyright (C) 2003, 
+Lucent Technologies Inc. ("LUCENT"), the Original a. in the case of 
+("LUCENT"), the Original a. in the case of Lucent Technologies Inc. 
+Lucida /lib/font/bit/lucida and printer fonts (Lucida Sans Unicode, 
+Lucida Sans Sans Italic, Lucida Sans Demibold, Lucida Typewriter, 
+Lucida Sans Demibold, Lucida Typewriter, Lucida Sans Sans Italic, 
+(Lucida Sans Unicode, Lucida /lib/font/bit/lucida and printer fonts 
+Lucida Typewriter, Lucida Sans Sans Italic, Lucida Sans Demibold, 
+make such provision valid and enforceable. minimum extent necessary to 
+make, use, sell, offer to sell, license under Licensed Patents to 
+makes performance Distributor. If that Commercial Distributor then 
+manner that reasonably allows originator of its Contribution in a 
+manner which does not commercial product offering should do so in a 
+marked in the file tree with Other, less notable exceptions are 
+material copyrights by B&H Inc. and Y&Y Inc. These directories contain 
+material terms or conditions of this fails to comply with any of the 
+may accept certain Commercial distributors of software 
+may always be distributed subject to the version of the Contributions) 
+may choose to distribute the Program in any form under A. Distributor 
+may elect to version of the Agreement is published, Contributor 
+may not thereafter be revoked. it 
+may participate in any such negotiations. The Indemnified Contributor 
+may publish new versions (including revisions) of this LUCENT 
+mean patent claims licensable by a Contributor "Licensed Patents" 
+means: "Contribution" 
+means a Recipient that distributes the Program, "Distributor" 
+means anyone who receives the Program under this "Recipient" 
+means LUCENT and any other entity that has Contributed a "Contributor" 
+means the Original Program and Contributions or any part "Program" 
+means the original version of the software "Original Program" 
+MERCHANTABILITY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, 
+merchantability and fitness for a particular purpose; conditions of 
+might include the Program in a commercial For example, a Distributor 
+minimum extent necessary to make such provision valid and enforceable. 
+modifications to the Program, or any part thereof. 
+modify this version. No one other than LUCENT has the right to 
+more than one year after the cause of action arose. Each party waives 
+must: a) promptly In order to qualify, an Indemnified Contributor 
+must agree that the additions and/or changes Also, each Contributor 
+must identify itself as the C. In addition, each Contributor 
+must include the following in a conspicuous B. Each Distributor 
+must pay those any damages as a result, the Commercial Distributor 
+necessarily infringed by the use or sale of its Contribution which are 
+necessary to make such provision valid and enforceable. minimum extent 
+needed, if any. For to secure any other intellectual property rights 
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR 
+negotiations. The Indemnified Contributor may participate in any such 
+NEITHER RECIPIENT NOR EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, 
+new Agreement under which it was received. In addition, after a 
+new distribute the Program (including its Contributions) under the 
+new version of the Agreement will be Agreement from time to time. Each 
+new versions (including revisions) of this LUCENT may publish 
+New York and This Agreement is governed by the laws of the State of 
+No the intellectual property laws of the United States of America. 
+no assurances are licenses to its Contributions set forth herein, 
+No hardware per se is (ii) Contributions of other Contributors. 
+No one other than LUCENT has the right to modify this version. 
+No right is granted to create derivative works of or 1. 
+no rights or licenses to the intellectual property Recipient receives 
+NO WARRANTY 5. 
+noncompliance. If all Recipient's time after becoming aware of such 
+non-exclusive, worldwide, royalty-free copyright grants Recipient a 
+non-exclusive, worldwide, royalty-free patent grants Recipient a 
+non-infringement, and implied warranties or conditions of title and 
+NON-INFRINGEMENT, MERCHANTABILITY WARRANTIES OR CONDITIONS OF TITLE, 
+NOR EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT 
+nor to to (i) any other combinations which include the Contribution, 
+not commercial product offering should do so in a manner which does 
+not implication, estoppel or otherwise. All rights in the Program 
+not affect the validity or enforceability of applicable law, it shall 
+not apply Patents. The patent license granted by a Contributor shall 
+not apply to any claims or Losses obligations in this section do 
+not by any other party. offered by that Contributor alone and 
+not cure such failure in a reasonable period of Agreement and does 
+not infringe the provided by any Contributor that the Program does 
+not limited to exercise of rights under this Agreement, including but 
+not thereafter be revoked. it may 
+notable exceptions: with the following 
+notable exceptions are marked in the file tree with Other, less 
+notify the Commercial Distributor in writing of such claim, and b) 
+number. The Program (including given a distinguishing version 
+object code and documentation, if any. code, 
+object code form. 
+object code form. The patent license granted any, in source code and 
+obligations in this section do not apply to any claims or Losses 
+obligations under this Agreement and any licenses However, Recipient's 
+of, publicly display, license to reproduce, prepare derivative works 
+offer to sell, license under Licensed Patents to make, use, sell, 
+offered by that Contributor alone and not by any other party. 
+offering, Distributor includes the Program in a commercial product 
+offering, Product X. That Distributor is then a Commercial product 
+offering should do so in a manner which does not commercial product 
+offering. The distribution of the Program in a commercial product 
+offers warranties related to Product X, those performance claims, or 
+omissions of such Commercial Distributor in connection with its or 
+Once a Contribution is contributed, are intended to be a Contribution. 
+Operating System) to redistribute (other than with the Plan 9 
+operations. unavailability or interruption of 
+order to qualify, an Indemnified Contributor must: a) promptly In 
+Original a. in the case of Lucent Technologies Inc. ("LUCENT"), the 
+Original Program and Contributions or any part "Program" means the 
+"Original Program" means the original version of the software 
+original version of the software "Original Program" means the 
+originator of its Contribution in a manner that reasonably allows 
+originator of the Contribution. subsequent Recipients to identify the 
+Other, less notable exceptions are marked in the file tree with 
+(other than with the Plan 9 Operating System) to redistribute 
+others. All Rights Copyright (C) 2003, Lucent Technologies Inc. and 
+otherwise. All rights in the Program not implication, estoppel or 
+OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR NEGLIGENCE OR 
+otherwise. As a condition to exercising the rights and licenses or 
+otherwise transfer the Contribution of such Contributor, if import and 
+own expense. claim at its 
+own license agreement form, a copy of this Agreement or Distributor's 
+own license agreement, provided that: this Agreement or under its 
+own license agreement, such c. if distributed under Distributor's 
+participate in any such negotiations. The Indemnified Contributor may 
+particular purpose; conditions of merchantability and fitness for a 
+PARTICULAR PURPOSE. Each Recipient is solely OR FITNESS FOR A 
+parties hereto, such provision shall be reformed to the action by the 
+partners and the responsibilities with respect to end users, business 
+party claims, lawsuits and other legal actions brought by a third 
+party. offered by that Contributor alone and not by any other 
+party patent license is required to allow example, if a third 
+party to this Agreement will bring a legal action under this Agreement 
+party waives more than one year after the cause of action arose. Each 
+patent grants Recipient a non-exclusive, worldwide, royalty-free 
+patent applicable to software (including a cross-claim or respect to a 
+patent claims licensable by a Contributor "Licensed Patents" mean 
+patent license granted any, in source code and object code form. The 
+patent license granted by a Contributor shall not apply Patents. The 
+patent license is required to allow example, if a third party 
+patent licenses granted by that counterclaim in a lawsuit), then any 
+patent litigation against a Contributor with If Recipient institutes 
+patent litigation against any entity (including a institutes 
+patent or other intellectual property rights of any other entity. Each 
+Patents" mean patent claims licensable by a Contributor "Licensed 
+Patents. The patent license granted by a Contributor shall not apply 
+patent(s), then such Recipient's hardware) infringes such Recipient's 
+Patents to make, use, sell, offer to sell, license under Licensed 
+pay claims and warranties, and if a court requires any Contributor to 
+pay those any damages as a result, the Commercial Distributor must 
+per se is (ii) Contributions of other Contributors. No hardware 
+perform, distribute and sublicense the Contribution of such publicly 
+performance claims, or offers warranties related to Product X, those 
+performance defend claims against the Contributors related to those 
+performance Distributor. If that Commercial Distributor then makes 
+period of Agreement and does not cure such failure in a reasonable 
+Plan 9 Operating System) to redistribute (other than with the 
+Plan 9 software is provided under the terms of the The 
+POSSIBILITY OF SUCH DAMAGES. HEREUNDER, EVEN IF ADVISED OF THE 
+potential liability for Contributors. Therefore, if a create 
+practicable. and distribution of the Program as soon as reasonably 
+printer fonts identified in subdirectory /sys/lib/ghostscript/font 2. The 
+printer fonts (Lucida Sans Unicode, Lucida /lib/font/bit/lucida and 
+profits; and consequential damages, such as lost 
+PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF WITHOUT LIMITATION LOST 
+Program. alone or when combined with the 
+Program. Contribution to the 
+Program cross-claim or counterclaim in a lawsuit) alleging that the 
+Program, "Distributor" means a Recipient that distributes the 
+Program; ii. additions to the 
+Program: location in the 
+Program. to acquire that license before distributing the 
+Program, and 
+Program, and i. changes to the 
+Program; and is included with each copy of the 
+Program and assumes all risks associated with its distributing the 
+Program and Contributions or any part "Program" means the Original 
+Program as soon as reasonably practicable. and distribution of the 
+Program by such Contributor itself or anyone acting on such 
+PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT. 
+Program does not infringe the provided by any Contributor that the 
+program errors, compliance with applicable the risks and costs of 
+Program if, at the time the Contribution of that Contributor and the 
+Program in a of the Program, the Distributor who includes the 
+Program in a commercial For example, a Distributor might include the 
+Program in a commercial product offering, Distributor includes the 
+Program in a commercial product offering. The distribution of the 
+Program in any form under A. Distributor may choose to distribute the 
+program in the subdirectory /sys/src/cmd/gs is 3. The ghostscript 
+Program (including given a distinguishing version number. The 
+Program (including its Contributions) under the new distribute the 
+PROGRAM IS EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE 
+Program is distributed in source code or other tangible b. if the 
+PROGRAM IS PROVIDED UNDER THE TERMS OF THIS PUBLIC THE ACCOMPANYING 
+Program, it is Recipient's responsibility Recipient to distribute the 
+"Program" means the Original Program and Contributions or any part 
+Program" means the original version of the software "Original 
+Program not implication, estoppel or otherwise. All rights in the 
+Program, or any part thereof. modifications to the 
+PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED DISTRIBUTION OF THE 
+Program shall continue and granted by Recipient relating to the 
+Program, the Distributor who includes the Program in a of the 
+Program under this "Recipient" means anyone who receives the 
+Program were added to the where such changes and/or additions to the 
+Program with other software or itself (excluding combinations of the 
+programs or equipment, and laws, damage to or loss of data, 
+promptly In order to qualify, an Indemnified Contributor must: a) 
+property Recipient receives no rights or licenses to the intellectual 
+property infringement. relating to any actual or alleged intellectual 
+property laws of the United States of America. No the intellectual 
+property rights any other entity based on infringement of intellectual 
+property rights needed, if any. For to secure any other intellectual 
+property rights of any other entity. Each patent or other intellectual 
+provided by any Contributor that the Program does not infringe the 
+PROVIDED ON AN"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY 
+provided that: this Agreement or under its own license agreement, 
+provided under the terms of the The Plan 9 software is 
+PROVIDED UNDER THE TERMS OF THIS PUBLIC THE ACCOMPANYING PROGRAM IS 
+provision of this Agreement is invalid or unenforceable under If any 
+provision shall be reformed to the action by the parties hereto, such 
+provision valid and enforceable. minimum extent necessary to make such 
+provisions which differ from this Agreement are iii. states that any 
+PUBLIC THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS 
+Public License, reproduced in the file covered by the Aladdin Free 
+Public License Version 1.02 Lucent 
+Public License, Version 1.02, reproduced below, Lucent 
+publicly display, license to reproduce, prepare derivative works of, 
+publicly perform, distribute and sublicense the Contribution of such 
+publish new versions (including revisions) of this LUCENT may 
+published, Contributor may elect to version of the Agreement is 
+purpose; conditions of merchantability and fitness for a particular 
+PURPOSE. Each Recipient is solely OR FITNESS FOR A PARTICULAR 
+qualify, an Indemnified Contributor must: a) promptly In order to 
+reasonable period of Agreement and does not cure such failure in a 
+reasonably allows originator of its Contribution in a manner that 
+reasonably practicable. and distribution of the Program as soon as 
+received. In addition, after a new Agreement under which it was 
+receives no rights or licenses to the intellectual property Recipient 
+receives the Program under this "Recipient" means anyone who 
+Recipient of the date such litigation is filed. In addition, if 
+Recipient a non-exclusive, worldwide, royalty-free copyright grants 
+Recipient a non-exclusive, worldwide, royalty-free patent grants 
+Recipient agrees that Recipient alone is responsible for compliance 
+Recipient agrees to cease use rights under this Agreement terminate, 
+Recipient alone is responsible for compliance Recipient agrees that 
+Recipient for claims brought by Contributor disclaims any liability to 
+Recipient hereby assumes sole responsibility granted hereunder, each 
+Recipient institutes patent litigation against a Contributor with If 
+Recipient is solely OR FITNESS FOR A PARTICULAR PURPOSE. Each 
+"Recipient" means anyone who receives the Program under this 
+RECIPIENT NOR EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER 
+Recipient receives no rights or licenses to the intellectual property 
+Recipient relating to the Program shall continue and granted by 
+Recipient that distributes the Program, "Distributor" means a 
+Recipient to distribute the Program, it is Recipient's responsibility 
+Recipient under this Agreement shall terminate as Contributor to such 
+Recipient understands that although each Contributor grants the c. 
+Recipient's hardware) infringes such Recipient's patent(s), then such 
+Recipient's time after becoming aware of such noncompliance. If all 
+RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT. PROGRAM CONSTITUTES 
+Recipient's obligations under this Agreement and any licenses However, 
+Recipient's patent(s), then such Recipient's hardware) infringes such 
+Recipient's responsibility Recipient to distribute the Program, it is 
+Recipient's rights under this Agreement shall terminate if it All 
+Recipients to identify the originator of the Contribution. subsequent 
+redistribute (other than with the Plan 9 Operating System) to 
+reformed to the action by the parties hereto, such provision shall be 
+regulation of any other countries). export control laws and 
+regulations (and the with the United States export administration 
+relating to any actual or alleged intellectual property infringement. 
+relating to the Program shall continue and granted by Recipient 
+released by LUCENT, including source accompanying this Agreement as 
+remainder of the terms of this Agreement, and without further the 
+represents that to its knowledge it has sufficient d. Each Contributor 
+reproduce, prepare derivative works of, publicly display, license to 
+reproduced below, Lucent Public License, Version 1.02, 
+reproduced in the file covered by the Aladdin Free Public License, 
+reproduced in the file /LICENSE.gpl. are subject to the GNU GPL, 
+REPRODUCTION OR DISTRIBUTION OF THE LICENSE ("AGREEMENT"). ANY USE, 
+required to allow example, if a third party patent license is 
+REQUIREMENTS 3. 
+requires any Contributor to pay claims and warranties, and if a court 
+Reserved. 
+reserved. expressly granted under this Agreement are 
+respect to a patent applicable to software (including a cross-claim or 
+respect to end users, business partners and the responsibilities with 
+responsibilities with respect to end users, business partners and the 
+responsibility claims and warranties are such Commercial Distributor's 
+responsibility granted hereunder, each Recipient hereby assumes sole 
+responsibility Recipient to distribute the Program, it is Recipient's 
+responsible for compliance Recipient agrees that Recipient alone is 
+responsible for determining the appropriateness of using and 
+result, the Commercial Distributor must pay those any damages as a 
+resulting litigation. its rights to a jury trial in any 
+revisions) of this LUCENT may publish new versions (including 
+revoked. it may not thereafter be 
+right is granted to create derivative works of or 1. No 
+right to modify this version. No one other than LUCENT has the 
+RIGHTS 2. GRANT OF 
+rights any other entity based on infringement of intellectual property 
+Rights Copyright (C) 2003, Lucent Technologies Inc. and others. All 
+rights and licenses or otherwise. As a condition to exercising the 
+RIGHTS GRANTED DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY 
+rights granted under Section 2(b) shall terminate as of the date such 
+rights in its Contribution, if any, to grant the copyright copyright 
+rights in the Program not implication, estoppel or otherwise. All 
+rights needed, if any. For to secure any other intellectual property 
+rights of any other entity. Each patent or other intellectual property 
+rights or licenses to the intellectual property Recipient receives no 
+rights to a jury trial in any resulting litigation. its 
+rights under this Agreement, including but not limited to exercise of 
+rights under this Agreement shall terminate if it All Recipient's 
+rights under this Agreement terminate, Recipient agrees to cease use 
+risks and costs of program errors, compliance with applicable the 
+risks associated with its distributing the Program and assumes all 
+royalty-free copyright grants Recipient a non-exclusive, worldwide, 
+royalty-free patent grants Recipient a non-exclusive, worldwide, 
+sale of its Contribution which are necessarily infringed by the use or 
+Sans Sans Italic, Lucida Sans Demibold, Lucida Typewriter, Lucida 
+Sans Demibold, Lucida Typewriter, Lucida Sans Sans Italic, Lucida 
+Sans Italic, Lucida Sans Demibold, Lucida Typewriter, Lucida Sans 
+Sans Unicode, Lucida /lib/font/bit/lucida and printer fonts (Lucida 
+screen imprinter fonts identified in subdirectory the 
+se is (ii) Contributions of other Contributors. No hardware per 
+Section 2(b) shall terminate as of the date such rights granted under 
+Section 3C, to characterization of the changes and/or accordance with 
+section do not apply to any claims or Losses obligations in this 
+section, the Commercial Distributor would have to alone. Under this 
+Sections 2(a) and 2(b) above, Agreement. Except as expressly stated in 
+secure any other intellectual property rights needed, if any. For to 
+sell, license under Licensed Patents to make, use, sell, offer to 
+sell, offer to sell, license under Licensed Patents to make, use, 
+settlement Commercial Distributor in, the defense and any related 
+shall also apply to the combination of the by a Contributor 
+shall be reformed to the action by the parties hereto, such provision 
+shall continue and granted by Recipient relating to the Program 
+SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, ANY CONTRIBUTORS 
+shall not affect the validity or enforceability of applicable law, it 
+shall not apply Patents. The patent license granted by a Contributor 
+shall terminate as Contributor to such Recipient under this Agreement 
+shall terminate as of the date such rights granted under Section 2(b) 
+shall terminate if it All Recipient's rights under this Agreement 
+should do so in a manner which does not commercial product offering 
+so in a manner which does not commercial product offering should do 
+software "Original Program" means the original version of the 
+software (including a cross-claim or respect to a patent applicable to 
+software is provided under the terms of the The Plan 9 
+software may accept certain Commercial distributors of 
+software or itself (excluding combinations of the Program with other 
+sole responsibility granted hereunder, each Recipient hereby assumes 
+solely OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is 
+soon as reasonably practicable. and distribution of the Program as 
+source accompanying this Agreement as released by LUCENT, including 
+source code and Contributor, if any, and such derivative works, in 
+source code and object code form. The patent license granted any, in 
+source code or other tangible b. if the Program is distributed in 
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING INCIDENTAL, 
+special, incidental and for damages, including direct, indirect, 
+State of New York and This Agreement is governed by the laws of the 
+stated in Sections 2(a) and 2(b) above, Agreement. Except as expressly 
+States export administration regulations (and the with the United 
+States of America. No the intellectual property laws of the United 
+states that any provisions which differ from this Agreement are iii. 
+STRICT LIABILITY, OR TORT (INCLUDING LIABILITY, WHETHER IN CONTRACT, 
+subdirectory the screen imprinter fonts identified in 
+subdirectory /sys/lib/ghostscript/font 2. The printer fonts identified in 
+subdirectory /sys/lib/postscript/font. Typewriter83), identified in 
+subdirectory /sys/src/cmd/gs is 3. The ghostscript program in the 
+subject to the GNU GPL, reproduced in the file /LICENSE.gpl. are 
+Subject to the terms of this Agreement, each Contributor hereby a. 
+Subject to the terms of this Agreement, each Contributor hereby b. 
+subject to the version of the Contributions) may always be distributed 
+sublicense the Contribution of such publicly perform, distribute and 
+subsequent Recipients to identify the originator of the Contribution. 
+such c. if distributed under Distributor's own license agreement, 
+such negotiations. The Indemnified Contributor may participate in any 
+such Program by such Contributor itself or anyone acting on 
+such publicly perform, distribute and sublicense the Contribution of 
+such rights granted under Section 2(b) shall terminate as of the date 
+such addition of the Contribution is added by the Contributor, 
+such as lost profits; and consequential damages, 
+such changes and/or additions to the Program were added to the where 
+such claim, and b) notify the Commercial Distributor in writing of 
+such combination to be covered by the Licensed Contribution causes 
+such Commercial Distributor in connection with its or omissions of 
+such Commercial Distributor's responsibility claims and warranties are 
+such Contributor, if import and otherwise transfer the Contribution of 
+such Contributor itself or anyone acting on such Program by 
+SUCH DAMAGES. HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF 
+such derivative works, in source code and Contributor, if any, and 
+such Distributor ("Commercial Distributor") hereby agrees to defend 
+such failure in a reasonable period of Agreement and does not cure 
+such litigation is filed. In addition, if Recipient of the date 
+such noncompliance. If all Recipient's time after becoming aware of 
+such provision shall be reformed to the action by the parties hereto, 
+such provision valid and enforceable. minimum extent necessary to make 
+such Recipient under this Agreement shall terminate as Contributor to 
+such Recipient's hardware) infringes such Recipient's patent(s), then 
+such Recipient's patent(s), then such Recipient's hardware) infringes 
+sufficient d. Each Contributor represents that to its knowledge it has 
+survive. 
+/sys/lib/ghostscript/font 2. The printer fonts identified in subdirectory 
+/sys/lib/postscript/font. Typewriter83), identified in subdirectory 
+/sys/src/cmd/gs is 3. The ghostscript program in the subdirectory 
+System) to redistribute (other than with the Plan 9 Operating 
+tangible b. if the Program is distributed in source code or other 
+Technologies Inc. and others. All Rights Copyright (C) 2003, Lucent 
+Technologies Inc. ("LUCENT"), the Original a. in the case of Lucent 
+terminate as Contributor to such Recipient under this Agreement shall 
+terminate as of the date such rights granted under Section 2(b) shall 
+terminate if it All Recipient's rights under this Agreement shall 
+terminate, Recipient agrees to cease use rights under this Agreement 
+terms and conditions of this Agreement; a. it complies with the 
+terms of the The Plan 9 software is provided under the 
+terms of this Agreement, and without further the remainder of the 
+terms of this Agreement, each Contributor hereby a. Subject to the 
+terms of this Agreement, each Contributor hereby b. Subject to the 
+TERMS OF THIS PUBLIC THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE 
+terms or conditions of this fails to comply with any of the material 
+than LUCENT has the right to modify this version. No one other 
+than one year after the cause of action arose. Each party waives more 
+than with the Plan 9 Operating System) to redistribute (other 
+that counterclaim in a lawsuit), then any patent licenses granted by 
+that: this Agreement or under its own license agreement, provided 
+that although each Contributor grants the c. Recipient understands 
+that any provisions which differ from this Agreement are iii. states 
+that Commercial Distributor then makes performance Distributor. If 
+that Contributor alone and not by any other party. offered by 
+that Contributor and the Program if, at the time the Contribution of 
+that distributes the Program, "Distributor" means a Recipient 
+That Distributor is then a Commercial product offering, Product X. 
+that has Contributed a "Contributor" means LUCENT and any other entity 
+that license before distributing the Program. to acquire 
+that reasonably allows originator of its Contribution in a manner 
+that Recipient alone is responsible for compliance Recipient agrees 
+that the additions and/or changes Also, each Contributor must agree 
+that the Program cross-claim or counterclaim in a lawsuit) alleging 
+that the Program does not infringe the provided by any Contributor 
+that to its knowledge it has sufficient d. Each Contributor represents 
+THEORY OF WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY 
+thereafter be revoked. it may not 
+Therefore, if a create potential liability for Contributors. 
+thereof 
+thereof. modifications to the Program, or any part 
+These directories contain material copyrights by B&H Inc. and Y&Y Inc. 
+third party claims, lawsuits and other legal actions brought by a 
+third party patent license is required to allow example, if a 
+those any damages as a result, the Commercial Distributor must pay 
+those performance claims, or offers warranties related to Product X, 
+those performance defend claims against the Contributors related to 
+time after becoming aware of such noncompliance. If all Recipient's 
+time. Each new version of the Agreement will be Agreement from time to 
+time the Contribution of that Contributor and the Program if, at the 
+time to time. Each new version of the Agreement will be Agreement from 
+title and non-infringement, and implied warranties or conditions of 
+TITLE, NON-INFRINGEMENT, MERCHANTABILITY WARRANTIES OR CONDITIONS OF 
+TORT (INCLUDING LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+transfer the Contribution of such Contributor, if import and otherwise 
+tree with Other, less notable exceptions are marked in the file 
+trial in any resulting litigation. its rights to a jury 
+Typewriter, Lucida Sans Sans Italic, Lucida Sans Demibold, Lucida 
+Typewriter83), identified in subdirectory /sys/lib/postscript/font. 
+unavailability or interruption of operations. 
+under A. Distributor may choose to distribute the Program in any form 
+under If any provision of this Agreement is invalid or unenforceable 
+under Distributor's own license agreement, such c. if distributed 
+under its own license agreement, provided that: this Agreement or 
+under Licensed Patents to make, use, sell, offer to sell, license 
+under Section 2(b) shall terminate as of the date such rights granted 
+under the new distribute the Program (including its Contributions) 
+under the terms of the The Plan 9 software is provided 
+UNDER THE TERMS OF THIS PUBLIC THE ACCOMPANYING PROGRAM IS PROVIDED 
+under this "Recipient" means anyone who receives the Program 
+under this Agreement party to this Agreement will bring a legal action 
+under this Agreement and any licenses However, Recipient's obligations 
+under this Agreement are reserved. expressly granted 
+under this Agreement, including but not limited to exercise of rights 
+under this Agreement shall terminate as Contributor to such Recipient 
+under this Agreement shall terminate if it All Recipient's rights 
+under this Agreement terminate, Recipient agrees to cease use rights 
+under this Agreement, whether expressly, by of any Contributor 
+Under this section, the Commercial Distributor would have to alone. 
+under which it was received. In addition, after a new Agreement 
+understands that although each Contributor grants the c. Recipient 
+unenforceable under If any provision of this Agreement is invalid or 
+Unicode, Lucida /lib/font/bit/lucida and printer fonts (Lucida Sans 
+United States export administration regulations (and the with the 
+United States of America. No the intellectual property laws of the 
+USE, REPRODUCTION OR DISTRIBUTION OF THE LICENSE ("AGREEMENT"). ANY 
+use, sell, offer to sell, license under Licensed Patents to make, 
+users, business partners and the responsibilities with respect to end 
+using and responsible for determining the appropriateness of 
+valid and enforceable. minimum extent necessary to make such provision 
+validity or enforceability of applicable law, it shall not affect the 
+Version 1.02 Lucent Public License 
+Version 1.02, reproduced below, Lucent Public License, 
+version. No one other than LUCENT has the right to modify this 
+version number. The Program (including given a distinguishing 
+version of the Contributions) may always be distributed subject to the 
+version of the Agreement is published, Contributor may elect to 
+version of the Agreement will be Agreement from time to time. Each new 
+version of the software "Original Program" means the original 
+versions (including revisions) of this LUCENT may publish new 
+waives more than one year after the cause of action arose. Each party 
+warranties i. effectively disclaims on behalf of all Contributors all 
+warranties, and if a court requires any Contributor to pay claims and 
+warranties are such Commercial Distributor's responsibility claims and 
+warranties or and conditions, express and implied, including 
+warranties or conditions of title and non-infringement, and implied 
+WARRANTIES OR CONDITIONS OF ANY PROVIDED ON AN"AS IS" BASIS, WITHOUT 
+WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY 
+warranties related to Product X, those performance claims, or offers 
+WARRANTY 5. NO 
+were added to the where such changes and/or additions to the Program 
+when combined with the Program. alone or 
+where such changes and/or additions to the Program were added to the 
+whether expressly, by of any Contributor under this Agreement, 
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING LIABILITY, 
+which are necessarily infringed by the use or sale of its Contribution 
+which differ from this Agreement are iii. states that any provisions 
+which does not commercial product offering should do so in a manner 
+which include the Contribution, nor to to (i) any other combinations 
+which it was received. In addition, after a new Agreement under 
+While this license is intended to facilitate the commercial use like. 
+who includes the Program in a of the Program, the Distributor 
+who receives the Program under this "Recipient" means anyone 
+will be Agreement from time to time. Each new version of the Agreement 
+will bring a legal action under this Agreement party to this Agreement 
+without further the remainder of the terms of this Agreement, and 
+WITHOUT LIMITATION, ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, 
+WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF 
+WITHOUT WARRANTIES OR CONDITIONS OF ANY PROVIDED ON AN"AS IS" BASIS, 
+works, in source code and Contributor, if any, and such derivative 
+works of or 1. No right is granted to create derivative 
+works of, publicly display, license to reproduce, prepare derivative 
+worldwide, royalty-free copyright grants Recipient a non-exclusive, 
+worldwide, royalty-free patent grants Recipient a non-exclusive, 
+would have to alone. Under this section, the Commercial Distributor 
+writing of such claim, and b) notify the Commercial Distributor in 
+X. That Distributor is then a Commercial product offering, Product 
+X, those performance claims, or offers warranties related to Product 
+year after the cause of action arose. Each party waives more than one 
+York and This Agreement is governed by the laws of the State of New 
+Y&Y Inc. These directories contain material copyrights by B&H Inc. and 

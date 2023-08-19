@@ -1,0 +1,5 @@
+#!/bin/rc
+if (~ $#* 0)
+	echo no arguments
+if not
+	echo got some arguments: $*

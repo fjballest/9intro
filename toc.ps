@@ -1,0 +1,1007 @@
+%!PS-Adobe-2.0
+%%Version: 0.1
+%%DocumentFonts: (atend)
+%%Pages: (atend)
+%%EndComments
+%
+% Version 3.3.2 prologue for troff files.
+%
+
+/#copies 1 store
+/aspectratio 1 def
+/formsperpage 1 def
+/landscape false def
+/linewidth .3 def
+/magnification 1 def
+/margin 0 def
+/orientation 0 def
+/resolution 720 def
+/rotation 1 def
+/xoffset 0 def
+/yoffset 0 def
+
+/roundpage true def
+/useclippath true def
+/pagebbox [0 0 612 792] def
+
+/R  /Times-Roman def
+/I  /Times-Italic def
+/B  /Times-Bold def
+/BI /Times-BoldItalic def
+/H  /Helvetica def
+/HI /Helvetica-Oblique def
+/HB /Helvetica-Bold def
+/HX /Helvetica-BoldOblique def
+/CW /Courier def
+/CO /Courier def
+/CI /Courier-Oblique def
+/CB /Courier-Bold def
+/CX /Courier-BoldOblique def
+/PA /Palatino-Roman def
+/PI /Palatino-Italic def
+/PB /Palatino-Bold def
+/PX /Palatino-BoldItalic def
+/Hr /Helvetica-Narrow def
+/Hi /Helvetica-Narrow-Oblique def
+/Hb /Helvetica-Narrow-Bold def
+/Hx /Helvetica-Narrow-BoldOblique def
+/KR /Bookman-Light def
+/KI /Bookman-LightItalic def
+/KB /Bookman-Demi def
+/KX /Bookman-DemiItalic def
+/AR /AvantGarde-Book def
+/AI /AvantGarde-BookOblique def
+/AB /AvantGarde-Demi def
+/AX /AvantGarde-DemiOblique def
+/NR /NewCenturySchlbk-Roman def
+/NI /NewCenturySchlbk-Italic def
+/NB /NewCenturySchlbk-Bold def
+/NX /NewCenturySchlbk-BoldItalic def
+/ZD /ZapfDingbats def
+/ZI /ZapfChancery-MediumItalic def
+/S  /S def
+/S1 /S1 def
+/GR /Symbol def
+
+/inch {72 mul} bind def
+/min {2 copy gt {exch} if pop} bind def
+
+/setup {
+	counttomark 2 idiv {def} repeat pop
+
+	landscape {/orientation 90 orientation add def} if
+	/scaling 72 resolution div def
+	linewidth setlinewidth
+	1 setlinecap
+
+	pagedimensions
+	xcenter ycenter translate
+	orientation rotation mul rotate
+	width 2 div neg height 2 div translate
+	xoffset inch yoffset inch neg translate
+	margin 2 div dup neg translate
+	magnification dup aspectratio mul scale
+	scaling scaling scale
+
+	addmetrics
+	0 0 moveto
+} def
+
+/pagedimensions {
+	useclippath userdict /gotpagebbox known not and {
+		/pagebbox [clippath pathbbox newpath] def
+		roundpage currentdict /roundpagebbox known and {roundpagebbox} if
+	} if
+	pagebbox aload pop
+	4 -1 roll exch 4 1 roll 4 copy
+	landscape {4 2 roll} if
+	sub /width exch def
+	sub /height exch def
+	add 2 div /xcenter exch def
+	add 2 div /ycenter exch def
+	userdict /gotpagebbox true put
+} def
+
+/addmetrics {
+	/Symbol /S null Sdefs cf
+	/Times-Roman /S1 StandardEncoding dup length array copy S1defs cf
+} def
+
+/pagesetup {
+	/page exch def
+	currentdict /pagedict known currentdict page known and {
+		page load pagedict exch get cvx exec
+	} if
+} def
+
+/decodingdefs [
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg /y exch def counttomark 2 idiv {y moveto show} repeat}
+	{neg moveto {2 index stringwidth pop sub exch div 0 32 4 -1 roll widthshow} repeat}
+	{neg moveto {spacewidth sub 0.0 32 4 -1 roll widthshow} repeat}
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg setfunnytext}
+] def
+
+/setdecoding {/t decodingdefs 3 -1 roll get bind def} bind def
+
+/w {neg moveto show} bind def
+/m {neg dup /y exch def moveto} bind def
+/done {/lastpage where {pop lastpage} if} def
+
+/f {
+	dup /font exch def findfont exch
+	dup /ptsize exch def scaling div dup /size exch def scalefont setfont
+	linewidth ptsize mul scaling 10 mul div setlinewidth
+	/spacewidth ( ) stringwidth pop def
+} bind def
+
+/changefont {
+	/fontheight exch def
+	/fontslant exch def
+	currentfont [
+		1 0
+		fontheight ptsize div fontslant sin mul fontslant cos div
+		fontheight ptsize div
+		0 0
+	] makefont setfont
+} bind def
+
+/sf {f} bind def
+
+/cf {
+	dup length 2 idiv
+	/entries exch def
+	/chtab exch def
+	/newencoding exch def
+	/newfont exch def
+
+	findfont dup length 1 add dict
+	/newdict exch def
+	{1 index /FID ne {newdict 3 1 roll put}{pop pop} ifelse} forall
+
+	newencoding type /arraytype eq {newdict /Encoding newencoding put} if
+
+	newdict /Metrics entries dict put
+	newdict /Metrics get
+	begin
+		chtab aload pop
+		1 1 entries {pop def} for
+		newfont newdict definefont pop
+	end
+} bind def
+
+%
+% A few arrays used to adjust reference points and character widths in some
+% of the printer resident fonts. If square roots are too high try changing
+% the lines describing /radical and /radicalex to,
+%
+%	/radical	[0 -75 550 0]
+%	/radicalex	[-50 -75 500 0]
+%
+% Move braceleftbt a bit - default PostScript character is off a bit.
+%
+
+/Sdefs [
+	/bracketlefttp		[201 500]
+	/bracketleftbt		[201 500]
+	/bracketrighttp		[-81 380]
+	/bracketrightbt		[-83 380]
+	/braceleftbt		[203 490]
+	/bracketrightex		[220 -125 500 0]
+	/radical		[0 0 550 0]
+	/radicalex		[-50 0 500 0]
+	/parenleftex		[-20 -170 0 0]
+	/integral		[100 -50 500 0]
+	/infinity		[10 -75 730 0]
+] def
+
+/S1defs [
+	/underscore		[0 80 500 0]
+	/endash			[7 90 650 0]
+] def
+%
+% Tries to round clipping path dimensions, as stored in array pagebbox, so they
+% match one of the known sizes in the papersizes array. Lower left coordinates
+% are always set to 0.
+%
+
+/roundpagebbox {
+    7 dict begin
+	/papersizes [8.5 inch 11 inch 14 inch 17 inch] def
+
+	/mappapersize {
+		/val exch def
+		/slop .5 inch def
+		/diff slop def
+		/j 0 def
+		0 1 papersizes length 1 sub {
+			/i exch def
+			papersizes i get val sub abs
+			dup diff le {/diff exch def /j i def} {pop} ifelse
+		} for
+		diff slop lt {papersizes j get} {val} ifelse
+	} def
+
+	pagebbox 0 0 put
+	pagebbox 1 0 put
+	pagebbox dup 2 get mappapersize 2 exch put
+	pagebbox dup 3 get mappapersize 3 exch put
+    end
+} bind def
+
+%%EndProlog
+%%BeginSetup
+mark
+%
+% Encoding vector and redefinition of findfont for the ISO Latin1 standard.
+% The 18 characters missing from ROM based fonts on older printers are noted
+% below.
+%
+
+/ISOLatin1Encoding [
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/space
+	/exclam
+	/quotedbl
+	/numbersign
+	/dollar
+	/percent
+	/ampersand
+	/quoteright
+	/parenleft
+	/parenright
+	/asterisk
+	/plus
+	/comma
+	/minus
+	/period
+	/slash
+	/zero
+	/one
+	/two
+	/three
+	/four
+	/five
+	/six
+	/seven
+	/eight
+	/nine
+	/colon
+	/semicolon
+	/less
+	/equal
+	/greater
+	/question
+	/at
+	/A
+	/B
+	/C
+	/D
+	/E
+	/F
+	/G
+	/H
+	/I
+	/J
+	/K
+	/L
+	/M
+	/N
+	/O
+	/P
+	/Q
+	/R
+	/S
+	/T
+	/U
+	/V
+	/W
+	/X
+	/Y
+	/Z
+	/bracketleft
+	/backslash
+	/bracketright
+	/asciicircum
+	/underscore
+	/quoteleft
+	/a
+	/b
+	/c
+	/d
+	/e
+	/f
+	/g
+	/h
+	/i
+	/j
+	/k
+	/l
+	/m
+	/n
+	/o
+	/p
+	/q
+	/r
+	/s
+	/t
+	/u
+	/v
+	/w
+	/x
+	/y
+	/z
+	/braceleft
+	/bar
+	/braceright
+	/asciitilde
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/dotlessi
+	/grave
+	/acute
+	/circumflex
+	/tilde
+	/macron
+	/breve
+	/dotaccent
+	/dieresis
+	/.notdef
+	/ring
+	/cedilla
+	/.notdef
+	/hungarumlaut
+	/ogonek
+	/caron
+	/space
+	/exclamdown
+	/cent
+	/sterling
+	/currency
+	/yen
+	/brokenbar		% missing
+	/section
+	/dieresis
+	/copyright
+	/ordfeminine
+	/guillemotleft
+	/logicalnot
+	/hyphen
+	/registered
+	/macron
+	/degree			% missing
+	/plusminus		% missing
+	/twosuperior		% missing
+	/threesuperior		% missing
+	/acute
+	/mu			% missing
+	/paragraph
+	/periodcentered
+	/cedilla
+	/onesuperior		% missing
+	/ordmasculine
+	/guillemotright
+	/onequarter		% missing
+	/onehalf		% missing
+	/threequarters		% missing
+	/questiondown
+	/Agrave
+	/Aacute
+	/Acircumflex
+	/Atilde
+	/Adieresis
+	/Aring
+	/AE
+	/Ccedilla
+	/Egrave
+	/Eacute
+	/Ecircumflex
+	/Edieresis
+	/Igrave
+	/Iacute
+	/Icircumflex
+	/Idieresis
+	/Eth			% missing
+	/Ntilde
+	/Ograve
+	/Oacute
+	/Ocircumflex
+	/Otilde
+	/Odieresis
+	/multiply		% missing
+	/Oslash
+	/Ugrave
+	/Uacute
+	/Ucircumflex
+	/Udieresis
+	/Yacute			% missing
+	/Thorn			% missing
+	/germandbls
+	/agrave
+	/aacute
+	/acircumflex
+	/atilde
+	/adieresis
+	/aring
+	/ae
+	/ccedilla
+	/egrave
+	/eacute
+	/ecircumflex
+	/edieresis
+	/igrave
+	/iacute
+	/icircumflex
+	/idieresis
+	/eth			% missing
+	/ntilde
+	/ograve
+	/oacute
+	/ocircumflex
+	/otilde
+	/odieresis
+	/divide			% missing
+	/oslash
+	/ugrave
+	/uacute
+	/ucircumflex
+	/udieresis
+	/yacute			% missing
+	/thorn			% missing
+	/ydieresis
+] def
+
+/NewFontDirectory FontDirectory maxlength dict def
+
+%
+% Apparently no guarantee findfont is defined in systemdict so the obvious
+%
+%	systemdict /findfont get exec
+%
+% can generate an error. So far the only exception is a VT600 (version 48.0).
+%
+
+userdict /@RealFindfont known not {
+	userdict begin
+		/@RealFindfont systemdict begin /findfont load end def
+	end
+} if
+
+/findfont {
+	dup NewFontDirectory exch known not {
+		dup
+		%dup systemdict /findfont get exec	% not always in systemdict
+		dup userdict /@RealFindfont get exec
+		dup /Encoding get StandardEncoding eq {
+			dup length dict begin
+				{1 index /FID ne {def}{pop pop} ifelse} forall
+				/Encoding ISOLatin1Encoding def
+				currentdict
+			end
+			/DummyFontName exch definefont
+		} if
+		NewFontDirectory 3 1 roll put
+	} if
+	NewFontDirectory exch get
+} bind def
+
+%%Patch from lp
+%%EndPatch from lp
+
+setup
+%%EndSetup
+%%Page: 1 1
+/saveobj save def
+mark
+1 pagesetup
+14 /Times-Bold f
+(Table) 1876 686 w
+(of Contents) 2254 686 w
+12 /Times-Bold f
+(1.) 1066 998 w
+(Getting started) 1786 998 w
+(1) 3946 998 w
+10 /Times-Roman f
+(1.1.) 1066 1118 w
+(What is an Operating System?) 1786 1118 w
+(1) 3946 1118 w
+(1.2.) 1066 1238 w
+(Entering the system) 1786 1238 w
+(3) 3946 1238 w
+(1.3.) 1066 1358 w
+(Leaving the system) 1786 1358 w
+(7) 3946 1358 w
+(1.4.) 1066 1478 w
+(Editing and running commands) 1786 1478 w
+(7) 3946 1478 w
+(1.5.) 1066 1598 w
+(Obtaining help) 1786 1598 w
+(11) 3946 1598 w
+(1.6.) 1066 1718 w
+(Using files) 1786 1718 w
+(13) 3946 1718 w
+(1.7.) 1066 1838 w
+(Directories) 1786 1838 w
+(16) 3946 1838 w
+(1.8.) 1066 1958 w
+(Files and data) 1786 1958 w
+(19) 3946 1958 w
+(1.9.) 1066 2078 w
+(Permissions) 1786 2078 w
+(23) 3946 2078 w
+(1.10.) 1066 2198 w
+(Writing a C program in Plan 9) 1786 2198 w
+(26) 3946 2198 w
+(1.11.) 1066 2318 w
+(The Operating System and your programs) 1786 2318 w
+(28) 3946 2318 w
+(1.12.) 1066 2438 w
+(Where are the files?) 1786 2438 w
+(30) 3946 2438 w
+(1.13.) 1066 2558 w
+(The Shell, commands, binaries, and system calls) 1786 2558 w
+(31) 3946 2558 w
+(1.14.) 1066 2678 w
+(The Operating System and the hardware) 1786 2678 w
+(32) 3946 2678 w
+12 /Times-Bold f
+(2.) 1066 2918 w
+(Programs) 1786 2918 w
+(and Processes) 2322 2918 w
+(35) 3946 2918 w
+10 /Times-Roman f
+(2.1.) 1066 3038 w
+(Processes) 1786 3038 w
+(35) 3946 3038 w
+(2.2.) 1066 3158 w
+(Loaded programs) 1786 3158 w
+(37) 3946 3158 w
+(2.3.) 1066 3278 w
+(Process birth and death) 1786 3278 w
+(42) 3946 3278 w
+(2.4.) 1066 3398 w
+(System call errors) 1786 3398 w
+(48) 3946 3398 w
+(2.5.) 1066 3518 w
+(Environment) 1786 3518 w
+(50) 3946 3518 w
+(2.6.) 1066 3638 w
+(Process names and states) 1786 3638 w
+(53) 3946 3638 w
+(2.7.) 1066 3758 w
+(Debugging) 1786 3758 w
+(56) 3946 3758 w
+(2.8.) 1066 3878 w
+(Everything is a file!) 1786 3878 w
+(59) 3946 3878 w
+12 /Times-Bold f
+(3.) 1066 4118 w
+(Files) 1786 4118 w
+(65) 3946 4118 w
+10 /Times-Roman f
+(3.1.) 1066 4238 w
+(Input/Output) 1786 4238 w
+(65) 3946 4238 w
+(3.2.) 1066 4358 w
+(Write games) 1786 4358 w
+(71) 3946 4358 w
+(3.3.) 1066 4478 w
+(Read games) 1786 4478 w
+(76) 3946 4478 w
+(3.4.) 1066 4598 w
+(Creating and removing files) 1786 4598 w
+(77) 3946 4598 w
+(3.5.) 1066 4718 w
+(Directory entries) 1786 4718 w
+(79) 3946 4718 w
+(3.6.) 1066 4838 w
+(Listing files in the shell) 1786 4838 w
+(84) 3946 4838 w
+(3.7.) 1066 4958 w
+(Buffered Input/Output) 1786 4958 w
+(87) 3946 4958 w
+12 /Times-Bold f
+(4.) 1066 5198 w
+(Parent) 1786 5198 w
+(and Child) 2162 5198 w
+(97) 3946 5198 w
+10 /Times-Roman f
+(4.1.) 1066 5318 w
+(Running a new program) 1786 5318 w
+(97) 3946 5318 w
+(4.2.) 1066 5438 w
+(Process creation) 1786 5438 w
+(98) 3946 5438 w
+(4.3.) 1066 5558 w
+(Shared or not?) 1786 5558 w
+(103) 3946 5558 w
+(4.4.) 1066 5678 w
+(Race conditions) 1786 5678 w
+(106) 3946 5678 w
+(4.5.) 1066 5798 w
+(Executing another program) 1786 5798 w
+(106) 3946 5798 w
+(4.6.) 1066 5918 w
+(Using both calls) 1786 5918 w
+(109) 3946 5918 w
+(4.7.) 1066 6038 w
+(Waiting for children) 1786 6038 w
+(110) 3946 6038 w
+(4.8.) 1066 6158 w
+(Interpreted programs) 1786 6158 w
+(114) 3946 6158 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 1 1
+%%Page: 2 2
+/saveobj save def
+mark
+2 pagesetup
+12 /Times-Bold f
+(5.) 1066 806 w
+(Talking Processes) 1786 806 w
+(119) 3946 806 w
+10 /Times-Roman f
+(5.1.) 1066 926 w
+(Input/Output redirection) 1786 926 w
+(119) 3946 926 w
+(5.2.) 1066 1046 w
+(Conventions) 1786 1046 w
+(124) 3946 1046 w
+(5.3.) 1066 1166 w
+(Other redirections) 1786 1166 w
+(125) 3946 1166 w
+(5.4.) 1066 1286 w
+(Pipes) 1786 1286 w
+(126) 3946 1286 w
+(5.5.) 1066 1406 w
+(Using pipes) 1786 1406 w
+(132) 3946 1406 w
+(5.6.) 1066 1526 w
+(Notes and process groups) 1786 1526 w
+(138) 3946 1526 w
+(5.7.) 1066 1646 w
+(Reading, notes, and alarms) 1786 1646 w
+(142) 3946 1646 w
+(5.8.) 1066 1766 w
+(The file descriptor bulletin board) 1786 1766 w
+(144) 3946 1766 w
+(5.9.) 1066 1886 w
+(Delivering messages) 1786 1886 w
+(147) 3946 1886 w
+12 /Times-Bold f
+(6.) 1066 2126 w
+(Networking) 1786 2126 w
+(159) 3946 2126 w
+10 /Times-Roman f
+(6.1.) 1066 2246 w
+(Network connections) 1786 2246 w
+(159) 3946 2246 w
+(6.2.) 1066 2366 w
+(Names) 1786 2366 w
+(164) 3946 2366 w
+(6.3.) 1066 2486 w
+(Making calls) 1786 2486 w
+(166) 3946 2486 w
+(6.4.) 1066 2606 w
+(Providing services) 1786 2606 w
+(171) 3946 2606 w
+(6.5.) 1066 2726 w
+(System services) 1786 2726 w
+(176) 3946 2726 w
+(6.6.) 1066 2846 w
+(Distributed computing) 1786 2846 w
+(178) 3946 2846 w
+12 /Times-Bold f
+(7.) 1066 3086 w
+(Resources) 1786 3086 w
+(and Names) 2335 3086 w
+(181) 3946 3086 w
+10 /Times-Roman f
+(7.1.) 1066 3206 w
+(Resource fork) 1786 3206 w
+(181) 3946 3206 w
+(7.2.) 1066 3326 w
+(Protecting from notes) 1786 3326 w
+(184) 3946 3326 w
+(7.3.) 1066 3446 w
+(Environment in shell scripts) 1786 3446 w
+(186) 3946 3446 w
+(7.4.) 1066 3566 w
+(Independent children) 1786 3566 w
+(187) 3946 3566 w
+(7.5.) 1066 3686 w
+(Name spaces) 1786 3686 w
+(187) 3946 3686 w
+(7.6.) 1066 3806 w
+(Local name space tricks) 1786 3806 w
+(193) 3946 3806 w
+(7.7.) 1066 3926 w
+(Device files) 1786 3926 w
+(196) 3946 3926 w
+(7.8.) 1066 4046 w
+(Unions) 1786 4046 w
+(198) 3946 4046 w
+(7.9.) 1066 4166 w
+(Changing the name space) 1786 4166 w
+(200) 3946 4166 w
+(7.10.) 1066 4286 w
+(Using names) 1786 4286 w
+(202) 3946 4286 w
+(7.11.) 1066 4406 w
+(Sand\255boxing) 1786 4406 w
+(204) 3946 4406 w
+(7.12.) 1066 4526 w
+(Distributed computing revisited) 1786 4526 w
+(206) 3946 4526 w
+12 /Times-Bold f
+(8.) 1066 4766 w
+(Using the) 1786 4766 w
+(Shell) 2300 4766 w
+(211) 3946 4766 w
+10 /Times-Roman f
+(8.1.) 1066 4886 w
+(Programs are tools) 1786 4886 w
+(211) 3946 4886 w
+(8.2.) 1066 5006 w
+(Lists) 1786 5006 w
+(212) 3946 5006 w
+(8.3.) 1066 5126 w
+(Simple things) 1786 5126 w
+(215) 3946 5126 w
+(8.4.) 1066 5246 w
+(Real programs) 1786 5246 w
+(219) 3946 5246 w
+(8.5.) 1066 5366 w
+(Conditions) 1786 5366 w
+(224) 3946 5366 w
+(8.6.) 1066 5486 w
+(Editing text) 1786 5486 w
+(228) 3946 5486 w
+(8.7.) 1066 5606 w
+(Moving files around) 1786 5606 w
+(233) 3946 5606 w
+12 /Times-Bold f
+(9.) 1066 5846 w
+(More) 1786 5846 w
+(tools) 2095 5846 w
+(237) 3946 5846 w
+10 /Times-Roman f
+(9.1.) 1066 5966 w
+(Regular expressions) 1786 5966 w
+(237) 3946 5966 w
+(9.2.) 1066 6086 w
+(Sorting and searching) 1786 6086 w
+(242) 3946 6086 w
+(9.3.) 1066 6206 w
+(Searching for changes) 1786 6206 w
+(247) 3946 6206 w
+(9.4.) 1066 6326 w
+(AWK) 1786 6326 w
+(252) 3946 6326 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 2 2
+%%Page: 3 3
+/saveobj save def
+mark
+3 pagesetup
+10 /Times-Roman f
+(9.5.) 1066 686 w
+(Processing data) 1786 686 w
+(258) 3946 686 w
+(9.6.) 1066 806 w
+(File systems) 1786 806 w
+(265) 3946 806 w
+12 /Times-Bold f
+(10.) 1066 1046 w
+(Concurrent) 1786 1046 w
+(programming) 2415 1046 w
+(271) 3946 1046 w
+10 /Times-Roman f
+(10.1.) 1066 1166 w
+(Synchronization) 1786 1166 w
+(271) 3946 1166 w
+(10.2.) 1066 1286 w
+(Locks) 1786 1286 w
+(275) 3946 1286 w
+(10.3.) 1066 1406 w
+(Queueing locks) 1786 1406 w
+(283) 3946 1406 w
+(10.4.) 1066 1526 w
+(Rendezvous) 1786 1526 w
+(293) 3946 1526 w
+(10.5.) 1066 1646 w
+(Sleep and wakeup) 1786 1646 w
+(296) 3946 1646 w
+(10.6.) 1066 1766 w
+(Shared buffers) 1786 1766 w
+(299) 3946 1766 w
+(10.7.) 1066 1886 w
+(Other tools) 1786 1886 w
+(306) 3946 1886 w
+12 /Times-Bold f
+(11.) 1066 2126 w
+(Threads) 1786 2126 w
+(and Channels) 2243 2126 w
+(311) 3946 2126 w
+10 /Times-Roman f
+(11.1.) 1066 2246 w
+(Threads) 1786 2246 w
+(311) 3946 2246 w
+(11.2.) 1066 2366 w
+(Thread names) 1786 2366 w
+(315) 3946 2366 w
+(11.3.) 1066 2486 w
+(Channels) 1786 2486 w
+(321) 3946 2486 w
+(11.4.) 1066 2606 w
+(I/O in threaded programs) 1786 2606 w
+(328) 3946 2606 w
+(11.5.) 1066 2726 w
+(Many to one communication) 1786 2726 w
+(332) 3946 2726 w
+(11.6.) 1066 2846 w
+(Other calls) 1786 2846 w
+(340) 3946 2846 w
+12 /Times-Bold f
+(12.) 1066 3086 w
+(User) 1786 3086 w
+(Input/Output) 2055 3086 w
+(345) 3946 3086 w
+10 /Times-Roman f
+(12.1.) 1066 3206 w
+(Console input) 1786 3206 w
+(345) 3946 3206 w
+(12.2.) 1066 3326 w
+(Characters and runes) 1786 3326 w
+(350) 3946 3326 w
+(12.3.) 1066 3446 w
+(Mouse input) 1786 3446 w
+(352) 3946 3446 w
+(12.4.) 1066 3566 w
+(Devices for graphics) 1786 3566 w
+(356) 3946 3566 w
+(12.5.) 1066 3686 w
+(Graphics) 1786 3686 w
+(359) 3946 3686 w
+(12.6.) 1066 3806 w
+(A graphic slider) 1786 3806 w
+(362) 3946 3806 w
+(12.7.) 1066 3926 w
+(Keyboard input) 1786 3926 w
+(371) 3946 3926 w
+(12.8.) 1066 4046 w
+(Drawing text) 1786 4046 w
+(377) 3946 4046 w
+(12.9.) 1066 4166 w
+(The window system) 1786 4166 w
+(378) 3946 4166 w
+12 /Times-Bold f
+(13.) 1066 4406 w
+(Building a File) 1786 4406 w
+(Server) 2573 4406 w
+(387) 3946 4406 w
+10 /Times-Roman f
+(13.1.) 1066 4526 w
+(Disk storage) 1786 4526 w
+(387) 3946 4526 w
+(13.2.) 1066 4646 w
+(The file system protocol) 1786 4646 w
+(392) 3946 4646 w
+(13.3.) 1066 4766 w
+(Semaphores for Plan 9) 1786 4766 w
+(399) 3946 4766 w
+(13.4.) 1066 4886 w
+(Speaking 9P) 1786 4886 w
+(401) 3946 4886 w
+(13.5.) 1066 5006 w
+(9P requests) 1786 5006 w
+(405) 3946 5006 w
+(13.6.) 1066 5126 w
+(Semaphores) 1786 5126 w
+(409) 3946 5126 w
+(13.7.) 1066 5246 w
+(Semaphores as files) 1786 5246 w
+(412) 3946 5246 w
+(13.8.) 1066 5366 w
+(A program to make things) 1786 5366 w
+(422) 3946 5366 w
+(13.9.) 1066 5486 w
+(Debugging and testing) 1786 5486 w
+(429) 3946 5486 w
+12 /Times-Bold f
+(14.) 1066 5726 w
+(Security) 1786 5726 w
+(433) 3946 5726 w
+10 /Times-Roman f
+(14.1.) 1066 5846 w
+(Secure systems) 1786 5846 w
+(433) 3946 5846 w
+(14.2.) 1066 5966 w
+(The local machine) 1786 5966 w
+(434) 3946 5966 w
+(14.3.) 1066 6086 w
+(Distributed security and authentication) 1786 6086 w
+(436) 3946 6086 w
+(14.4.) 1066 6206 w
+(Authentication agents) 1786 6206 w
+(440) 3946 6206 w
+(14.5.) 1066 6326 w
+(Secure servers) 1786 6326 w
+(447) 3946 6326 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 3 3
+%%Page: 4 4
+/saveobj save def
+mark
+4 pagesetup
+10 /Times-Roman f
+(14.6.) 1066 686 w
+(Identity changes) 1786 686 w
+(451) 3946 686 w
+(14.7.) 1066 806 w
+(Accounts and keys) 1786 806 w
+(455) 3946 806 w
+(14.8.) 1066 926 w
+(What now?) 1786 926 w
+(456) 3946 926 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 4 4
+%%Trailer
+done
+%%DocumentFonts: Times-Roman Times-Bold
+%%Pages: 4

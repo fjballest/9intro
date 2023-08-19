@@ -1,0 +1,25 @@
+ 7 Input and Output, CONTENTS	7 Input and Output, CONTENTS	
+CONTENTS 7 Input and Output	CONTENTS 7 Input and Output	
+Input and Output, CONTENTS 7	Input and Output, CONTENTS 7	
+Output, CONTENTS 7 Input and	Output, CONTENTS 7 Input and	
+TEX	T\v'.17m'\h'-.12m'E\h'-.12m'\v'-.17m'X	40
+%d specification, printf	[%%d] specification, [printf]	35
+[^...] regular expression	[%[^]...[%]] regular expression	32
+~ tilde	[%~] tilde	41
+pr -n command	[pr] [-]{n} command	31
+printf %d specification	[printf] [%%d] specification	35
+-a, ps	\f(CW-a\fP, \f(CWps\fP	34
+PS1 shell variable	\f(CWPS1\fP shell variable	36
+ps -a	\f(CWps\fP \f(CW-a\fP	34
+ps command	\f(CWps\fP command	34
+and Output, CONTENTS 7 Input	and Output, CONTENTS 7 Input	
+book index, sorting a	book index, sorting a	25
+command, pr -n	command, [pr] [-]{n}	31
+command, ps	command, \f(CWps\fP	34
+line	line	1\(en3, 11\(en19
+regular expression, [^...]	regular expression, [%[^]...[%]]	32
+shell variable, PS1	shell variable, \f(CWPS1\fP	36
+sorting a book index	sorting a book index	25
+specification, printf %d	specification, [printf] [%%d]	35
+tilde, ~	tilde, [%~]	41
+variable, PS1 shell	variable, \f(CWPS1\fP shell	36

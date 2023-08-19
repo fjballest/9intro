@@ -1,0 +1,4 @@
+#!/bin/rc
+projectdir=/sys/src/planb
+echo cp *.[ch] $projectdir/cmd
+echo cp *.ms $projectdir/docs

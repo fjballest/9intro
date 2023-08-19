@@ -1,0 +1,448 @@
+
+be sure that each chapter starts at an odd page number.
+
+From: pheras@gmail.com
+Date: Mon, 18 Dec 2006 23:08:40 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+p. 113: s/and in well shape/and in good shape/
+
+From: pheras@gmail.com
+Date: Tue, 19 Dec 2006 00:03:46 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+en p 114
+creo que deberías decir 1 o 2 líneas en esta página sobre note/process
+groups: quién pertenece a un grupo... pones un ejemplo con la shell de una
+ventana, donde el alumno intuye que todos los procesos creados por la shell
+pertenecen al mismo grupo, y por tanto puede extrapolar que un proceso que
+crea otros está en el mismo grupo que éstos. Pero estaría bien decirlo. O si
+no poner referencia hacia adelante a 7.1 y 7.2.
+Por cierto, en p.114 hablas de process group, pero  luego en 7.1 y
+7.2utilizas la notación plan9: note group. Habría que unificar. Yo
+pondría en
+114 note group en lugar de process group, y, quizá, no estoy seguro, una
+nota a pie diciendo que esto es parecido a  process groups en unix.
+
+From: pheras@gmail.com
+Date: Tue, 19 Dec 2006 00:08:40 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+p116
+
+However, Thisfunction
+
+From: pheras@gmail.com
+Date: Tue, 19 Dec 2006 00:17:18 +0100
+To: nemo@lsub.org
+Subject: libro
+
+p117
+
+Cambiar
+It requirestheprocesstoinstall ahandler for theinterruptednote
+
+por ... the interrupt note
+
+No queda claro que el manejador obtiene "interrupt" en *msg,  mientras que
+en tras una nota tratada en rerrstr se obtiene el string "interrupted"
+
+En el código es lo que parece, pero no en el texto
+
+From: pheras@gmail.com
+Date: Tue, 19 Dec 2006 00:51:43 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+p124
+s/doesoccurs/does occur/
+
+
+
+Sobre la semántica de close.
+
+En p. 100, dices:
+Atthispoint, thedescriptorwhosenumberisinfd
+isnolongernecessary, andcanbeclosed.
+
+Close no cierra  descriptores, sino ficheros. Creo que aquí hay que rehacer
+algo, pues puede liarse el lector.
+
+Convendría explicar que el close después de dup  cierra el fichero, en lo
+que a ese descriptor se refiere, pero el mismo proceso mantiene abierto ese
+mismo fichero a través del otro descriptor.
+
+O quizá bastaría con aclararlo en el capítulo 3, mostrando un programa que
+abre 2 veces para lectura/esc un mismo fichero, y luego cierra el fichero
+una vez, pero sigue pudiendo leer a través del otro descriptor.
+
+Aunque creo que habría que reincidir en p.100 al volver al dup, pues tras el
+dup son 2 descriptores apuntando al mismo chan, y tras cerrar el fichero a
+través de un descriptor, sigue estando abierto a través del otro descriptor.
+
+en p. 103 cambiar
+whichisequivalenttoadup(1,2)
+
+por
+.... dup(2,1)
+
+programa pipeto p109
+
+Está muy bien hacerlo genérico, pero puede complicar la comprensión del uso
+de pipe el poner rc como proceso que ejecuta grep, en lugar de que se
+ejecute directamente.
+
+De hecho en la figura 5.3 no aparece rc...
+
+p104: andwhattocheckthatout,
+
+
+Thisfileinisanother invention
+
+p102: Iftheprogramhadwrite
+
+x
+
+ If the program had written
+
+
+p. 97
+s/did now write anything/did not write anything/
+
+
+
+El problema 6 y el 7 de p.95 no se entienden bien.
+
+La respuesta al 6 es:
+#!/bin/rc
+/bin/rc $*
+
+Pero qué siginifca tu pregunta: "Can you specify..."
+
+Y por tanto el problema 7, pues que tampoco lo entiendo.
+problema 5 p95:
+
+¿quieres que devuelva el msg del struct Waitmsg devuelto por wait, ¿no?
+
+Despista el Hint. La respuesta al Hint es "shell", pero, ¿cómo ayuda saber
+responder el hint a resolver el problema?
+
+el problema 4 de la p95 no se puede resolver sin hacer man wait
+
+En la p91 no explicas que el array time te da esos 3 tiempos que pides.
+Aunque se intuye :-)
+
+p.30, programa take.c
+¿no deberías poner la primera vez que aparece "nil" qué es?
+
+p93, l-3: s/loader/loader\/linker/
+
+> > p87: cambiar "dangerous" por "exciting and dangerous"
+en p75 dice:
+
+Asyoucansee, bothBtermandBflushreturnaninteger.
+
+Pero es la pprimera vez que se habla de Bflush. Habría que decir qué hace
+justo ahí.
+en programa lsdot.c, p. 67 falta close
+
+p.63, rm.c: hay que poner argc, argv
+
+> cambiar en el código 0664 por 0644
+andrecordthewhat thefilewasopen
+
+Andthefilewereto
+
+where, no were
+
+
+A couple of small things from chapter 12:
+
+Section 12.2 - I believe Rune is defined in u.h rather than libc.h
+
+Section 12.5, the text of black.c doesn't quite match the surrounding 
+discussion - the sleep call is for 5 seconds rather than the 10 seconds 
+in the text, and the call to draw is:
+
+draw(screen, rect, black, nil, Pt(rect.min.x+20, rect.min.x+20);
+
+rather than
+
+draw(screen, screen->r, display->black, nil, ZP);
+as discussed in the text on p298.
+
+:  Chapter 8 - in general, my shell doesn't print the double prompt on 
+:  continuation lines, just indents them - can this be configured somewhere?
+
+Most times you use the word "miss" I think you probably mean "lack",
+maybe sometimes "omit" (I suspect you are translating from "falta"?).
+
+As a Windows & Mac user, I found the user-interface style of rio & acme 
+initially quite alien, and I think more description of this could be 
+helpful, depending on the background of your students – eg the use of 
+the three button mouse in rio, and particularly how the "Send" command 
+allows you to treat the whole window as a kind of scratchpad to assemble 
+commands, and does away with the need for the normal history mechanisms 
+using command line recall and editing. I was very slow to appreciate 
+this aspect of the system. I think it would also be good to have more 
+info on using acme – maybe by including the acme paper as an appendix. 
+The way that scrolling and the cursor keys work is initially baffling 
+and frustrating to a Windows user, and I’ve still not mastered chording.
+
+I initially had trouble in following the discussion in Section 5.5, 
+because I thought that you were saying that the mail program internally 
+used the technique in pipeto.c, and I couldn’t see why it should. I 
+think I was misled because of the way the sentence "This can be used for 
+many things" was immediately followed by "For example, the mail program 
+...", which led me to think that the mail program was an example of a C 
+program of the type mentioned in the first sentence, rather than a 
+command being executed by such a program.
+
+In the listing rforkls.c in Section 1, the first flag to rfork should 
+presumably be RFFDG, not RFCFDG?
+
+In section 7.3, I was not clear of the exact meaning of "After executing 
+copy, the environment is not yet known to our shell. The reason is that 
+the shell caches environment variables." Will the new environment ever 
+become known to the current instance of the shell, or is it the case 
+that environment variables are loaded only once, when the instance of 
+the shell is started, so that the current instance will never see the 
+new variable? If the latter, then "not yet" is a bit of an understatement.
+
+In Section 7.5, you introduce the mount command without describing the 
+–c option, but then use this option the first time you use the command – 
+I would have liked to see it explained here, but then maybe you’re 
+trying to get your students to use the manual, rather than spoon-feeding 
+them all the time.
+
+When you first introduced "bind" in the context of:
+
+bind –c /n/whale /n/other
+
+my immediate response was, "why on earth would I want to do that?" You 
+make the uses of bind very clear later on in section 7.10 – perhaps a 
+comment and a forward reference might be helpful?
+
+On p150, the "grep whale /proc/843/ns" and "ns" commands produce output 
+containing the device name "#s", rather than the directory name "/srv" 
+which you used originally, and you don’t introduce devices until section 
+7.7 – a comment and a forward reference could be helpful. Also, more 
+detail on the differences between the output from the two commands would 
+be useful – is it just the single quotes around #s/tcp!whale!9fs? It's 
+surely a matter of taste whether they make the output prettier.
+
+In section 7.7, I think I understood the discussion, but found myself 
+wondering how exactly it got us any further – we started by wondering 
+how anything got mounted at /, and I ended up wondering how #/ managed 
+to provide any files – this could well just be stupidity on my part, 
+combined with a complete ignorance as to how device drivers work.
+
+The sandbox program in section 7.11 has a few problems. It should test 
+for argc != 3, and in this context the final argument to fprint should 
+be argv[0] rather than argv0, which has not been initialised. The 
+arguments to execl should be argv[2], not argv[1]. It may be worth 
+pointing out that if you are foolish enough not to bind a directory 
+containing rc in "sandbox" – as I was – then the example will fail to 
+execute /bin/rc.
+
+sam, ed
+yesterday
+process priorities
+upasfs
+timezone, ctim
+pipefile
+
+
+- que llevas usando Plan 9 para docencia más de 5 años, con un buen
+resultado. 
+
+- En el item 5 de "outstanding features", hacer hincapié en que los
+sistemas populares (pe Linux) cada vez incluyen más conceptos de Plan 9,
+como /proc, varios ns, bla bla. Por lo tanto, el libro no trata sobre un
+bicho raro cuyos mecanismos no se aplican en sistemas populares, justo
+lo contrario: cada vez tiene más influencia.
+
+- que el otro libro que has escrito ha tenido éxito entre los alumnos
+y la comunidad de Plan 9. Dale bombo. Pon la url.
+ 
+
+- Austing --> Austin
+
+
+Solo una cosa. Creo que tanto en audiencia como en promocion no has
+vendido suficientemente bien, piensa que esa gente quiere vender libros.
+
+Por ejemplo, en promotion, pondria algo como:
+
+There is a growing and widespread interest in Linux and Unix like systems
+and operating systems in general.
+
+More and more people are interested in how a operating system works. Unix
+systems have grown to be too complex to be understood by only one person.
+
+The intended audience would be anyone willing to learn how a full
+fledge operating system works  which includes hobbyists, professional
+programmers and students
+and CS an CE students. This is specially true for people interested in
+Unix since the system it is based on one which was written by the
+people who designed and implemented it after realizing their mistakes.
+
+Algo parecido en promotion. Parece que solo se podria promocionar en
+9fans y puede que en otras comunidades de linux. Creo que deberias ser
+mas agresivo. El libro no es solo plan 9, es más general.
+From: pheras@gmail.com
+Date: Tue, 19 Dec 2006 20:06:44 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+problema 2 p129
+
+1. en open falta cerrar comillas
+2. Pregunta: la respuesta a lo que preguntas es "porque 0 no debe tener
+permiso de escritura"?
+
+Me ha costado poco ver dónde está el código: boot.c
+
+Explícame este problema
+
+From: pheras@gmail.com
+Date: Tue, 19 Dec 2006 20:23:18 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+En problema 3 p 129:
+
+Respuesta a 1ª pregunta: "porque puede llegar una nota durante la ejecución
+de open, y si hay un manejador para la misma, después se llama a dup,
+quedando apuntando 0 a donde fd: al aire"
+
+¿sí?
+
+En el texto de la siguiente pregunta de este problema s/notice/NOTICE/
+
+Respuesta: </NOTICE
+
+From: pheras@gmail.com
+Date: Tue, 19 Dec 2006 20:35:58 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+problema 4 p 129
+
+Quieres que hagan un pipe, llamen a read sobre fd[0] y vean que está en
+PRead?
+
+From: pheras@gmail.com
+Date: Wed, 20 Dec 2006 00:10:34 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+p. 131: s/theremanyprograms/there are many programs/
+
+s/sometypeofwireortheairforradiocommunication/copper wires, optical fibers
+or the air for radio communication/
+
+From: pheras@gmail.com
+Date: Wed, 20 Dec 2006 00:17:18 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+p. 131:
+s/anethernet network(just sometypeof
+cablingandconventions)./an ethernet network: the most used link technology
+(hw+protocols) for digitally send bits over wires.
+
+From: pheras@gmail.com
+Date: Wed, 20 Dec 2006 00:30:20 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+p 131
+
+s/Machinesattachedtothewirehaveaddresses/In some link technologies like
+ethernet, machines attached to the wire have link addresses/
+s/identifydifferentmachinesattachedtothewire./identify different machines
+attached to the same wire/
+
+From: pheras@gmail.com
+Date: Wed, 20 Dec 2006 00:31:51 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+p.131
+s/wireyour machineisattachedat/wire your machine is attached at, and even if
+its particular link technology does not provide link addresses!/
+
+From: pheras@gmail.com
+Date: Wed, 20 Dec 2006 00:35:21 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+p.131
+s/it knowshowtoreachanymachine, givenitsaddress./it knows how to make
+information reach its destination given its network or IP address/
+
+From: pheras@gmail.com
+Date: Wed, 20 Dec 2006 00:36:45 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+p. 131
+s/TheinterfacefortheIPnet-
+workinPlan9issimilartotheonewesawforEthernet/The interface for accessing the
+IP protocol in Plan 9 is similar to the one .../
+
+From: pheras@gmail.com
+Date: Wed, 20 Dec 2006 00:38:48 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+p.132
+s/provideanabstractionsimilar/provide a service similar/
+
+From: pheras@gmail.com
+Date: Wed, 20 Dec 2006 00:40:26 +0100
+To: nemo@lsub.org
+Subject: libro
+
+
+p.132
+
+TheIPdevicedriver
+
+The TCP/IP software
+
+Pág. 48, se menciona que rabbits.c es peor que diehard.c y que
+crea procesos de forma exponencial, pero no es así, tal y como
+está rabbits.c, todos los hijos mueren inmediatamente, por lo que
+la creación de procesos es lineal y además es sencillo de
+terminar, basta con matar al padre original.
+
+rabbits.c es:
+
+   while(fork())
+        ;
+   exits(nil);
+
+Debería ser algo como:
+
+   while(fork() >= 0)
+        ;
+   exits(nil);

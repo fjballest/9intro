@@ -1,0 +1,2 @@
+#!/bin/rc
+echo 'obase=16;  '$1 | bc

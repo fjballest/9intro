@@ -1,0 +1,26 @@
+#!/bin/rc
+cat <<!
+.nr LT 13cm
+.nr LL 13cm
+.nr PO 2cm
+.nr HM 2cm
+.nr FM 2cm
+.nr TM 2cm
+.nr FL 13cm
+.pl 24cm
+.pl 24cm
+.po 2cm
+.ll 13cm
+.ps +4
+.ce 1
+.B "Table of Contents"
+.ps -4
+.sp .1i
+.RS
+!
+cat $* |
+	sed 's/^([0-9]+\.)	(.*)/\n.RE\n.LG\n.ta 1i 4i 3i\n.B "\1	\2\n.RS\n.ta 1i 4i 3i\n.NS/' |
+sed 's/^([0-9]+\.[0-9]+\.)	(.*)/.br\n\1	\2/'
+cat <<!
+.br
+!

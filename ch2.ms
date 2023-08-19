@@ -1,0 +1,2065 @@
+.so tmacs
+.BC 2 "Programs and Processes
+.BS 2 "Processes
+.LP
+A running program is called a
+.B process .
+.ix "running program
+The name
+.I program
+is not used to refer to a running program
+because both concepts differ. The difference is the same that you may find
+between a cookie recipe and a cookie.
+A program is just a bunch of data, and not something
+alive. On the other hand, a process is a living program. It has a set of
+registers including a program counter and a stack. This means that it has
+a
+.I "flow of control"
+.ix "flow~of~control
+that executes one instruction after another as you know.
+.PP
+The difference is quite clear if you consider that you may execute simultaneously
+the same program more than once. For example, figure [[!three processes!]]
+shows a window
+system with three windows. Each one has its own shell. 
+This means that we have three processes running
+.CW /bin/rc ,
+although there is only a single program for those processes. Namely, that kept
+stored in the file
+.CW /bin/rc .
+Furthermore, if we change the working directory in a shell, the other two ones
+remain unaffected. Try it! Suppose that the program
+.CW rc
+.ix "current directory
+keeps in a variable the name for its working directory. Each shell process has its own
+.I "current working directory
+variable. However, the program had only one such variable declared.
+.LS
+.BP rio3.ps
+.R
+.LE F Three \f(CW/bin/rc\fP processes. But just one \f(CW/bin/rc\fP.
+.PP
+So, what is a process? Consider all the programs you made. Pick one of them.
+When you execute your program and it starts execution, it can run \fBindependently\fP
+.ix "independent execution
+of all other programs in the computer. Did you have to take into account
+other programs like the window system, the system shell, a clock, a web
+navigator, or any other just to write your own (independent) program and
+execute it? Of course not. A brain with the size of the moon would be needed
+to be able to take all that into account. Because no such brains exist,
+operating systems provide the process abstraction. To let you write and
+run one program and
+.I forget
+about other running programs.
+.PP
+Each process gets the
+.I illusion
+of having its own processor. When you write programs, you think that the machine executes
+one instruction after another. But you always think that all the instructions belong to your
+program. The implementation of the process abstraction included in your system provides
+this fantasy.
+.PP
+When machines have several processors, multiple programs can be executed
+in \fBparallel\fP.
+.ix "parallel execution
+i.e., at the same time. Although this is becoming common, many machines have
+just one processor. In some cases we can find machines with two or four ones.
+But in any case, you run many more programs than processors are installed.
+Count the number of windows at your terminal. There is at least one program per window.
+You do not have that many processors.
+.PP
+What happens is that the operating system makes arrangements to let each
+program execute for just some time. Figure [[!concurrent execution!]] depicts the
+memory for a system with three processes running. Each process gets its own
+set of registers, including the program counter. The figure is just a snapshot made
+.ix "program counter
+at a point in time. During some time, the process 1 running
+.CW rio
+may be allowed to proceed, and it would execute its code. Later, a hardware timer
+set by the system may expire, to let the operating system know that the time for
+this process is over. At this point, the system may
+.I jump
+to continue the execution of process 2,
+running
+.CW rc .
+After the time for this process expires, the system would jump to continue execution
+for process 3, running
+.CW rio .
+When time for this process expires, the system may jump back to process 1, to continue
+where it was left at.
+.LS
+.PS 4.5cm
+.CW
+.ps -4
+boxwid=.8
+boxht=.2
+arrowhead=7
+down
+[
+	[ right
+	P1:	[ down
+			box invis  "..."
+			box invis  "addl bx, di"
+			P: box invis  "addl bx, si"
+			box invis  "subl $4, di"
+			box invis  "movl bx, cx"
+			box invis  "..."
+		]
+		box dashed wid 1 ht 6*boxht at last []
+		box invis wid 1 "\fRRio\fP" "\fR(process #1)\fP"
+		move 1
+	P2:	[ down
+			box invis  "..."
+			box invis  "cmpl si, di"
+			box invis  "jls label"
+			box invis  "movl bx, cx"
+			P: box invis  "addl bx, si"
+			box invis  "..."
+		]
+		box  dashed wid 1 ht 1.2 at last []
+		box invis wid 1 "\fRRio\fP" "\fR(process #3)\fP"
+		arrow <- from P1.P.w left .4 "PC" above 
+		arrow <- from P2.P.w left .4 "PC" above
+	]
+	move
+	[ right
+	P3:	[ down
+			box invis  "..."
+			box invis  "addl bx, di"
+			box invis  "addl bx, si"
+			P: box invis  "subl $4, di"
+			box invis  "movl bx, cx"
+			box invis  "..."
+		]
+		box  dashed wid 1 ht 6*boxht at last []
+		box invis wid 1 "\fRRc\fP" "\fR(process #2)\fP"
+		move .5
+		arrow <- from P3.P.w left .4 "PC" above
+	]
+]
+.B
+box wid 6 ht 3.5 at last []
+box invis ht .75  "System" "Memory" with .se at last box.se
+reset boxwid, boxht, arrowhead
+.R
+.ps +4
+.PE
+.LE F Concurrent execution of multiple programs in the same system.
+.PP
+All this happens behind the scenes. The operating system program knows
+that there is a single flow of control per processor, and jumps from one
+place to another to transfer control. For the users of the system, all that
+matters is that each process executes independently of other ones, as if it
+had a single processor for it.
+.PP
+Because all the processes appear to execute
+simultaneously, we say they are
+.B "concurrent processes" .
+In some cases, they will really execute in
+.B parallel
+when each one can get a real processor. In most cases, it would be a
+.B "pseudo-parallel execution" .
+For the programmer, it does not matter. They are just concurrent
+processes that seem to execute simultaneously.
+.PP
+In this chapter we are going to explore the process we obtain when we
+execute a program. Before doing so, it is important to know what's in a program
+and what's in a process.
+.BS 2 "Loaded programs
+.ix "loaded program
+.LP
+When a program in source form is compiled and linked, a binary file is generated.
+This file
+keeps all the information needed to execute the program, i.e., to create
+a process that runs it. Different parts of the binary file that keep different type
+of information are called sections. A binary file starts with a few words
+that describe the following sections. These initial
+words are called a header, and usually show the architecture where the
+binary can run, the size and offset in the file for various sections.
+.ix "binary file
+.ix "compiler
+.ix "linker
+.PP
+One section (i.e., portion) of the file contains the program text (machine
+instructions). For initialized global variables of the program,
+another section contains their initial values. Note that the system knows
+.I nothing
+about the meaning of these values. 
+For uninitialized variables, only the total memory size required to hold
+them  is kept in the file. Because they
+have no initial value, it makes no sense to keep that in the file. Usually, some
+information to help debuggers is kept in the file as well, including the strings
+with procedure and symbol names and their addresses.
+.PP
+ In the last chapter we
+saw how
+.CW nm
+can be used to display symbol information in both object and binary files.
+But it  is important to notice that only your program code knows the meaning of
+the bytes in the program data (i.e., the program knows what a variable is).
+For the system, your program data has no meaning. \fBThe system knows nothing\fP
+about your program; you are the one who knows. The program
+.CW nm
+can display information about the binary file because it looks at the symbol
+table stored in the binary for debugging purposes.
+.PP
+We can see this if we remove
+the symbol table from our binary for the
+.CW take.c
+program. The command
+.CW strip
+.ix [strip]
+removes the symbol table. To find the binary file size,
+.ix "symbol table
+we can use option
+.CW -l
+for
+.I ls ,
+which (as you know) lists a long line of information for each file, including the size in bytes.
+.ix "[ls] flag~[-l]
+.P1
+; !!ls -l 8.take
+--rwxr-xr-x M 19 nemo nemo 36348 Jul  6 22:49 8.take
+; strip 8.take
+; ls -l 8.take
+--rwxr-xr-x M 19 nemo nemo 21713 Jul  6 22:49 8.take
+.P2
+.LP
+The number after the user name and before the date is the file size in bytes.
+The binary file size changed from 36348 bytes down to 21713 bytes. The
+difference in size is due to the symbol table.
+And without the symbol table,
+.CW nm
+knows nothing. Just like the system.
+.P1
+; nm 8.take
+;
+.P2
+.LP
+Well, of course the system has a convention regarding which one is the address where
+to start executing the program. But nevertheless, it does not care much about which
+code is in there.
+.PP
+A program stored in a file is different from the same program stored in memory
+while it runs. They are related, but they are not the same.
+Consider this program. It does nothing, but has a global variable of one megabyte.
+.so progs/global.c.ms
+.ix [global.c]
+.ix "global variable
+.LP
+Assuming it is kept at
+.CW global.c ,
+we can compile it and use the linker option
+.CW -o
+to specify that the binary is to be generated in the new file
+.CW 8.global .
+It is a good practice to name the binary file for a program after the program name,
+specially when multiple programs may be compiled in the same directory.
+.P1
+; 8c -FVw global.c
+; 8l -o 8.global global.8
+.P2
+.LP
+.P1
+; ls -l 8.global global.8
+--rwxr-xr-x M 19 nemo nemo 3380 Jul  6 23:06 8.global
+--rw-r--r-- M 19 nemo nemo  328 Jul  6 23:06 global.8
+.P2
+.LP
+Clearly, there is no room in the 328 bytes of the object file for the
+.CW global
+array, which needs one megabyte of storage. The explanation is that only the
+size required to hold the (not initialized) array is kept in the file. The binary file
+does not include the array either (change the array size, and recompile to check
+that the size of the binary file does not change).
+.PP
+When the shell asks the system (making a system call) to execute
+.CW 8.global ,
+the system \fBloads the program\fP
+.ix "program loader
+into memory. The part of the system (kernel) doing this is called the \fBloader\fP.
+How can the system load a program? By reading the information kept in the binary:
+.IP •
+The header in the binary file reports the memory size required
+for the program text, and the file keeps the memory image of that text. Therefore,
+.ix "memory image
+the system can just copy all this into memory. For a given system and architecture,
+there is a convention regarding which addresses the program must use. Therefore,
+the system knows where to load the program.
+.IP •
+The header in the binary reports the memory size required for initialized
+variables (globals) and the file contains a memory image for them. Thus, the
+system can copy those bytes to memory. Note that the system has no idea
+regarding where does one variable start or how big it is. The system only knows
+how many bytes it has to copy to memory, and at which address should they be
+copied.
+.IP •
+For uninitialized global variables, the binary header reports their total size.
+The system allocates that amount of memory for the program. That is all it
+has to do. As a courtesy, Plan 9 guarantees that such memory is initialized with
+all bytes being zero. This means that all your global variables are initialized to
+null values by default. That is a good thing, because most programs will misbehave
+if variables are not properly initialized, and null values for variables seem to be a
+nice initial value by default.
+.LP
+We saw how the program
+.CW nm
+prints addresses for symbols. Those addresses are memory addresses that
+are only meaningful when the program has been loaded. In fact, the Plan 9 manual
+refers to the linker as the
+.B loader .
+The addresses are
+.ix "virtual address space
+.ix "virtual memory
+.I virtual
+memory addresses, because the system uses the virtual memory hardware to
+keep each process in its own virtual address space. Although virtual, the addresses are
+absolute, and not relative (offsets) to some particular origin.
+Using
+.CW nm
+we can learn more about how the memory of a loaded program looks like.
+Option
+.CW -n
+.ix "[nm] flag~[-n]
+asks
+.CW nm
+to sort the output by symbol address.
+.P1
+; nm -n 8.global
+            1020 T main
+            1033 T _main
+            1073 T atexit
+            10e2 T atexitdont
+            1124 T exits
+            1180 T _exits
+            1188 T getpid
+            11fb T memset
+            122a T lock
+            12e7 T canlock
+            130a T unlock
+            1315 T atol
+            1442 T atoi
+            1455 T sleep
+.P2
+.P1
+            145d T open
+            1465 T close
+            146d T read
+            14a0 T _tas
+            14ac T pread
+            14b4 T etext
+            2000 D argv0
+            2004 D _tos
+            2008 D _nprivates
+            200c d onexlock
+            2010 D _privates
+            2014 d _exits
+            2024 B edata
+            2024 B onex
+            212c B global
+          10212c B end
+.P2
+.LP
+Figure [[!memory image!]] shows the layout of memory for this program when
+loaded. Looking at the output of
+.I nm
+we can see several things. First, the program code uses addresses starting
+at 0x1020 up to 0x14b4.
+.PP
+The last symbol in the code is
+.CW etext ,
+.ix [etext]
+which is a symbol defined by the linker to let you know where the end of text is.
+Data goes from address 0x2000 up to address 0x10212c. There is a symbol
+called
+.CW end ,
+.ix [end]
+also defined by the linker, at the end of the data. This symbol lets you know where
+the end of data is. This symbol is not to be confused with
+.CW edata ,
+.ix [edata]
+which reports the address where initialized data terminates.
+.LS
+.PS
+boxwid=.7
+boxht=.5
+.ps -2
+T: [ down
+	box  invis "\fIText segment\fP"
+	box   "Program" "text"
+]
+D: [ down
+	box  invis "\fIData segment\fP"
+	box   "Initialized" "data"
+]
+B: [ down
+	box  invis "\fIBSS segment\fP"
+	box wid 3*boxwid  "Uninitialized" "data"
+]
+[ down
+	box invis 
+	box invis "..."
+]
+[ down
+	box  invis "\fIStack segment\fP"
+	box   "stack"
+]
+down
+boxht=.2
+linewid=.2
+.CW
+line <- from T.sw ; box invis   "0x0"
+line <- from T.se ; box invis  "etext" 
+line <- from D.se ; box invis  "edata" 
+line <- from B.se ; box invis  "end" 
+.R
+reset boxht, linewid, boxwid
+.ps +2
+.PE
+.LE F Memory image for the \f(CWglobal\fP program.
+.PP
+In decimal, the address for
+.CW end
+is 1.057.068 bytes! That is more than 1 Mbyte, which is a lot of memory for a program
+that was kept in a binary file of 3 Kbytes. Can you see the difference?
+.PP
+And there is more. We did not
+take into account the program stack. As you know, your program needs a stack to execute.
+That is the place in memory used to keep track of the chain of function calls being made,
+to know where to return, and to maintain the values for function arguments and local variables.
+Therefore, the size of the program when loaded
+into memory will be even larger. To know how much memory a program will consume,
+use
+.I nm ,
+do not list the binary file.
+.PP
+The memory of a loaded program, and thus that of a process, is
+arranged as shown in figure [[!memory image!]]. But
+that is an invention of the operating system. That is the abstraction supplied
+by the system, implemented using the virtual memory hardware, to make your
+life easier. This abstraction is called
+.B "virtual memory" .
+A process believes that it is the only program loaded in memory. You
+can notice by looking at the addresses shown by
+.CW nm .
+All processes running such
+program will use the same addresses, which are absolute (virtual) memory addresses.
+And more than just one of such processes might run simultaneously in the same
+computer.
+.PP
+The virtual memory of a process in Plan 9 has several, so called,
+.I segments .
+This is also an abstraction of the system and has few to do with the segmentation
+hardware found at some popular processors. A
+.B "memory segment"
+is a portion of contiguous
+memory with some properties. Segments used by a Plan 9 process are:
+.IP •
+The
+.B "text segment" .
+It contains instructions that can be executed but not modified. The hardware is
+used by the system to enforce these permissions. The memory is initialized by
+the system with the program text (code) kept within the binary file for the program.
+.IP •
+The
+.B "data segment" .
+It contains the initialized data for the
+program. Protection is set to allow both read and write operations on it,
+but you cannot execute instructions on it. The memory is initialized by the system
+using the initialized data kept within the binary file for the program.
+.IP •
+The uninitialized data
+segment, called
+.B "bss segment"
+is almost like the data segment. However, this one is initialized by zeroing
+its memory. The name of the segment comes from an arcane instruction used to
+implement it on a machine that no longer exists.
+How much memory is given depends on the size recorded in the binary
+file. Moreover, this segment can
+.I grow ,
+by using a system call that allocates more memory for it. Function libraries like
+.CW malloc
+.ix [malloc]
+cause this segment to grow when they consume all the available memory in this segment. This is
+the reason for the
+.I gap
+between this segment and the stack segment (shown in figure  [[!memory image!]]), to leave room
+for the segment to grow.
+.IP •
+The
+.B "stack segment"
+is also used for reading and writing memory. Unlike other segments, this segment
+seems to grow automatically when more space is used. It is used to keep the stack
+for the process.
+.LP
+All this
+is important to know because it has a significant impact on your programs and processes.
+Usually, not all the code is loaded at once from the binary file into the text (memory)
+segment. Binaries are copied into memory one
+virtual memory page at a time as demanded by references to memory addresses.
+This is called
+.B "demand paging" ,
+(or loading on demand).
+.ix "loading on~demand"
+It is important to know this because, if you remove a binary file for a program that
+is executing, the corresponding process may get broken if it needs a part of the
+program that was not yet loaded into memory. And the same might happen if
+you overwrite a binary file while a process is using it to obtain its code!
+.PP
+Because memory is
+.I virtual ,
+and is only allocated when first used, any unused part of the BSS
+segment is free! It consumes no memory until you touch it. However, if
+you initialized it with a loop, all the memory will be allocated. One particular
+case when this may be useful is when you implement large hash tables
+that contain few elements (called
+.I sparse ).
+You might implement them using a huge array,
+not initialized. Because it is not initialized, no physical memory will be allocated
+for the array, initially. If the program uses later
+a portion of the array for the first time, the system
+will allocate memory and zero it. The array entries would be all nulls.
+Therefore, in this example, initializing by hand the array
+would have a big impact on memory consumption.
+.BS 2 "Process birth and death
+.ix "process birth
+.ix "process death
+.LP
+Programs are not
+.I called ,
+they are
+.I executed .
+Besides, programs do not
+.I return ,
+their processes terminate when they want or when they misbehave. Being this said,
+we can supply arguments to programs we run, to control what they do.
+.ix "program arguments
+.PP
+When the shell asks the system to execute a program,
+after it has been loaded into memory, the system provides a flow of control for it.
+This means just that processor registers are initialized for the new
+running program, including the program counter and stack pointer, along with
+an initial (almost empty) stack.
+When we compile a C program, the loader puts
+.CW main
+.ix [main]
+.ix "program entry point
+at the address where the system will start executing the code. Therefore, our
+C programs start running at
+.CW main .
+The arguments supplied to this program (e.g., in the shell command line)
+are copied by the system to the stack for the new program.
+.PP
+The arguments given to the
+.CW main
+function of a program are an array of strings (the argument vector,
+.CW argv )
+and the number of strings kept
+in the array. We can write a program to print its arguments.
+.so progs/echo.c.ms
+.ix [echo.c]
+.LP
+If we execute it we can see which arguments are given to the program for
+a particular command line:
+.P1
+; 8c -FVw echo.c
+; 8l -o 8.echo echo.8
+; ./8.echo one little program
+0: ./8.echo
+1: one
+2: little
+3: program
+;
+.P2
+.LP
+There are several things to note here. First, the first argument supplied to
+the program is the program name! More precisely, it is the command name as given
+to the shell. Second, this time we gave a relative path as a command name.
+Remember,
+.CW ./8.echo ,
+is the file
+.CW 8.echo
+within the current working directory for our shell. 
+which is a relative path. And that was the value of
+.ix "relative path
+.CW argv[0]
+.ix [argv]
+for our program. Programs know their name by looking at
+.CW argv[0] ,
+which is very useful to print diagnostic messages while letting the user know
+which program was the one that had a problem.
+.PP
+There is a standard command in Plan 9 that is almost the same,
+.CW echo .
+.ix [echo]
+This command prints its arguments separated by white space and a new line.
+The new line can be suppressed with the option
+.CW -n .
+.ix "[echo] flag~[-n]
+.P1
+; echo hi there
+hi there
+;
+; echo -n hi there
+hi there;
+.P2
+.LP
+Note the shell prompt right after the output of echo. Despite being simple,
+echo is invaluable to know which arguments a program would get, and to
+generate text strings by using echo to print them.
+.PP
+Our program is not a perfect echo. At least, the standard
+.CW echo
+has the flag
+.CW -n ,
+to ask for a precise echo of its arguments, without the addition of the final
+new line. We could add several options to our program. Option
+.CW -n
+may suppress the print of the additional new line, and option
+.CW -v
+may print brackets around each argument, to let us know precisely where does
+an argument start and where does it end. Without
+any option, the program might behave just like the standard tool and print one argument
+after another. The problem is that the user may call the program in any of the following
+ways, among others:
+.P1
+	8.echo repeat after me
+	8.echo -n repeat after me
+	8.echo -v repeat after me
+	8.echo -n -v repeat after me
+	8.echo -nv repeat after me
+.P2
+.LP
+It is customary that options may be combined in any of the ways shown. Furthermore,
+the user might want to echo just
+.CW -word- ,
+and echo might be confused because it would think that
+.CW -word-
+was a set of options. The standard procedure is to do it like this.
+.P1
+	8.echo -- -word--
+.P2
+.ix "option [--]
+.LP
+The double dash indicates that there are no more options. Isn't it a burden to process
+.CW argc
+and
+.CW argv
+to handle all these combinations? That is why there are a set of macros to help (macros are definitions
+given to the C preprocessor, that are replaced with some C code before actually compiling).
+The following program is an example.
+.so progs/aecho.c.ms
+.ix [aecho.c]
+.LP
+The macros
+.CW ARGBEGIN
+.ix [ARGBEGIN]
+and
+.CW ARGEND
+.ix [ARGEND]
+loop through the argument list, removing and processing options. After
+.CW ARGEND ,
+both
+.CW argc
+and
+.CW argv
+reflect the argument list
+.I without
+any option. Between both macros, we must write the body for a
+.CW switch
+statement (supplied by
+.CW ARGBEGIN ),
+with a
+.CW case
+per option. And the macros take care of any feasible combination of flags in the
+arguments. Here are some examples of how can we run our program now.
+.P1
+; 8.aecho repeat after me
+repeat after me 
+; 8.aecho -v repeat after me
+[repeat] [after] [me] 
+; 8.aecho -vn repeat after me
+[repeat] [after] [me] ; 	\fIwe gave a return here.\fP
+; 8.aecho -d repeat after me
+usage: 8.aecho [-nv] args
+; 8.aecho -- -d repeat after me
+-d repeat after me 
+.P2
+.LP
+In all but the last case,
+.CW argc
+is 3 after
+.CW ARGEND ,
+and
+.CW argv
+holds just
+.CW repeat ,
+.CW after ,
+and
+.CW me .
+.PP
+Another convenience of using these macros is that they initialize the global variable
+.CW argv0
+.ix [argv0]
+to point to the original
+.CW argv[0]
+in
+.CW main ,
+that is, to point to the name of the program. We used this when printing the diagnostic
+about how the program must be used, which is the custom when any program is
+called in a erroneously way.
+.PP
+In some cases, an option for a program carries an argument. For example, we might
+.ix "option argument
+want to allow the user to specify an alternate pair of characters to use instead of
+.CW [
+and
+.CW ]
+when echoing with the
+.CW -v
+option. This could be done by adding an option
+.CW -d
+to the program that carries as its argument a string with the characters to use. For
+example, like in
+.P1
+	8.aecho -v -d"" repeat after me
+.P2
+.LP
+This can be done by using another macro, called
+.CW ARGF .
+.ix [ARGF]
+This macro is used within the
+.CW case
+for an option, and it returns a pointer to the option argument (the rest of the argument
+if there are more characters after the option, or the following argument otherwise).
+The resulting program follows.
+.so progs/becho.c.ms
+.LP
+And this is an example of use for our new program.
+.P1
+; 8.becho -v -d"" repeat after me
+"repeat" "after" "me" 
+; 8.becho -vd "" repeat after me	\fRnote the space before the ""\fP
+"repeat" "after" "me" 
+; 8.becho -v
+
+; 8.becho -v -d 
+usage: 8.becho [-nv] [-d delims] args
+.P2
+.LP
+A missing argument for an option usually means that the program
+calls a function to terminate (e.g.,
+.CW usage ),
+.ix [usage]
+the macro
+.CW EARGF
+.ix [EARGF]
+is usually preferred to
+.CW ARGF .
+We could replace the case for our option
+.CW -d
+to be as follows.
+.P1
+	case 'd':
+		delims = EARGF(usage());
+		if (strlen(delims) < 2)
+			usage();
+		break;
+.P2
+.LP
+And
+.CW EARGF
+would execute the code given as an argument when the argument is not supplied. In
+our case, we had to add an extra
+.CW if ,
+to check that the argument has at least the two characters we need.
+.PP
+Most of the Plan 9 programs that accept multiple options use these macros to
+process their argument list in search for options. This means that the invocation syntax
+.ix "command invocation syntax
+is similar for most programs. As you have seen, you may combine options in a single
+argument, use multiple arguments, supply arguments for options immediately after
+the option letter, or use another argument, terminate the option list by giving a
+.CW --
+argument, and so on. 
+.PP
+As you have probably noticed after going this far,
+a process terminates by a call to
+.CW exits ,
+see
+.I exits (2)
+.ix [exits]
+for the whole story. This system call terminates the calling process. The
+.ix "process termination
+process may leave a single string as its legacy, reporting what it has to say.
+Such string reports the process
+.B "exit status" ,
+that is, what happen to it.
+If the string is null, it means by convention that everything went well for
+the dying process, i.e., it could do its job. Otherwise, the convention is
+that string should report the problem the process had to complete its job.
+For example,
+.so progs/sic.c.ms
+.ix [sic.c]
+.LP
+would report
+.CW sic!
+to the system when
+.CW exits
+terminates the process. Here is a run
+that shows that by echoing
+.CW $status
+.ix [$status]
+we can learn how it went to this depressive program.
+.P1
+; 8.sic
+; echo $status
+8.sic 2046: sic!
+;
+.P2
+.LP
+Commands exit with an appropriate status depending on what happen
+to them. Thus,
+.CW ls
+reports success as its status when it could list the files given as arguments, and
+it reports failure otherwise. In the same way,
+.CW rm
+reports success when it could remove the file(s) indicated, and failure otherwise.
+And the same applies for other commands.
+.PP
+We lied before when we said that a program starts running at
+.CW main ,
+it does not. It starts running at a function that calls
+.CW main
+and then (when
+.CW main
+returns), this function calls
+.CW exits
+to terminate the execution. That is the reason why a process ceases
+existing when the main function of the program returns. The process makes
+a system call to terminate itself. There is no magic here, and a process may
+not cease existing merely because a function returns. A flow of control does
+not vanish, the processor always keeps on executing instructions. However,
+because processes are an invention of the operating system, we can use
+a system call that kills the calling process. The system deallocates its
+resources and the process is history. A process is a data type after all.
+.PP
+In few words, if your program does not call
+.CW exits ,
+the function that calls
+.CW main
+will do so when
+.CW main
+returns. But you better call
+.CW exits
+in your program. Otherwise, you cannot be sure about what value is being used
+as your exit status.
+.BS 2 "System call errors
+.LP
+.ix "system call error"
+In this chapter and the following ones we are going to make a lot of system calls from
+programs written in C. In many cases, there will be no problem and a system
+call we make will be performed. But in other cases we will make a mistake
+and a system call will not be able to do its work. For example, this will happen
+if we try to change our current working directory and supply a path that does not exist. 
+.PP
+Almost any function that we call (and system calls are functions) may have problems to
+complete its job. In Plan 9, when a system call encounters an error or is not
+able to do its work, the function returns a value that alerts us of the error condition.
+Depending on the function, the return value indicating the error may be one or
+another. In general, absurd return values are used to report errors.
+.PP
+For example, we will see how the system call
+.CW open
+returns a positive small integer. However, upon failure, it returns -1. This is the convention
+for most system calls returning integer values. System calls that
+return strings will return a null string when they fail, and so on. The manual pages
+report what a system call does when it fails.
+.PP
+You must \fBalways check for error conditions\fP.
+If you do not check that a system call could do its work, you do not know if
+it worked. Be warned, not checking for errors is like driving blind, and it will
+surely put you into a debugging Inferno (limbo didn't seem bad enough).
+.ix debugging
+An excellent book, that anyone programming should read, which teaches
+practical issues regarding how to program is [.practice programming.].
+.ix "programming practice
+.PP
+Besides reporting the error with an absurd return value from the system call,
+Plan 9 keeps a string describing the error. This
+.B "error string"
+is invaluable information for
+fixing the problem. You really want to print it out to let the user know what happen.
+.PP
+There are several ways of doing so. The more convenient one is using the format
+“\f(CW%r\fP” in
+.ix [%r] format specifier
+.CW print .
+.ix [print]
+This instructs
+.CW print
+to ask Plan 9 for the error string and print it along with other output.
+This program is an example.
+.so progs/err.c.ms
+.ix [err.c]
+.LP
+Let's run it now
+.P1
+; 8.err
+chdir failed: 'magic' file does not exist
+.P2
+.LP
+The program tried to use
+.CW chdir
+.ix [chdir]
+to change its current working directory to
+.CW magic .
+Because it did not exist, the system call failed and returned
+.CW -1 .
+A good program would always check for this condition, and then report
+the error to the user. Note the use of
+.CW %r
+in
+.CW print
+and compare to the output produced by the program.
+.PP
+If the program cannot proceed because of the failure, it is sensible
+to terminate the execution indicating that the program failed. This is
+so common that there is a function that both prints a message and
+exits. It is called
+.CW sysfatal ,
+.ix [sysfatal]
+and is used like follows.
+.P1
+	if (chdir("magic") < 0)
+		sysfatal("chdir failed: %r");
+.P2
+.LP
+In a few cases you will need to obtain the error string for a system call that
+failed. For example, to modify it and print a customary diagnostic message.
+The system call
+.CW rerrstr
+.ix [rerrstr]
+reads the error string. It stores the string at the buffer you supply. Here
+is an example
+.P1
+	char	error[128];
+	\fI ... \fP
+	rerrstr(error, sizeof error);
+.P2
+.LP
+After the call,
+.CW error
+contains the error string.
+.PP
+A function implemented to be placed in a library also needs to report errors.
+If you write such function, you must think how to do that. One way is to use
+the same mechanism used by Plan 9. This is good because it allows any
+programmer using your library to do exactly the same to deal with errors,
+no matter if the error is being reported by your library function or by Plan 9.
+.PP
+The system call
+.CW werrstr
+.ix [werrstr]
+writes a new value for the error string. It is used like
+.CW print .
+Using it, we can implement a function that
+.CW pops
+an element from a stack and reports errors nicely:
+.P1
+int
+pop(Stack * s)
+{
+	if (isempty(s)){
+		werrstr("pop on an empty stack");
+		return -1;
+	}
+	\fI ... do the pop otherwise ... \fP
+}
+.P2
+.LP
+Now, we could write code like the following,
+.P1
+	\fI...\fP
+	if (pop(s) < 0){
+		print("pop failed: %r\en");
+		\fI...\fP
+	}
+.P2
+.LP
+and, upon an error in
+.CW pop
+this would print something like:
+.P1
+pop failed: pop on an empty stack
+.P2
+.BS 2 "Environment
+.LP
+Another way to supply “arguments” to a process is to define
+.B "environment variables" .
+Each process is supplied with a set of \fIname\fP=\fIvalue\fP
+strings, that are known as environment variables. They are used to customize
+the behavior of certain programs, when it is more convenient to define
+an environment variable than to give a command line argument every time we
+run a program. Usually, all processes running in the same
+.ix [rio]
+window share
+.ix window
+.ix "process group
+the environment variables.
+.PP
+For example, the variable
+.CW home
+.ix "home directory
+has the path for your home directory as its value. The command
+.CW cd
+uses this variable to know where your home is. Otherwise, how could
+it know what to do when given no arguments?
+Both names and values of environment variables are strings.
+Remember this.
+.PP
+We can define environment variables in a shell command line by using an equal sign.
+Later, we can use the shell to refer to the value of any environment variable.
+After reading each command line, the shell replaces each word starting with a
+dollar sign with the value of the environment variable whose name follows the
+dollar. For example, the first command in the following session defines the variable
+.CW dir :
+.ix "command line
+.P1
+; dir=/a/very/long/path
+; cd $dir
+; pwd
+/a/very/long/path
+;
+.P2
+The second command line used
+.CW $dir ,
+and therefore, the shell replaced the string
+.CW $dir
+with the string that is the value of the
+.CW dir
+environment variable:
+.CW /a/very/long/path .
+Note that
+.CW cd
+knows nothing about
+.CW $dir .
+We can see this using
+.CW echo ,
+because we know it prints the arguments received verbatim.
+.P1
+; echo $dir
+/a/very/long/path
+;
+.P2
+.LP
+The next two commands do the same. However, one receives one argument and
+the other does not. The output of
+.CW pwd
+.ix [pwd]
+would be the same after any of them.
+.P1
+; cd $home
+; cd
+.P2
+.LP
+In some cases it is convenient to define an environment variable just for a command.
+This can be done by defining it in the same command line, before the command, like
+in the following example:
+.P1
+; temp=/tmp/foobar echo $temp
+/tmp/foobar
+; echo $temp
+
+;
+.P2
+.LP
+At this point, we can understand what
+.CW $status
+.ix [$status]
+.ix "exit status
+means. It is the value of the environment variable
+.I status .
+This variable is updated by the shell once it finds out how it went
+to the last command it executed. This is done before prompting for
+the next command. As you know, the value of this variable would be
+the string given to
+.I exits
+by the process running the command.
+.PP
+Another interesting variable is
+.CW path .
+.ix [$path]
+.ix command
+This variable is a list of paths where the shell should look for executable files
+to run the user commands. When you type a command name that does not start
+with
+.CW /
+or
+.CW ./ ,
+the shell looks for an executable file relative to each one of the directories listed in
+.CW $path ,
+in the same order.
+If a binary file is found, that is the one executed to run the command. This is the value
+of the
+.I path
+variable in a typical Plan 9 shell:
+.P1
+ ; echo $path
+ . /bin
+ ;
+.P2
+.LP
+It contains the working directory, and
+.CW /bin ,
+.ix [/bin]
+in that order.
+If you type
+.CW ls ,
+the shell tries with
+.CW ./ls ,
+and if there is no such file, it tries with
+.CW /bin/ls .
+If you type
+.CW ip/ping ,
+the shell tries with
+.CW ./ip/ping ,
+and then with
+.CW /bin/ip/ping .
+Simple, isn't it?
+.PP
+Two other useful environment variables are
+.CW user ,
+.ix [$user]
+.ix "user name
+which contains the user name, and
+.CW sysname ,
+.ix [$sysname]
+.ix "system name
+which contains the machine name. You may define as many as you want.
+But be careful. Environment variables are usually forgotten while debugging a
+.ix debugging
+problem. If some program input value should be a command line argument, use
+a command line argument. If somehow you need an environment variable to
+avoid passing an argument all the times a program is called, perhaps the command
+arguments should be changed. Sensible default values for program arguments
+can avoid the burden of having to supply always the same arguments. Command
+line arguments make the program invocation explicit,
+more clear at first sight, and therefore,
+simpler to grasp and debug. On the other hand,
+environment variables are used by programs without
+the user noticing.
+.PP
+Because of the syntax in the shell for environment variables, we may have a problem
+if we want to run
+.I echo ,
+or any other program, supplying arguments
+containing either the dollar sign, or the equal sign. Both characters
+we know are special. This can be done by asking the shell not to do anything with
+a string we type, and to take it literally. Just type the string into single quotes and
+.ix quoting
+the shell will not change anything between them:
+.P1
+; echo $user
+nemo
+; echo '$user' is $user
+$user is nemo
+;
+.P2
+.LP
+Note also that the shell behaves always the same way regarding command
+line text. For example, the first word (which is the command name) is not special,
+and we can do this
+.P1
+; cmd=pwd
+; $cmd
+/usr/nemo
+;
+.P2
+.LP
+and use variables wherever we want in command lines. Also, quoting works always
+the same way. Let's try with the
+.I echo
+program we implemented before:
+.P1
+; 8.echo 'this is' weird
+0: echo
+1: this is
+2: weird
+;
+.P2
+.LP
+As you may see,
+.CW argv[1]
+.ix [argv]
+.ix [echo.c]
+contains the string
+.CW "this is" ,
+including the white space. The shell did not split the string into two different
+arguments for the command. Because you quoted it! Even the new line can be quoted.
+.P1
+; echo 'how many
+;; lines'
+how many
+lines
+.P2
+.LP
+The prompt changed because the shell had to read more input, to complete the quoted
+string. That is its way of telling us.
+Quoting also removes the special meaning of other characters, like the backslash:
+.ix "escape character
+.ix "backslash
+.P1
+; echo \e
+;;	\fIwaiting for the continuation of the line\fP
+;	\fI...until we press return\fP
+	\fIecho prints the empty line\fP
+; echo '\e'
+\e
+;
+.P2
+.LP
+To obtain the value for a environment variable, from a C program, we can
+use the
+.CW getenv
+.ix [getenv]
+system call. And of course, the program must check out for errors. Even
+.CW getenv
+can fail. Perhaps the variable was not defined. In this case
+.CW getenv
+returns a null string.
+.so progs/env.c.ms
+.ix [env.c]
+.LP
+Running it yields
+.P1
+; 8.env
+home is /usr/nemo
+.P2
+.LP
+A related call is
+.CW putenv ,
+.ix [putenv]
+which accepts a name and a value, and sets the corresponding environment
+variable accordingly. Both the name and value are strings.
+.BS 2 "Process names and states
+.ix "process name
+.ix "process state
+.ix "scheduling
+.LP
+The name of a process is not the name of the program it runs. That is
+convenient to know, nevertheless.
+Each process is given a unique number by the system when it is created.
+That number is called the
+.B "process id" ,
+or the
+.I pid .
+.ix pid
+The pid identifies, and therefore names, a process.
+.PP
+The pid of a process is a positive number, and the system tries hard not
+to reuse them. This number can be used to name a process when asking
+the system to do things to it. Needless to say that this
+.I name
+is also an invention of the operating system. The shell environment variable
+.CW pid
+.ix [$pid]
+.ix "shell pid"
+contains the pid for the shell. Note that its value is a string, not an integer. Useful
+for creating temporary files that we want to be unique for a given shell.
+.ix "temporary files"
+.PP
+To know the pid of the process that is executing our program, we can use
+.CW getpid :
+.ix [getpid]
+.so progs/pid.c.ms
+.ix [pid.c]
+.LP
+Executing this program several times may look like this
+.P1
+; 8.pid
+my pid is 345
+; 8.pid
+my pid is 372
+;
+.P2
+.LP
+The first process was the one with pid 345, but we may say as well that
+the first process was the 345, for short. The second process started was
+the 372.
+Each time we run the program we would get a different one.
+.PP
+The command
+.CW ps
+(process status)
+.ix [ps]
+lists the processes in the system. The second field of each line (there is
+one per process) is the process id. This is an example
+.P1
+.ps -2
+; ps
+nemo            280    0:00   0:00  13 13    1148K Pread    rio
+nemo            281    0:02   0:07  13 13    1148K Pread    rio
+nemo            303    0:00   0:00  13 13    1148K Await    rio
+nemo            305    0:00   0:00  13 13     248K Await    rc
+nemo            306    0:00   0:00  13 13    1148K Await    rio
+	\fI... more output omitted ...\fP
+.ps +2
+.P2
+.LP
+The last field is the name of the program being run by the process. The third field going right
+to left is the size of the (virtual) memory being used by the process. You may now know
+.ix "process memory
+.ix "virtual memory
+how much memory a program consumes when loaded.
+.PP
+The second field on the right is interesting. You see names like
+.CW Pread
+.ix [Pread]
+and
+.CW Await .
+.ix [Await]
+Those names reflect the
+.B "process state" .
+The process state indicates what the process is doing. For example, the
+first processes 280 and 281, running
+.CW rio ,
+are reading something, and everyone else in the listing above
+is awaiting for something to happen. To understand this, it is important to
+get an idea of how the operating system implements processes.
+.PP
+There is only one processor, but there are multiple processes that seem to
+run simultaneously. That is the process abstraction. Multiple programs that
+.ix process
+execute independently of each other. None of them transfer control to
+others. However, the processor implements only a single flow of control.
+.ix "flow of control
+.PP
+What happens is that when one process enters the kernel because of a
+.ix kernel
+.ix "system call
+system call, or an interrupt, the system may store the process state (its
+registers mostly) and then jump to the previously saved state for another process.
+Doing this quickly, with the amazingly fast processors we have today, makes
+it appear that all processes can run at the same time.
+Each process is given a small amount of processor time, and later, the system
+decides to jump to another one. This amount of processor time
+is called a
+.B quantum ,
+and can be 100ms, which is a very long time regarding
+the number of machine instructions that you can execute in that time. 
+.PP
+A transfer of control
+from one process to another, by saving the state for the old process and
+reloading the state for the new one, is called a
+.B "context switch" ,
+because the state for a process (its registers, stack, etc.) is called its
+.B "context" .
+But note that it is the kernel the one that transfers control. You do not
+include “jumps” to other processes in your programs!
+.PP
+The part of the kernel
+deciding which process runs each time is called the
+.B scheduler ,
+because it
+schedules processes for execution. And the decisions made
+by the scheduler to multiplex the processor among processes are collectively
+known as
+.B scheduling .
+In Plan 9 and most other systems, the scheduler is able to move a process out
+of the processor even if it does not call the operating system (and gives it a
+chance to move the process out). Interrupts are used to do this. Such type of
+scheduling is called
+.B "preemptive scheduling" .
+.PP
+With a single processor, just one process may be
+.B running
+at a time, and many others may be
+.B ready
+to run. These are two process states, see figure [[!process states!]].
+The running process becomes ready
+when the system terminates its time in the processor. Then, the system picks
+up a ready process to become the next running one. States are just constants
+defined by the system to cope with the process abstraction.
+.PP
+Many times, a process would be reading from a terminal, or from a network
+connection, or any other device. When this happens, the process has to wait
+for input to come. The process could wait by using a loop, but that would be
+a waste of the processor. The idea is that when one process starts waiting for
+.ix "busy waiting
+input (or output) to happen, the system can switch to another process
+and let it run. Input/output
+devices are so slow compared with the processor that the machine can execute a lot
+of code for other processes
+while one is waiting. The time the processor needs to execute some instructions,
+compared to the time needed by I/O devices to perform their job, is like
+the time you need to move around in your house and the time you
+need to go to the moon.
+.PP
+This idea is central to the concept of
+.B multiprogramming ,
+which is the name given to the technique that allows multiple programs to
+be loaded at the same time on a computer.
+.LS
+.PS
+.ps -2
+.R
+circlerad=.3
+down
+X: circle  "Running"
+move
+D: [ right
+R: circle   "Ready"
+line <-
+B: circle   "Blocked"
+]
+arrow <-> from X to D.R chop
+arrow from X to D.B chop
+left ; arrow <- from D.R.w left ; box invis "Birth"
+right
+arrow from X.e right ; circle  "Broken" ; arrow ; D: box invis "Death"
+spline -> from X.ne up right then right then to D.nw
+.ps +2
+.PE
+.LE F Process states and transitions between them.
+.PP
+To let one process wait out of the processor, without considering it as a
+candidate to be put into the running state, the process is flagged as
+.B blocked .
+This is yet another process state. All the processes listed above where
+blocked. For example,
+.CW Pread
+and
+.CW Await
+mean that the process is blocked (i.e., the former shows that the process is blocked
+waiting for a read to complete). When the event a blocked process is waiting for happens, the
+process state is changed to ready. Sometime in the future it will be selected
+for execution in the processor.
+.PP
+In Plan 9, the state shown for blocked processes reflects the reason
+that caused the process to block. That is why
+.CW ps
+shows many different states. They are a help to let us know what is happening
+to our processes.
+.PP
+There is one last state,
+.B broken ,
+which is entered when the process does something illegal (i.e., it
+suffers an error). For example, dividing by zero or dereferencing a null pointer
+causes a hardware exception (an error). Exceptions are dealt with by the hardware
+.ix exception
+.ix error
+like interrupts are, and the system is of course the handler for these
+exceptions. Upon this kind of error, the process enters the broken state. A broken
+process will never run. But it will be kept hanging around for debugging until it
+dies upon user request (or because there are too many broken processes).
+.BS 2 "Debugging
+.ix "debugging
+.LP
+When we make a mistake, and a running program enters the broken state,
+it is useful to see what happen. There are several ways of finding out what happen.
+To see them, let's write a program that crashes. This program says hello to
+the name given as an argument, but it does not check that the argument was
+given, nor does it use the appropriate format string for
+.CW print .
+.so progs/hi.c.ms
+.LP
+When we compile this program and execute it, this happens:
+.P1
+.ps -1
+; 8.hi
+8.hi 788: suicide: sys: trap: fault read addr=0x0 pc=0x000016ff
+.ps +1
+.P2
+.ix trap
+.ix fault
+.LP
+The last line is a message printed by the shell. It was waiting for
+.CW 8.hi
+to terminate its execution. When it terminated, the shell saw that
+something bad happen to the program and printed the diagnostic so we could
+know. If we print the value of
+the
+.CW status
+variable, we see this
+.P1
+; echo $status
+8.hi 788: sys: trap: fault read addr=0x0 pc=0x000016ff
+.P2
+Therefore, the
+.I legacy ,
+or exit status, of
+.ix "exit status
+.CW 8.hi
+is the string printed by the shell. This status does not proceed from a call to
+.CW exits
+in
+.CW 8.hi ,
+we know that. What happen is that we tried to read the memory address 0x0.
+That address is not within any valid memory segment for the process, and reading
+.ix "memory segment
+it leads to an error (or exception, or fault). That is why the status string contains
+.CW "fault read addr=0x0" .
+The status string starts with the program name and the process pid, so we
+could know which process had a problem. There is more information, the program
+counter when the process tried to read 0x0, was 0x000016ff. We do some
+post-mortem analysis now.
+.PP
+The program
+.CW src
+.ix [src]
+.ix "program source
+knows how
+to obtain the source file name and line number that corresponds to that program counter.
+.P1
+; src -n -s 0x000016ff 8.hi
+/sys/src/libc/fmt/dofmt.c:37
+.P2
+.LP
+We gave the name of the binary file as an argument.
+The option
+.CW -n
+causes the source file name and line to be printed. Otherwise
+.CW src
+would ask your editor to display that file and line. Option
+.CW -s
+.ix "symbol
+permits you to give a memory address or a symbol name to locate its source.
+By the way, this program is an endless source of wisdom. If you want to know how
+to implement, say,
+.CW cat ,
+you can run
+.CW "src /bin/cat" .
+.PP
+Because of the source file name printed, we know that the problem seems to be
+within the C library, in
+.CW dofmt.c .
+What is more likely? Is there a bug in the C library or did we make a mistake
+when calling one of its functions? The mystery can be solved by looking at the stack
+of the broken process. We can read the process stack because the process is still
+there, in the broken state:
+.P1
+; ps
+ \fI...many other processes...\fP
+nemo            788    0:00   0:00       24K Broken   8.hi
+;
+.P2
+.LP
+To print the stack, we call the debugger,
+.CW acid :
+.ix [acid]
+.ix debugging
+.ix debugger
+.P1
+; acid 788
+/proc/788/text:386 plan 9 executable
+
+/sys/lib/acid/port
+/sys/lib/acid/386
+acid: 
+.P2
+.LP
+This debugger is indeed a powerful tool, described in [.acid manual.], we will use just
+a couple of its functions. After obtaining the prompt
+from
+.CW acid ,
+we ask for a stack dump using the
+.CW stk
+command:
+.ix "[stk] [acid] command
+.P1
+.ps -2
+acid: stk()
+dofmt(fmt=0x0,f=0xdfffef08)+0x138 /sys/src/libc/fmt/dofmt.c:37
+vfprint(fd=0x1,args=0xdfffef60,fmt=0x0)+0x59 /sys/src/libc/fmt/vfprint.c:30
+print(fmt=0x0)+0x24 /sys/src/libc/fmt/print.c:13
+main(argv=0xdfffefb4)+0x12 /usr/nemo/9intro/hi.c:8
+_main+0x31 /sys/src/libc/386/main9.s:16
+acid: 
+.ps +2
+.P2
+.LP
+The function
+.CW stk()
+dumps the stack.
+The program crashed while executing the function
+.CW dofmt ,
+at file
+.CW dofmt.c .
+This function was called by
+.CW vfprint ,
+which was called by
+.CW print ,
+which was called by
+.CW main .
+As you can see, the parameter
+.CW fmt
+of
+.CW print
+is zero! That should never happen, because
+.CW print
+expects its first parameter to be a valid, non-null, string. That was the bug.
+.PP
+We can gather much more information about this program. For example,
+to obtain the values of the local variables in all functions found in the stack
+.ix "[lstk] [acid] command
+.P1
+.ps -2
+acid: lstk()
+dofmt(fmt=0x0,f=0xdfffef08)+0x138 /sys/src/libc/fmt/dofmt.c:37
+	nfmt=0x0
+	rt=0x0
+	rs=0x0
+	r=0x0
+	rune=0x15320000
+	t=0xdfffee08
+	s=0xdfffef08
+	n=0x0
+vfprint(fd=0x1,args=0xdfffef60,fmt=0x0)+0x59 /sys/src/libc/fmt/vfprint.c:30
+	f=0x0
+	buf=0x0
+	n=0x0
+.ps +2
+.P2
+.P1
+.ps -2
+print(fmt=0x0)+0x24 /sys/src/libc/fmt/print.c:13
+	args=0xdfffef60
+main(argv=0xdfffefb4)+0x12 /usr/nemo/9intro/hi.c:8
+_main+0x31 /sys/src/libc/386/main9.s:16
+.ps +2
+.P2
+.LP
+When your program gets broken, using
+.CW lstk()
+in
+.CW acid
+is invaluable. Usually, that is all you need to fix your bug. You have all the
+information about what happen from
+.CW main
+down to the point where it crashed, and you just have to think a little bit
+why that could happen. If your program was checking out for errors, things
+can be even more easy, because in many case the error diagnostic printed
+by the program may suffice to fix up the problem.
+.PP
+One final note. Can you see how
+.CW main
+.ix [main]
+.ix [_main]
+is not the main function in your program? It seems that
+.CW _main
+in the C library called what we thought was the
+.CW main
+function.
+.PP
+The last note about debugging is not about what to do after a program
+crashes, but about what to do
+.I before .
+There is a library function called
+.CW abort .
+.ix [abort]
+This is its code
+.P1
+void
+abort(void)
+{
+	while(*(int*)0)
+		;
+}
+.P2
+.LP
+This function dereferences a nil pointer! You know what would happen to
+the miserable program calling
+.CW abort .
+It gets broken. While you program, it is very sensible to prepare for things
+that in theory would not happen. In practice they will happen. One tool
+for doing this is
+.CW abort .
+You can include code that checks for things that should never happen.
+Those things that you know in advance that would be very hard to debug.
+If your code detects that such things happen, it may call
+.CW abort .
+The process will enter the broken state for you to debug it before things
+.ix [broken]
+get worse.
+.BS 2 "Everything is a file!
+.ix "everything is~a~file
+.PP
+We have seen two abstractions that are part of the baggage that comes
+with processes in Plan 9: Processes themselves and environment variables.
+The way to use these abstractions is to perform system calls that operate on
+them.
+.ix process
+.ix "environment variable
+.ix "file
+.PP
+That is nice. But Plan 9 was built considering that it is natural to
+have the machine connected to the network. We saw how your files are not
+kept at your terminal, but at a remote machine. The designers of the system
+noticed that files (another abstraction!) were simple to use. They also
+noticed that it was well known how to engineer the system
+to permit one machine use files that
+were kept at another.
+.PP
+Here comes the idea! For most abstractions provided by Plan 9, to let you
+use your hardware, a
+.B "file interface"
+is provided. This means that the system
+lies to you, and makes you believe that many things, that of course are not,
+are files. The point is that they
+.I appear
+to be files, so that you can use them as if that was really the case.
+.PP
+The motivation
+for doing things this way is that you get simple interfaces to write programs and
+use the system, and that you can use also these files from remote machines.
+You can debug programs running at a different machine, you can use (almost)
+anything from any other computer running Plan 9. All you have to do is to apply
+the same tools that you are using to use your real files at your terminal, while
+keeping them at a remote machine (the file server).
+.PP
+Consider the time. Each Plan 9 machine has an idea of what is the time. Internally,
+it keeps a counter to notice the time passing by and relies on a hardware clock.
+However, for a Plan 9 user, the time seems to be a file:
+.ix time
+.ix [/dev/time]
+.P1
+; cat /dev/time
+ 1152301434   1152301434554319872         \fI...\fP
+.P2
+.LP
+Reading
+.CW /dev/time
+yields a string that contains the time, measured in various forms: Seconds since
+the epoch (since a particular agreed-upon point in time in the past), nanoseconds
+since the epoch, and clock ticks since the epoch.
+.ix "epoch
+.PP
+Is
+.CW /dev/time
+a real file? Does it exist in your disk with rest of the files? Of course not!
+How can you keep in a disk a file that contains the
+.I current
+time?
+Do you expect a file to change by some black magic so that each different
+nanosecond it contains the precise value that matches the current time?
+What happens is that when you read the file the system notices you are reading
+.CW /dev/time ,
+and it knows what to do. To give you the string representing the current system time.
+.PP
+If this seems confusing, think that files are an abstraction. The system can
+decide what reading a file means, and what writing a file means. For real files
+sitting on a disk, the meaning is to read and write data from and to the disk
+storage. However, for
+.CW /dev/time ,
+reading means obtaining the string that represents the system time.
+Other operating systems provide a
+.CW time
+system call that returns the time. Plan 9 provides a (fake!) file. The C function
+.CW time ,
+.ix [time]
+described in
+.I time (2),
+reads this file and returns the integer value that was read.
+.PP
+Consider now processes. How does
+.I ps
+know which processes are in the system? Simple. In Plan 9, the
+.CW /proc
+.ix "[/proc] file system
+.ix "[#p] device driver
+directory does not exist on disk either. It is a virtual (read: fake) directory
+that represents the processes running in the system. Listing the directory
+yields one file per process:
+.P1
+; lc /proc
+1	1320	2	246	268	30	32	348
+10	135	20	247	269	300	320	367
+ \fI...\fP
+.P2
+.LP
+But these files are not real files on a disk. They are the
+.I interface
+for handling running processes in Plan 9.
+Each of the files listed above is a directory, and its name is the process pid.
+For example, to go to the directory representing the shell we are using we
+can do this:
+.P1
+.ps -2
+; echo $pid
+938
+; cd /proc/938
+; lc
+args fd	kregs	note	notepg	proc	regs status wait
+ctl   fpregs mem	noteid	ns	profile	segment	text
+.ps +2
+.P2
+.LP
+These files provide the interface for the process with pid 938, which was
+the shell used. Many of these (fake, virtual) files are provided to permit
+debuggers to operate on the process, and to permit programs like
+.CW ps
+.ix [ps]
+gather information about the process. For example, look again at the first
+lines printed by
+.CW acid
+when we broke a process in the last section:
+.ix [acid]
+.P1
+; acid 788
+/proc/788/text:386 plan 9 executable
+.P2
+.LP
+Acid is reading
+.CW /proc/788/text ,
+which
+.I "appears to be"
+a file containing the binary for the program. The debugger also used
+.CW /proc/788/regs ,
+to read the values for the processor registers in the process, and
+.CW /proc/788/mem ,
+.ix "process [mem] file
+to read the stack when we asked for a stack dump.
+.PP
+Besides files intended for debuggers,
+other files are for you to use (as long as you remember that they are
+not files, but part of the interface for a process). We are now in position of
+killing a process. If we write the string
+.CW kill
+.ix [kill]
+.ix "killing a~process
+into the file named
+.CW ctl ,
+.ix [ctl]
+.ix "process [ctl] file
+we kill the process. For example, this command writes the string
+.CW kill
+into the
+.CW ctl
+file of the shell where you execute it. The result is that you are killing the
+shell you are using. You are not writing the string
+.CW kill
+on a disk file. Nobody would record what you wrote to that file.
+The more probable result of writing this is that the window where
+the shell was running will vanish (because no other processes are using it).
+.P1
+; echo kill >/proc/$pid/ctl
+   \fI ... where is my window? ... \fP
+.P2
+.LP
+We saw the memory layout for a process. It had several segments to keep
+.ix "memory segment
+the process memory. One of the (virtual) files that is part of the process interface
+can be used to see which segments a process is using, and where do they start
+and terminate:
+.P1
+; cat /proc/$pid/segment
+Stack     defff000 dffff000    1
+Text   R  00001000 00016000    4
+Data      00016000 00019000    1
+Bss       00019000 0003f000    1
+.P2
+.LP
+.ix "text segment"
+.ix "data segment"
+.ix "stack segment"
+.ix "bss segment"
+The stack starts at 0xdefff000, which is a big number. It goes up to
+0xdffff000. The process is not probably using all of this stack space. You can see
+how the stack segment does
+.I not
+grow. The physical memory actually used for the process stack will be provided by
+the operating system on demand, as it is referenced. Having virtual memory,
+there is no need for growing segments.
+The text segment is read-only (it has an
+.CW R
+printed). And four processes are using it! There must be four shells running at
+my system,
+all of them executing code from
+.CW /bin/rc .
+.PP
+Note how the first few addresses, from 0 to 0x0fff, are not valid. You cannot use
+the first 4K of your (virtual) address space. That is how the system catches null
+.ix "null pointer
+pointer dereferences.
+.PP
+We have seen most of the file interface provided for processes in Plan 9.
+Environment variables are not different. The interface for using environment
+.ix "environment variable
+variables in Plan 9 is a file interface. To know which environment variables we
+have, we can list a (virtual) directory that is invented by Plan 9 to represent
+the interface for our environment variables. This directory is
+.CW /env .
+.ix "[/env] file system
+.ix "[#e] device driver
+.P1
+.SM
+; lc /env
+ '*'	cpu		init		planb	sysname
+0	cputype		location		plumbsrv	tabstop
+MKFILE	disk		menuitem		prompt	terminal
+afont	ether0		monitor		rcname	timezone
+apid	facedom		mouseport		role	user
+auth	'fn#sigexit'	nobootprompt	rootdir	vgasize
+bootdisk	font		objtype		sdC0part	wctl
+bootfile	fs		part		sdC1part	wsys
+cflag	home		partition		service
+cfs	i		path		status
+cmd	ifs		pid		sysaddr
+;
+.NS
+.P2
+.LP
+Each one of these (fake!) files represents an environment variable. For you and
+your programs, these files are as real as those stored in a disk. Because you
+can list them, read them, and write them. However, do not search for them
+on a disk. They are not there.
+.PP
+You can see a file named
+.CW sysname ,
+.ix [sysname]
+another named
+.CW user ,
+.ix [user]
+and yet another named
+.CW path .
+.ix [path]
+This means that your shell has the environment variables
+.I sysname ,
+.I user ,
+and
+.I path .
+Let's double check:
+.P1
+; echo $user
+nemo
+; cat /env/user
+nemo; 
+.P2
+.LP
+The
+.I file
+.CW /env/user
+appears to contain the string
+.CW nemo ,
+(with no new line at the end). That is precisely the value printed by
+.I echo ,
+which is the value of the
+.I user
+environment variable. The implementation of
+.I getenv ,
+.ix [getenv]
+which we used before to return the value of an environment variable, reads
+the corresponding file, and returns a C string for the value read.
+.PP 
+This simple idea, representing almost everything as a file, is very powerful. It will
+take some ingenuity on your part to fully exploit it. For example, the file
+.CW /dev/text
+.ix [/dev/text]
+.ix "window text
+represents the text shown in the window (when used within that window). To
+make a copy of your shell session, you already know what to do:
+.P1
+; cp /dev/text $home/saved
+.P2
+.LP
+The same can be done for the image shown in the display for your window, which is
+also represented as a file,
+.CW /dev/window .
+.ix [/dev/window]
+.ix "window image
+.ix [rio]
+This is what we did to capture screen images for this book.
+The same thing works for any program, not just for
+.CW cp ,
+for example,
+.CW lp
+.ix [lp]
+prints a file, and this command makes a hardcopy of the whole screen.
+.ix "screen image
+.ix [/dev/screen]
+.P1
+; lp /dev/screen
+.P2
+.SH
+Problems
+.IP 1
+Why was not zero the first address used by the memory image of program
+.CW global ?
+.IP 2
+Write a program that defines environment variables for arguments.
+For example, after calling the program with options
+.P1
+; args -ab -d x y z
+.P2
+.IP
+the following must happen:
+.P1
+; echo $opta
+yes
+; echo $optb
+yes
+; echo $optc
+yes
+; echo $args
+x y z
+.P2
+.IP 3
+What would print
+.CW "/bin/ls /blahblah"
+(given that
+.CW /blahblah
+does not exits). Would
+.CW "ls /blahblah
+print the same? Why?
+.IP 4
+What happens when we execute
+.P1
+; cd
+;
+.P2
+.IP
+after executing this program. Why?
+.P1
+#include <u.h>
+#include <libc.h>
+void
+main(int, char*[])
+{
+	putenv("home", "/tmp");
+	exits(nil);
+}
+.P2
+.IP 5
+What would do these commands? Why?
+.P1
+; cd /
+; cd ..
+; pwd
+.P2
+.IP 6
+After reading
+.I date (1),
+change the environment variable
+.CW timezone
+to display the current time in New Jersey (East coast of US).
+.IP 7
+How can we know the arguments given to a process that has
+been already started?
+.IP 8
+Give another answer for the previous problem.
+.IP 9
+What could we do if we want to debug a broken process
+tomorrow, and want to power off the machine now?
+.IP 10
+What would happen if you use the debugger,
+.CW acid ,
+to inspect
+.CW 8.out
+after executing the next command line? Why?
+.P1
+; strip 8.out
+.P2
+.ds CH
+.bp
+ 

@@ -1,0 +1,1293 @@
+%!PS-Adobe-2.0
+%%Version: 0.1
+%%DocumentFonts: (atend)
+%%Pages: (atend)
+%%EndComments
+%
+% Version 3.3.2 prologue for troff files.
+%
+
+/#copies 1 store
+/aspectratio 1 def
+/formsperpage 1 def
+/landscape false def
+/linewidth .3 def
+/magnification 1 def
+/margin 0 def
+/orientation 0 def
+/resolution 720 def
+/rotation 1 def
+/xoffset 0 def
+/yoffset 0 def
+
+/roundpage true def
+/useclippath true def
+/pagebbox [0 0 612 792] def
+
+/R  /Times-Roman def
+/I  /Times-Italic def
+/B  /Times-Bold def
+/BI /Times-BoldItalic def
+/H  /Helvetica def
+/HI /Helvetica-Oblique def
+/HB /Helvetica-Bold def
+/HX /Helvetica-BoldOblique def
+/CW /Courier def
+/CO /Courier def
+/CI /Courier-Oblique def
+/CB /Courier-Bold def
+/CX /Courier-BoldOblique def
+/PA /Palatino-Roman def
+/PI /Palatino-Italic def
+/PB /Palatino-Bold def
+/PX /Palatino-BoldItalic def
+/Hr /Helvetica-Narrow def
+/Hi /Helvetica-Narrow-Oblique def
+/Hb /Helvetica-Narrow-Bold def
+/Hx /Helvetica-Narrow-BoldOblique def
+/KR /Bookman-Light def
+/KI /Bookman-LightItalic def
+/KB /Bookman-Demi def
+/KX /Bookman-DemiItalic def
+/AR /AvantGarde-Book def
+/AI /AvantGarde-BookOblique def
+/AB /AvantGarde-Demi def
+/AX /AvantGarde-DemiOblique def
+/NR /NewCenturySchlbk-Roman def
+/NI /NewCenturySchlbk-Italic def
+/NB /NewCenturySchlbk-Bold def
+/NX /NewCenturySchlbk-BoldItalic def
+/ZD /ZapfDingbats def
+/ZI /ZapfChancery-MediumItalic def
+/S  /S def
+/S1 /S1 def
+/GR /Symbol def
+
+/inch {72 mul} bind def
+/min {2 copy gt {exch} if pop} bind def
+
+/setup {
+	counttomark 2 idiv {def} repeat pop
+
+	landscape {/orientation 90 orientation add def} if
+	/scaling 72 resolution div def
+	linewidth setlinewidth
+	1 setlinecap
+
+	pagedimensions
+	xcenter ycenter translate
+	orientation rotation mul rotate
+	width 2 div neg height 2 div translate
+	xoffset inch yoffset inch neg translate
+	margin 2 div dup neg translate
+	magnification dup aspectratio mul scale
+	scaling scaling scale
+
+	addmetrics
+	0 0 moveto
+} def
+
+/pagedimensions {
+	useclippath userdict /gotpagebbox known not and {
+		/pagebbox [clippath pathbbox newpath] def
+		roundpage currentdict /roundpagebbox known and {roundpagebbox} if
+	} if
+	pagebbox aload pop
+	4 -1 roll exch 4 1 roll 4 copy
+	landscape {4 2 roll} if
+	sub /width exch def
+	sub /height exch def
+	add 2 div /xcenter exch def
+	add 2 div /ycenter exch def
+	userdict /gotpagebbox true put
+} def
+
+/addmetrics {
+	/Symbol /S null Sdefs cf
+	/Times-Roman /S1 StandardEncoding dup length array copy S1defs cf
+} def
+
+/pagesetup {
+	/page exch def
+	currentdict /pagedict known currentdict page known and {
+		page load pagedict exch get cvx exec
+	} if
+} def
+
+/decodingdefs [
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg /y exch def counttomark 2 idiv {y moveto show} repeat}
+	{neg moveto {2 index stringwidth pop sub exch div 0 32 4 -1 roll widthshow} repeat}
+	{neg moveto {spacewidth sub 0.0 32 4 -1 roll widthshow} repeat}
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg setfunnytext}
+] def
+
+/setdecoding {/t decodingdefs 3 -1 roll get bind def} bind def
+
+/w {neg moveto show} bind def
+/m {neg dup /y exch def moveto} bind def
+/done {/lastpage where {pop lastpage} if} def
+
+/f {
+	dup /font exch def findfont exch
+	dup /ptsize exch def scaling div dup /size exch def scalefont setfont
+	linewidth ptsize mul scaling 10 mul div setlinewidth
+	/spacewidth ( ) stringwidth pop def
+} bind def
+
+/changefont {
+	/fontheight exch def
+	/fontslant exch def
+	currentfont [
+		1 0
+		fontheight ptsize div fontslant sin mul fontslant cos div
+		fontheight ptsize div
+		0 0
+	] makefont setfont
+} bind def
+
+/sf {f} bind def
+
+/cf {
+	dup length 2 idiv
+	/entries exch def
+	/chtab exch def
+	/newencoding exch def
+	/newfont exch def
+
+	findfont dup length 1 add dict
+	/newdict exch def
+	{1 index /FID ne {newdict 3 1 roll put}{pop pop} ifelse} forall
+
+	newencoding type /arraytype eq {newdict /Encoding newencoding put} if
+
+	newdict /Metrics entries dict put
+	newdict /Metrics get
+	begin
+		chtab aload pop
+		1 1 entries {pop def} for
+		newfont newdict definefont pop
+	end
+} bind def
+
+%
+% A few arrays used to adjust reference points and character widths in some
+% of the printer resident fonts. If square roots are too high try changing
+% the lines describing /radical and /radicalex to,
+%
+%	/radical	[0 -75 550 0]
+%	/radicalex	[-50 -75 500 0]
+%
+% Move braceleftbt a bit - default PostScript character is off a bit.
+%
+
+/Sdefs [
+	/bracketlefttp		[201 500]
+	/bracketleftbt		[201 500]
+	/bracketrighttp		[-81 380]
+	/bracketrightbt		[-83 380]
+	/braceleftbt		[203 490]
+	/bracketrightex		[220 -125 500 0]
+	/radical		[0 0 550 0]
+	/radicalex		[-50 0 500 0]
+	/parenleftex		[-20 -170 0 0]
+	/integral		[100 -50 500 0]
+	/infinity		[10 -75 730 0]
+] def
+
+/S1defs [
+	/underscore		[0 80 500 0]
+	/endash			[7 90 650 0]
+] def
+%
+% Tries to round clipping path dimensions, as stored in array pagebbox, so they
+% match one of the known sizes in the papersizes array. Lower left coordinates
+% are always set to 0.
+%
+
+/roundpagebbox {
+    7 dict begin
+	/papersizes [8.5 inch 11 inch 14 inch 17 inch] def
+
+	/mappapersize {
+		/val exch def
+		/slop .5 inch def
+		/diff slop def
+		/j 0 def
+		0 1 papersizes length 1 sub {
+			/i exch def
+			papersizes i get val sub abs
+			dup diff le {/diff exch def /j i def} {pop} ifelse
+		} for
+		diff slop lt {papersizes j get} {val} ifelse
+	} def
+
+	pagebbox 0 0 put
+	pagebbox 1 0 put
+	pagebbox dup 2 get mappapersize 2 exch put
+	pagebbox dup 3 get mappapersize 3 exch put
+    end
+} bind def
+
+%%EndProlog
+%%BeginSetup
+mark
+%
+% Encoding vector and redefinition of findfont for the ISO Latin1 standard.
+% The 18 characters missing from ROM based fonts on older printers are noted
+% below.
+%
+
+/ISOLatin1Encoding [
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/space
+	/exclam
+	/quotedbl
+	/numbersign
+	/dollar
+	/percent
+	/ampersand
+	/quoteright
+	/parenleft
+	/parenright
+	/asterisk
+	/plus
+	/comma
+	/minus
+	/period
+	/slash
+	/zero
+	/one
+	/two
+	/three
+	/four
+	/five
+	/six
+	/seven
+	/eight
+	/nine
+	/colon
+	/semicolon
+	/less
+	/equal
+	/greater
+	/question
+	/at
+	/A
+	/B
+	/C
+	/D
+	/E
+	/F
+	/G
+	/H
+	/I
+	/J
+	/K
+	/L
+	/M
+	/N
+	/O
+	/P
+	/Q
+	/R
+	/S
+	/T
+	/U
+	/V
+	/W
+	/X
+	/Y
+	/Z
+	/bracketleft
+	/backslash
+	/bracketright
+	/asciicircum
+	/underscore
+	/quoteleft
+	/a
+	/b
+	/c
+	/d
+	/e
+	/f
+	/g
+	/h
+	/i
+	/j
+	/k
+	/l
+	/m
+	/n
+	/o
+	/p
+	/q
+	/r
+	/s
+	/t
+	/u
+	/v
+	/w
+	/x
+	/y
+	/z
+	/braceleft
+	/bar
+	/braceright
+	/asciitilde
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/dotlessi
+	/grave
+	/acute
+	/circumflex
+	/tilde
+	/macron
+	/breve
+	/dotaccent
+	/dieresis
+	/.notdef
+	/ring
+	/cedilla
+	/.notdef
+	/hungarumlaut
+	/ogonek
+	/caron
+	/space
+	/exclamdown
+	/cent
+	/sterling
+	/currency
+	/yen
+	/brokenbar		% missing
+	/section
+	/dieresis
+	/copyright
+	/ordfeminine
+	/guillemotleft
+	/logicalnot
+	/hyphen
+	/registered
+	/macron
+	/degree			% missing
+	/plusminus		% missing
+	/twosuperior		% missing
+	/threesuperior		% missing
+	/acute
+	/mu			% missing
+	/paragraph
+	/periodcentered
+	/cedilla
+	/onesuperior		% missing
+	/ordmasculine
+	/guillemotright
+	/onequarter		% missing
+	/onehalf		% missing
+	/threequarters		% missing
+	/questiondown
+	/Agrave
+	/Aacute
+	/Acircumflex
+	/Atilde
+	/Adieresis
+	/Aring
+	/AE
+	/Ccedilla
+	/Egrave
+	/Eacute
+	/Ecircumflex
+	/Edieresis
+	/Igrave
+	/Iacute
+	/Icircumflex
+	/Idieresis
+	/Eth			% missing
+	/Ntilde
+	/Ograve
+	/Oacute
+	/Ocircumflex
+	/Otilde
+	/Odieresis
+	/multiply		% missing
+	/Oslash
+	/Ugrave
+	/Uacute
+	/Ucircumflex
+	/Udieresis
+	/Yacute			% missing
+	/Thorn			% missing
+	/germandbls
+	/agrave
+	/aacute
+	/acircumflex
+	/atilde
+	/adieresis
+	/aring
+	/ae
+	/ccedilla
+	/egrave
+	/eacute
+	/ecircumflex
+	/edieresis
+	/igrave
+	/iacute
+	/icircumflex
+	/idieresis
+	/eth			% missing
+	/ntilde
+	/ograve
+	/oacute
+	/ocircumflex
+	/otilde
+	/odieresis
+	/divide			% missing
+	/oslash
+	/ugrave
+	/uacute
+	/ucircumflex
+	/udieresis
+	/yacute			% missing
+	/thorn			% missing
+	/ydieresis
+] def
+
+/NewFontDirectory FontDirectory maxlength dict def
+
+%
+% Apparently no guarantee findfont is defined in systemdict so the obvious
+%
+%	systemdict /findfont get exec
+%
+% can generate an error. So far the only exception is a VT600 (version 48.0).
+%
+
+userdict /@RealFindfont known not {
+	userdict begin
+		/@RealFindfont systemdict begin /findfont load end def
+	end
+} if
+
+/findfont {
+	dup NewFontDirectory exch known not {
+		dup
+		%dup systemdict /findfont get exec	% not always in systemdict
+		dup userdict /@RealFindfont get exec
+		dup /Encoding get StandardEncoding eq {
+			dup length dict begin
+				{1 index /FID ne {def}{pop pop} ifelse} forall
+				/Encoding ISOLatin1Encoding def
+				currentdict
+			end
+			/DummyFontName exch definefont
+		} if
+		NewFontDirectory 3 1 roll put
+	} if
+	NewFontDirectory exch get
+} bind def
+
+%%Patch from lp
+%%EndPatch from lp
+
+setup
+%%EndSetup
+%%Page: 1 1
+/saveobj save def
+mark
+1 pagesetup
+12 /Times-Bold f
+(Index) 720 840 w
+10 /Times-Bold f
+(A) 745 1200 w
+10 /Times-Roman f
+(a name, resolving,) 720 1356 w
+(147) 1502 1356 w
+(absolute paths,) 720 1476 w
+(12) 1364 1476 w
+(acceleration, hardware,) 720 1596 w
+(280) 1696 1596 w
+(Access control,) 720 1716 w
+(339) 1385 1716 w
+(access control) 720 1836 w
+(list,) 795 1956 w
+(15) 993 1956 w
+(lists,) 795 2076 w
+(339) 1032 2076 w
+(agent, authentication,) 720 2196 w
+(341) 1627 2196 w
+(always check out for error conditions,) 720 2316 w
+(34) 2283 2316 w
+(announce,) 720 2436 w
+(133) 1177 2436 w
+(ansynchronous,) 720 2556 w
+(107) 1394 2556 w
+(append only,) 720 2676 w
+(56) 1286 2676 w
+(archive,) 720 2796 w
+(184) 1088 2796 w
+(argument,) 720 2916 w
+(9) 1172 2916 w
+(atomic,) 720 3036 w
+(82) 1067 3036 w
+(atomically,) 720 3156 w
+(217) 1217 3156 w
+(attributes, file,) 720 3276 w
+(59) 1350 3276 w
+(authentication,) 720 3396 w
+(340) 1361 3396 w
+(agent,) 795 3516 w
+(341) 1086 3516 w
+(domain,) 795 3636 w
+(342) 1170 3636 w
+(domains,) 795 3756 w
+(341) 1209 3756 w
+(servers,) 795 3876 w
+(341) 1152 3876 w
+(authorization,) 720 3996 w
+(337) 1322 3996 w
+10 /Times-Bold f
+(B) 745 4236 w
+10 /Times-Roman f
+(background, in the,) 720 4392 w
+(88) 1541 4392 w
+(backing store,) 720 4512 w
+(287) 1330 4512 w
+(binding,) 720 4632 w
+(149) 1101 4632 w
+(blocked,) 720 4752 w
+(40) 1111 4752 w
+(boldface,) 720 4872 w
+(221) 1138 4872 w
+(boundaries, write,) 720 4992 w
+(100) 1488 4992 w
+(broken,) 720 5112 w
+(40) 1072 5112 w
+(bss segment,) 720 5232 w
+(29) 1281 5232 w
+10 /Times-Bold f
+(C) 745 5472 w
+10 /Times-Roman f
+(call) 720 5628 w
+(remote procedure,) 795 5748 w
+(21) 1570 5748 w
+(system,) 795 5868 w
+(20) 1148 5868 w
+(capabilities,) 720 5988 w
+(352) 1250 5988 w
+(channel,) 720 6108 w
+(252) 1105 6108 w
+(event,) 795 6228 w
+(118) 1086 6228 w
+(check out for error conditions, always,) 720 6348 w
+(34) 2308 6348 w
+(child,) 720 6468 w
+(75) 995 6468 w
+(client,) 720 6588 w
+(305) 1017 6588 w
+(clients,) 720 6708 w
+(3) 1056 6708 w
+(clip,) 720 6828 w
+(284) 945 6828 w
+(collection, garbage,) 720 6948 w
+(320) 1554 6948 w
+(command,) 720 7068 w
+(4) 1189 7068 w
+(line,) 795 7188 w
+(4) 1020 7188 w
+(concurrent,) 720 7308 w
+(25) 1221 7308 w
+(programing,) 3099 1200 w
+(82) 3640 1200 w
+(server,) 3099 1320 w
+(137) 3417 1320 w
+(condition) 3024 1440 w
+(race,) 3099 1560 w
+(82, 214) 3339 1560 w
+(variables,) 3099 1680 w
+(236) 3534 1680 w
+(conditions, always check out for error,) 3024 1800 w
+(34) 4612 1800 w
+(connection,) 3024 1920 w
+(125) 3537 1920 w
+(context,) 3024 2040 w
+(40) 3393 2040 w
+(switch,) 3099 2160 w
+(40) 3435 2160 w
+(control) 3024 2280 w
+(Access,) 3099 2400 w
+(339) 3456 2400 w
+(list, access,) 3099 2520 w
+(15) 3601 2520 w
+(lists, access,) 3099 2640 w
+(339) 3640 2640 w
+(control., The flow of,) 3024 2760 w
+(141) 3928 2760 w
+(control\255d,) 3024 2880 w
+(73, 229, 353) 3465 2880 w
+(cooked mode,) 3024 3000 w
+(272) 3634 3000 w
+(cooks,) 3024 3120 w
+(272) 3332 3120 w
+(counting, reference,) 3024 3240 w
+(320) 3868 3240 w
+(CPU servers,) 3024 3360 w
+(140) 3601 3360 w
+(critical region,) 3024 3480 w
+(218) 3656 3480 w
+(current directory,) 3024 3600 w
+(12) 3766 3600 w
+10 /Times-Bold f
+(D) 3049 3840 w
+10 /Times-Roman f
+(data segment,) 3024 3996 w
+(29) 3623 3996 w
+(deadlock,) 3024 4116 w
+(105) 3459 4116 w
+(Del,) 3024 4236 w
+(117, 121, 127, 136, 139, 178, 199, 273, 291) 3243 4236 w
+(descriptor table., The file,) 3024 4356 w
+(141) 4105 4356 w
+(descriptors, file,) 3024 4476 w
+(48) 3720 4476 w
+(device) 3024 4596 w
+(driver,) 3099 4716 w
+(22) 3412 4716 w
+(paths,) 3099 4836 w
+(154) 3385 4836 w
+(directory,) 3024 4956 w
+(11) 3459 4956 w
+(current,) 3099 5076 w
+(12) 3456 5076 w
+(entry,) 3099 5196 w
+(60) 3379 5196 w
+(home,) 3099 5316 w
+(4) 3396 5316 w
+(root,) 3099 5436 w
+(11, 141) 3335 5436 w
+(working,) 3099 5556 w
+(141) 3507 5556 w
+(domain, authentication,) 3024 5676 w
+(342) 4015 5676 w
+(domains, authentication,) 3024 5796 w
+(341) 4054 5796 w
+(driver, device,) 3024 5916 w
+(22) 3647 5916 w
+(dst,) 3024 6036 w
+(120) 3216 6036 w
+10 /Times-Bold f
+(E) 3049 6276 w
+10 /Times-Roman f
+(entry, directory,) 3024 6432 w
+(60) 3714 6432 w
+(environment variables,) 3024 6552 w
+(36) 3989 6552 w
+(error) 3024 6672 w
+(conditions, always check out for,) 3099 6792 w
+(34) 4469 6792 w
+(standard,) 3099 6912 w
+(48) 3512 6912 w
+(string,) 3099 7032 w
+(34) 3402 7032 w
+(Esc,) 3024 7152 w
+(274) 3243 7152 w
+(event,) 3024 7272 w
+(115) 3315 7272 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 1 1
+%%Page: 2 2
+/saveobj save def
+mark
+2 pagesetup
+10 /Times-Roman f
+(\255 2 \255) 2797 480 w
+(channel,) 795 840 w
+(118) 1180 840 w
+(evironment variables., The,) 720 960 w
+(141) 1865 960 w
+(exclussion, mutual,) 720 1080 w
+(219) 1545 1080 w
+(expression, regular,) 720 1200 w
+(187) 1554 1200 w
+10 /Times-Bold f
+(F) 745 1440 w
+10 /Times-Roman f
+(fids,) 720 1596 w
+(306) 945 1596 w
+(file) 720 1716 w
+(attributes,) 795 1836 w
+(59) 1242 1836 w
+(descriptor table., The,) 795 1956 w
+(141) 1718 1956 w
+(descriptors,) 795 2076 w
+(48) 1308 2076 w
+(interface,) 795 2196 w
+(43) 1218 2196 w
+(mounted,) 795 2316 w
+(149) 1220 2316 w
+(offset,) 795 2436 w
+(51) 1097 2436 w
+(server,) 795 2556 w
+(3, 210) 1113 2556 w
+(servers,) 795 2676 w
+(147) 1152 2676 w
+(system,) 795 2796 w
+(210) 1148 2796 w
+(with holes,) 795 2916 w
+(56) 1284 2916 w
+(flow of control., The,) 720 3036 w
+(141) 1624 3036 w
+(focus, input,) 720 3156 w
+(299) 1267 3156 w
+(font,) 720 3276 w
+(294) 956 3276 w
+(for error conditions, always check out,) 720 3396 w
+(34) 2308 3396 w
+(formatted,) 720 3516 w
+(304) 1183 3516 w
+(full\255duplex,) 720 3636 w
+(100) 1239 3636 w
+(function, shell,) 720 3756 w
+(192) 1367 3756 w
+10 /Times-Bold f
+(G) 745 3996 w
+10 /Times-Roman f
+(garbage collection,) 720 4152 w
+(320) 1529 4152 w
+(globbing,) 720 4272 w
+(65) 1151 4272 w
+(group,) 720 4392 w
+(15) 1028 4392 w
+(process,) 795 4512 w
+(108) 1169 4512 w
+(group., The) 720 4632 w
+(The note,) 920 4752 w
+(141) 1347 4752 w
+(The rendezvous,) 920 4872 w
+(141) 1629 4872 w
+10 /Times-Bold f
+(H) 745 5112 w
+10 /Times-Roman f
+(hardware acceleration,) 720 5268 w
+(280) 1671 5268 w
+(holes, file with,) 720 5388 w
+(56) 1392 5388 w
+(home directory,) 720 5508 w
+(4) 1402 5508 w
+10 /Times-Bold f
+(I) 745 5748 w
+10 /Times-Roman f
+(id) 720 5904 w
+(process,) 795 6024 w
+(38) 1169 6024 w
+(thread,) 795 6144 w
+(247) 1119 6144 w
+(Identification,) 720 6264 w
+(337) 1333 6264 w
+(in the background,) 720 6384 w
+(88) 1516 6384 w
+(independently,) 720 6504 w
+(24, 75) 1361 6504 w
+(input) 720 6624 w
+(focus,) 795 6744 w
+(299) 1086 6744 w
+(standard,) 795 6864 w
+(48) 1208 6864 w
+(integrity,) 720 6984 w
+(336) 1134 6984 w
+(interface, file,) 720 7104 w
+(43) 1326 7104 w
+(interleaving,) 720 7224 w
+(215) 1272 7224 w
+10 /Times-Bold f
+(K) 3049 840 w
+10 /Times-Roman f
+(kernel,) 3024 996 w
+(1) 3348 996 w
+(keys,) 3024 1116 w
+(342) 3282 1116 w
+(knows nothing, The system,) 3024 1236 w
+(26) 4199 1236 w
+10 /Times-Bold f
+(L) 3049 1476 w
+10 /Times-Roman f
+(least privilege principle,) 3024 1632 w
+(350) 4042 1632 w
+(libraries,) 3024 1752 w
+(1) 3426 1752 w
+(line, command,) 3024 1872 w
+(4) 3693 1872 w
+(list, access control,) 3024 1992 w
+(15) 3834 1992 w
+(lists, access control,) 3024 2112 w
+(339) 3873 2112 w
+(load, system,) 3024 2232 w
+(116) 3599 2232 w
+(loader,) 3024 2352 w
+(27) 3348 2352 w
+(loads the program,) 3024 2472 w
+(27) 3820 2472 w
+(lock,) 3024 2592 w
+(219) 3271 2592 w
+(queueing,) 3099 2712 w
+(224) 3540 2712 w
+(spin,) 3099 2832 w
+(224) 3341 2832 w
+(locks, read/write,) 3024 2952 w
+(229) 3764 2952 w
+10 /Times-Bold f
+(M) 3049 3192 w
+10 /Times-Roman f
+(machine, virtual,) 3024 3348 w
+(2) 3748 3348 w
+(machines,) 3024 3468 w
+(337) 3476 3468 w
+(manager, resource,) 3024 3588 w
+(2) 3829 3588 w
+(matches,) 3024 3708 w
+(187) 3426 3708 w
+(matching,) 3024 3828 w
+(65) 3471 3828 w
+(memory) 3024 3948 w
+(segments., The,) 3099 4068 w
+(141) 3776 4068 w
+(virtual,) 3099 4188 w
+(28) 3435 4188 w
+(message type,) 3024 4308 w
+(306) 3634 4308 w
+(metadata,) 3024 4428 w
+(59) 3459 4428 w
+(mode,) 3024 4548 w
+(281) 3321 4548 w
+(cooked,) 3099 4668 w
+(272) 3462 4668 w
+(raw,) 3099 4788 w
+(272) 3323 4788 w
+(monitor,) 3024 4908 w
+(236) 3416 4908 w
+(mount) 3024 5028 w
+(point,) 3099 5148 w
+(149) 3380 5148 w
+(table,) 3099 5268 w
+(149) 3368 5268 w
+(mounted file,) 3024 5388 w
+(149) 3607 5388 w
+(multiprogramming,) 3024 5508 w
+(40) 3855 5508 w
+(mutual exclussion,) 3024 5628 w
+(219) 3824 5628 w
+10 /Times-Bold f
+(N) 3049 5868 w
+10 /Times-Roman f
+(name) 3024 6024 w
+(resolving a,) 3099 6144 w
+(147) 3615 6144 w
+(service,) 3099 6264 w
+(147) 3456 6264 w
+(space,) 3099 6384 w
+(147) 3395 6384 w
+(space., The,) 3099 6504 w
+(141) 3625 6504 w
+(ndata,) 3024 6624 w
+(120) 3315 6624 w
+(note group., The,) 3024 6744 w
+(141) 3759 6744 w
+(nothing, The system knows,) 3024 6864 w
+(26) 4199 6864 w
+(nvram,) 3024 6984 w
+(354) 3354 6984 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 2 2
+%%Page: 3 3
+/saveobj save def
+mark
+3 pagesetup
+10 /Times-Roman f
+(\255 3 \255) 2797 480 w
+10 /Times-Bold f
+(O) 745 840 w
+10 /Times-Roman f
+(of control., The flow,) 720 996 w
+(141) 1624 996 w
+(offset, file,) 720 1116 w
+(51) 1205 1116 w
+(on, single sign,) 720 1236 w
+(354) 1376 1236 w
+(only, append,) 720 1356 w
+(56) 1311 1356 w
+(operating system,) 720 1476 w
+(1) 1475 1476 w
+(option,) 720 1596 w
+(10) 1051 1596 w
+(out for error conditions, always check,) 720 1716 w
+(34) 2308 1716 w
+(output, standard,) 720 1836 w
+(48) 1439 1836 w
+10 /Times-Bold f
+(P) 745 2076 w
+10 /Times-Roman f
+(parallel,) 720 2232 w
+(24) 1094 2232 w
+10 /LucidaSansUnicode20 f
+(\023) 1194 2232 w
+10 /Times-Roman f
+(25) 1244 2232 w
+(parent,) 720 2352 w
+(74) 1044 2352 w
+(partitions,) 720 2472 w
+(301) 1173 2472 w
+(path,) 720 2592 w
+(11, 36) 967 2592 w
+(paths) 720 2712 w
+(absolute,) 795 2832 w
+(12) 1203 2832 w
+(device,) 795 2952 w
+(154) 1130 2952 w
+(relative,) 795 3072 w
+(12) 1169 3072 w
+(patterns,) 720 3192 w
+(65) 1111 3192 w
+(plumbing,) 720 3312 w
+(118) 1179 3312 w
+(point, mount,) 720 3432 w
+(149) 1307 3432 w
+(polling,) 720 3552 w
+(115) 1079 3552 w
+(port,) 720 3672 w
+(118) 956 3672 w
+(principle, least privilege,) 720 3792 w
+(350) 1763 3792 w
+(privilege principle, least,) 720 3912 w
+(350) 1763 3912 w
+(procedure call, remote,) 720 4032 w
+(21) 1689 4032 w
+(process,) 720 4152 w
+(24) 1094 4152 w
+(group,) 795 4272 w
+(108) 1103 4272 w
+(id,) 795 4392 w
+(38) 948 4392 w
+(state,) 795 4512 w
+(39) 1053 4512 w
+(program, loads the,) 720 4632 w
+(27) 1541 4632 w
+(programing, concurrent,) 720 4752 w
+(82) 1737 4752 w
+(pseudo\255parallel,) 720 4872 w
+(25) 1410 4872 w
+10 /Times-Bold f
+(Q) 745 5112 w
+10 /Times-Roman f
+(qids,) 720 5268 w
+(307) 962 5268 w
+(queueing lock,) 720 5388 w
+(224) 1358 5388 w
+10 /Times-Bold f
+(R) 745 5628 w
+10 /Times-Roman f
+(race condition,) 720 5784 w
+(82, 214) 1363 5784 w
+(raw mode,) 720 5904 w
+(272) 1191 5904 w
+(read/write locks,) 720 6024 w
+(229) 1435 6024 w
+(ready,) 720 6144 w
+(40) 1016 6144 w
+(redirect,) 720 6264 w
+(91) 1099 6264 w
+(reference counting,) 720 6384 w
+(320) 1539 6384 w
+(region, critical,) 720 6504 w
+(218) 1377 6504 w
+(regression testing,) 720 6624 w
+(335) 1497 6624 w
+(regular expression,) 720 6744 w
+(187) 1529 6744 w
+(relative paths,) 720 6864 w
+(12) 1330 6864 w
+(remote procedure call,) 720 6984 w
+(21) 1664 6984 w
+(rendezvous group., The,) 720 7104 w
+(141) 1737 7104 w
+(resolving a name,) 720 7224 w
+(147) 1477 7224 w
+(resource manager,) 3024 840 w
+(2) 3804 840 w
+(root directory,) 3024 960 w
+(11, 141) 3645 960 w
+(runes,) 3024 1080 w
+(275) 3315 1080 w
+(running,) 3024 1200 w
+(40) 3410 1200 w
+10 /Times-Bold f
+(S) 3049 1440 w
+10 /Times-Roman f
+(sandbox,) 3024 1596 w
+(160) 3432 1596 w
+(screen,) 3024 1716 w
+(282) 3353 1716 w
+(script, shell,) 3024 1836 w
+(89) 3560 1836 w
+(segment) 3024 1956 w
+(bss,) 3099 2076 w
+(29) 3302 2076 w
+(data,) 3099 2196 w
+(29) 3340 2196 w
+(stack,) 3099 2316 w
+(29) 3379 2316 w
+(text,) 3099 2436 w
+(29) 3324 2436 w
+(segments,) 3024 2556 w
+(28) 3471 2556 w
+(segments., The memory,) 3024 2676 w
+(141) 4059 2676 w
+(semaphore,) 3024 2796 w
+(240) 3531 2796 w
+(sequential server,) 3024 2916 w
+(137) 3772 2916 w
+(server,) 3024 3036 w
+(305) 3342 3036 w
+(concurrent,) 3099 3156 w
+(137) 3600 3156 w
+(file,) 3099 3276 w
+(3, 210) 3307 3276 w
+(sequential,) 3099 3396 w
+(137) 3579 3396 w
+(servers) 3024 3516 w
+(authentication,) 3099 3636 w
+(341) 3740 3636 w
+(CPU,) 3099 3756 w
+(140) 3369 3756 w
+(file,) 3099 3876 w
+(147) 3307 3876 w
+(service,) 3024 3996 w
+(126) 3381 3996 w
+(name,) 3099 4116 w
+(147) 3390 4116 w
+(shell,) 3024 4236 w
+(4) 3288 4236 w
+(function,) 3099 4356 w
+(192) 3507 4356 w
+(script,) 3099 4476 w
+(89) 3396 4476 w
+(sign on, single,) 3024 4596 w
+(354) 3680 4596 w
+(single sign on,) 3024 4716 w
+(354) 3655 4716 w
+(single\255user,) 3024 4836 w
+(337) 3537 4836 w
+(slash,) 3024 4956 w
+(11) 3299 4956 w
+(space, name,) 3024 5076 w
+(147) 3586 5076 w
+(space., The name,) 3024 5196 w
+(141) 3791 5196 w
+(spin lock,) 3024 5316 w
+(224) 3463 5316 w
+(src,) 3024 5436 w
+(120) 3215 5436 w
+(stack segment,) 3024 5556 w
+(29) 3662 5556 w
+(standard) 3024 5676 w
+(error,) 3099 5796 w
+(48) 3367 5796 w
+(input,) 3099 5916 w
+(48) 3380 5916 w
+(output,) 3099 6036 w
+(48) 3430 6036 w
+(starvation,) 3024 6156 w
+(223) 3493 6156 w
+(state, process,) 3024 6276 w
+(39) 3631 6276 w
+(stateless,) 3024 6396 w
+(3) 3432 6396 w
+(store, backing,) 3024 6516 w
+(287) 3659 6516 w
+(string, error,) 3024 6636 w
+(34) 3570 6636 w
+(switch, context,) 3024 6756 w
+(40) 3704 6756 w
+(synchronize,) 3024 6876 w
+(217, 220) 3581 6876 w
+(synchronous,) 3024 6996 w
+(107) 3604 6996 w
+(system) 3024 7116 w
+(call,) 3099 7236 w
+(20) 3318 7236 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 3 3
+%%Page: 4 4
+/saveobj save def
+mark
+4 pagesetup
+10 /Times-Roman f
+(\255 4 \255) 2797 480 w
+(file,) 795 840 w
+(210) 1003 840 w
+(knows nothing, The,) 795 960 w
+(26) 1667 960 w
+(load,) 795 1080 w
+(116) 1042 1080 w
+(operating,) 795 1200 w
+(1) 1247 1200 w
+10 /Times-Bold f
+(T) 745 1440 w
+10 /Times-Roman f
+(table, mount,) 720 1596 w
+(149) 1295 1596 w
+(table., The file descriptor,) 720 1716 w
+(141) 1801 1716 w
+(Tags,) 720 1836 w
+(306) 989 1836 w
+(terminal,) 720 1956 w
+(3) 1128 1956 w
+(test\255and\255set,) 720 2076 w
+(220) 1255 2076 w
+(testing, regression,) 720 2196 w
+(335) 1522 2196 w
+(text segment,) 720 2316 w
+(29) 1303 2316 w
+(the background, in,) 720 2436 w
+(88) 1541 2436 w
+(The) 720 2556 w
+(evironment variables.,) 795 2676 w
+(141) 1735 2676 w
+(file descriptor table.,) 795 2796 w
+(141) 1671 2796 w
+(flow of control.,) 795 2916 w
+(141) 1494 2916 w
+(memory segments.,) 795 3036 w
+(141) 1625 3036 w
+(name space.,) 795 3156 w
+(141) 1357 3156 w
+(note group.,) 795 3276 w
+(141) 1325 3276 w
+(the program, loads,) 720 3396 w
+(27) 1541 3396 w
+(The) 720 3516 w
+(rendezvous group.,) 795 3636 w
+(141) 1607 3636 w
+(system knows nothing,) 795 3756 w
+(26) 1765 3756 w
+(thread,) 720 3876 w
+(244) 1044 3876 w
+(id,) 795 3996 w
+(247) 948 3996 w
+(tickets,) 720 4116 w
+(341) 1056 4116 w
+(timeouts,) 720 4236 w
+(111) 1140 4236 w
+(trap,) 720 4356 w
+(21) 950 4356 w
+(type,) 720 4476 w
+(120) 967 4476 w
+(message,) 795 4596 w
+(306) 1208 4596 w
+10 /Times-Bold f
+(U) 745 4836 w
+10 /Times-Roman f
+(Unicode,) 720 4992 w
+(274) 1133 4992 w
+(union,) 720 5112 w
+(156) 1023 5112 w
+(users,) 720 5232 w
+(337) 1000 5232 w
+(UTF\2558,) 720 5352 w
+(275) 1067 5352 w
+10 /Times-Bold f
+(V) 745 5592 w
+10 /Times-Roman f
+(variables) 720 5748 w
+(condition,) 795 5868 w
+(236) 1248 5868 w
+(environment,) 795 5988 w
+(36) 1375 5988 w
+(variables., The evironment,) 720 6108 w
+(141) 1865 6108 w
+(virtual) 720 6228 w
+(machine,) 795 6348 w
+(2) 1208 6348 w
+(memory,) 795 6468 w
+(28) 1203 6468 w
+10 /Times-Bold f
+(W) 745 6708 w
+10 /Times-Roman f
+(wdir,) 720 6864 w
+(120) 978 6864 w
+(window,) 720 6984 w
+(295) 1117 6984 w
+(with holes, file,) 720 7104 w
+(56) 1392 7104 w
+(working directory,) 720 7224 w
+(141) 1513 7224 w
+(write boundaries,) 3024 840 w
+(100) 3767 840 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 4 4
+%%Page: 5 5
+/saveobj save def
+mark
+5 pagesetup
+10 /Times-Roman f
+(\255 5 \255) 2797 480 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 5 5
+%%Trailer
+done
+%%DocumentFonts: Times-Roman LucidaSansUnicode20 Times-Bold
+%%Pages: 5

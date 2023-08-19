@@ -1,0 +1,95 @@
+  ..	[..]	{see} arithmetic progression
+  ;	[;]	{see} semicolon statement terminator
+  ".\|.\|.", '.\|.\|.'	["].\|.\|.["], ['].\|.\|.[']	{see} quotes
+  >, >>	[>], [>>]	{see} output to file
+  >>> <<<	[>>> <<<]	{see} error messages
+ 7 Input and Output, CONTENTS	7 Input and Output, CONTENTS	
+= attribute	[=] attribute	{see} defined variables
+[^...] regular expression	[%[^]...[%]] regular expression	32
+~ tilde	[%~] tilde	41
+-a, ps	\f(CW-a\fP, \f(CWps\fP	34
+and Output, CONTENTS 7 Input	and Output, CONTENTS 7 Input	
+argument	argument	{see} command-line argument
+array	array	{see} one-dimensional set, parameter
+.body	[.body]	{see} constraint body
+book index, sorting a	book index, sorting a	25
+breakpoint	breakpoint	{see} piecewise-linear expression
+built-in function	built-in function	{see} function
+Cartesian product	Cartesian product	{see} cross product
+command	command	{see also} statement
+command mode	command mode	{see} model mode
+command, ps	command, \f(CWps\fP	34
+command, pr -n	command, [pr] [-]{n}	31
+comparison operators	comparison operators	{see} relational operators
+conditional declaration	conditional declaration	{see} [if] indexing expression
+conditional expression	conditional expression	{see} logical expression, [if]-[then]-[else]
+CONTENTS 7 Input and Output	CONTENTS 7 Input and Output	
+%d specification, printf	[%%d] specification, [printf]	35
+.dat file	[.dat] file	{see} file
+data reset	data reset	{see} [reset] [data] command
+data value, omitted	data value, omitted	{see} default symbol
+declaration	declaration	{see also} statement
+.dual	[.dual]	{see} dual value
+file inclusion	file inclusion	{see} [model], [data]
+flow	flow	{see} network flow
+include	[include]	{see also} [model], [data]
+index	index	{see} dummy index
+Input and Output, CONTENTS 7	Input and Output, CONTENTS 7	
+intersection, set	intersection, set	{see} [inter]
+iterated operator	iterated operator	{see} operator
+Lagrange multiplier	Lagrange multiplier	{see} dual variables
+line	line	1\(en3, 11\(en19
+marginal value	marginal~value	{see} dual value
+matrix	matrix	{see} two-dimensional set, parameter
+maximize	[maximize]	{see} objective declaration
+member, dummy	member, dummy	{see} dummy index
+membership test	membership test	{see} [in], [within]
+messages	messages	{see} error messages
+minimize	[minimize]	{see} objective declaration
+.mod file	[.mod] file	{see} file
+model file	model file	{see} file
+omitted data value	omitted data value	{see} default symbol
+Output, CONTENTS 7 Input and	Output, CONTENTS 7 Input and	
+pr -n command	[pr] [-]{n} command	31
+price, shadow	price, shadow	{see} dual value
+printf %d specification	[printf] [%%d] specification	35
+problem	problem	{see also} model
+ps -a	\f(CWps\fP
+ps -a	   \f(CW-a\fP	34
+ps -a	   command	34
+PS1 shell variable	\f(CWPS1\fP shell variable	36
+qualified name	qualified name	{see} [.] suffix
+.rc	[.rc]	{see} reduced cost
+reading files	reading files	{see} [model], [data]
+redirection	redirection	{see} output to file
+regular expression, [^...]	regular expression, [%[^]...[%]]	32
+roll trim problem	roll trim problem	{see} cutting-stock problem
+scaling along arc	scaling along arc	{see} loss in network flow
+scope	scope	{see also} dummy index
+set difference	set difference	{see} [diff], [symdiff]
+set intersection	set intersection	{see} [inter]
+set of sets	set of sets	{see} indexed collection
+shadow price	shadow price	{see} dual value
+shell variable, PS1	shell variable, \f(CWPS1\fP	36
+simplification of expression	simplification of expression	{see also} presolve
+slope	slope	{see} piecewise-linear expression
+soft constraints	soft constraints	{see} penalty function
+sorting a book index	sorting a book index	25
+space requirement	space requirement	{see} memory use
+specification, printf %d	specification, [printf] [%%d]	35
+s.t.	[s.t.]	{see} constraint declaration
+starting guess	starting guess	{see} initial values of variables
+statement	statement	{see also} command, declaration
+subject to	[subject] [to]	{see} constraint declaration
+subset test	subset test	{see} [in], [within]
+such-that condition	such-that condition	{see} logical condition
+symmetric difference	symmetric difference	{see} [symdiff]
+syntax error	syntax error	{see} error messages
+TEX	T\v'.17m'\h'-.12m'E\h'-.12m'\v'-.17m'X	40
+tilde, ~	tilde, [%~]	41
+traffic flow	traffic flow	{see} maximum flow model
+transposition	transposition	{see} table transposition
+variable, PS1 shell	variable, \f(CWPS1\fP shell	36
+vector	vector	{see} one-dimensional set, parameter
+viewing data	viewing data	{see} [display] command
+zero-one programming	zero-one programming	{see} integer programming

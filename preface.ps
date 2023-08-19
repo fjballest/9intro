@@ -1,0 +1,1436 @@
+%!PS-Adobe-2.0
+%%Version: 0.1
+%%DocumentFonts: (atend)
+%%Pages: (atend)
+%%EndComments
+%
+% Version 3.3.2 prologue for troff files.
+%
+
+/#copies 1 store
+/aspectratio 1 def
+/formsperpage 1 def
+/landscape false def
+/linewidth .3 def
+/magnification 1 def
+/margin 0 def
+/orientation 0 def
+/resolution 720 def
+/rotation 1 def
+/xoffset 0 def
+/yoffset 0 def
+
+/roundpage true def
+/useclippath true def
+/pagebbox [0 0 612 792] def
+
+/R  /Times-Roman def
+/I  /Times-Italic def
+/B  /Times-Bold def
+/BI /Times-BoldItalic def
+/H  /Helvetica def
+/HI /Helvetica-Oblique def
+/HB /Helvetica-Bold def
+/HX /Helvetica-BoldOblique def
+/CW /Courier def
+/CO /Courier def
+/CI /Courier-Oblique def
+/CB /Courier-Bold def
+/CX /Courier-BoldOblique def
+/PA /Palatino-Roman def
+/PI /Palatino-Italic def
+/PB /Palatino-Bold def
+/PX /Palatino-BoldItalic def
+/Hr /Helvetica-Narrow def
+/Hi /Helvetica-Narrow-Oblique def
+/Hb /Helvetica-Narrow-Bold def
+/Hx /Helvetica-Narrow-BoldOblique def
+/KR /Bookman-Light def
+/KI /Bookman-LightItalic def
+/KB /Bookman-Demi def
+/KX /Bookman-DemiItalic def
+/AR /AvantGarde-Book def
+/AI /AvantGarde-BookOblique def
+/AB /AvantGarde-Demi def
+/AX /AvantGarde-DemiOblique def
+/NR /NewCenturySchlbk-Roman def
+/NI /NewCenturySchlbk-Italic def
+/NB /NewCenturySchlbk-Bold def
+/NX /NewCenturySchlbk-BoldItalic def
+/ZD /ZapfDingbats def
+/ZI /ZapfChancery-MediumItalic def
+/S  /S def
+/S1 /S1 def
+/GR /Symbol def
+
+/inch {72 mul} bind def
+/min {2 copy gt {exch} if pop} bind def
+
+/setup {
+	counttomark 2 idiv {def} repeat pop
+
+	landscape {/orientation 90 orientation add def} if
+	/scaling 72 resolution div def
+	linewidth setlinewidth
+	1 setlinecap
+
+	pagedimensions
+	xcenter ycenter translate
+	orientation rotation mul rotate
+	width 2 div neg height 2 div translate
+	xoffset inch yoffset inch neg translate
+	margin 2 div dup neg translate
+	magnification dup aspectratio mul scale
+	scaling scaling scale
+
+	addmetrics
+	0 0 moveto
+} def
+
+/pagedimensions {
+	useclippath userdict /gotpagebbox known not and {
+		/pagebbox [clippath pathbbox newpath] def
+		roundpage currentdict /roundpagebbox known and {roundpagebbox} if
+	} if
+	pagebbox aload pop
+	4 -1 roll exch 4 1 roll 4 copy
+	landscape {4 2 roll} if
+	sub /width exch def
+	sub /height exch def
+	add 2 div /xcenter exch def
+	add 2 div /ycenter exch def
+	userdict /gotpagebbox true put
+} def
+
+/addmetrics {
+	/Symbol /S null Sdefs cf
+	/Times-Roman /S1 StandardEncoding dup length array copy S1defs cf
+} def
+
+/pagesetup {
+	/page exch def
+	currentdict /pagedict known currentdict page known and {
+		page load pagedict exch get cvx exec
+	} if
+} def
+
+/decodingdefs [
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg /y exch def counttomark 2 idiv {y moveto show} repeat}
+	{neg moveto {2 index stringwidth pop sub exch div 0 32 4 -1 roll widthshow} repeat}
+	{neg moveto {spacewidth sub 0.0 32 4 -1 roll widthshow} repeat}
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg setfunnytext}
+] def
+
+/setdecoding {/t decodingdefs 3 -1 roll get bind def} bind def
+
+/w {neg moveto show} bind def
+/m {neg dup /y exch def moveto} bind def
+/done {/lastpage where {pop lastpage} if} def
+
+/f {
+	dup /font exch def findfont exch
+	dup /ptsize exch def scaling div dup /size exch def scalefont setfont
+	linewidth ptsize mul scaling 10 mul div setlinewidth
+	/spacewidth ( ) stringwidth pop def
+} bind def
+
+/changefont {
+	/fontheight exch def
+	/fontslant exch def
+	currentfont [
+		1 0
+		fontheight ptsize div fontslant sin mul fontslant cos div
+		fontheight ptsize div
+		0 0
+	] makefont setfont
+} bind def
+
+/sf {f} bind def
+
+/cf {
+	dup length 2 idiv
+	/entries exch def
+	/chtab exch def
+	/newencoding exch def
+	/newfont exch def
+
+	findfont dup length 1 add dict
+	/newdict exch def
+	{1 index /FID ne {newdict 3 1 roll put}{pop pop} ifelse} forall
+
+	newencoding type /arraytype eq {newdict /Encoding newencoding put} if
+
+	newdict /Metrics entries dict put
+	newdict /Metrics get
+	begin
+		chtab aload pop
+		1 1 entries {pop def} for
+		newfont newdict definefont pop
+	end
+} bind def
+
+%
+% A few arrays used to adjust reference points and character widths in some
+% of the printer resident fonts. If square roots are too high try changing
+% the lines describing /radical and /radicalex to,
+%
+%	/radical	[0 -75 550 0]
+%	/radicalex	[-50 -75 500 0]
+%
+% Move braceleftbt a bit - default PostScript character is off a bit.
+%
+
+/Sdefs [
+	/bracketlefttp		[201 500]
+	/bracketleftbt		[201 500]
+	/bracketrighttp		[-81 380]
+	/bracketrightbt		[-83 380]
+	/braceleftbt		[203 490]
+	/bracketrightex		[220 -125 500 0]
+	/radical		[0 0 550 0]
+	/radicalex		[-50 0 500 0]
+	/parenleftex		[-20 -170 0 0]
+	/integral		[100 -50 500 0]
+	/infinity		[10 -75 730 0]
+] def
+
+/S1defs [
+	/underscore		[0 80 500 0]
+	/endash			[7 90 650 0]
+] def
+%
+% Tries to round clipping path dimensions, as stored in array pagebbox, so they
+% match one of the known sizes in the papersizes array. Lower left coordinates
+% are always set to 0.
+%
+
+/roundpagebbox {
+    7 dict begin
+	/papersizes [8.5 inch 11 inch 14 inch 17 inch] def
+
+	/mappapersize {
+		/val exch def
+		/slop .5 inch def
+		/diff slop def
+		/j 0 def
+		0 1 papersizes length 1 sub {
+			/i exch def
+			papersizes i get val sub abs
+			dup diff le {/diff exch def /j i def} {pop} ifelse
+		} for
+		diff slop lt {papersizes j get} {val} ifelse
+	} def
+
+	pagebbox 0 0 put
+	pagebbox 1 0 put
+	pagebbox dup 2 get mappapersize 2 exch put
+	pagebbox dup 3 get mappapersize 3 exch put
+    end
+} bind def
+
+%%EndProlog
+%%BeginSetup
+mark
+%
+% Encoding vector and redefinition of findfont for the ISO Latin1 standard.
+% The 18 characters missing from ROM based fonts on older printers are noted
+% below.
+%
+
+/ISOLatin1Encoding [
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/space
+	/exclam
+	/quotedbl
+	/numbersign
+	/dollar
+	/percent
+	/ampersand
+	/quoteright
+	/parenleft
+	/parenright
+	/asterisk
+	/plus
+	/comma
+	/minus
+	/period
+	/slash
+	/zero
+	/one
+	/two
+	/three
+	/four
+	/five
+	/six
+	/seven
+	/eight
+	/nine
+	/colon
+	/semicolon
+	/less
+	/equal
+	/greater
+	/question
+	/at
+	/A
+	/B
+	/C
+	/D
+	/E
+	/F
+	/G
+	/H
+	/I
+	/J
+	/K
+	/L
+	/M
+	/N
+	/O
+	/P
+	/Q
+	/R
+	/S
+	/T
+	/U
+	/V
+	/W
+	/X
+	/Y
+	/Z
+	/bracketleft
+	/backslash
+	/bracketright
+	/asciicircum
+	/underscore
+	/quoteleft
+	/a
+	/b
+	/c
+	/d
+	/e
+	/f
+	/g
+	/h
+	/i
+	/j
+	/k
+	/l
+	/m
+	/n
+	/o
+	/p
+	/q
+	/r
+	/s
+	/t
+	/u
+	/v
+	/w
+	/x
+	/y
+	/z
+	/braceleft
+	/bar
+	/braceright
+	/asciitilde
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/dotlessi
+	/grave
+	/acute
+	/circumflex
+	/tilde
+	/macron
+	/breve
+	/dotaccent
+	/dieresis
+	/.notdef
+	/ring
+	/cedilla
+	/.notdef
+	/hungarumlaut
+	/ogonek
+	/caron
+	/space
+	/exclamdown
+	/cent
+	/sterling
+	/currency
+	/yen
+	/brokenbar		% missing
+	/section
+	/dieresis
+	/copyright
+	/ordfeminine
+	/guillemotleft
+	/logicalnot
+	/hyphen
+	/registered
+	/macron
+	/degree			% missing
+	/plusminus		% missing
+	/twosuperior		% missing
+	/threesuperior		% missing
+	/acute
+	/mu			% missing
+	/paragraph
+	/periodcentered
+	/cedilla
+	/onesuperior		% missing
+	/ordmasculine
+	/guillemotright
+	/onequarter		% missing
+	/onehalf		% missing
+	/threequarters		% missing
+	/questiondown
+	/Agrave
+	/Aacute
+	/Acircumflex
+	/Atilde
+	/Adieresis
+	/Aring
+	/AE
+	/Ccedilla
+	/Egrave
+	/Eacute
+	/Ecircumflex
+	/Edieresis
+	/Igrave
+	/Iacute
+	/Icircumflex
+	/Idieresis
+	/Eth			% missing
+	/Ntilde
+	/Ograve
+	/Oacute
+	/Ocircumflex
+	/Otilde
+	/Odieresis
+	/multiply		% missing
+	/Oslash
+	/Ugrave
+	/Uacute
+	/Ucircumflex
+	/Udieresis
+	/Yacute			% missing
+	/Thorn			% missing
+	/germandbls
+	/agrave
+	/aacute
+	/acircumflex
+	/atilde
+	/adieresis
+	/aring
+	/ae
+	/ccedilla
+	/egrave
+	/eacute
+	/ecircumflex
+	/edieresis
+	/igrave
+	/iacute
+	/icircumflex
+	/idieresis
+	/eth			% missing
+	/ntilde
+	/ograve
+	/oacute
+	/ocircumflex
+	/otilde
+	/odieresis
+	/divide			% missing
+	/oslash
+	/ugrave
+	/uacute
+	/ucircumflex
+	/udieresis
+	/yacute			% missing
+	/thorn			% missing
+	/ydieresis
+] def
+
+/NewFontDirectory FontDirectory maxlength dict def
+
+%
+% Apparently no guarantee findfont is defined in systemdict so the obvious
+%
+%	systemdict /findfont get exec
+%
+% can generate an error. So far the only exception is a VT600 (version 48.0).
+%
+
+userdict /@RealFindfont known not {
+	userdict begin
+		/@RealFindfont systemdict begin /findfont load end def
+	end
+} if
+
+/findfont {
+	dup NewFontDirectory exch known not {
+		dup
+		%dup systemdict /findfont get exec	% not always in systemdict
+		dup userdict /@RealFindfont get exec
+		dup /Encoding get StandardEncoding eq {
+			dup length dict begin
+				{1 index /FID ne {def}{pop pop} ifelse} forall
+				/Encoding ISOLatin1Encoding def
+				currentdict
+			end
+			/DummyFontName exch definefont
+		} if
+		NewFontDirectory 3 1 roll put
+	} if
+	NewFontDirectory exch get
+} bind def
+
+%%Patch from lp
+%%EndPatch from lp
+
+setup
+%%EndSetup
+%%Page: 1 1
+/saveobj save def
+mark
+1 pagesetup
+13 /Times-Bold f
+(Preface) 2201 1076 w
+11 /Times-Roman f
+(Using) 816 1682 w
+(effectively) 1113 1682 w
+(the) 1614 1682 w
+(operating) 1782 1682 w
+(system) 2230 1682 w
+(is) 2571 1682 w
+(very) 2680 1682 w
+(important) 2909 1682 w
+(for) 3372 1682 w
+(anyone) 3534 1682 w
+(working) 3885 1682 w
+(with) 566 1802 w
+(computers.) 801 1802 w
+(It) 1325 1802 w
+(can) 1431 1802 w
+(be) 1621 1802 w
+(the) 1763 1802 w
+(difference) 1936 1802 w
+(between) 2416 1802 w
+(performing) 2819 1802 w
+(most) 3351 1802 w
+(tasks) 3604 1802 w
+(by) 3862 1802 w
+(hand,) 4010 1802 w
+(and) 566 2042 w
+(asking) 752 2042 w
+(the) 1067 2042 w
+(computer) 1229 2042 w
+(to) 1671 2042 w
+(perform) 1785 2042 w
+(them.) 2165 2042 w
+(Traditionally,) 816 2198 w
+(Operating) 1463 2198 w
+(Systems) 1947 2198 w
+(courses) 2361 2198 w
+(used) 2735 2198 w
+(UNIX) 2982 2198 w
+(to) 3301 2198 w
+(do) 3433 2198 w
+(this.) 3589 2198 w
+(However,) 3823 2198 w
+(today) 566 2318 w
+(there) 845 2318 w
+(is) 1098 2318 w
+(no) 1206 2318 w
+(such) 1350 2318 w
+(thing) 1585 2318 w
+(as) 1846 2318 w
+(UNIX.) 1971 2318 w
+(Linux) 2306 2318 w
+(is) 2603 2318 w
+(a) 2711 2318 w
+(huge) 2793 2318 w
+(system,) 3040 2318 w
+(full) 3408 2318 w
+(of) 3595 2318 w
+(inconsisten\255) 3720 2318 w
+(cies,) 566 2438 w
+(with) 806 2438 w
+(programs) 1044 2438 w
+(that) 1500 2438 w
+(do) 1707 2438 w
+(multiple) 1859 2438 w
+(tasks) 2269 2438 w
+(and) 2532 2438 w
+(do) 2733 2438 w
+(not) 2886 2438 w
+(perform) 3070 2438 w
+(them) 3465 2438 w
+(well.) 3728 2438 w
+(Linux) 3988 2438 w
+(manual) 566 2558 w
+(pages) 917 2558 w
+(just) 1194 2558 w
+(cannot) 1382 2558 w
+(be) 1702 2558 w
+(read.) 1833 2558 w
+(These) 816 2714 w
+(lecture) 1124 2714 w
+(notes) 1468 2714 w
+(use) 1747 2714 w
+(Plan) 1940 2714 w
+(9) 2183 2714 w
+(from) 2285 2714 w
+(Bell) 2545 2714 w
+(Labs) 2776 2714 w
+(to) 3036 2714 w
+(teach) 3169 2714 w
+(a) 3446 2714 w
+(first) 3542 2714 w
+(\(practical!\)) 3767 2714 w
+(course) 566 2834 w
+(on) 884 2834 w
+(operating) 1026 2834 w
+(systems.) 1472 2834 w
+(The) 1881 2834 w
+(system) 2083 2834 w
+(is) 2421 2834 w
+(easy) 2527 2834 w
+(to) 2753 2834 w
+(use) 2871 2834 w
+(for) 3049 2834 w
+(programmers,) 3208 2834 w
+(and) 3852 2834 w
+(is) 4042 2834 w
+(an) 4148 2834 w
+(excellent) 566 2954 w
+(example) 991 2954 w
+(of) 1392 2954 w
+(high\255quality) 1513 2954 w
+(system) 2081 2954 w
+(design) 2417 2954 w
+(and) 2735 2954 w
+(software) 2924 2954 w
+(development.) 3331 2954 w
+(Study\255) 3957 2954 w
+(ing) 566 3074 w
+(its) 738 3074 w
+(code) 874 3074 w
+(reveals) 1111 3074 w
+(how) 1451 3074 w
+(simplicity) 1671 3074 w
+(can) 2144 3074 w
+(be) 2326 3074 w
+(more) 2460 3074 w
+(effective) 2716 3074 w
+(than) 3128 3074 w
+(contortions) 3348 3074 w
+(made) 3874 3074 w
+(by) 4141 3074 w
+(other) 566 3194 w
+(systems.) 819 3194 w
+(The) 816 3350 w
+(first) 1020 3350 w
+(Operating) 1231 3350 w
+(Systems) 1703 3350 w
+(course) 2105 3350 w
+(at) 2424 3350 w
+(Rey) 2537 3350 w
+(Juan) 2748 3350 w
+(Carlos) 2983 3350 w
+(University) 3304 3350 w
+(is) 3802 3350 w
+(focused) 3911 3350 w
+(on) 566 3470 w
+(practice.) 725 3470 w
+(Because) 1147 3470 w
+(in) 1560 3470 w
+(theory,) 1694 3470 w
+(theory) 2050 3470 w
+(is) 2378 3470 w
+(like) 2500 3470 w
+(practice,) 2713 3470 w
+(but) 3134 3470 w
+(in) 3323 3470 w
+(practice) 3457 3470 w
+(it) 3850 3470 w
+(is) 3960 3470 w
+(not.) 4082 3470 w
+(What) 566 3590 w
+(is) 847 3590 w
+(important) 965 3590 w
+(is) 1437 3590 w
+(for) 1555 3590 w
+(you) 1726 3590 w
+(to) 1935 3590 w
+(use) 2065 3590 w
+(the) 2255 3590 w
+(system,) 2433 3590 w
+(and) 2811 3590 w
+(to) 3013 3590 w
+(learn) 3143 3590 w
+(to) 3406 3590 w
+(solve) 3537 3590 w
+(problems.) 3814 3590 w
+(Theory) 566 3710 w
+(will) 922 3710 w
+(come) 1134 3710 w
+(later) 1411 3710 w
+(to) 1645 3710 w
+(fill) 1771 3710 w
+(the) 1940 3710 w
+(gaps) 2113 3710 w
+(and) 2353 3710 w
+(try) 2550 3710 w
+(to) 2711 3710 w
+(give) 2836 3710 w
+(more) 3064 3710 w
+(insight) 3328 3710 w
+(about) 3668 3710 w
+(what) 3951 3710 w
+(a) 4203 3710 w
+(system) 566 3830 w
+(does) 900 3830 w
+(and) 1129 3830 w
+(how) 1315 3830 w
+(can) 1532 3830 w
+(it) 1711 3830 w
+(be) 1801 3830 w
+(used.) 1932 3830 w
+(The) 816 3986 w
+(whole) 1015 3986 w
+(text) 1312 3986 w
+(assumes) 1507 3986 w
+(that) 1903 3986 w
+(you) 2098 3986 w
+(have) 2293 3986 w
+(been) 2529 3986 w
+(already) 2765 3986 w
+(exposed) 3116 3986 w
+(to) 3505 3986 w
+(computer,) 3621 3986 w
+(and) 4093 3986 w
+(used) 566 4106 w
+(at) 809 4106 w
+(least) 930 4106 w
+(a) 1173 4106 w
+(computer) 1263 4106 w
+(running) 1719 4106 w
+(Windows.) 2103 4106 w
+(This) 2594 4106 w
+(is) 2831 4106 w
+(so) 2946 4106 w
+(common) 3085 4106 w
+(that) 3511 4106 w
+(it) 3717 4106 w
+(makes) 3820 4106 w
+(no) 4141 4106 w
+(sense) 566 4226 w
+(to) 833 4226 w
+(drop) 949 4226 w
+(this) 1180 4226 w
+(assumption.) 1370 4226 w
+(Furthermore,) 1930 4226 w
+(we) 2536 4226 w
+(assume) 2693 4226 w
+(that) 3046 4226 w
+(you) 3241 4226 w
+(already) 3436 4226 w
+(know) 3787 4226 w
+(how) 4062 4226 w
+(to) 566 4346 w
+(write) 694 4346 w
+(programs.) 961 4346 w
+(This) 1445 4346 w
+(is) 1683 4346 w
+(indeed) 1799 4346 w
+(the) 2133 4346 w
+(case) 2309 4346 w
+(for) 2538 4346 w
+(the) 2707 4346 w
+(lecture) 2883 4346 w
+(this) 3222 4346 w
+(text) 3423 4346 w
+(is) 3629 4346 w
+(written) 3744 4346 w
+(for.) 4096 4346 w
+(One) 566 4466 w
+(last) 781 4466 w
+(assumption) 967 4466 w
+(is) 1502 4466 w
+(that) 1609 4466 w
+(you) 1807 4466 w
+(attended) 2005 4466 w
+(a) 2409 4466 w
+(basic) 2490 4466 w
+(computer) 2749 4466 w
+(architecture) 3197 4466 w
+(course,) 3746 4466 w
+(and) 4093 4466 w
+(you) 566 4586 w
+(know) 775 4586 w
+(at) 1062 4586 w
+(least) 1184 4586 w
+(basic) 1428 4586 w
+(concepts.) 1696 4586 w
+(There) 2150 4586 w
+(is) 2447 4586 w
+(a) 2564 4586 w
+(quick) 2655 4586 w
+(review) 2942 4586 w
+(appendix) 3282 4586 w
+(in) 3727 4586 w
+(case) 3856 4586 w
+(you) 4086 4586 w
+(need) 566 4706 w
+(to) 800 4706 w
+(refresh) 914 4706 w
+(your) 1244 4706 w
+(memory.) 1473 4706 w
+(Throughout) 816 4862 w
+(the) 1372 4862 w
+(text,) 1543 4862 w
+(the) 1773 4862 w
+11 /Times-Bold f
+(boldface) 1944 4862 w
+11 /Times-Roman f
+(font) 2378 4862 w
+(is) 2592 4862 w
+(used) 2703 4862 w
+(when) 2941 4862 w
+(a) 3215 4862 w
+(new) 3300 4862 w
+(concept) 3519 4862 w
+(is) 3896 4862 w
+(intro\255) 4007 4862 w
+(duced.) 566 4982 w
+(This) 901 4982 w
+(will) 1143 4982 w
+(help) 1361 4982 w
+(you) 1596 4982 w
+(to) 1807 4982 w
+(make) 1939 4982 w
+(quick) 2222 4982 w
+(reviews) 2512 4982 w
+(and) 2898 4982 w
+(to) 3102 4982 w
+(double) 3233 4982 w
+(check) 3577 4982 w
+(that) 3876 4982 w
+(you) 4086 4982 w
+(know) 566 5102 w
+(the) 842 5102 w
+(concepts.) 1008 5102 w
+(All) 1451 5102 w
+(important) 1624 5102 w
+(concepts) 2084 5102 w
+(are) 2499 5102 w
+(listed) 2663 5102 w
+(in) 2934 5102 w
+(the) 3052 5102 w
+(index,) 3218 5102 w
+(at) 3523 5102 w
+(the) 3635 5102 w
+(end) 3802 5102 w
+(of) 3993 5102 w
+(the) 4117 5102 w
+(book.) 566 5222 w
+(The) 866 5222 w
+11 /Courier f
+(constant) 1088 5222 w
+(width) 1706 5222 w
+11 /Times-Roman f
+(teletype) 2087 5222 w
+(font) 2485 5222 w
+(is) 2713 5222 w
+(used) 2838 5222 w
+(to) 3090 5222 w
+(refer) 3227 5222 w
+(to) 3482 5222 w
+(machine) 3619 5222 w
+(data,) 4041 5222 w
+(including) 566 5342 w
+(functions,) 1017 5342 w
+(programs,) 1489 5342 w
+(and) 1966 5342 w
+(symbol) 2159 5342 w
+(names.) 2519 5342 w
+(In) 2862 5342 w
+(many) 2988 5342 w
+(cases,) 3268 5342 w
+(text) 3562 5342 w
+(in) 3763 5342 w
+(constant) 3885 5342 w
+(width) 566 5462 w
+(font) 851 5462 w
+(reproduces) 1062 5462 w
+(a) 1575 5462 w
+(session) 1657 5462 w
+(with) 2009 5462 w
+(the) 2239 5462 w
+(system) 2407 5462 w
+(\(e.g.,) 2747 5462 w
+(typing) 3004 5462 w
+(some) 3319 5462 w
+(commands) 3584 5462 w
+(and) 4093 5462 w
+(showing) 566 5582 w
+(their) 981 5582 w
+(output\).) 1224 5582 w
+(The) 1612 5582 w
+(text) 1824 5582 w
+(written) 2031 5582 w
+(by) 2384 5582 w
+(the) 2536 5582 w
+(user) 2712 5582 w
+(\(and) 2936 5582 w
+(not) 3172 5582 w
+(by) 3355 5582 w
+(the) 3507 5582 w
+(computer\)) 3684 5582 w
+(is) 4177 5582 w
+(slightly) 566 5702 w
+11 /Courier f
+15 11 changefont
+(slanted) 936 5702 w
+11 /Times-Roman f
+(,) 1398 5702 w
+(but) 1463 5702 w
+(still) 1641 5702 w
+(in) 1845 5702 w
+(constant) 1968 5702 w
+(width.) 2371 5702 w
+(Note) 2687 5702 w
+(the) 2937 5702 w
+(difference) 3108 5702 w
+(with) 3586 5702 w
+(respect) 3819 5702 w
+(to) 4165 5702 w
+(the) 566 5822 w
+(font) 743 5822 w
+(used) 963 5822 w
+(for) 1207 5822 w
+(text) 1377 5822 w
+(written) 1585 5822 w
+(by) 1939 5822 w
+(a) 2092 5822 w
+(program,) 2183 5822 w
+(which) 2625 5822 w
+(is) 2936 5822 w
+(not) 3053 5822 w
+11 /Courier f
+(slanted) 3238 5822 w
+11 /Times-Roman f
+(.) 3700 5822 w
+11 /Times-Italic f
+(Italics) 3800 5822 w
+11 /Times-Roman f
+(are) 4119 5822 w
+(used) 566 5942 w
+(to) 823 5942 w
+(emphasize) 965 5942 w
+(things) 1483 5942 w
+(and) 1809 5942 w
+(to) 2023 5942 w
+(refer) 2164 5942 w
+(to) 2423 5942 w
+(the) 2564 5942 w
+(system) 2753 5942 w
+(manual,) 3114 5942 w
+(like) 3520 5942 w
+(in) 3740 5942 w
+11 /Times-Italic f
+(intro) 3881 5942 w
+11 /Times-Roman f
+(\(1\).) 4096 5942 w
+(Regarding) 566 6062 w
+(numeric) 1070 6062 w
+(values,) 1476 6062 w
+(we) 1831 6062 w
+(use) 2005 6062 w
+(the) 2198 6062 w
+(C) 2379 6062 w
+(notation) 2501 6062 w
+(to) 2910 6062 w
+(represent) 3044 6062 w
+(hexadecimal) 3492 6062 w
+(and) 4093 6062 w
+(octal) 566 6182 w
+(numeric) 807 6182 w
+(bases.) 1194 6182 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 1 1
+%%Page: 2 2
+/saveobj save def
+mark
+2 pagesetup
+11 /Times-Roman f
+(Unlike) 566 686 w
+(most) 914 686 w
+(other) 1178 686 w
+(textbooks) 1452 686 w
+(for) 1929 686 w
+(operating) 2106 686 w
+(systems) 2570 686 w
+(courses,) 2969 686 w
+(bibliographic) 3375 686 w
+(refer\255) 4011 686 w
+(ences) 566 806 w
+(are) 840 806 w
+(kept) 1004 806 w
+(to) 1224 806 w
+(the) 1341 806 w
+(bare) 1506 806 w
+(minimum.) 1724 806 w
+(We) 2213 806 w
+(cite) 2395 806 w
+(a) 2584 806 w
+(particular) 2663 806 w
+(text) 3113 806 w
+(when) 3309 806 w
+(we) 3577 806 w
+(think) 3735 806 w
+(that) 3993 806 w
+(it) 4189 806 w
+(may) 566 926 w
+(be) 790 926 w
+(worth) 929 926 w
+(reading) 1221 926 w
+(to) 1585 926 w
+(continue) 1707 926 w
+(learning) 2121 926 w
+(about) 2516 926 w
+(something) 2796 926 w
+(said) 3291 926 w
+(in) 3504 926 w
+(this) 3626 926 w
+(book.) 3822 926 w
+(So,) 4106 926 w
+(do) 566 1046 w
+(not) 712 1046 w
+(quickly) 888 1046 w
+(dismiss) 1253 1046 w
+(references.) 1620 1046 w
+(We) 2129 1046 w
+(encourage) 2315 1046 w
+(you) 2798 1046 w
+(to) 2998 1046 w
+(read) 3119 1046 w
+(them,) 3341 1046 w
+(to) 3624 1046 w
+(learn) 3745 1046 w
+(more.) 3998 1046 w
+(There) 566 1166 w
+(are) 862 1166 w
+(not) 1036 1166 w
+(so) 1220 1166 w
+(many) 1361 1166 w
+(ones.) 1648 1166 w
+(If) 1920 1166 w
+(you) 2035 1166 w
+(want) 2243 1166 w
+(to) 2499 1166 w
+(get) 2628 1166 w
+(a) 2805 1166 w
+(thorough) 2896 1166 w
+(set) 3336 1166 w
+(of) 3501 1166 w
+(references) 3635 1166 w
+(for) 4124 1166 w
+(something) 566 1286 w
+(discussed) 1065 1286 w
+(in) 1526 1286 w
+(the) 1652 1286 w
+(test,) 1826 1286 w
+(we) 2047 1286 w
+(suggest) 2213 1286 w
+(looking) 2582 1286 w
+(at) 2958 1286 w
+(a) 3076 1286 w
+(more) 3163 1286 w
+(classical) 3427 1286 w
+(operating) 3837 1286 w
+(systems) 566 1406 w
+(textbook,) 943 1406 w
+(like) 1384 1406 w
+(for) 1577 1406 w
+(example) 1732 1406 w
+([1].) 2131 1406 w
+(It) 816 1562 w
+(is) 916 1562 w
+(important) 1023 1562 w
+(to) 1484 1562 w
+(note) 1603 1562 w
+(that) 1825 1562 w
+(this) 2023 1562 w
+(book) 2216 1562 w
+(is) 2469 1562 w
+(not) 2576 1562 w
+(a) 2750 1562 w
+(reference) 2831 1562 w
+(for) 3267 1562 w
+(using) 3427 1562 w
+(an) 3700 1562 w
+(operating) 3837 1562 w
+(system) 566 1682 w
+(nor) 913 1682 w
+(a) 1100 1682 w
+(reference) 1189 1682 w
+(for) 1633 1682 w
+(Plan) 1801 1682 w
+(9) 2038 1682 w
+(from) 2134 1682 w
+(Bell) 2387 1682 w
+(Labs.) 2611 1682 w
+(The) 2892 1682 w
+(user's) 3102 1682 w
+(manual) 3403 1682 w
+(that) 3766 1682 w
+(comes) 3971 1682 w
+(installed) 566 1802 w
+(within) 976 1802 w
+(the) 1295 1802 w
+(system) 1466 1802 w
+(is) 1809 1802 w
+(the) 1920 1802 w
+(proper) 2091 1802 w
+(reference) 2413 1802 w
+(to) 2853 1802 w
+(use.) 2976 1802 w
+(These) 3187 1802 w
+(lecture) 3486 1802 w
+(notes) 3821 1802 w
+(just) 4091 1802 w
+(shows) 566 1922 w
+(you) 891 1922 w
+(how) 1106 1922 w
+(things) 1345 1922 w
+(work,) 1665 1922 w
+(by) 1968 1922 w
+(using) 2128 1922 w
+(them.) 2417 1922 w
+(Once) 2715 1922 w
+(you) 2995 1922 w
+(have) 3209 1922 w
+(gone) 3464 1922 w
+(through) 3726 1922 w
+(the) 4117 1922 w
+(course,) 566 2042 w
+(you) 907 2042 w
+(are) 1100 2042 w
+(expected) 1260 2042 w
+(to) 1676 2042 w
+(search) 1790 2042 w
+(and) 2096 2042 w
+(use) 2282 2042 w
+(the) 2456 2042 w
+(user's) 2618 2042 w
+(manual) 2907 2042 w
+(as) 3258 2042 w
+(a) 3377 2042 w
+(reference.) 3453 2042 w
+(One) 816 2198 w
+(final) 1026 2198 w
+(note) 1255 2198 w
+(of) 1472 2198 w
+(caution.) 1591 2198 w
+(This) 1971 2198 w
+(text) 2196 2198 w
+(is) 2390 2198 w
+(to) 2493 2198 w
+(be) 2608 2198 w
+(read) 2740 2198 w
+(with) 2956 2198 w
+(a) 3181 2198 w
+(computer) 3258 2198 w
+(side) 3701 2198 w
+(by) 3907 2198 w
+(side.) 4046 2198 w
+(The) 566 2318 w
+(only) 769 2318 w
+(way) 998 2318 w
+(to) 1213 2318 w
+(learn) 1332 2318 w
+(to) 1583 2318 w
+(use) 1702 2318 w
+(a) 1881 2318 w
+(system) 1962 2318 w
+(is) 2301 2318 w
+(by) 2408 2318 w
+(actually) 2551 2318 w
+(using) 2931 2318 w
+(it.) 3202 2318 w
+(Reading) 3324 2318 w
+(this) 3722 2318 w
+(without) 3914 2318 w
+(doing) 566 2438 w
+(so) 845 2438 w
+(is) 971 2438 w
+(meaningless.) 1073 2438 w
+(I) 816 2594 w
+(am) 894 2594 w
+(grateful) 1070 2594 w
+(go) 1452 2594 w
+(to) 1604 2594 w
+(other) 1732 2594 w
+(colleagues) 1999 2594 w
+(who) 2504 2594 w
+(suffered) 2736 2594 w
+(or) 3136 2594 w
+(helped) 3270 2594 w
+(in) 3605 2594 w
+(one) 3734 2594 w
+(way) 3935 2594 w
+(or) 4160 2594 w
+(another) 566 2714 w
+(to) 933 2714 w
+(write) 1058 2714 w
+(this) 1322 2714 w
+(book.) 1521 2714 w
+(First,) 1808 2714 w
+(authors) 2078 2714 w
+(of) 2440 2714 w
+(Plan) 2570 2714 w
+(9) 2805 2714 w
+(from) 2899 2714 w
+(Bell) 3151 2714 w
+(Labs) 3373 2714 w
+(made) 3624 2714 w
+(an) 3899 2714 w
+(awe\255) 4040 2714 w
+(some) 566 2834 w
+(system,) 849 2834 w
+(worth) 1234 2834 w
+(describing) 1541 2834 w
+(for) 2050 2834 w
+(an) 2229 2834 w
+(Operating) 2384 2834 w
+(Systems) 2874 2834 w
+(Course.) 3294 2834 w
+(It) 3685 2834 w
+(cannot) 3804 2834 w
+(be) 4148 2834 w
+(overemphasized) 566 2954 w
+(how) 1322 2954 w
+(much) 1555 2954 w
+(help) 1843 2954 w
+(the) 2076 2954 w
+(authors) 2254 2954 w
+(of) 2621 2954 w
+(Plan) 2756 2954 w
+(9) 2996 2954 w
+(provide) 3095 2954 w
+(to) 3474 2954 w
+(anyone) 3604 2954 w
+(asking) 3964 2954 w
+(questions) 566 3074 w
+(in) 1010 3074 w
+(the) 1124 3074 w
+11 /Courier f
+(9fans) 1286 3074 w
+11 /Times-Roman f
+(list.) 1644 3074 w
+(For) 1836 3074 w
+(what) 2017 3074 w
+(is) 2258 3074 w
+(worth,) 2360 3074 w
+(I) 2672 3074 w
+(have) 2736 3074 w
+(to) 2970 3074 w
+(say) 3084 3074 w
+(that) 3258 3074 w
+(I) 3451 3074 w
+(am) 3515 3074 w
+(deeply) 3677 3074 w
+(grate\255) 3997 3074 w
+(ful) 566 3194 w
+(to) 724 3194 w
+(people) 846 3194 w
+(like) 1174 3194 w
+(Rob) 1375 3194 w
+(Pike,) 1595 3194 w
+(Dave) 1854 3194 w
+(Presotto,) 2119 3194 w
+(Jim) 2543 3194 w
+(McKie,) 2738 3194 w
+(Russ) 3105 3194 w
+(Cox,) 3355 3194 w
+(and) 3602 3194 w
+(many) 3795 3194 w
+(oth\255) 4074 3194 w
+(ers.) 566 3314 w
+(In) 776 3314 w
+(particular,) 922 3314 w
+(Russ) 1424 3314 w
+(Cox) 1694 3314 w
+(seems) 1933 3314 w
+(to) 2256 3314 w
+(be) 2397 3314 w
+(a) 2555 3314 w
+(program) 2658 3314 w
+(listening) 3084 3314 w
+(for) 3519 3314 w
+(questions) 3701 3314 w
+(at) 4172 3314 w
+11 /Courier f
+(9fans) 566 3434 w
+11 /Times-Roman f
+(,) 896 3434 w
+(at) 960 3434 w
+(least) 1075 3434 w
+(his) 1312 3434 w
+(response) 1477 3434 w
+(time) 1895 3434 w
+(suggests) 2126 3434 w
+(that.) 2534 3434 w
+(I) 2790 3434 w
+(have) 2861 3434 w
+(learned) 3102 3434 w
+(a) 3458 3434 w
+(lot) 3541 3434 w
+(from) 3693 3434 w
+(you) 3941 3434 w
+(all) 4141 3434 w
+(\(or) 566 3554 w
+(I) 727 3554 w
+(tried\).) 797 3554 w
+(Other) 1124 3554 w
+(colleagues) 1407 3554 w
+(from) 1903 3554 w
+(Rey) 2150 3554 w
+(Juan) 2361 3554 w
+(Carlos) 2596 3554 w
+(University) 2917 3554 w
+(helped) 3415 3554 w
+(me) 3741 3554 w
+(as) 3909 3554 w
+(well.) 4034 3554 w
+(Pedro) 566 3674 w
+(de) 853 3674 w
+(las) 987 3674 w
+(Heras) 1140 3674 w
+(was) 1425 3674 w
+(eager) 1625 3674 w
+(to) 1890 3674 w
+(get) 2006 3674 w
+(new) 2170 3674 w
+(drafts) 2382 3674 w
+(for) 2661 3674 w
+(this) 2818 3674 w
+(manuscript.) 3008 3674 w
+(Sergio) 3582 3674 w
+(Ar\351valo) 3899 3674 w
+(was) 566 3794 w
+(an) 779 3794 w
+(unlimited) 925 3794 w
+(supply) 1391 3794 w
+(of) 1728 3794 w
+(useful) 1862 3794 w
+(comments) 2173 3794 w
+(and) 2668 3794 w
+(fixes) 2869 3794 w
+(for) 3125 3794 w
+(improving) 3296 3794 w
+(this) 3799 3794 w
+(book,) 4003 3794 w
+(specially) 566 3914 w
+(for) 995 3914 w
+(using) 1161 3914 w
+(it) 1438 3914 w
+(as) 1538 3914 w
+(a) 1667 3914 w
+(textbook.) 1753 3914 w
+(Jos\351) 2204 3914 w
+(Centeno) 2431 3914 w
+(was) 2835 3914 w
+(scared) 3043 3914 w
+(to) 3359 3914 w
+(hell) 3483 3914 w
+(after) 3686 3914 w
+(reading) 3923 3914 w
+(our) 566 4034 w
+(initial) 757 4034 w
+(description) 1060 4034 w
+(of) 1593 4034 w
+(computer) 1729 4034 w
+(networks,) 2188 4034 w
+(and) 2663 4034 w
+(helped) 2867 4034 w
+(to) 3205 4034 w
+(reach) 3337 4034 w
+(a) 3618 4034 w
+(much) 3712 4034 w
+(better) 4002 4034 w
+(description.) 566 4154 w
+(Francisco) 566 4994 w
+(J.) 1020 4994 w
+(Ballesteros) 1119 4994 w
+(Laboratorio) 566 5114 w
+(de) 1111 5114 w
+(Sistemas,) 1242 5114 w
+(Rey) 566 5234 w
+(Juan) 771 5234 w
+(Carlos) 1000 5234 w
+(University) 1315 5234 w
+(of) 1807 5234 w
+(Madrid) 1926 5234 w
+(Madrid,) 566 5354 w
+(Spain) 945 5354 w
+(2006) 566 5474 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 2 2
+%%Trailer
+done
+%%DocumentFonts: Times-Roman Times-Italic Times-Bold Courier
+%%Pages: 2

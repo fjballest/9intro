@@ -1,0 +1,19 @@
+line	1
+line	2
+line	2
+line	3
+%begin line	11
+%begin line	14
+%begin line	12
+line	15
+%end line	19
+\f(CWps\fP \f(CW-a\fP	34
+\f(CWps\fP command	34
+\f(CWPS1\fP shell variable	36
+sorting~a book~index	25
+[pr]~[-]{n} command	31
+[%[^]...[%]] regular~expression	32
+[printf] [%%d] specification	35
+T\v'.17m'\h'-.12m'E\h'-.12m'\v'-.17m'X %key TEX	40
+CONTENTS 7 Input and Output
+[%~] tilde	41

@@ -1,0 +1,2270 @@
+ix: operating system	1
+ix: libraries	1
+ix: kernel	1
+ix: abstraction	1
+ix: abstract data types	1
+ix: backward-compatibility	2
+ix: virtual machine	2
+ix: abstraction	2
+ix: resource manager	2
+ix: resource multiplexing	2
+ix: magic	2
+ix: privileged mode	2
+ix: entering the~system	2
+ix: UNIX	3
+ix: terminal	3
+ix: command	3
+ix: command	3
+ix: window system	3
+ix: stateless	3
+ix: file server	3
+ix: clients	3
+ix: PXE	3
+ix: booting	3
+ix: prompt	4
+ix: user name	4
+ix: account	4
+ix: Return	4
+ix: open account	4
+ix: logging into	4
+ix: login	4
+ix: loging out	4
+ix: logout	4
+ix: shell	4
+ix: command line	4
+ix: [rc]	4
+ix: directory	4
+ix: home directory	4
+ix: [newuser]	4
+ix: [rio]	4
+ix: [profile]	4
+ix: leaving the~system	5
+ix: loging out	5
+ix: logout	5
+ix: editing	5
+ix: executing commands	5
+ix: window system	5
+ix: [rio] menu	5
+ix: mouse button	5
+ix: [rio] commands	5
+ix: [New]	5
+ix: new window	5
+ix: [Resize]	5
+ix: [Move]	5
+ix: [Delete]	5
+ix: [Hide]	5
+ix: Rob Pike	6
+ix: [acme]	6
+ix: [acme]	6
+ix: file	6
+ix: acme commands	7
+ix: [Del]	7
+ix: [Snarf]	7
+ix: [Get]	7
+ix: [Put]	7
+ix: [Exit]	7
+ix: tag	7
+ix: point to~type	7
+ix: click to~type	7
+ix: [date]	7
+ix: help	7
+ix: manual	7
+ix: [man]	8
+ix: command argument	8
+ix: command option	8
+ix: command flag	8
+ix: [lookman]	8
+ix: [sig]	9
+ix: using files	9
+ix: [date]	9
+ix: typing~a command	9
+ix: [ls]	9
+ix: compound command	9
+ix: escape character	10
+ix: [touch]	10
+ix: argument	10
+ix: command argument	10
+ix: option	10
+ix: flags	10
+ix: [ls] flag~[-s]	10
+ix: file size	10
+ix: file copy	10
+ix: [cp]	10
+ix: file remove	10
+ix: [rm]	10
+ix: command diagnostic	11
+ix: [rm] flag~[-f]	11
+ix: directory	11
+ix: directory	11
+ix: file name	11
+ix: file tree	11
+ix: slash	11
+ix: path	11
+ix: root directory	12
+ix: current directory	12
+ix: relative paths	12
+ix: absolute paths	12
+ix: home directory	12
+ix: dot directory	12
+ix: dot-dot directory	13
+ix: [cd]	13
+ix: change current directory	13
+ix: [pwd]	13
+ix: print current directory	13
+ix: [mkdir]	13
+ix: [rm]	13
+ix: [mv]	13
+ix: file rename	13
+ix: file move	13
+ix: [ls] flag~[-m]	14
+ix: file who~last~modified	14
+ix: [ls] flag~[-d]	14
+ix: [cp]	14
+ix: data	14
+ix: file content	14
+ix: [cat]	14
+ix: file display	14
+ix: [xd]	14
+ix: file hexadecimal dump	14
+ix: offset	15
+ix: UTF8	15
+ix: rune	15
+ix: new-line character	15
+ix: control character	15
+ix: UNIX	15
+ix: carriage-return character	15
+ix: line-feed character	15
+ix: EOF	16
+ix: end of~file	16
+ix: [Tab]	16
+ix: tab wdith	16
+ix: data meaning~of	16
+ix: privacy	17
+ix: file permissions	17
+ix: access control list	17
+ix: file ownership	17
+ix: group	17
+ix: account	17
+ix: executable file	17
+ix: directory permissions	17
+ix: [chmod]	18
+ix: change permissions	18
+ix: octal mode	18
+ix: permissions in~octal	18
+ix: C program	19
+ix: [take.c]	19
+ix: C program	19
+ix: C language	19
+ix: compiler	19
+ix: library	19
+ix: [8c]	19
+ix: [8l]	19
+ix: Intel	19
+ix: shell comment~character	19
+ix: UNIX	19
+ix: loader	19
+ix: binary file	19
+ix: [8.out]	19
+ix: cross-compiler	19
+ix: [5c]	19
+ix: [5l]	19
+ix: arm	19
+ix: Ken Thompson	19
+ix: [u.h]	19
+ix: [libc.h]	19
+ix: standard includes	19
+ix: header files	19
+ix: [pragma]	19
+ix: compiler flags	19
+ix: [8l] flag~[-o]	20
+ix: program text	20
+ix: object file	20
+ix: binary file	20
+ix: [nm]	20
+ix: program symbols	20
+ix: [exits]	21
+ix: [print]	21
+ix: undefined symbol	21
+ix: library function	21
+ix: system call	21
+ix: [write]	21
+ix: terminal	22
+ix: file server	22
+ix: privileged mode	22
+ix: kernel	22
+ix: software interrupt	22
+ix: trap	22
+ix: remote procedure call	22
+ix: shell	23
+ix: command interpreter	23
+ix: command	23
+ix: command line	23
+ix: binary file	23
+ix: system call	23
+ix: window system	23
+ix: hardware	23
+ix: program execution	23
+ix: hardware interrupt	23
+ix: hardware device	23
+ix: device driver	23
+ix: process	25
+ix: running program	25
+ix: flow~of~control	25
+ix: current directory	25
+ix: independent execution	25
+ix: parallel execution	25
+ix: program counter	26
+ix: concurrent processes	26
+ix: parallel	26
+ix: pseudo-parallel execution	26
+ix: loaded program	26
+ix: binary file	26
+ix: compiler	26
+ix: linker	26
+ix: [strip]	27
+ix: symbol table	27
+ix: [ls] flag~[-l]	27
+ix: [global.c]	27
+ix: global variable	27
+ix: program loader	27
+ix: memory image	27
+ix: loader	28
+ix: virtual address space	28
+ix: virtual memory	28
+ix: [nm] flag~[-n]	28
+ix: [etext]	28
+ix: [end]	28
+ix: [edata]	28
+ix: virtual memory	29
+ix: memory segment	29
+ix: text segment	29
+ix: data segment	29
+ix: bss segment	29
+ix: [malloc]	29
+ix: stack segment	29
+ix: demand paging	29
+ix: loading on~demand	29
+ix: process birth	30
+ix: process death	30
+ix: program arguments	30
+ix: [main]	30
+ix: program entry point	30
+ix: [echo.c]	30
+ix: relative path	30
+ix: [argv]	30
+ix: [echo]	30
+ix: [echo] flag~[-n]	30
+ix: option [--]	31
+ix: [aecho.c]	31
+ix: [ARGBEGIN]	31
+ix: [ARGEND]	31
+ix: [argv0]	32
+ix: option argument	32
+ix: [ARGF]	32
+ix: [usage]	33
+ix: [EARGF]	33
+ix: command invocation syntax	33
+ix: [exits]	33
+ix: process termination	33
+ix: exit status	33
+ix: [sic.c]	33
+ix: [$status]	33
+ix: system call error	34
+ix: debugging	34
+ix: programming practice	34
+ix: error string	34
+ix: [%r]	34
+ix: [print]	34
+ix: [err.c]	35
+ix: [chdir]	35
+ix: [sysfatal]	35
+ix: [rerrstr]	35
+ix: [werrstr]	35
+ix: environment variables	36
+ix: [rio]	36
+ix: window	36
+ix: process group	36
+ix: home directory	36
+ix: command line	36
+ix: [pwd]	36
+ix: [$status]	36
+ix: exit status	36
+ix: [$path]	37
+ix: command	37
+ix: [/bin]	37
+ix: [$user]	37
+ix: user name	37
+ix: [$sysname]	37
+ix: system name	37
+ix: debugging	37
+ix: quoting	37
+ix: [argv]	37
+ix: [echo.c]	37
+ix: escape character	37
+ix: backslash	37
+ix: [getenv]	38
+ix: [env.c]	38
+ix: [putenv]	38
+ix: process name	38
+ix: process state	38
+ix: scheduling	38
+ix: process id	38
+ix: pid	38
+ix: [$pid]	38
+ix: shell pid	38
+ix: temporary files	38
+ix: [getpid]	38
+ix: [pid.c]	39
+ix: [ps]	39
+ix: process memory	39
+ix: virtual memory	39
+ix: [Pread]	39
+ix: [Await]	39
+ix: process state	39
+ix: process	39
+ix: flow of control	39
+ix: kernel	39
+ix: system call	39
+ix: quantum	39
+ix: context switch	39
+ix: context	39
+ix: scheduler	39
+ix: scheduling	39
+ix: preemptive scheduling	39
+ix: running	39
+ix: ready	39
+ix: busy waiting	39
+ix: multiprogramming	40
+ix: blocked	40
+ix: broken	40
+ix: exception	40
+ix: error	40
+ix: debugging	40
+ix: trap	40
+ix: fault	40
+ix: exit status	41
+ix: memory segment	41
+ix: [src]	41
+ix: program source	41
+ix: symbol	41
+ix: [acid]	41
+ix: debugging	41
+ix: debugger	41
+ix: [stk] [acid] command	41
+ix: [lstk] [acid] command	41
+ix: [main]	42
+ix: [_main]	42
+ix: [abort]	42
+ix: [broken]	42
+ix: everything is~a~file	42
+ix: process	42
+ix: environment variable	42
+ix: file	42
+ix: file interface	42
+ix: time	43
+ix: [/dev/time]	43
+ix: epoch	43
+ix: [time]	43
+ix: [/proc] file system	43
+ix: [#p] device driver	43
+ix: [ps]	43
+ix: [acid]	43
+ix: process [mem] file	43
+ix: [kill]	43
+ix: killing a~process	43
+ix: [ctl]	43
+ix: process [ctl] file	43
+ix: memory segment	44
+ix: text segment	44
+ix: data segment	44
+ix: stack segment	44
+ix: bss segment	44
+ix: null pointer	44
+ix: environment variable	44
+ix: [/env] file system	44
+ix: [#e] device driver	44
+ix: [sysname]	44
+ix: [user]	44
+ix: [path]	44
+ix: [getenv]	44
+ix: [/dev/text]	45
+ix: window text	45
+ix: [/dev/window]	45
+ix: window image	45
+ix: [rio]	45
+ix: [lp]	45
+ix: screen image	45
+ix: [/dev/screen]	45
+ix: I/O	47
+ix: formatted output	47
+ix: [write]	47
+ix: [write.c]	47
+ix: [sig]	47
+ix: file descriptor	47
+ix: file descriptor table	47
+ix: standard output	47
+ix: standard input	47
+ix: standard error	47
+ix: [read]	48
+ix: [read.c]	48
+ix: [cat]	48
+ix: control-d	49
+ix: console	49
+ix: standard input	49
+ix: standard output	49
+ix: standard error	49
+ix: [/dev/cons]	49
+ix: window	49
+ix: [read.c]	49
+ix: [open]	49
+ix: file name	49
+ix: path	49
+ix: open mode	49
+ix: [read]	49
+ix: [write]	49
+ix: [close]	49
+ix: [OREAD] open~mode	49
+ix: [OWRITE] open~mode	49
+ix: process [fd] file	49
+ix: file descriptor	49
+ix: [$pid]	49
+ix: current directory	50
+ix: [OREAD] open~mode	50
+ix: [OWRITE] open~mode	50
+ix: [sleep.c]	50
+ix: [sleep]	50
+ix: file offset	51
+ix: sequential access	51
+ix: [seek]	51
+ix: offset	51
+ix: [fhello.c]	52
+ix: [/NOTICE]	52
+ix: new line	52
+ix: [open]	52
+ix: [write]	52
+ix: [xd]	53
+ix: file offset	53
+ix: [OWRITE] open~mode	53
+ix: [Chan]	53
+ix: 9P	53
+ix: file server	53
+ix: channel	53
+ix: [seek]	53
+ix: [xd]	54
+ix: truncate	54
+ix: [OTRUNC] open~mode	54
+ix: [thello.c]	54
+ix: [seek]	55
+ix: [seekhello.c]	55
+ix: [write]	55
+ix: disk space	55
+ix: file with holes	55
+ix: append only	55
+ix: [chmod]	55
+ix: [chmod] flag~[+a]	55
+ix: [nread.c]	56
+ix: [create]	56
+ix: file creation	56
+ix: [open]	56
+ix: [create.c]	56
+ix: truncate	57
+ix: directory creation	57
+ix: [DMDIR]	57
+ix: [remove]	57
+ix: file deletion	57
+ix: [rm]	57
+ix: [rm.c]	57
+ix: system call error	57
+ix: error string	57
+ix: empty directory	57
+ix: [rm] flag~[-r]	57
+ix: wastebasket	57
+ix: [access]	57
+ix: checking~for access	57
+ix: [AEXIST] access~mode	58
+ix: [AWRITE] access~mode	58
+ix: [AREAD] access~mode	58
+ix: [AEXEC] access~mode	58
+ix: metadata	58
+ix: file attributes	58
+ix: directory entry	58
+ix: architecture independent	58
+ix: network format	58
+ix: [libc.h]	58
+ix: C library	58
+ix: [Dir]	59
+ix: [ls]	59
+ix: file name	59
+ix: file access time	59
+ix: [mtime]	59
+ix: file modification time	59
+ix: [/dev/time]	59
+ix: file length	59
+ix: file owner	59
+ix: file group	59
+ix: permissions	59
+ix: [uid]	59
+ix: user id	59
+ix: [gid]	59
+ix: group id	59
+ix: file mode	59
+ix: [chmod]	59
+ix: octal permissions	59
+ix: modification user id	59
+ix: QID	59
+ix: [dirstat]	59
+ix: [stat]	59
+ix: [Dir]	59
+ix: [malloc]	59
+ix: [free]	59
+ix: [stat.c]	60
+ix: [stat]	60
+ix: [Dir]	60
+ix: [dirfstat]	60
+ix: [fstat]	60
+ix: [stat]	60
+ix: directory read	60
+ix: [dirread]	60
+ix: network format	60
+ix: [lsdot.c]	61
+ix: [dirwstat]	61
+ix: [dirstat]	61
+ix: [chgrp]	61
+ix: [chgrp.c]	62
+ix: [wstat]	62
+ix: [dirfwstat]	62
+ix: [fwstat]	62
+ix: [ls]	62
+ix: [lc]	62
+ix: file list	62
+ix: directory list	62
+ix: [echo]	63
+ix: shell variable	63
+ix: environment variable	63
+ix: variable expansion	63
+ix: globbing	63
+ix: file name patterns	63
+ix: matching	63
+ix: [*] pattern	63
+ix: file name	63
+ix: file searching	63
+ix: [rm]	64
+ix: [?] pattern	64
+ix: character range pattern	64
+ix: file dump	64
+ix: file archive	64
+ix: [/n/dump]	64
+ix: quoting	64
+ix: [rm]	64
+ix: buffered I/O	65
+ix: [open]	65
+ix: [close]	65
+ix: [read]	65
+ix: [write]	65
+ix: [cat]	65
+ix: [cp]	65
+ix: file copy	65
+ix: [bcp.c]	65
+ix: device to~device	65
+ix: [dd]	65
+ix: file creation	66
+ix: file block	66
+ix: [/dev/zero]	66
+ix: tape	66
+ix: buffer	66
+ix: [time]	66
+ix: performance	66
+ix: user time	66
+ix: system time	66
+ix: elapsed time	66
+ix: [bio]	67
+ix: buffered I/O	67
+ix: [Biobuf]	67
+ix: [read]	67
+ix: [biocp.c]	67
+ix: [bio.h]	67
+ix: [Bopen]	67
+ix: [read]	68
+ix: [Bread]	68
+ix: [Bwrite]	68
+ix: [Bterm]	68
+ix: [Biobuf] termination	68
+ix: [Bflush]	68
+ix: [Biobuf] flushing	68
+ix: [cat]	69
+ix: [biocat.c]	69
+ix: [Binit]	69
+ix: [Biobuf] file descriptor	69
+ix: [Brdline]	69
+ix: read line	69
+ix: [Brdstr]	69
+ix: string read	69
+ix: [Blinelen]	69
+ix: line length	69
+ix: buffer flushing	70
+ix: program execution	71
+ix: process	71
+ix: command	71
+ix: system call	71
+ix: process creation	71
+ix: program loading	71
+ix: process environment	71
+ix: [fork]	71
+ix: [exec]	71
+ix: [execl]	71
+ix: [runls.c]	71
+ix: [main]	71
+ix: parent process	71
+ix: child process	71
+ix: [fork] return~value	71
+ix: process creation	72
+ix: [fork]	72
+ix: [onefork.c]	72
+ix: [exits]	72
+ix: process termination	72
+ix: process memory	72
+ix: registers	72
+ix: independent execution	72
+ix: [fork]	72
+ix: [intfork.c]	74
+ix: virus	74
+ix: [child.c]	74
+ix: child process	74
+ix: runaway process	75
+ix: [diehard]	75
+ix: [rabbits.c]	75
+ix: [fork]	75
+ix: parent process	75
+ix: child process	75
+ix: file descriptor	75
+ix: [Chan]	75
+ix: [before.c]	75
+ix: shared resource	76
+ix: [write]	76
+ix: [after.c]	77
+ix: shared offset	77
+ix: atomic [write]	77
+ix: atomic	77
+ix: race condition	78
+ix: race condition	78
+ix: concurrent programming	78
+ix: shared resource	78
+ix: program execution	78
+ix: [exec]	78
+ix: [execl]	78
+ix: [execl.c]	78
+ix: argument vector	78
+ix: [argv]	78
+ix: program name	78
+ix: [argv0]	78
+ix: [execl]	79
+ix: system call error	79
+ix: [$home]	79
+ix: environment variable	79
+ix: [exec]	80
+ix: [fork]	80
+ix: [access]	81
+ix: [AEXEC] access mode	81
+ix: wait~for children	81
+ix: [exits]	81
+ix: exit status	81
+ix: [wait]	81
+ix: [Waitmsg]	81
+ix: process time	81
+ix: error string	82
+ix: [werrstr]	82
+ix: [waitpid]	83
+ix: [await]	83
+ix: background command	83
+ix: [sleep]	83
+ix: [apid]	83
+ix: [/dev/null]	83
+ix: [read] command	84
+ix: command line	84
+ix: interpreted program	84
+ix: script	84
+ix: executable	84
+ix: binary	84
+ix: [exec] header	84
+ix: 5c	84
+ix: 5l	84
+ix: architecture	84
+ix: interpreter	84
+ix: shell script	84
+ix: [hello]~[rc]~script	84
+ix: [cdtmp]~[rc]~script	85
+ix: resource sharing	85
+ix: child process	85
+ix: [hoc]	85
+ix: arithmetic expression	85
+ix: calculator	85
+ix: shell comment	85
+ix: shell script	85
+ix: [rcecho]~[rc]~script	85
+ix: script arguments	85
+ix: I/O redirection	87
+ix: file descriptor redirection 	87
+ix: [date]	87
+ix: output redirection	87
+ix: command line	87
+ix: [ps]	87
+ix: machine load	87
+ix: process list	87
+ix: [wc]	87
+ix: word count	87
+ix: standard input	88
+ix: control-d	88
+ix: [/fd] file system	88
+ix: file descriptor	88
+ix: background command	88
+ix: input redirection	88
+ix: [iredir.c]	89
+ix: [execl]	89
+ix: standard input	89
+ix: [assert]	89
+ix: [dup]	89
+ix: duplicate file descriptor	89
+ix: [create]	90
+ix: [dup]	90
+ix: standard output redirection	91
+ix: truncate	91
+ix: standard error	91
+ix: diagnostic	91
+ix: God	91
+ix: [/dev/cons]	91
+ix: inheritance	91
+ix: append redirection	92
+ix: [create]	92
+ix: device	92
+ix: input~and~output redirection	92
+ix: [dup] in~[rc]	92
+ix: output discard	93
+ix: pipe	93
+ix: compound command	93
+ix: [troff]	93
+ix: typesetting	93
+ix: [wc]	93
+ix: word count	93
+ix: [wc] flag~[-w]	93
+ix: [grep]	93
+ix: word search	93
+ix: pipe	93
+ix: [ps]	94
+ix: [Broken]	94
+ix: [broke]	94
+ix: kill broken process	94
+ix: [rc] in~pipes	94
+ix: process communication	94
+ix: [pipe]	95
+ix: [pipe.c]	95
+ix: bidirectional pipe	95
+ix: full-duplex	95
+ix: write boundaries	95
+ix: message delimiters	95
+ix: UNIX	95
+ix: pipe	95
+ix: [fill.c]	96
+ix: [Pwrite]	96
+ix: end of~file	96
+ix: blocked process	96
+ix: broken pipe	96
+ix: closed pipe	97
+ix: [mail]	97
+ix: pipe~to child~process	97
+ix: [pipeto.c]	97
+ix: wait~for child~process	98
+ix: [waitpid]	98
+ix: [pipeto]	99
+ix: [rc] flag~[-c]	99
+ix: pipe creation	99
+ix: [fork]	99
+ix: [close]	99
+ix: [execl]	99
+ix: [waitpid]	100
+ix: deadlock	100
+ix: frozen process	100
+ix: [acme] pipe command	100
+ix: [t+]	100
+ix: command substitution	100
+ix: command line	100
+ix: [seq]	100
+ix: here file	101
+ix: [cmp]	101
+ix: file compare	101
+ix: non-linear pipe	101
+ix: notes	101
+ix: process group	101
+ix: synchronous communication	101
+ix: pipe	101
+ix: asynchronous communication	101
+ix: interrupt	101
+ix: note post	102
+ix: window system	102
+ix: console	102
+ix: focus	102
+ix: [interrupt] note	102
+ix: [apid]	102
+ix: [/proc] file system	102
+ix: process [note] file	102
+ix: process [notepg] file	102
+ix: process interrupt	102
+ix: process group	102
+ix: [hangup] note	102
+ix: exception	103
+ix: [atnotify]	103
+ix: note handler	103
+ix: process kill	103
+ix: asynchronous communication	103
+ix: [sleep]	104
+ix: [Delete]	104
+ix: [ORCLOSE] open~flag	104
+ix: [interrupt] note	104
+ix: note handler	104
+ix: process [note] file	104
+ix: process [notepg] file	104
+ix: robust file read	104
+ix: [read]	104
+ix: [readn]	104
+ix: [robustreadn]	105
+ix: timeout	105
+ix: process alarm	105
+ix: [alarm]	105
+ix: [alarm.c]	106
+ix: alarm cancel	106
+ix: timer	106
+ix: registry	106
+ix: file descriptor board	106
+ix: [/srv] file~system	106
+ix: [#s] device~driver	106
+ix: [fossil]	106
+ix: file server	106
+ix: boot	106
+ix: fossil console	106
+ix: [/srv]	107
+ix: file descriptor post	107
+ix: [dup]	107
+ix: echo server	107
+ix: [srvecho.c]	107
+ix: [create]	108
+ix: pipe	108
+ix: file server	108
+ix: [Chan]	108
+ix: [faces]	108
+ix: [mail]	108
+ix: polling	108
+ix: event	108
+ix: busy waiting	108
+ix: efficiency	108
+ix: [sleep]	108
+ix: [poll.c]	110
+ix: [pollb.c]	110
+ix: system load	110
+ix: CPU time	110
+ix: [Ready]	110
+ix: [Running]	110
+ix: process state	110
+ix: [stats]	110
+ix: system statistics	110
+ix: polling	110
+ix: [sleep]	111
+ix: event	111
+ix: event channel	111
+ix: plumbing	111
+ix: [plumber]	111
+ix: plumb message	111
+ix: pipe	111
+ix: [/mnt/plumb] file system	112
+ix: plumber [rules]	112
+ix: plumber [send]	112
+ix: plumber port	112
+ix: port	112
+ix: message delivering	112
+ix: [acme] plumbing	112
+ix: mouse button-3	112
+ix: [edit] plumb~port	112
+ix: [profile]	112
+ix: [plumbing]	112
+ix: regular expression	112
+ix: [page]	112
+ix: document viewer	112
+ix: MS~Word viewer	112
+ix: PostScript viewer	112
+ix: file address	112
+ix: text search	112
+ix: [/sys/include]	113
+ix: manual page	113
+ix: plumb message attributes	113
+ix: src	113
+ix: dst	113
+ix: wdir	113
+ix: type	113
+ix: ndata	113
+ix: [plumb] command	113
+ix: [plumb] library	113
+ix: [edits.c]	113
+ix: [plumbopen]	113
+ix: plumb~port open	113
+ix: [plumbrecv]	114
+ix: plumb message receive	114
+ix: [Plumbattr]	114
+ix: [Plumbmsg]	114
+ix: plumb message attribute	114
+ix: [plumb]	114
+ix: [plumbsend]	115
+ix: [plumbsendtext]	115
+ix: network connection	117
+ix: distributed system	117
+ix: UNIX	117
+ix: computer network	117
+ix: network services	117
+ix: mail	117
+ix: web	117
+ix: library	117
+ix: network device	117
+ix: RJ45	117
+ix: ethernet	117
+ix: [/net] file~system	117
+ix: [ether0]	117
+ix: network address	117
+ix: internet protocol	117
+ix: IP	117
+ix: [/net/ipifc]	117
+ix: protocol	117
+ix: network port	117
+ix: port number	118
+ix: transport protocol	118
+ix: datagram	118
+ix: UDP	118
+ix: connection	118
+ix: network connection	118
+ix: pipe	118
+ix: [clone] file	118
+ix: line directory	118
+ix: network [ctl]~file	118
+ix: network [data] file	118
+ix: connection hangup	119
+ix: write boundaries	119
+ix: message delimiters	119
+ix: [local] file	119
+ix: [remote] file	119
+ix: network address	119
+ix: [whale]	119
+ix: [9fs]	119
+ix: service name	119
+ix: service	119
+ix: [srv]	119
+ix: [/srv]	119
+ix: HTTP	119
+ix: [telnet]	120
+ix: telnet protocol	120
+ix: [telnet] flag~[-r]	120
+ix: carriage return	120
+ix: network address	120
+ix: port number	120
+ix: 	120
+ix: network protocol	120
+ix: name translation	120
+ix: service name	120
+ix: DNS	120
+ix: network database	121
+ix: [ndb]	121
+ix: [9fs]	121
+ix: connection server	121
+ix: [ndb/cs]	121
+ix: [csquery]	121
+ix: [ndb/csquery]	121
+ix: [netstat]	121
+ix: network status	121
+ix: [netstat] flag~[-n]	121
+ix: [ping]	122
+ix: [ip/ping]	122
+ix: network connection	122
+ix: round~trip time	122
+ix: RTT	122
+ix: making calls 	122
+ix: [srv.c]	122
+ix: dialing	122
+ix: [netmkaddr]	123
+ix: address construction	123
+ix: [dial]	123
+ix: local address	123
+ix: connection [ctl]~file	123
+ix: [getnetconninfo]	123
+ix: network connection information	123
+ix: [NetConnInfo]	124
+ix: [freenetconninfo]	124
+ix: [conninfo.c]	124
+ix: providing services	125
+ix: server	125
+ix: client	125
+ix: announce	125
+ix: [announce]	125
+ix: port announce	125
+ix: network port creation	125
+ix: service name	125
+ix: [netstat]	126
+ix: [listen]	126
+ix: line directory	126
+ix: [listen.c]	126
+ix: call receiving	127
+ix: accept connection	127
+ix: [accept]	127
+ix: [netecho.c]	128
+ix: network echo server	128
+ix: [listen]	128
+ix: sequential server	128
+ix: client connection	128
+ix: listen	128
+ix: concurrent server	128
+ix: threaded server	128
+ix: connection close	129
+ix: [cecho.c]	129
+ix: boot	130
+ix: [aux/listen]	130
+ix: machine services	130
+ix: network services	130
+ix: [/rc/bin/service]	130
+ix: TCP echo service	130
+ix: [tcp7]	130
+ix: [listen] command	130
+ix: distributed computing	130
+ix: CPU servers	130
+ix: mail server	131
+ix: [boot]	131
+ix: boot program	131
+ix: [termrc]	131
+ix: machine start script	131
+ix: UNIX	131
+ix: [listen1]	131
+ix: [cpu] command	131
+ix: [cpu] variable	131
+ix: [service]	131
+ix: profile	131
+ix: [rx]	131
+ix: remote command execution	131
+ix: resource sharing	133
+ix: file name	133
+ix: resource fork	133
+ix: [fork]	133
+ix: process creation	133
+ix: [getenv]	133
+ix: process resource	133
+ix: environment variable	133
+ix: environment process group	133
+ix: file descriptor process group	133
+ix: note process group	133
+ix: parent process	133
+ix: child process	133
+ix: [rfork]	133
+ix: control flow	133
+ix: file descriptor table	133
+ix: Environment variables	133
+ix: name space	133
+ix: working directory	133
+ix: root directory	133
+ix: slash	133
+ix: path	133
+ix: file tree	133
+ix: virtual memory segment	133
+ix: note group	133
+ix: rendezvous group	133
+ix: [rendezvous]	133
+ix: [rforkls.c]	134
+ix: [RFPROC] [rfork]~flag	134
+ix: new process	134
+ix: control flow	134
+ix: file descriptor group	134
+ix: [RFFDG] [rfork]~flag	134
+ix: [RFFDG] [rfork]~flag	134
+ix: rendezvous group	134
+ix: note group	135
+ix: [Delete]	135
+ix: [interrupt] note	135
+ix: [RFNOTEG] [rfork]~flag	135
+ix: [noterfork.c]	136
+ix: [wait]	136
+ix: environment variable	137
+ix: shell script	137
+ix: resource sharing	137
+ix: subshell	137
+ix: child process	137
+ix: [copy] [rc]~script	137
+ix: [/env]	137
+ix: [RFENVG] [rfork]~flag	137
+ix: environment group	137
+ix: [rfork] command	138
+ix: builtin command	138
+ix: independent child process	138
+ix: process termination	138
+ix: [RFNOWAIT] [rfork]~flag	138
+ix: dissociated child	138
+ix: [fork]	138
+ix: name resolution	138
+ix: path	138
+ix: walk	138
+ix: file tree	138
+ix: name space	138
+ix: file name	138
+ix: [open]	138
+ix: [/]	139
+ix: name space	139
+ix: name service	139
+ix: name resolution	139
+ix: walk	139
+ix: [Chan]	139
+ix: kernel	139
+ix: file server	139
+ix: file tree	139
+ix: 9P	139
+ix: file system protocol	139
+ix: network connection	139
+ix: [srv]	139
+ix: file descriptor post	139
+ix: [mount]	139
+ix: file system mount	139
+ix: mount table	139
+ix: walk	140
+ix: mount table	140
+ix: mount point	140
+ix: mounted file	140
+ix: [Chan]	140
+ix: [9fs] [rc]~script	141
+ix: binding	141
+ix: [bind]	141
+ix: process [ns] file	141
+ix: [/proc] file system	141
+ix: [#p] device driver	141
+ix: [grep]	141
+ix: [ns]	142
+ix: [unmount]	142
+ix: [fossil]	142
+ix: file server program	142
+ix: file system snapshot	142
+ix: file system dump	142
+ix: archive	142
+ix: attach specifier	142
+ix: mount specifier	142
+ix: [main/active]	142
+ix: [bind]	143
+ix: [9fs] [rc]~script	143
+ix: [Local]	143
+ix: [acme]	143
+ix: [rfork]	143
+ix: [plumber]	144
+ix: plumbing	144
+ix: window	144
+ix: [plumbing]	145
+ix: mount point	145
+ix: [#/] device driver	145
+ix: root device	145
+ix: [/]	145
+ix: device driver	145
+ix: file system	145
+ix: device path	146
+ix: [#] file names	146
+ix: [/dev/drivers]	146
+ix: [#e] device driver	146
+ix: [#p] device driver	146
+ix: union mount	147
+ix: [bind] flag~[-a]	147
+ix: [bind] flag~[-b]	147
+ix: union	147
+ix: mount point	148
+ix: [bind] flag~[-c]	148
+ix: [mount]	148
+ix: [bind]	148
+ix: name space	148
+ix: [aname]	148
+ix: mount specifier	148
+ix: [MREPL] mount~flag	148
+ix: [MBEFORE] mount~flag	148
+ix: [MAFTER] mount~flag	148
+ix: [MCREATE] mount~flag	148
+ix: [amount]	149
+ix: authentication mount	149
+ix: authentication file descriptor	149
+ix: [path] variable	149
+ix: [/bin]	149
+ix: binary file	149
+ix: [termrc]	149
+ix: [newns]	149
+ix: new name space	149
+ix: [/root]	150
+ix: console device	150
+ix: [#c] device driver	150
+ix: [/dev/null]	150
+ix: [/dev/time]	150
+ix: [#d] device driver	150
+ix: [/fd] file system	150
+ix: [init]	150
+ix: booting	150
+ix: [$user]	150
+ix: [$sysname]	150
+ix: [$home]	150
+ix: [$cputype]	150
+ix: user name	150
+ix: system name	150
+ix: home directory	150
+ix: CPU type	150
+ix: 386	150
+ix: union	150
+ix: sandboxing	151
+ix: [window] command	151
+ix: window system	151
+ix: [rio] file system	151
+ix: sandbox	151
+ix: no~attach	151
+ix: [RFNOMNT] [rfork]~flag	151
+ix: [box.c]	151
+ix: [getuser]	152
+ix: [/lib/namespace]	152
+ix: standard name~space	152
+ix: distributed computing	152
+ix: remote execution	152
+ix: import	152
+ix: remote file~system	152
+ix: CPU server	152
+ix: [/mnt/term]	152
+ix: terminal file~system	152
+ix: [cpu]	152
+ix: [/dev]	152
+ix: [/dev/mouse]	152
+ix: [/dev/draw]	152
+ix: [exportfs]	153
+ix: file~system export	153
+ix: [srvfs]	153
+ix: [/srv]	153
+ix: remote debugging	154
+ix: storage device driver	154
+ix: [#S] device driver	154
+ix: [sdC0]	154
+ix: firewall	155
+ix: tools	157
+ix: command	157
+ix: using [rc]	157
+ix: combining commands	157
+ix: UNIX	157
+ix: programming language	157
+ix: debugging	157
+ix: [grep]	157
+ix: text files	157
+ix: processing data	157
+ix: file interface	157
+ix: XML	157
+ix: [rc] lists	157
+ix: shell variable	157
+ix: environment variable	157
+ix: shell program	157
+ix: [getenv]	158
+ix: string	158
+ix: script argument	158
+ix: [$*]	158
+ix: variable length	158
+ix: [$#*]	158
+ix: list indexing	158
+ix: concatenation operator	158
+ix: list concatenation	158
+ix: distributive concatenation	159
+ix: empty list	160
+ix: null list	160
+ix: null variable	160
+ix: shell script	160
+ix: [rc] script	160
+ix: [rfork] command	160
+ix: arithmetic expression	160
+ix: [lookman]	160
+ix: manual search	160
+ix: [hoc] option~[-e]	161
+ix: [bc]	161
+ix: arithmetic language	161
+ix: output base	161
+ix: input base	161
+ix: hexadecimal	161
+ix: quoting	161
+ix: [d2h] [rc]~script	162
+ix: pipe	162
+ix: compound command	162
+ix: background	162
+ix: case conversion	162
+ix: [tr]	162
+ix: [tr] flag~[-d]	163
+ix: [h2d] [rc]~script	163
+ix: code generation	163
+ix: C declaration	163
+ix: array initializer	163
+ix: [for] command	163
+ix: [rc] loop	163
+ix: [seq]	164
+ix: sequences	164
+ix: command substitution	165
+ix: [if] command	165
+ix: conditional execution	165
+ix: exit status	165
+ix: [/dev/null]	165
+ix: standard error redirection	165
+ix: compare operator	165
+ix: [~] command	165
+ix: string match	165
+ix: [if] [not]	165
+ix: conditional command	165
+ix: [args] [rc]~script	166
+ix: script arguments	166
+ix: [ping]	166
+ix: [ip/ping]	166
+ix: internet probe	166
+ix: condition	167
+ix: [rc] conditionals	167
+ix: globbing	167
+ix: string match	167
+ix: [file] [rc]~script	167
+ix: [file] command	167
+ix: negation	167
+ix: [!] command	167
+ix: [switch]	167
+ix: multiway branch	167
+ix: conditional construct	167
+ix: [case]	167
+ix: pattern	168
+ix: [test]	168
+ix: [test] flag~[-d]	168
+ix: [test] flag~[-e]	168
+ix: conditional pipe	168
+ix: [&&] command	168
+ix: command line	168
+ix: logical and	168
+ix: [||] command	168
+ix: logical or	168
+ix: [when] [rc]~script	169
+ix: [sleep]	169
+ix: [mail]	169
+ix: [test] flag~[-older]	169
+ix: kernel compilation	169
+ix: parsing	169
+ix: string split	169
+ix: [when] [rc]~script	170
+ix: text editing	170
+ix: [bc]	170
+ix: efficiency	171
+ix: command line	171
+ix: [sed]	171
+ix: stream editor	171
+ix: replace string	171
+ix: [time] command	171
+ix: performance measurement	171
+ix: [wait]	171
+ix: [sed] flag~[-e]	171
+ix: file head	171
+ix: text address	171
+ix: address pair	172
+ix: delete text	172
+ix: print lines	172
+ix: [sed] flag~[-n]	172
+ix: [$] address	172
+ix: EOF address	172
+ix: include file	172
+ix: compound [sed]~command	173
+ix: substitute string	173
+ix: global substitution	173
+ix: file rename	173
+ix: move files	174
+ix: directory copy	174
+ix: CD write	174
+ix: [du]	174
+ix: disk usage	174
+ix: archive	174
+ix: [tar]	174
+ix: tape archive	174
+ix: verbose output	175
+ix: archive extraction	175
+ix: [gzip]	175
+ix: compressed archive	175
+ix: compound command	176
+ix: [sed]	177
+ix: text matching	177
+ix: text search	177
+ix: [grep]	177
+ix: regular expression	177
+ix: globbing	177
+ix: character set	177
+ix: character range	177
+ix: start~of text	177
+ix: end~of text	177
+ix: start~of line	177
+ix: end~of line	177
+ix: optional string	177
+ix: backslash	178
+ix: escape character	178
+ix: inner expression	178
+ix: sub-expression match	178
+ix: identifier	179
+ix: match context	179
+ix: text indent	179
+ix: [t+]	179
+ix: [t-]	179
+ix: [/lib/namespace]	179
+ix: [namespace] file	179
+ix: [regexp]	180
+ix: [Reprog]	180
+ix: [match.c]	180
+ix: [regcomp]	180
+ix: regular expression compiler	180
+ix: sorting	181
+ix: searching	181
+ix: [du]	181
+ix: disk usage	181
+ix: [sort]	181
+ix: text sort	181
+ix: [sort] flag~[-n]	181
+ix: [sort] flag~[-r]	181
+ix: shell function	182
+ix: [fn]	182
+ix: [lr]	182
+ix: function definition	182
+ix: [whatis]	182
+ix: [uniq]	183
+ix: remove duplicates	183
+ix: unique lines	183
+ix: [sort] flag~[-u]	183
+ix: [lrusers]	183
+ix: non-linear pipe	183
+ix: [grep] flag~[-n]	184
+ix: line number	184
+ix: [grep] flag~[-e]	184
+ix: case insensitive	185
+ix: [grep] flag~[-i]	185
+ix: spam	185
+ix: [grep] flag~[-f]	185
+ix: [patterns] file	185
+ix: file differences	185
+ix: file comparation	185
+ix: [cmp]	185
+ix: [diff]	185
+ix: script diagnostics	186
+ix: [diff] flag~[-n]	186
+ix: context [diff]	186
+ix: temporary file	188
+ix: shell note~handler	188
+ix: [sighup]	188
+ix: [sigint]	188
+ix: [sigalrm]	188
+ix: [hangup] note	188
+ix: [interrupt] note	188
+ix: AWK	188
+ix: AWK statement	189
+ix: AWK variables	189
+ix: line fields	189
+ix: AWK pattern	190
+ix: [Broken]	191
+ix: [kill]	191
+ix: reverse sort	192
+ix: memory usage	192
+ix: [BEGIN] pattern	192
+ix: [END] pattern	192
+ix: [seq]	192
+ix: maximum	193
+ix: average process	193
+ix: data processing	194
+ix: student account	194
+ix: [list] AWK~script	194
+ix: AWK program	194
+ix: [next] AWK~command	194
+ix: skip record	194
+ix: ignore comment	194
+ix: input record	194
+ix: field delimiter	195
+ix: [awk] flag~[-F]	195
+ix: [list2usr]	195
+ix: [fossil]	195
+ix: [grep] flag~[-s]	196
+ix: silent [grep]	196
+ix: [/adm/users]	196
+ix: [interrupt] note	197
+ix: [hangup] note	197
+ix: [rc] note~handler	197
+ix: [list2grades] [rc]~script	197
+ix: file server	198
+ix: file system	198
+ix: [tarfs]	198
+ix: [zipfs]	198
+ix: pipe device	198
+ix: [#|] device~driver	198
+ix: [#|/data1]	198
+ix: end~of pipe	198
+ix: [cdfs]	199
+ix: CD file~system	199
+ix: CD burn	199
+ix: audio CD	199
+ix: blank CD	199
+ix: CD copy	200
+ix: [cdcopy] [rc]~script	200
+ix: [ramfs]	200
+ix: ram file~system	200
+ix: synchronization	203
+ix: concurrent programming	203
+ix: [rfork]	203
+ix: shared memory	203
+ix: [RFMEM] [rfork]~flag	203
+ix: race condition	203
+ix: [rincr.c]	203
+ix: shared counter	203
+ix: global variable	203
+ix: meaning~of program	204
+ix: process execution	204
+ix: scheduling	204
+ix: interleaving	204
+ix: [sleep]	204
+ix: blocked state	204
+ix: context switch	204
+ix: atomic instruction	205
+ix: interrupt	205
+ix: synchronize	205
+ix: lock	206
+ix: concurrent updates	206
+ix: good luck	206
+ix: instruction order	206
+ix: critical region	206
+ix: [rcinr.c]	207
+ix: mutual exclusion	207
+ix: lock	207
+ix: resource lock	207
+ix: [Lock]	207
+ix: [lock]	207
+ix: [unlock]	207
+ix: [lock.c]	208
+ix: mutual exclusion	208
+ix: critical region	208
+ix: synchronize	208
+ix: test-and-set	208
+ix: [tas] instruction	208
+ix: boldface	209
+ix: [cnt.c]	210
+ix: [rfork]	210
+ix: process stack	211
+ix: stack dump	211
+ix: starvation	211
+ix: spin lock	211
+ix: busy waiting	211
+ix: queueing lock	212
+ix: [QLock]	212
+ix: [qlock]	212
+ix: [qunlock]	212
+ix: [qcnt.c]	213
+ix: airport panels	213
+ix: version number	214
+ix: airport application	214
+ix: panel process	214
+ix: console reader	214
+ix: message reader	214
+ix: [ticker.c]	216
+ix: process synchronization	216
+ix: process termination	216
+ix: [exits]	216
+ix: [QLock]	217
+ix: [qlock]	217
+ix: read/write locks	217
+ix: [WRLock]	217
+ix: multiple reader	217
+ix: single writer	217
+ix: [rlock]	217
+ix: [runlock]	217
+ix: [wlock]	217
+ix: [wunlock]	217
+ix: lock contention	219
+ix: [rendezvous]	219
+ix: synchronization	219
+ix: rendezvous tag	219
+ix: [rendez.c]	220
+ix: polling	221
+ix: sleep	221
+ix: wakeup	221
+ix: [rsleep]	221
+ix: [rwakeup]	221
+ix: [rwakeupall]	221
+ix: starvation	221
+ix: [Rendez]	221
+ix: monitor	223
+ix: condition variables	223
+ix: bounded buffer	223
+ix: shared buffer	223
+ix: producer/consumer	223
+ix: pipe	224
+ix: [qlock]	224
+ix: [Rendez]	224
+ix: [put]	224
+ix: [get]	225
+ix: [pc.c]	227
+ix: program termination	228
+ix: semaphore	228
+ix: semaphore tickets	228
+ix: semaphore value	228
+ix: [wait]	228
+ix: [signal]	228
+ix: [up]	228
+ix: [down]	228
+ix: mutual exclusion	229
+ix: mutex	229
+ix: bounded buffer	229
+ix: producer/consumer	230
+ix: deadlock	230
+ix: thread library	234
+ix: thread	234
+ix: control flow	234
+ix: process	234
+ix: scheduling	234
+ix: context switch	234
+ix: [Ready]	234
+ix: kernel	234
+ix: shared counter	234
+ix: [tincr.c]	235
+ix: [threadcreate]	235
+ix: [threadmain]	235
+ix: thread stack	235
+ix: process stack	235
+ix: [threadexits]	235
+ix: [exits]	235
+ix: [threadexitsall]	235
+ix: [trinc.c]	236
+ix: [sleep]	236
+ix: thread switch	236
+ix: context switch	236
+ix: [yield]	237
+ix: thread name	237
+ix: thread id	237
+ix: [threadid]	237
+ix: thread identifier	237
+ix: [tid.c]	237
+ix: [PID]	237
+ix: thread argument	238
+ix: [tcnt.c]	239
+ix: starvation	239
+ix: debugger	239
+ix: [acid]	239
+ix: thread debugging	239
+ix: [acid] [threads] function	239
+ix: [threadsetname]	240
+ix: [threadgetname]	240
+ix: thread stack dump	241
+ix: channel	241
+ix: communication channel	241
+ix: process communication	241
+ix: [send]	241
+ix: [recv]	241
+ix: [chancreate]	242
+ix: [chanfree]	242
+ix: channel buffering	243
+ix: ping-pong	243
+ix: [pong.c]	244
+ix: unbuffered channel	244
+ix: thread synchronization	245
+ix: rendezvous	245
+ix: [sendul]	246
+ix: [recvul]	246
+ix: [sendp]	246
+ix: [recvp]	246
+ix: thread I/O	246
+ix: airport application	246
+ix: airport panels	246
+ix: broadcast	246
+ix: [Brdstr]	246
+ix: buffered I/O	246
+ix: [Brdline]	246
+ix: program termination	247
+ix: [proccreate]	247
+ix: process creation	247
+ix: [threadcreate]	247
+ix: [rfork]	248
+ix: [RFREND]	248
+ix: process structure	249
+ix: multiway communication	250
+ix: [etticker.c]	254
+ix: timer thread	254
+ix: [localtime]	254
+ix: time~of~day	254
+ix: [time]	254
+ix: [Alt]	256
+ix: [alts]	256
+ix: alternative channel operation	256
+ix: simultaneous channel operation	256
+ix: [CHANRCV]	256
+ix: [CHANSEND]	256
+ix: [CHANEND]	256
+ix: [chanprint]	256
+ix: channel [print]	256
+ix: [smprint]	256
+ix: MT-Safe	257
+ix: UNIX	257
+ix: [procexec]	257
+ix: program execution	257
+ix: [procexecl]	257
+ix: [wait]	257
+ix: [threadwaitchan]	257
+ix: [Waitmsg] channel	257
+ix: [texec.c]	258
+ix: [threadnotify]	258
+ix: notes	258
+ix: [atnotify]	258
+ix: user I/O	261
+ix: [#c] device driver	261
+ix: console device	261
+ix: [/dev]	261
+ix: [/dev/cons]	261
+ix: [rio]	261
+ix: window system	261
+ix: simultaneous read	261
+ix: [#c/cons]	261
+ix: console write	262
+ix: [/dev/kprint]	262
+ix: [/dev/kmesg]	262
+ix: console read	262
+ix: cooked mode	262
+ix: backspace	262
+ix: control-u	262
+ix: newline	262
+ix: compose	262
+ix: [Delete]	262
+ix: arrow keys	262
+ix: [Escape]	262
+ix: hold mode	262
+ix: escape key	262
+ix: cooked mode	262
+ix: line discipline	262
+ix: raw mode	262
+ix: [rawon]	262
+ix: [rawoff]	262
+ix: [raw.c]	263
+ix: character echo	263
+ix: console echo	263
+ix: program interrupt	264
+ix: virtual console	264
+ix: rune	264
+ix: text representation	264
+ix: text symbol	264
+ix: ASCII	264
+ix: Unicode	264
+ix: UTF-8	264
+ix: Ken Thompson	264
+ix: Rob Pike	264
+ix: keyboard	265
+ix: greek letter	265
+ix: unicode code	265
+ix: [runetochar]	265
+ix: [chartorune]	265
+ix: [Rune]	265
+ix: [rune.c]	265
+ix: [UTFmax]	265
+ix: [toupperrune]	265
+ix: rune conversion	266
+ix: mouse input	266
+ix: [#m] device driver	266
+ix: mouse device	266
+ix: [/dev/mouse]	266
+ix: [/dev/mousectl]	266
+ix: exclusive open	266
+ix: mouse event	266
+ix: stream	266
+ix: time stamp	267
+ix: mouse coordinate	267
+ix: pixel	267
+ix: picture element	267
+ix: screen	267
+ix: screen size	267
+ix: mouse position	267
+ix: mouse button-1	267
+ix: mouse button2	267
+ix: mouse button2	267
+ix: mouse library	267
+ix: [initmouse]	268
+ix: mouse initialization	268
+ix: [Mousectl]	268
+ix: mouse event channel	268
+ix: [Mouse]	268
+ix: [recv]	268
+ix: [Point]	268
+ix: [Pfmt]	269
+ix: [%P] format	269
+ix: [fmtinstall]	269
+ix: format install	269
+ix: [closemouse]	269
+ix: graphic devices	269
+ix: VGA	269
+ix: monitor	269
+ix: hardware acceleration	269
+ix: vga device	269
+ix: [#v] device driver	269
+ix: [vgactl]	269
+ix: BIOS	269
+ix: ROM	269
+ix: text mode	269
+ix: graphics mode	269
+ix: screen resolution	270
+ix: [aux/vga]	270
+ix: [vga]	270
+ix: hardware acceleration	270
+ix: screen blank	270
+ix: [$monitor]	270
+ix: [$vgasize]	270
+ix: draw device	270
+ix: draw connection	270
+ix: [#i] device driver	270
+ix: [/dev/draw]	270
+ix: [ctl] file	270
+ix: [data] file	270
+ix: line directory	270
+ix: image	271
+ix: graphics	271
+ix: screen	271
+ix: [black.c]	271
+ix: [initdraw]	271
+ix: graphics initialization	271
+ix: [screen]	271
+ix: [display]	271
+ix: [errfun]	271
+ix: font	271
+ix: [/dev/label]	271
+ix: window label	271
+ix: [Display]	271
+ix: [closedisplay]	271
+ix: drawing graphics	272
+ix: [Image]	272
+ix: [screen] rectangle	272
+ix: [Rectangle]	272
+ix: window coordinates	272
+ix: [draw]	272
+ix: [mask]	272
+ix: [black]	272
+ix: tiling	273
+ix: clip	273
+ix: [ZP]	273
+ix: screen origin	273
+ix: coordinate translation	273
+ix: image copy	273
+ix: [mask]	273
+ix: flushimage	273
+ix: draw~operation flush	273
+ix: graphic slider	273
+ix: window resize	273
+ix: [/dev/winname]	273
+ix: window name	273
+ix: [getwindow]	273
+ix: acquiring window	273
+ix: window resize	274
+ix: resize event	274
+ix: [blank]	274
+ix: [resize.c]	275
+ix: mouse event processing	275
+ix: [mousethread]	275
+ix: [closemouse]	275
+ix: resize event	275
+ix: [resizethread]	275
+ix: backing store	276
+ix: [Refnone]	276
+ix: [threadname]	276
+ix: channel	276
+ix: slider drawing	277
+ix: color	278
+ix: [allocimage]	278
+ix: image allocation	278
+ix: [Display]	278
+ix: image descriptor	278
+ix: [Pt]	278
+ix: [Rect]	278
+ix: [Rpt]	278
+ix: replicated image	278
+ix: [repl]	278
+ix: image chan	278
+ix: [DYellow]	278
+ix: [Dx]	279
+ix: rectangle width	279
+ix: [Dy]	279
+ix: rectangle height	279
+ix: axis	279
+ix: mouse button-1	279
+ix: click	279
+ix: keyboard input	280
+ix: keyboard library	280
+ix: [initkeyboard]	280
+ix: keyboard initialization	280
+ix: [rawon]	280
+ix: [Keyboardctl]	280
+ix: [slider.c]	283
+ix: [keyboardthread]	283
+ix: [closekeyboard]	284
+ix: drawing text	284
+ix: drawing functions	284
+ix: [string]	284
+ix: draw string	284
+ix: [ZP]	285
+ix: [Font]	285
+ix: font	285
+ix: [openfont]	285
+ix: font file	285
+ix: [$font]	285
+ix: [stringsize]	285
+ix: window system	286
+ix: [rio]	286
+ix: terminal	286
+ix: console	286
+ix: window	286
+ix: console multiplexing	286
+ix: [rio] file~system	286
+ix: window creation	286
+ix: attach specifier	286
+ix: [/srv]	286
+ix: [$wsys]	286
+ix: [/dev/cons]	286
+ix: [/dev/consctl]	286
+ix: [/dev/cursor]	286
+ix: [/dev/mouse]	286
+ix: [/mnt/wsys]	287
+ix: [stats]	287
+ix: alternate window	287
+ix: new window	287
+ix: [interrupt] note	287
+ix: [Delete]	287
+ix: window pid	287
+ix: [window]	287
+ix: [window] library	288
+ix: [/dev/winid]	288
+ix: [/dev/winname]	288
+ix: [/dev/wsys]	288
+ix: [getwindow]	288
+ix: [screen]	288
+ix: [/dev/label]	288
+ix: window label	288
+ix: /dev/text	288
+ix: window text	288
+ix: [rio] menu	289
+ix: window hide	289
+ix: input focus	289
+ix: current window	289
+ix: top window	289
+ix: bottom window	289
+ix: window overlap	289
+ix: scroll mode	289
+ix: window resize	290
+ix: [$vgasize]	290
+ix: screen size	290
+ix: automatic layout	290
+ix: screen layout	290
+ix: disk storage	291
+ix: file server	291
+ix: file~server program	291
+ix: disk file	291
+ix: storage device	291
+ix: disk	291
+ix: [#S] device driver	291
+ix: [inquiry]	291
+ix: disk description	291
+ix: DMA	291
+ix: [dma]	291
+ix: setting~up DMA	291
+ix: partition	291
+ix: disk	291
+ix: [seek]	292
+ix: partitions	292
+ix: drive unit	292
+ix: [9fat] partition	292
+ix: [fs] partition	292
+ix: [plan9] partition	292
+ix: adding partitions	293
+ix: deleting partitions	293
+ix: [fdisk]	293
+ix: [prep]	293
+ix: automatic partitioning	294
+ix: disk partitioning	294
+ix: stand-alone installation	294
+ix: local disk	294
+ix: [fossil]	294
+ix: [kfs]	294
+ix: disk initialization	294
+ix: formatted	294
+ix: 9P	294
+ix: file~system protocol	294
+ix: server	295
+ix: 9P server	295
+ix: 9P request	295
+ix: client	295
+ix: [ramfs]	295
+ix: [9P] messages	295
+ix: file~descriptor post	295
+ix: [/srv/ram]	295
+ix: message type	295
+ix: [Tversion]	296
+ix: [Tattach]	296
+ix: attach	296
+ix: [Rversion]	296
+ix: [Rattach]	296
+ix: Tags	296
+ix: message tag	296
+ix: [9P2000]	296
+ix: message size	296
+ix: [Rerror]	296
+ix: file identifier	296
+ix: 9P file	296
+ix: fids	296
+ix: file~server root~directory	296
+ix: file~server mount	296
+ix: [Chan]	296
+ix: file Qid	297
+ix: qids	297
+ix: unique identifier	297
+ix: [Dir]	297
+ix: [dirstat]	297
+ix: directory entry	297
+ix: [QTDIR]	297
+ix: [QTAPPEND]	297
+ix: [QTEXCL]	297
+ix: Qid [type]	297
+ix: Qid [path]	297
+ix: Qid 	297
+ix: file version	297
+ix: [Twalk]	298
+ix: [Rwalk]	298
+ix: walk	298
+ix: [Topen]	298
+ix: [Ropen]	298
+ix: [Twrite]	298
+ix: [Rwrite]	298
+ix: [Tclunk]	298
+ix: [Rclunk]	298
+ix: [nwname]	298
+ix: [wname]	298
+ix: new fid	298
+ix: [create]	298
+ix: [DMDIR]	299
+ix: directory creation	299
+ix: [Tstat]	299
+ix: [Twstat]	299
+ix: semaphore	300
+ix: semaphore file~system	300
+ix: [semfs]	300
+ix: wishful thinking	300
+ix: [/mnt/sem]	301
+ix: [lib9p]	301
+ix: 9P library	301
+ix: [Srv]	301
+ix: [postmountsrv]	302
+ix: server process	302
+ix: shared memory	303
+ix: server loop	303
+ix: 9P message~handler	303
+ix: [threadpostmountsrv]	303
+ix: [chatty9p]	304
+ix: file~server debugging	304
+ix: 9P implementation	304
+ix: [Req]	304
+ix: 9P request	304
+ix: [ifcall]	305
+ix: [respond]	305
+ix: [ofcall]	305
+ix: [Fcall]	305
+ix: [Fid]	306
+ix: attach	307
+ix: [Sem]	307
+ix: up	307
+ix: down	307
+ix: Qid conventions	308
+ix: emalloc9p	308
+ix: erealloc9p	308
+ix: [lib9p] memory~allocation	308
+ix: reference counting	308
+ix: garbage collection	308
+ix: [Ref]	309
+ix: [incref]	309
+ix: [decref]	309
+ix: queue	309
+ix: [Tcreate]	310
+ix: [QTDIR]	310
+ix: fid clone	311
+ix: user data	311
+ix: [destroyfid]	311
+ix: file remove	311
+ix: [Tremove]	312
+ix: read processing	312
+ix: [readstr]	313
+ix: [readbuf]	313
+ix: write processing	313
+ix: directory reads	314
+ix: [dirread9p]	314
+ix: [dirgen]	314
+ix: access time	314
+ix: modification time	314
+ix: stat processing	315
+ix: mutex	315
+ix: walk processing	316
+ix: [mk]	317
+ix: [make]	317
+ix: UNIX	317
+ix: [mkfile]	317
+ix: building things	317
+ix: [mk] rules	317
+ix: [mk] targets	317
+ix: file dependencies	317
+ix: [5c]	319
+ix: [mk] variables	319
+ix: [$CC]	319
+ix: [$LD]	319
+ix: [$O]	319
+ix: [$target]	319
+ix: [$prereq]	319
+ix: [mk] predefined~variables	319
+ix: meta-rule	320
+ix: implicit rule	320
+ix: [$stem]	320
+ix: [$objtype]	321
+ix: [mkone]	321
+ix: [OFILES]	321
+ix: [HFILES]	321
+ix: [BIN]	321
+ix: [TARG]	321
+ix: [mk] install	321
+ix: [troff]	321
+ix: [doctype]	321
+ix: debugging	322
+ix: testing	322
+ix: program checking	322
+ix: regression testing	322
+ix: [mkfile]	322
+ix: memory leak	323
+ix: [leak]	323
+ix: [malloc]	323
+ix: [acid]	323
+ix: [page]	323
+ix: security	325
+ix: secure system	325
+ix: stand-alone machine	325
+ix: laptop computer	325
+ix: malicious person	325
+ix: evil	325
+ix: password	325
+ix: local storage	325
+ix: integrity	325
+ix: authorized access	325
+ix: users	325
+ix: user	325
+ix: machines	325
+ix: server process	325
+ix: terminal	325
+ix: single-user	326
+ix: Identification	326
+ix: machine owner	326
+ix: [/dev/hostowner]	326
+ix: [/dev/sysname]	326
+ix: authorization	326
+ix: booting	327
+ix: [boot]	327
+ix: [/dev/user]	327
+ix: user name	327
+ix: uid	327
+ix: kernel	327
+ix: [/boot]	327
+ix: 9P security	327
+ix: new user	328
+ix: account	328
+ix: identity	328
+ix: [Tattach]	328
+ix: Access control	328
+ix: permitted operation	328
+ix: [Topen]	328
+ix: permission check	328
+ix: access control lists	328
+ix: authentication	328
+ix: proof of~identity	328
+ix: shared secret	328
+ix: [mount]	328
+ix: authentication file	328
+ix: [afd]	328
+ix: [fauth]	328
+ix: [Tauth]	328
+ix: [Rauth]	328
+ix: authentication protocol	329
+ix: authentication servers	329
+ix: tickets	329
+ix: [authsrv]	329
+ix: authentication domains	329
+ix: [/dev/hostdomain]	329
+ix: [hostdomain]	329
+ix: [hostowner]	329
+ix: [factotum]	330
+ix: authentication agent	330
+ix: keys	330
+ix: [key]	330
+ix: [9PSK1]	330
+ix: [9PANY]	330
+ix: authentication domain	330
+ix: password	330
+ix: debug protection	331
+ix: private memory	331
+ix: [noswap]	331
+ix: [rpc] file	331
+ix: [auth] library	332
+ix: [auth_proxy]	332
+ix: relying	332
+ix: [amount]	332
+ix: [amount.c]	333
+ix: [Authinfo]	333
+ix: authentication information	333
+ix: [auth_freeAI]	333
+ix: [afd]	334
+ix: role	334
+ix: meta-protocol	334
+ix: client uid	334
+ix: server uid	334
+ix: key reading	335
+ix: [amount_getkey]	335
+ix: adding key	335
+ix: handling authentication	335
+ix: secure server	335
+ix: [Tauth]	335
+ix: [QTAUTH]	335
+ix: authentication file	335
+ix: [authread]	336
+ix: [auth9p]	336
+ix: [authwrite]	336
+ix: [authdestroy]	336
+ix: [destroyfid]	336
+ix: message dump	337
+ix: least privilege principle	338
+ix: sandboxing	338
+ix: [none]	338
+ix: [newns]	339
+ix: [/lib/namespace]	339
+ix: new namespace	339
+ix: [RFNOMNT] [rfork]~flag	339
+ix: become [none]	339
+ix: CPU server	339
+ix: identity change	339
+ix: [/lib/ndb/auth]	339
+ix: speak~for	339
+ix: [cron]	339
+ix: capability device	340
+ix: capabilities	340
+ix: [AuthInfo]	340
+ix: [auth_chuid]	340
+ix: identity change	340
+ix: uid change	340
+ix: [login]	340
+ix: [auth_login]	341
+ix: account	341
+ix: key	341
+ix: authentication	341
+ix: [keyfs]	341
+ix: [/adm/keys]	341
+ix: [authsrv]	341
+ix: authentication server	341
+ix: secret	341
+ix: [changeuser]	341
+ix: new account	341
+ix: new user	341
+ix: [passwd]	342
+ix: NVRAM	342
+ix: nvram	342
+ix: [wrkey]	342
+ix: [secstore]	342
+ix: secure store	342
+ix: single sign on	342
+ix: [factotum]	342
+ix: TLS	342
+ix: encrypt	343
+ix: DES	343
+ix: good~luck	343

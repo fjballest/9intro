@@ -1,0 +1,802 @@
+.so tmacs
+.BC 9 "More tools
+.BS 2 "Regular expressions
+.LP
+We have used
+.CW sed
+to replace one string with another. But, what happens here? 
+.P1
+; echo foo.xcc | sed 's/.cc/.c/g'
+foo..c
+; echo focca.x | sed 's/.cc/.c/g'
+f.ca.x
+.P2
+.LP
+We need to learn more.
+.PP
+In addresses of the form
+.CW /text/
+and in commands like
+.CW s/text/other/ ,
+the string
+.CW text
+is not a string for
+.CW sed .
+This happens to many other programs that search for things.
+For example, we have used
+.CW grep
+to print only lines containing a string. Well, the
+.I string
+given to grep, like in
+.P1
+; grep string file1 file2 ...
+.P2
+.LP
+is
+.I not
+a string. It is a
+.B "regular expression" .
+A regular expression is a little language. It is very useful to master it, because
+many commands employ regular expressions to let you do complex things
+in an easy way.
+.PP
+The text in a regular expression represents many different strings. You have
+already seen something similar. The
+.CW *.c
+in the shell, used for globbing, is very similar to a regular expression. Although
+it has a slightly different meaning. But you know that in the shell,
+.CW *.c
+.B matches
+with many different strings. In this case, those that are file names in the current
+directory that happen to terminate with the characters “\f(CW.c\fP”. That is what
+regular expressions, or
+.I regexps ,
+are for. They are used to select or match text, expressing the kind of text
+to be selected in a simple way. They are a language on their own.
+A regular expression, as known by
+.CW sed ,
+.CW grep ,
+and many others,
+is best defined recursively, as follows.
+.IP •
+Any single character
+.I matches
+the string consisting of that character. For example,
+.CW a
+matches
+.CW a ,
+but not
+.CW b .
+.IP •
+A single dot, “\f(CW.\fP”, matches
+.I any
+single character. For example, “\f(CW.\fP” matches
+.CW a
+and
+.CW b ,
+but not
+.CW ab .
+.IP •
+A set of characters, specified by writing a string within brackets, like
+.CW [abc123] ,
+matches
+.I any
+character in the string. This example would match
+.CW a ,
+.CW b ,
+or
+.CW 3 ,
+but not
+.CW x .
+A set of characters, but starting with
+.CW ^ ,
+matches any character
+.I not
+in the set. For example,
+.CW [^abc123]
+matches
+.CW x ,
+but not
+.CW 1 ,
+which is in the string that follows the
+.CW ^ .
+A range may be used, like in
+.CW [a-z0-9] ,
+which matches any single character that is a letter or a digit.
+.IP •
+A single
+.CW ^ ,
+matches the start of the text. And a single
+.CW $ ,
+matches the end of the text. Depending on the program using the
+regexp, the text may be a line or a file. For example, when using
+.CW grep ,
+.CW a
+matches the character
+.CW a
+at
+.I any
+place. However,
+.CW ^a
+matches
+.CW a
+only when it is the first character in a line, and
+.CW ^a$
+also requires it to be the last character in the line.
+.IP •
+Two regular expressions concatenated match
+any text matching the first regexp followed by any text
+matching the second. This is more hard to say
+than it is to understand. The expression
+.CW abc
+matches
+.CW abc
+because
+.CW a
+matches
+.CW a ,
+.CW b
+matches
+.CW b ,
+and so on. The expression
+.CW [a-z]x
+matches any two characters where the first one matches
+.CW [a-z] ,
+and the second one is an
+.CW x .
+.IP •
+Adding a
+.CW *
+after a regular expression, matches zero or any number of
+strings that match the expression. For example,
+.CW x*
+matches the empty string, and also
+.CW x ,
+.CW xx ,
+.CW xxx ,
+etc. Beware,
+.CW ab*
+matches
+.CW a ,
+.CW ab ,
+.CW abb ,
+etc. But it does
+.I not
+match
+.CW abab .
+The
+.CW *
+applies to the preceding regexp, with is just
+.CW b
+in this case.
+.IP •
+Adding a
+.CW +
+after a regular expression, matches one or more
+strings that match the previous regexp. It is like
+.CW * ,
+but there has to be at least one match. For example,
+.CW x+
+does not match the empty string, but it matches every other thing
+matched by
+.CW x* .
+.IP •
+Adding a
+.CW ?
+after a regular expression, matches either the empty string or
+one string matching the expression. For example,
+.CW x?
+matches
+.CW x
+and the empty string. This is used to make parts optional.
+.IP •
+Different expressions may be surounded by parenthesis, to alter
+grouping. For example,
+.CW (ab)+
+matches
+.CW ab ,
+.CW abab ,
+etc.
+.IP •
+Two expressions separated by
+.CW |
+match anything matched either by the first, or the second regexp. For example,
+.CW ab|xy
+matches
+.CW ab ,
+and
+.CW xy .
+.IP •
+A backslash removes the special meaning for any character used for
+syntax. This is called a
+.I escape
+character.
+For example,
+.CW (
+is not a well-formed regular expression, but
+.CW \e(
+is, and matches the string
+.CW ( .
+To use a backslash as a plain character, and not as a escape, use the
+backslash to escape itself, like in
+.CW \e\e .
+.PP
+That was a long list, but it is easy to learn regular expressions just by using
+them. First, let's fix the ones we used in the last section. This is what happen to us.
+.P1
+; echo foo.xcc | sed 's/.cc/.c/g'
+foo..c
+; echo focca.x | sed 's/.cc/.c/g'
+f.ca.x
+.P2
+.LP
+But we wanted to replace
+.CW .cc ,
+and not
+.I any
+character and a
+.CW cc .
+Now we know that the first argument to the
+.CW sed
+command
+.CW s ,
+is a regular expression.
+We can try to fix our problem.
+.P1
+; echo foo.xcc | sed 's/\e.cc/.c/g'
+foo.xcc
+; echo focca.x | sed 's/\e.cc/.c/g'
+focca.x
+.P2
+.LP
+It seems to work. The backslash removes the special meaning for the dot,
+and makes it match just one dot. But this may still happen.
+.P1
+; echo foo.cc.x | sed 's/\e.cc/.c/g'
+foo.c.x
+.P2
+.LP
+And we wanted to replace only the extension for file names ending in
+.CW .cc .
+We can modify our expression to match
+.CW .cc
+only when immediately before the end of the line (which is the string being
+matched here).
+.P1
+; echo foo.cc.x | sed 's/\e.cc$/.c/g'
+foo.cc.x
+; echo foo.x.cc | sed 's/\e.cc/.c/g'
+foo.x.c
+.P2
+.LP
+Sometimes, it is useful to be able to refer to text that matched part
+of a regular expression. Suppose you want to replace the variable name
+.CW text
+with
+.CW word
+in a program.
+You might try with
+.CW s/text/word/g ,
+but it would change other identifiers, which is not what you want.
+.P1
+; cat f.c
+void
+printtext(char* text)
+{
+	print("[%s]", text);
+}
+; sed 's/text/word/g' f.c
+void
+printword(char* word)
+{
+	print("[%s]", word);
+}
+.P2
+.LP
+The change is only to be done if
+.CW word
+is not surounded by characters that may be part of an identifier in the
+program. For simplicity, we will assume that these characters are just
+.CW [a-z0-9_] .
+We can do what follows.
+.P1
+; sed 's/([^a-z0-9_])text([^a-z0-9_])/\e1word\e2/g' f.c
+void
+printtext(char* word)
+{
+	print("[%s]", word);
+}
+.P2
+.LP
+The regular expression 
+.CW [^a-z0-9_]text[^a-z0-9_]
+means “any character that may not be part of an identifier”, then
+.CW text ,
+and then “any character that may not be part of an identifier”.
+Because the substitution affects
+.I all
+the regular expression, we need to substitute the matched string with
+another one that has
+.CW word
+instead of
+.CW text ,
+but keeping the characters matching
+.CW [^a-z0-9_]
+before and after the string
+.CW text .
+This can be done by surounding in parentheses both
+.CW [^a-z0-9_] .
+Later, in the destination string, we may use
+.CW \e1
+to refer to the text matching the first regexp within parenthesis, and
+.CW \e2
+to refer to the second.
+.PP
+Because
+.CW printtext
+is not matched by
+.CW [^a-z0-9_]text[^a-z0-9_] ,
+it was untouched. However, “\f(CW␣text)\fP” was matched. In the destination string,
+.CW \e1
+was a white space,
+because that is what matched the first parenthesized part. And
+.CW \e2
+was a right parenthesis, because that is what matched the second one.
+As a result, we left those characters untouched, and used them as
+.I context
+to determine when to do the substitution.
+.PP
+Regular expressions permit to clean up source files in an easy way.
+In may cases, it makes no sense to keep white space at the end of lines.
+This removes them.
+.P1
+; sed 's/[ \t]*//'
+.P2
+.LP
+We saw that a script
+.CW t+
+can be used to indent text in Acme.
+Here it is.
+.P1
+; cat /bin/t+
+#!/bin/rc
+sed 's/^/\t/'
+;
+.P2
+.LP
+This other script removes one level of indentation.
+.P1
+; cat /bin/t-
+#!/bin/rc
+sed 's/^\t//'
+;
+.P2
+.LP
+There are many other useful uses of regular expressions, as you will be
+able to see from here to the end of this book. In many cases, your C
+programs can be made more flexible by accepting regular expressions
+for certain parameters instead of mere strings. For example, an editor
+might accept a regular expression that determines if the text is to be
+shown using a
+.CW "constant width font"
+or a
+.I "proportional width font" .
+For file names matching, say
+.CW .*\e.[ch] ,
+it could use a constant width font, to show C source code like you
+might be
+acustomed to see it.
+.PP
+It turns out that it is
+.I trivial
+to use regular expressions in a C program, by using the
+.CW regexp
+library. The expression is
+.I compiled
+into a description more amenable to the machine, and the resulting
+data structure (called a
+.CW Reprog )
+can be used for matching strings against the expression. This program
+accepts a regular expression as a parameter, and then reads one line
+at a time. For each such line, it reports if the string read matches the
+regular expression or not.
+.so src/match.c.ms
+.LP
+The call to
+.CW regcomp
+.I compiles
+the regular expression into
+.CW prog .
+Later,
+.CW regexec
+.I executes
+the compiled regular expression to determine if it matches the string
+just read in
+.CW buf .
+The parameter
+.CW sub
+points to an array of structures that keeps information about the match.
+The whole string matching starts at the character pointed to by
+.CW sub[0].sp
+and terminates right before the one pointed to by
+.CW sub[0].ep .
+Other entries in the array report which substring matched the
+first parenthesized expression in the regexp,
+.CW sub[1] ,
+which one matched the second one,
+.CW sub[2] ,
+etc. They are similar to
+.CW \e1 ,
+.CW \e2 ,
+etc.
+This is an example session with the program.
+.P1
+; 8.out '*.c'		\fRThe * needs something on the left!\fP
+regerror: missing operand for *
+
+; 8.match '\e.[123]'
+!!x123
+no match
+!!.123
+matched: '.1'
+!!x.z
+no match
+!!x.3
+matched: '.3'
+.P2
+.BS 2 "Sorting and searching
+.LP
+One of the most useful task achieved with a few shell commands is inspecting
+the system to find out things. In what follows we are going to learn how to do this,
+using several assorted examples.
+.PP
+Running out of disk space? It is not likely, given the big disks we have today.
+But anyway, which ones are the biggest files you have created at your home
+directory?
+.PP
+The command
+.CW du
+reports disk usage, measured in disk blocks. A disk block is usually 8 or 16 Kbytes,
+depending on your file system. Although
+.CW "du -a"
+reports the size in blocks for each file, it is a burden to scan by yourself through the
+whole list of files to search for the biggest one. The command
+.CW sort
+is used to sort lines of text, according to some criteria. We can ask
+.CW sort
+to sort the output of
+.CW du
+in numerically decreasing order (biggest numbers first) and then use
+.CW sed
+to print just the first few lines. Those ones correspond to the biggest files, which
+we are interested in.
+.P1
+; du -a bin | sort -nr | sed 15q
+4211	bin
+3085	bin/arm
+864	bin/arm/enc
+834	bin/386
+333	bin/arm/madplay
+320	bin/arm/madmix
+319	bin/arm/deco
+316	bin/386/minimad
+316	bin/arm/minimad
+280	bin/arm/mp3
+266	bin/386/minisync
+258	bin/rc
+212	bin/arm/calc
+181	bin/arm/mpg123
+146	bin/386/r2bib
+;
+.P2
+.LP
+This includes directories as well, but point us quickly to files like
+.CW bin/arm/enc
+that seem to occupy 864 disk blocks!
+.PP
+But in any case, if the disk is filling up,
+it is a good idea to locate the users that created files (or added data to them),
+to alert them. The flag
+.CW -m
+for
+.CW ls
+lists the user name that last modified the file. We may collect user names for
+all the files in the disk, and then notify them. We are going to play with commands
+until we complete our task, using
+.CW sed
+to print just a few lines until we know how to process all the information.
+The first step is to use the output
+of
+.CW du
+as the initial data, the list of files. If we remove everything up to the file names,
+we obtain a list of files to work with. 
+.P1
+; du -a bin | sed 's/.*	//' | sed 3q
+bin/386/minimad
+bin/386/minisync
+bin/386/r2bib
+.P2
+.LP
+Now we want to list the user who modified each file. We can change our data
+to produce the commands that do that, and send them to a shell.
+.P1
+; du -a bin | sed 's/.*	//' | sed 's/^/ls -m /' | sed 3q
+ls -m bin/386/minimad
+ls -m bin/386/minisync
+ls -m bin/386/r2bib
+;
+; du -a bin | sed 's/.*	//' | sed 's/^/ls -m /' | sed 3q | rc
+[nemo] bin/386/minimad
+[none] bin/386/minisync
+[nemo] bin/386/r2bib
+;
+.P2
+.LP
+We still have to work a little bit more. And our command line is growing. Being
+able to edit the text at any place in a Rio window does help, but it can be
+convenient to define a
+.B "shell function"
+that encapsulates what we have done so far. A shell function is like a function
+in any other language. The difference is that a shell function receives arguments
+as any other command, in the command line. Besides, a shell function has
+command lines in its body, which is not a surprise. Defining a function
+for what we have done so far can save some typing in the near future.
+Furthermore, the command we have just built, to list all the files within a given
+directory, is useful by itself.
+.P1
+; fn lr {
+;; du -a $1 | sed 's/.*	//' | sed 's/^/ls -m /' | rc
+;; }
+; 
+.P2
+.LP
+This defined a function, named
+.CW lr ,
+that executes exactly the command line we developed. Rc stores the function
+definition using an
+environment variable. Thus, most things said for environment variables apply for
+functions as well (e.g., think about
+.CW "rfork e" ).
+.P1
+; cat /env/'fn#lr'
+fn lr {du -a $1|sed 's/.*	//'|sed 's/^/ls -m /'|rc}
+;
+.P2
+.LP
+In the function, we removed the
+.CW "sed 3q"
+because it is not reasonable for a function listing all files recursively to
+stop after listing three of them. If we want to play, we can always add a
+final
+.CW sed
+in a pipeline. Arguments given to the function are accessed like they would be
+in a shell script. The difference is that the function is executed by the shell
+where we invoque it, and not by a child shell. By the way, it is preferable to create
+useful commands by creating ia shell, functions can not be edited as scripts, and
+are not automatically shared among all shells like files are. Functions are handy to
+make modular scripts. Let's try our new function.
+.P1
+; lr bin
+[nemo] bin/386/minimad
+[none] bin/386/minisync
+[nemo] bin/386/r2bib
+[nemo] bin/386/rc2bin
+.I "...and many other lines of output..."
+;
+.P2
+.LP
+To obtain our list of users, we may remove everything but the user name.
+.P1
+; lr bin | sed 's/.([a-z0-9]+).*/\e1/' | sed 3q
+nemo
+none
+nemo
+;
+.P2
+.LP
+And now, to get a list of users, we must drop dupplicates. The program
+.CW uniq
+knows how to do it, it reads lines and prints them,  lines showing up more than once
+in the input are printed once. This program
+needs an input with sorted lines. Therefore, we do what we just did, and sort
+the lines and remove dupplicate ones.
+.P1
+; lr bin | sed 's/.([a-z0-9]+).*/\e1/' | sort | uniq
+esoriano
+nemo
+none
+;
+.P2
+.LP
+Note that we removed
+.CW "sed 3q"
+from the pipeline, because this command does what we wanted to do and
+we want to process the whole file tree, and not just the first three ones.
+.PP
+To do something different,
+we can revisit the first example in the last chapter, finding function definitions.
+This script does just that, if we follow the style convention for declaring
+functions that was shown at the beginning of this chapter. First, we try
+to use
+.CW grep
+to print just the source line where the function
+.CW cat
+is defined in the file
+.CW /sys/src/cmd/cat.c .
+Our first try is this.
+.P1
+; grep cat /sys/src/cmd/cat.c
+cat(int f, char *s)
+	argv0 = "cat";
+		cat(0, "<stdin>");
+			cat(f, argv[i]);
+.P2
+.LP
+Which is not too helpful. All the lines contain the string
+.CW cat ,
+but we want only the lines where
+.CW cat
+is at the beggining of line, followed by an open parenthesis. Second
+attempt.
+.P1
+; grep '^cat\e(' /sys/src/cmd/cat.c
+cat(int f, char *s)
+.P2
+.LP
+At least, this prints just the line of interest to us. However, it is useful
+to get the file name and line number before the text in the line. That
+output can be used to point an editor to that particular file and line
+number. Because
+.CW grep
+prints the file name when more than one file is given, we could use
+.CW /dev/null
+as a second file where to search for the line. It would not be there,
+but it would make
+.CW grep
+print the file name. 
+.P1
+; grep  '^cat\e(' /sys/src/cmd/cat.c /dev/null
+/sys/src/cmd/cat.c:cat(int f, char *s)
+.P2
+.LP
+Giving the option
+.CW -n
+to
+.CW grep
+makes it print the line number. Now we can really search for functions,
+like we do next.
+.P1
+; grep -n '^cat\e(' /sys/src/cmd/*.c
+/sys/src/cmd/cat.c:5: cat(int f, char *s)
+.P2
+.LP
+And because this seems useful, we can package it as a shell script. It
+accepts as arguments the names for functions to be located. The command
+.CW grep
+is used to search for such functions at all the source files in the current directory.
+.P1
+#!/bin/rc
+rfork e
+for (f in $*)
+	grep -n '^'$f'\e('  *.[cCh]
+.P2
+.LP
+How can we use
+.CW grep
+to search for
+.CW -n ?
+If we try,
+.CW grep
+would get confussed, thinking that we are supplying an option. To avoid this,
+the
+.CW -e
+option tells
+.CW grep
+that what follows is a regexp to search for.
+.P1
+; cat text
+Hi there
+How can we grep for -n?
+Who knows!
+; grep -n text
+; grep -e -n text
+how can we grep for -n?
+.P2
+.LP
+This program has other useful options. For example, if may want to
+locate lines in the file for a chapter of this book where we mention
+figures. However, if the word
+.CW figure
+is in the middle of a sentence it would be all lowercase. When it is
+starting a sentece, it would be capitalized. We must search both for
+.CW Figure
+and
+.CW figure.
+The flag
+.CW -i
+makes
+.CW grep
+become case-insensitive. All the text read is converted to lowercase
+before matching the expression.
+.P1
+; grep -i figure ch1.ms
+Each window shows a file or the output of commands.  Figure
+figure are understood by acme itself. For commands
+shown in the figure would be
+.I "...and other matching lines
+.P2
+.LP
+A popular searching task is determining if a file containing a mail message
+is spam or not. Today, it would not work, because spammers employ heavy
+armoring, and even send their text encoded in multiple images sent as HTML
+mail. However, it was popular to see if a mail message contained certain
+expressions, if it did, it was considered spam.
+Because there will be many expressions, we may keep them in a file.
+The option
+.CW -f
+for
+.CW grep
+takes as an argument a file containing all the expressions to search for.
+.P1
+; cat patterns
+Make money fast!
+Earn 10+ millions
+(Take|use) viagra for a (better|best) life.
+; if (grep -i -f patterns $mailfile ) echo $mailfile is spam
+.P2
+.LP
+A different kind of search is looking for differences. Consider that you have
+mounted at
+.CW /n/sources/plan9
+the Plan 9 distribution file server, known as
+.I sources .
+You Plan 9 is likely to be installed by pulling changes from sources and
+updating your file tree. Nevertheless, you might want to be sure that a
+particular part of your file tree is exactly the same as it is in sources.
+.PP
+There are
+several tools that can be used to compare files. We saw
+.CW cmp ,
+but it compares only two files. Besides, 
+.CW cmp
+does not give much information, because it is meant to compare files that
+are binary and not textual, and the program reports just which one is the first
+byte that makes the files different. However, there is another tool,
+.CW diff ,
+that is just what we need. For example, we can compare 
+
+.PP
+Show diff, to search for differences.
+See the script bdiff
+.BS 2 "AWK
+.PP
+A simple calculator.
+Pickup some examples from your bin
+.BS 2 "More complex things
+
+.PP
+Show the scripts to replace strings.
+Show the script to automatically add users from a list
+of people.
+.PP
+
+tal vez seria mejor una seccion en procesar ficheros con campos.
+y ver alli sort uniq y demas. O a lo mejor no. falta por ver awk, esa
+seccion es una oportunidad para usar alli mismo sort uniq y demas.
+
+tail -f
+Show eval. Use walk as an example.
+Show doctype also.
+
+
+must talk about other file systems,
+plumber,
+cdfs,
+tarfs,
+upasfs,
+replica
+the dump
+.PP
+
+
+

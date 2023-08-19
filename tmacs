@@ -1,0 +1,101 @@
+.nr PS 11
+.nr LT 7in
+.nr LL 7in
+.nr PO .75in
+.nr HM .75in
+.nr FM 1in
+.nr TM .75in
+.nr FL 7.5in
+.pl 11in
+.\" Adapted from /sys/lib/tmac/tmac.s to use bigger fonts
+.\" and allow using just from  .NH 2
+.de N{
+.RT
+.ps 16
+.sp
+.sp
+.ne 4
+.ft 3
+.if n .ul 1000
+.nr NS \\$1
+.if !\\n(.$ .nr NS 1
+.if !\\n(NS .nr NS 1
+.nr H\\n(NS +1
+.if !\\n(NS-4 .nr H5 0
+.if !\\n(NS-3 .nr H4 0
+.if !\\n(NS-2 .nr H3 0
+.if !\\n(NS-1 .nr H2 0
+.if !\\$1 .if \\n(.$ .nr H1 1
+.ds SN \\n(H1.
+.ti \\n(.iu
+.if \\n(NS-1 .as SN \\n(H2.
+.if \\n(NS-2 .as SN \\n(H3.
+.if \\n(NS-3 .as SN \\n(H4.
+.if \\n(NS-4 .as SN \\n(H5.
+..
+.de NH
+.in \\n(BC
+.nr CI 0
+'ad b
+.N{ \\$1
+\\*(SN
+..
+.\ " Book section. Like NH. 
+.de BS
+.NH \\$1
+\\$2
+..
+.\" Book chapter. Simplistic.
+.\" Assumes that it starts at a begining of a page.
+.\" To be used instead of .NH 1
+.de BC
+'nf
+.ps 30
+\\$1 — \\$2
+.nr H1 \\$1
+.nr H2 0
+.nr H3 0
+.vs 0.3i
+\l'3'
+.vs 0.7i
+.ps 14
+.fi
+.ad r
+.nr CI -3
+.in +3i
+..
+.\" The same, but generating toc entries to stderr
+.de bC
+'nf
+.ps 30
+\\$1 — \\$2
+.nr H1 \\$1
+.nr H2 0
+.nr H3 0
+.vs 0.3i
+\l'3'
+.vs 0.7i
+.ps 14
+.fi
+.ad r
+.nr CI -3
+.in +3i
+.tm \\$1.	\\$2	\\n%
+..
+.\ " Book section. Like NH. but generatic toc entries to stderr
+.de bS
+.NH \\$1
+\\$2
+.tm \\*(SN	\\$2	\\n%
+..
+.\" index entries. 
+.de iX
+.B \\$1
+.tm ix: \\$1	\\n%
+..
+.de ix
+..
+.de Ix
+.tm ix: \\$1	\\n%
+..
+.ds CH "\(hy \\n% \(hy

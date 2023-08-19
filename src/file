@@ -1,0 +1,10 @@
+#!/bin/rc
+rfork e
+for (file in $*) {
+	if (~ $file *.c *.h)
+		echo $file: C source code
+	if (~ $file *.gif)
+		echo $file: GIF image
+	if (~ $file *.jpg)
+		echo $file: JPEG image
+}

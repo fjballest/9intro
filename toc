@@ -1,0 +1,130 @@
+1.	Getting started	1
+1.1.	What is an Operating System?	1
+1.2.	Entering the system	2
+1.3.	Leaving the system	5
+1.4.	Editing and running commands	5
+1.5.	Obtaining help	7
+1.6.	Using files	9
+1.7.	Directories	11
+1.8.	Files and data	14
+1.9.	Permissions	17
+1.10.	Writing a C program in Plan 9	19
+1.11.	The Operating System and your programs	20
+1.12.	Where are the files?	22
+1.13.	The Shell, commands, binaries, and system calls	23
+1.14.	The Operating System and the hardware	23
+2.	Programs and Processes	25
+2.1.	Processes	25
+2.2.	Loaded programs	26
+2.3.	Process birth and death	30
+2.4.	System call errors	34
+2.5.	Environment	36
+2.6.	Process names and states	38
+2.7.	Debugging	40
+2.8.	Everything is a file!	42
+3.	Files	47
+3.1.	Input/Output	47
+3.2.	Write games	51
+3.3.	Read games	55
+3.4.	Creating and removing files	56
+3.5.	Directory entries	58
+3.6.	Listing files in the shell	62
+3.7.	Buffered Input/Output	65
+4.	Parent and Child	71
+4.1.	Running a new program	71
+4.2.	Process creation	72
+4.3.	Shared or not?	75
+4.4.	Race conditions	78
+4.5.	Executing another program	78
+4.6.	Using both calls	80
+4.7.	Waiting for children	81
+4.8.	Interpreted programs	84
+5.	Talking Processes	87
+5.1.	Input/Output redirection	87
+5.2.	Conventions	91
+5.3.	Other redirections	92
+5.4.	Pipes	93
+5.5.	Using pipes	97
+5.6.	Notes and process groups	101
+5.7.	Reading, notes, and alarms	104
+5.8.	The file descriptor bulletin board	106
+5.9.	Delivering messages	108
+6.	Networking	117
+6.1.	Network connections	117
+6.2.	Names	120
+6.3.	Making calls	122
+6.4.	Providing services	125
+6.5.	System services	130
+6.6.	Distributed computing	130
+7.	Resources and Names	133
+7.1.	Resource fork	133
+7.2.	Protecting from notes	135
+7.3.	Environment in shell scripts	137
+7.4.	Independent children	138
+7.5.	Name spaces	138
+7.6.	Local name space tricks	143
+7.7.	Device files	145
+7.8.	Unions	147
+7.9.	Changing the name space	148
+7.10.	Using names	149
+7.11.	Sand-boxing	151
+7.12.	Distributed computing revisited	152
+8.	Using the Shell	157
+8.1.	Programs are tools	157
+8.2.	Lists	157
+8.3.	Simple things	160
+8.4.	Real programs	163
+8.5.	Conditions	167
+8.6.	Editing text	170
+8.7.	Moving files around	174
+9.	More tools	177
+9.1.	Regular expressions	177
+9.2.	Sorting and searching	181
+9.3.	Searching for changes	185
+9.4.	AWK	188
+9.5.	Processing data	194
+9.6.	File systems	198
+10.	Concurrency	203
+10.1.	Synchronization	203
+10.2.	Locks	206
+10.3.	Queueing locks	212
+10.4.	Rendezvous	219
+10.5.	Sleep and wakeup	221
+10.6.	Shared buffers	223
+10.7.	Other tools	228
+11.	Threads and Channels	234
+11.1.	Threads	234
+11.2.	Thread names	237
+11.3.	Channels	241
+11.4.	I/O in threaded programs	246
+11.5.	Many to one communication	250
+11.6.	Other calls	257
+12.	User Input/Output	261
+12.1.	Console input	261
+12.2.	Characters and runes	264
+12.3.	Mouse input	266
+12.4.	Devices for graphics	269
+12.5.	Graphics	271
+12.6.	A graphic slider	273
+12.7.	Keyboard input	280
+12.8.	Drawing text	284
+12.9.	The window system	286
+13.	Building a File Server	291
+13.1.	Disk storage	291
+13.2.	The file system protocol	294
+13.3.	Semaphores for Plan 9	300
+13.4.	Speaking 9P	301
+13.5.	9P requests	304
+13.6.	Semaphores	307
+13.7.	Semaphores as files	310
+13.8.	A program to make things	317
+13.9.	Debugging and testing	322
+14.	Security	325
+14.1.	Secure systems	325
+14.2.	The local machine	325
+14.3.	Distributed security and authentication	327
+14.4.	Authentication agents	330
+14.5.	Secure servers	335
+14.6.	Identity changes	338
+14.7.	Accounts and keys	341
+14.8.	What now?	342

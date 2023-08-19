@@ -1,0 +1,69 @@
+soft constraints	soft constraints	{see} penalty function
+  >>> <<<	[>>> <<<]	{see} error messages
+omitted data value	omitted data value	{see} default symbol
+data value, omitted	data value, omitted	{see} default symbol
+  ".\|.\|.", '.\|.\|.'	["].\|.\|.["], ['].\|.\|.[']	{see} quotes
+  ..	[..]	{see} arithmetic progression
+= attribute	[=] attribute	{see} defined variables
+.body	[.body]	{see} constraint body
+built-in function	built-in function	{see} function
+Cartesian product	Cartesian product	{see} cross product
+conditional expression	conditional expression	{see} logical expression, [if]-[then]-[else]
+conditional declaration	conditional declaration	{see} [if] indexing expression
+.dat file	[.dat] file	{see} file
+.dual	[.dual]	{see} dual value
+Lagrange multiplier	Lagrange multiplier	{see} dual variables
+index	index	{see} dummy index
+iterated operator	iterated operator	{see} operator
+comparison operators	comparison operators	{see} relational operators
+maximize	[maximize]	{see} objective declaration
+minimize	[minimize]	{see} objective declaration
+model file	model file	{see} file
+.mod file	[.mod] file	{see} file
+price, shadow	price, shadow	{see} dual value
+problem	problem	{see also} model
+.rc	[.rc]	{see} reduced cost
+data reset	data reset	{see} [reset] [data] command
+scaling along arc	scaling along arc	{see} loss in network flow
+scope	scope	{see also} dummy index
+set of sets	set of sets	{see} indexed collection
+shadow price	shadow price	{see} dual value
+marginal value	marginal~value	{see} dual value
+simplification of expression	simplification of expression	{see also} presolve
+starting guess	starting guess	{see} initial values of variables
+subject to	[subject] [to]	{see} constraint declaration
+s.t.	[s.t.]	{see} constraint declaration
+symmetric difference	symmetric difference	{see} [symdiff]
+set difference	set difference	{see} [diff], [symdiff]
+syntax error	syntax error	{see} error messages
+messages	messages	{see} error messages
+space requirement	space requirement	{see} memory use
+viewing data	viewing data	{see} [display] command
+  ;	[;]	{see} semicolon statement terminator
+array	array	{see} one-dimensional set, parameter
+vector	vector	{see} one-dimensional set, parameter
+matrix	matrix	{see} two-dimensional set, parameter
+command mode	command mode	{see} model mode
+  >, >>	[>], [>>]	{see} output to file
+redirection	redirection	{see} output to file
+qualified name	qualified name	{see} [.] suffix
+member, dummy	member, dummy	{see} dummy index
+membership test	membership test	{see} [in], [within]
+subset test	subset test	{see} [in], [within]
+such-that condition	such-that condition	{see} logical condition
+set intersection	set intersection	{see} [inter]
+intersection, set	intersection, set	{see} [inter]
+slope	slope	{see} piecewise-linear expression
+breakpoint	breakpoint	{see} piecewise-linear expression
+command	command	{see also} statement
+statement	statement	{see also} command, declaration
+declaration	declaration	{see also} statement
+traffic flow	traffic flow	{see} maximum flow model
+flow	flow	{see} network flow
+roll trim problem	roll trim problem	{see} cutting-stock problem
+argument	argument	{see} command-line argument
+zero-one programming	zero-one programming	{see} integer programming
+reading files	reading files	{see} [model], [data]
+file inclusion	file inclusion	{see} [model], [data]
+include	[include]	{see also} [model], [data]
+transposition	transposition	{see} table transposition

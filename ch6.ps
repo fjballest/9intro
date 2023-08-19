@@ -1,0 +1,8401 @@
+%!PS-Adobe-2.0
+%%Version: 0.1
+%%DocumentFonts: (atend)
+%%Pages: (atend)
+%%EndComments
+%
+% Version 3.3.2 prologue for troff files.
+%
+
+/#copies 1 store
+/aspectratio 1 def
+/formsperpage 1 def
+/landscape false def
+/linewidth .3 def
+/magnification 1 def
+/margin 0 def
+/orientation 0 def
+/resolution 720 def
+/rotation 1 def
+/xoffset 0 def
+/yoffset 0 def
+
+/roundpage true def
+/useclippath true def
+/pagebbox [0 0 612 792] def
+
+/R  /Times-Roman def
+/I  /Times-Italic def
+/B  /Times-Bold def
+/BI /Times-BoldItalic def
+/H  /Helvetica def
+/HI /Helvetica-Oblique def
+/HB /Helvetica-Bold def
+/HX /Helvetica-BoldOblique def
+/CW /Courier def
+/CO /Courier def
+/CI /Courier-Oblique def
+/CB /Courier-Bold def
+/CX /Courier-BoldOblique def
+/PA /Palatino-Roman def
+/PI /Palatino-Italic def
+/PB /Palatino-Bold def
+/PX /Palatino-BoldItalic def
+/Hr /Helvetica-Narrow def
+/Hi /Helvetica-Narrow-Oblique def
+/Hb /Helvetica-Narrow-Bold def
+/Hx /Helvetica-Narrow-BoldOblique def
+/KR /Bookman-Light def
+/KI /Bookman-LightItalic def
+/KB /Bookman-Demi def
+/KX /Bookman-DemiItalic def
+/AR /AvantGarde-Book def
+/AI /AvantGarde-BookOblique def
+/AB /AvantGarde-Demi def
+/AX /AvantGarde-DemiOblique def
+/NR /NewCenturySchlbk-Roman def
+/NI /NewCenturySchlbk-Italic def
+/NB /NewCenturySchlbk-Bold def
+/NX /NewCenturySchlbk-BoldItalic def
+/ZD /ZapfDingbats def
+/ZI /ZapfChancery-MediumItalic def
+/S  /S def
+/S1 /S1 def
+/GR /Symbol def
+
+/inch {72 mul} bind def
+/min {2 copy gt {exch} if pop} bind def
+
+/setup {
+	counttomark 2 idiv {def} repeat pop
+
+	landscape {/orientation 90 orientation add def} if
+	/scaling 72 resolution div def
+	linewidth setlinewidth
+	1 setlinecap
+
+	pagedimensions
+	xcenter ycenter translate
+	orientation rotation mul rotate
+	width 2 div neg height 2 div translate
+	xoffset inch yoffset inch neg translate
+	margin 2 div dup neg translate
+	magnification dup aspectratio mul scale
+	scaling scaling scale
+
+	addmetrics
+	0 0 moveto
+} def
+
+/pagedimensions {
+	useclippath userdict /gotpagebbox known not and {
+		/pagebbox [clippath pathbbox newpath] def
+		roundpage currentdict /roundpagebbox known and {roundpagebbox} if
+	} if
+	pagebbox aload pop
+	4 -1 roll exch 4 1 roll 4 copy
+	landscape {4 2 roll} if
+	sub /width exch def
+	sub /height exch def
+	add 2 div /xcenter exch def
+	add 2 div /ycenter exch def
+	userdict /gotpagebbox true put
+} def
+
+/addmetrics {
+	/Symbol /S null Sdefs cf
+	/Times-Roman /S1 StandardEncoding dup length array copy S1defs cf
+} def
+
+/pagesetup {
+	/page exch def
+	currentdict /pagedict known currentdict page known and {
+		page load pagedict exch get cvx exec
+	} if
+} def
+
+/decodingdefs [
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg /y exch def counttomark 2 idiv {y moveto show} repeat}
+	{neg moveto {2 index stringwidth pop sub exch div 0 32 4 -1 roll widthshow} repeat}
+	{neg moveto {spacewidth sub 0.0 32 4 -1 roll widthshow} repeat}
+	{counttomark 2 idiv {y moveto show} repeat}
+	{neg setfunnytext}
+] def
+
+/setdecoding {/t decodingdefs 3 -1 roll get bind def} bind def
+
+/w {neg moveto show} bind def
+/m {neg dup /y exch def moveto} bind def
+/done {/lastpage where {pop lastpage} if} def
+
+/f {
+	dup /font exch def findfont exch
+	dup /ptsize exch def scaling div dup /size exch def scalefont setfont
+	linewidth ptsize mul scaling 10 mul div setlinewidth
+	/spacewidth ( ) stringwidth pop def
+} bind def
+
+/changefont {
+	/fontheight exch def
+	/fontslant exch def
+	currentfont [
+		1 0
+		fontheight ptsize div fontslant sin mul fontslant cos div
+		fontheight ptsize div
+		0 0
+	] makefont setfont
+} bind def
+
+/sf {f} bind def
+
+/cf {
+	dup length 2 idiv
+	/entries exch def
+	/chtab exch def
+	/newencoding exch def
+	/newfont exch def
+
+	findfont dup length 1 add dict
+	/newdict exch def
+	{1 index /FID ne {newdict 3 1 roll put}{pop pop} ifelse} forall
+
+	newencoding type /arraytype eq {newdict /Encoding newencoding put} if
+
+	newdict /Metrics entries dict put
+	newdict /Metrics get
+	begin
+		chtab aload pop
+		1 1 entries {pop def} for
+		newfont newdict definefont pop
+	end
+} bind def
+
+%
+% A few arrays used to adjust reference points and character widths in some
+% of the printer resident fonts. If square roots are too high try changing
+% the lines describing /radical and /radicalex to,
+%
+%	/radical	[0 -75 550 0]
+%	/radicalex	[-50 -75 500 0]
+%
+% Move braceleftbt a bit - default PostScript character is off a bit.
+%
+
+/Sdefs [
+	/bracketlefttp		[201 500]
+	/bracketleftbt		[201 500]
+	/bracketrighttp		[-81 380]
+	/bracketrightbt		[-83 380]
+	/braceleftbt		[203 490]
+	/bracketrightex		[220 -125 500 0]
+	/radical		[0 0 550 0]
+	/radicalex		[-50 0 500 0]
+	/parenleftex		[-20 -170 0 0]
+	/integral		[100 -50 500 0]
+	/infinity		[10 -75 730 0]
+] def
+
+/S1defs [
+	/underscore		[0 80 500 0]
+	/endash			[7 90 650 0]
+] def
+%
+% Version 3.3.2 drawing procedures for dpost. Automatically pulled in when
+% needed.
+%
+
+/inpath false def
+/savematrix matrix def
+
+/Dl {
+	inpath
+		{neg lineto pop pop}
+		{newpath neg moveto neg lineto stroke}
+	ifelse
+} bind def
+
+/De {
+	/y1 exch 2 div def
+	/x1 exch 2 div def
+	/savematrix savematrix currentmatrix def
+	neg exch x1 add exch translate
+	x1 y1 scale
+	0 0 1 0 360
+	inpath
+		{1 0 moveto arc savematrix setmatrix}
+		{newpath arc savematrix setmatrix stroke}
+	ifelse
+} bind def
+
+/Da {
+	/dy2 exch def
+	/dx2 exch def
+	/dy1 exch def
+	/dx1 exch def
+	dy1 add neg exch dx1 add exch
+	dx1 dx1 mul dy1 dy1 mul add sqrt
+	dy1 dx1 neg atan
+	dy2 neg dx2 atan
+	inpath
+		{arc}
+		{newpath arc stroke}
+	ifelse
+} bind def
+
+/DA {
+	/dy2 exch def
+	/dx2 exch def
+	/dy1 exch def
+	/dx1 exch def
+	dy1 add neg exch dx1 add exch
+	dx1 dx1 mul dy1 dy1 mul add sqrt
+	dy1 dx1 neg atan
+	dy2 neg dx2 atan
+	inpath
+		{arcn}
+		{newpath arcn stroke}
+	ifelse
+} bind def
+
+/Ds {
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	/y0 exch def
+	/x0 exch def
+	x0 5 x1 mul add 6 div
+	y0 5 y1 mul add -6 div
+	x2 5 x1 mul add 6 div
+	y2 5 y1 mul add -6 div
+	x1 x2 add 2 div
+	y1 y2 add -2 div
+	inpath
+		{curveto}
+		{newpath x0 x1 add 2 div y0 y1 add -2 div moveto curveto stroke}
+	ifelse
+} bind def
+%
+% Tries to round clipping path dimensions, as stored in array pagebbox, so they
+% match one of the known sizes in the papersizes array. Lower left coordinates
+% are always set to 0.
+%
+
+/roundpagebbox {
+    7 dict begin
+	/papersizes [8.5 inch 11 inch 14 inch 17 inch] def
+
+	/mappapersize {
+		/val exch def
+		/slop .5 inch def
+		/diff slop def
+		/j 0 def
+		0 1 papersizes length 1 sub {
+			/i exch def
+			papersizes i get val sub abs
+			dup diff le {/diff exch def /j i def} {pop} ifelse
+		} for
+		diff slop lt {papersizes j get} {val} ifelse
+	} def
+
+	pagebbox 0 0 put
+	pagebbox 1 0 put
+	pagebbox dup 2 get mappapersize 2 exch put
+	pagebbox dup 3 get mappapersize 3 exch put
+    end
+} bind def
+
+%%EndProlog
+%%BeginSetup
+mark
+%
+% Encoding vector and redefinition of findfont for the ISO Latin1 standard.
+% The 18 characters missing from ROM based fonts on older printers are noted
+% below.
+%
+
+/ISOLatin1Encoding [
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/space
+	/exclam
+	/quotedbl
+	/numbersign
+	/dollar
+	/percent
+	/ampersand
+	/quoteright
+	/parenleft
+	/parenright
+	/asterisk
+	/plus
+	/comma
+	/minus
+	/period
+	/slash
+	/zero
+	/one
+	/two
+	/three
+	/four
+	/five
+	/six
+	/seven
+	/eight
+	/nine
+	/colon
+	/semicolon
+	/less
+	/equal
+	/greater
+	/question
+	/at
+	/A
+	/B
+	/C
+	/D
+	/E
+	/F
+	/G
+	/H
+	/I
+	/J
+	/K
+	/L
+	/M
+	/N
+	/O
+	/P
+	/Q
+	/R
+	/S
+	/T
+	/U
+	/V
+	/W
+	/X
+	/Y
+	/Z
+	/bracketleft
+	/backslash
+	/bracketright
+	/asciicircum
+	/underscore
+	/quoteleft
+	/a
+	/b
+	/c
+	/d
+	/e
+	/f
+	/g
+	/h
+	/i
+	/j
+	/k
+	/l
+	/m
+	/n
+	/o
+	/p
+	/q
+	/r
+	/s
+	/t
+	/u
+	/v
+	/w
+	/x
+	/y
+	/z
+	/braceleft
+	/bar
+	/braceright
+	/asciitilde
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/.notdef
+	/dotlessi
+	/grave
+	/acute
+	/circumflex
+	/tilde
+	/macron
+	/breve
+	/dotaccent
+	/dieresis
+	/.notdef
+	/ring
+	/cedilla
+	/.notdef
+	/hungarumlaut
+	/ogonek
+	/caron
+	/space
+	/exclamdown
+	/cent
+	/sterling
+	/currency
+	/yen
+	/brokenbar		% missing
+	/section
+	/dieresis
+	/copyright
+	/ordfeminine
+	/guillemotleft
+	/logicalnot
+	/hyphen
+	/registered
+	/macron
+	/degree			% missing
+	/plusminus		% missing
+	/twosuperior		% missing
+	/threesuperior		% missing
+	/acute
+	/mu			% missing
+	/paragraph
+	/periodcentered
+	/cedilla
+	/onesuperior		% missing
+	/ordmasculine
+	/guillemotright
+	/onequarter		% missing
+	/onehalf		% missing
+	/threequarters		% missing
+	/questiondown
+	/Agrave
+	/Aacute
+	/Acircumflex
+	/Atilde
+	/Adieresis
+	/Aring
+	/AE
+	/Ccedilla
+	/Egrave
+	/Eacute
+	/Ecircumflex
+	/Edieresis
+	/Igrave
+	/Iacute
+	/Icircumflex
+	/Idieresis
+	/Eth			% missing
+	/Ntilde
+	/Ograve
+	/Oacute
+	/Ocircumflex
+	/Otilde
+	/Odieresis
+	/multiply		% missing
+	/Oslash
+	/Ugrave
+	/Uacute
+	/Ucircumflex
+	/Udieresis
+	/Yacute			% missing
+	/Thorn			% missing
+	/germandbls
+	/agrave
+	/aacute
+	/acircumflex
+	/atilde
+	/adieresis
+	/aring
+	/ae
+	/ccedilla
+	/egrave
+	/eacute
+	/ecircumflex
+	/edieresis
+	/igrave
+	/iacute
+	/icircumflex
+	/idieresis
+	/eth			% missing
+	/ntilde
+	/ograve
+	/oacute
+	/ocircumflex
+	/otilde
+	/odieresis
+	/divide			% missing
+	/oslash
+	/ugrave
+	/uacute
+	/ucircumflex
+	/udieresis
+	/yacute			% missing
+	/thorn			% missing
+	/ydieresis
+] def
+
+/NewFontDirectory FontDirectory maxlength dict def
+
+%
+% Apparently no guarantee findfont is defined in systemdict so the obvious
+%
+%	systemdict /findfont get exec
+%
+% can generate an error. So far the only exception is a VT600 (version 48.0).
+%
+
+userdict /@RealFindfont known not {
+	userdict begin
+		/@RealFindfont systemdict begin /findfont load end def
+	end
+} if
+
+/findfont {
+	dup NewFontDirectory exch known not {
+		dup
+		%dup systemdict /findfont get exec	% not always in systemdict
+		dup userdict /@RealFindfont get exec
+		dup /Encoding get StandardEncoding eq {
+			dup length dict begin
+				{1 index /FID ne {def}{pop pop} ifelse} forall
+				/Encoding ISOLatin1Encoding def
+				currentdict
+			end
+			/DummyFontName exch definefont
+		} if
+		NewFontDirectory 3 1 roll put
+	} if
+	NewFontDirectory exch get
+} bind def
+
+%%Patch from lp
+%%EndPatch from lp
+
+setup
+%%EndSetup
+%%Page: 1 1
+/saveobj save def
+mark
+1 pagesetup
+30 /Times-Roman f
+(6 ) 566 686 w
+30 /LucidaSansUnicode20 f
+(\024) 791 686 w
+30 /Times-Roman f
+(Network communication) 1166 686 w
+30 /S1 f
+(______) 566 902 w
+16 /Times-Bold f
+(6.1.) 566 1262 w
+(Network) 886 1262 w
+(connections) 1519 1262 w
+11 /Times-Roman f
+(Plan) 566 1418 w
+(9) 797 1418 w
+(is) 887 1418 w
+(a) 996 1418 w
+(distributed) 1079 1418 w
+(system.) 1586 1418 w
+(But) 1956 1418 w
+(even) 2152 1418 w
+(if) 2394 1418 w
+(it) 2497 1418 w
+(was) 2595 1418 w
+(as) 2801 1418 w
+(its) 2928 1418 w
+(ancestor,) 3069 1418 w
+(UNIX,) 3497 1418 w
+(a) 3834 1418 w
+(central\255) 3918 1418 w
+(ized) 566 1538 w
+(system) 782 1538 w
+(that) 1122 1538 w
+(was) 1321 1538 w
+(designed) 1525 1538 w
+(just) 1948 1538 w
+(for) 2141 1538 w
+(one) 2301 1538 w
+(machine,) 2492 1538 w
+(it) 2924 1538 w
+(is) 3019 1538 w
+(very) 3126 1538 w
+(important) 3353 1538 w
+(to) 3814 1538 w
+(be) 3933 1538 w
+(able) 4069 1538 w
+(to) 566 1658 w
+(use) 685 1658 w
+(the) 864 1658 w
+(network) 1031 1658 w
+(to) 1423 1658 w
+(provide) 1542 1658 w
+(services) 1910 1658 w
+(for) 2295 1658 w
+(other) 2455 1658 w
+(machines) 2713 1658 w
+(and) 3160 1658 w
+(to) 3352 1658 w
+(use) 3472 1658 w
+(services) 3652 1658 w
+(from) 4038 1658 w
+(others.) 566 1778 w
+(All) 897 1778 w
+(the) 1073 1778 w
+(operating) 1242 1778 w
+(systems) 1691 1778 w
+(that) 2075 1778 w
+(are) 2274 1778 w
+(in) 2440 1778 w
+(use) 2560 1778 w
+(today) 2740 1778 w
+(provide) 3018 1778 w
+(abstractions) 3387 1778 w
+(similar) 3945 1778 w
+(to) 566 1898 w
+(the) 680 1898 w
+(one) 842 1898 w
+(whose) 1028 1898 w
+(interface) 1336 1898 w
+(is) 1745 1898 w
+(described) 1847 1898 w
+(here,) 2294 1898 w
+(to) 2537 1898 w
+(let) 2651 1898 w
+(you) 2789 1898 w
+(use) 2982 1898 w
+(the) 3156 1898 w
+(network.) 3318 1898 w
+(This) 816 2054 w
+(chapter) 1046 2054 w
+(may) 1401 2054 w
+(be) 1625 2054 w
+(hard) 1763 2054 w
+(to) 1992 2054 w
+(understand) 2113 2054 w
+(if) 2629 2054 w
+(you) 2731 2054 w
+(have) 2931 2054 w
+(not) 3172 2054 w
+(attended) 3348 2054 w
+(a) 3754 2054 w
+(computer) 3837 2054 w
+(networks) 566 2174 w
+(course,) 998 2174 w
+(but) 1340 2174 w
+(we) 1510 2174 w
+(try) 1666 2174 w
+(to) 1817 2174 w
+(do) 1932 2174 w
+(our) 2071 2174 w
+(best) 2246 2174 w
+(to) 2452 2174 w
+(explain) 2567 2174 w
+(how) 2919 2174 w
+(to) 3137 2174 w
+(use) 3252 2174 w
+(the) 3427 2174 w
+(network) 3590 2174 w
+(in) 3978 2174 w
+(any) 4093 2174 w
+(case.) 566 2294 w
+(All) 809 2294 w
+(the) 978 2294 w
+(programs) 1140 2294 w
+(you) 1582 2294 w
+(have) 1775 2294 w
+(used) 2010 2294 w
+(to) 2240 2294 w
+(browse) 2355 2294 w
+(the) 2700 2294 w
+(Web,) 2863 2294 w
+(exchange) 3126 2294 w
+(electronic) 3567 2294 w
+(mail,) 4027 2294 w
+(etc.) 566 2414 w
+(are) 759 2414 w
+(implemented) 929 2414 w
+(using) 1541 2414 w
+(interfaces) 1818 2414 w
+(that) 2280 2414 w
+(are) 2483 2414 w
+(similar) 2652 2414 w
+(to) 2995 2414 w
+(the) 3118 2414 w
+(ones) 3289 2414 w
+(described) 3527 2414 w
+(below) 3983 2414 w
+(\(they) 566 2534 w
+(use) 819 2534 w
+(to) 993 2534 w
+(be) 1107 2534 w
+(more) 1238 2534 w
+(complex,) 1491 2534 w
+(though\).) 1925 2534 w
+(In) 816 2690 w
+(general,) 935 2690 w
+(things) 1312 2690 w
+(work) 1610 2690 w
+(as) 1863 2690 w
+(for) 1982 2690 w
+(any) 2137 2690 w
+(other) 2323 2690 w
+(service) 2576 2690 w
+(provided) 2913 2690 w
+(by) 3331 2690 w
+(the) 3469 2690 w
+(operating) 3631 2690 w
+(sys\255) 4074 2690 w
+(tem.) 566 2810 w
+(First,) 818 2810 w
+(the) 1080 2810 w
+(system) 1245 2810 w
+(provides) 1582 2810 w
+(some) 1990 2810 w
+(abstraction) 2252 2810 w
+(for) 2763 2810 w
+(using) 2920 2810 w
+(the) 3189 2810 w
+(network.) 3353 2810 w
+(As) 3770 2810 w
+(we) 3922 2810 w
+(will) 4079 2810 w
+(be) 566 2930 w
+(seeing,) 698 2930 w
+(Plan) 1035 2930 w
+(9) 1260 2930 w
+(uses) 1344 2930 w
+(also) 1562 2930 w
+(the) 1768 2930 w
+(file) 1931 2930 w
+(abstraction) 2106 2930 w
+(as) 2616 2930 w
+(its) 2736 2930 w
+(primary) 2870 2930 w
+(interface) 3246 2930 w
+(for) 3656 2930 w
+(using) 3812 2930 w
+(net\255) 4081 2930 w
+(works.) 566 3050 w
+(Of) 905 3050 w
+(course,) 1063 3050 w
+(files) 1419 3050 w
+(used) 1651 3050 w
+(to) 1895 3050 w
+(represent) 2023 3050 w
+(a) 2465 3050 w
+(network) 2555 3050 w
+(have) 2956 3050 w
+(a) 3204 3050 w
+(special) 3294 3050 w
+(meaning,) 3640 3050 w
+(i.e.,) 4088 3050 w
+(behave) 566 3170 w
+(in) 915 3170 w
+(a) 1041 3170 w
+(particular) 1129 3170 w
+(way,) 1588 3170 w
+(but) 1838 3170 w
+(they) 2019 3170 w
+(are) 2248 3170 w
+(still) 2420 3170 w
+(used) 2627 3170 w
+(like) 2868 3170 w
+(files.) 3073 3170 w
+(Other) 3330 3170 w
+(operating) 3619 3170 w
+(sys\255) 4074 3170 w
+(tems) 566 3290 w
+(use) 812 3290 w
+(a) 996 3290 w
+(whole) 1082 3290 w
+(bunch) 1388 3290 w
+(of) 1694 3290 w
+(extra) 1823 3290 w
+(system) 2079 3290 w
+(calls) 2423 3290 w
+(instead,) 2662 3290 w
+(to) 3039 3290 w
+(provide) 3163 3290 w
+(the) 3535 3290 w
+(interface) 3706 3290 w
+(for) 4124 3290 w
+(their) 566 3410 w
+(network) 805 3410 w
+(abstraction.) 1202 3410 w
+(Nevertheless,) 1749 3410 w
+(the) 2381 3410 w
+(ideas,) 2554 3410 w
+(and) 2846 3410 w
+(the) 3043 3410 w
+(programmatic) 3216 3410 w
+(interface) 3870 3410 w
+(that) 566 3530 w
+(we) 759 3530 w
+(will) 914 3530 w
+(see,) 1114 3530 w
+(are) 1309 3530 w
+(very) 1469 3530 w
+(similar.) 1691 3530 w
+(Upon) 816 3686 w
+(such) 1119 3686 w
+(system\255provided) 1379 3686 w
+(abstraction,) 2170 3686 w
+(library) 2738 3686 w
+(functions) 3090 3686 w
+(may) 3559 3686 w
+(provide) 3808 3686 w
+(a) 4203 3686 w
+(more) 566 3806 w
+(convenient) 834 3806 w
+(interface) 1358 3806 w
+(for) 1782 3806 w
+(the) 1952 3806 w
+(application) 2129 3806 w
+(programmer.) 2659 3806 w
+(And) 3270 3806 w
+(of) 3501 3806 w
+(course,) 3634 3806 w
+(in) 3989 3806 w
+(the) 4117 3806 w
+(end,) 566 3926 w
+(there) 803 3926 w
+(are) 1072 3926 w
+(many) 1255 3926 w
+(programs) 1550 3926 w
+(already) 2015 3926 w
+(installed) 2387 3926 w
+(in) 2811 3926 w
+(the) 2948 3926 w
+(system) 3133 3926 w
+(that,) 3490 3926 w
+(using) 3735 3926 w
+(these) 4026 3926 w
+(libraries,) 566 4046 w
+(provide) 981 4046 w
+(some) 1344 4046 w
+(services) 1604 4046 w
+(for) 1984 4046 w
+(the) 2139 4046 w
+(user.) 2301 4046 w
+(A) 816 4202 w
+(network) 934 4202 w
+(in) 1332 4202 w
+(Plan) 1457 4202 w
+(9) 1692 4202 w
+(is) 1786 4202 w
+(a) 1899 4202 w
+(set) 1987 4202 w
+(of) 2149 4202 w
+(devices) 2280 4202 w
+(that) 2648 4202 w
+(provide) 2853 4202 w
+(the) 3228 4202 w
+(ability) 3402 4202 w
+(to) 3724 4202 w
+(talk) 3850 4202 w
+(with) 4055 4202 w
+(other) 566 4322 w
+(machines) 826 4322 w
+(using) 1275 4322 w
+(some) 1549 4322 w
+(physical) 1816 4322 w
+(medium) 2216 4322 w
+(\(e.g,) 2611 4322 w
+(some) 2840 4322 w
+(type) 3106 4322 w
+(of) 3329 4322 w
+(wire) 3454 4322 w
+(or) 3682 4322 w
+(the) 3807 4322 w
+(air) 3975 4322 w
+(for) 4124 4322 w
+(radio) 566 4442 w
+(communication\).) 819 4442 w
+(A) 816 4598 w
+(network) 935 4598 w
+(device) 1334 4598 w
+(in) 1659 4598 w
+(Plan) 1785 4598 w
+(9) 2022 4598 w
+(may) 2118 4598 w
+(be) 2348 4598 w
+(an) 2492 4598 w
+(actual) 2636 4598 w
+(piece) 2938 4598 w
+(of) 3209 4598 w
+(hardware,) 3341 4598 w
+(but) 3815 4598 w
+(it) 3997 4598 w
+(can) 4100 4598 w
+(also) 566 4718 w
+(be) 776 4718 w
+(a) 912 4718 w
+(piece) 993 4718 w
+(of) 1256 4718 w
+(software) 1379 4718 w
+(used) 1787 4718 w
+(to) 2020 4718 w
+(speak) 2138 4718 w
+(some) 2419 4718 w
+(protocol.) 2683 4718 w
+(For) 3109 4718 w
+(example,) 3294 4718 w
+(most) 3725 4718 w
+(likely,) 3972 4718 w
+(your) 566 4838 w
+(PC) 795 4838 w
+(includes) 959 4838 w
+(an) 1353 4838 w
+(ethernet) 1484 4838 w
+(card.) 1864 4838 w
+(It) 2107 4838 w
+(uses) 2202 4838 w
+(an) 2419 4838 w
+(RJ45) 2551 4838 w
+(connector) 2807 4838 w
+(to) 3267 4838 w
+(plug) 3382 4838 w
+(your) 3607 4838 w
+(computer) 3837 4838 w
+(to) 566 4958 w
+(an) 688 4958 w
+(ethernet) 827 4958 w
+(network) 1214 4958 w
+(\(just) 1608 4958 w
+(some) 1839 4958 w
+(type) 2106 4958 w
+(of) 2330 4958 w
+(cabling) 2456 4958 w
+(and) 2814 4958 w
+(conventions\).) 3007 4958 w
+(The) 3665 4958 w
+(interface) 3870 4958 w
+(for) 566 5078 w
+(the) 761 5078 w
+(ethernet) 963 5078 w
+(device) 1383 5078 w
+(in) 1736 5078 w
+(Plan) 1890 5078 w
+(9) 2155 5078 w
+(is) 2279 5078 w
+(just) 2422 5078 w
+(a) 2651 5078 w
+(file) 2768 5078 w
+(tree,) 2983 5078 w
+(most) 3243 5078 w
+(likely) 3527 5078 w
+(found) 3847 5078 w
+(at) 4172 5078 w
+11 /Courier f
+(/net/ether0) 566 5198 w
+10 /Courier f
+(; !!lc /net/ether0) 786 5368 w
+(0) 786 5478 w
+(1) 1266 5478 w
+(2) 1746 5478 w
+(addr) 2226 5478 w
+(clone) 2706 5478 w
+(ifstats stats) 3186 5478 w
+11 /Times-Roman f
+(Machines) 566 5694 w
+(attached) 1036 5694 w
+(to) 1444 5694 w
+(the) 1574 5694 w
+(wire) 1752 5694 w
+(have) 1990 5694 w
+(addresses,) 2240 5694 w
+(used) 2731 5694 w
+(by) 2977 5694 w
+(the) 3132 5694 w
+(network) 3311 5694 w
+(hardware) 3715 5694 w
+(to) 4165 5694 w
+(identify) 566 5814 w
+(different) 944 5814 w
+(machines) 1356 5814 w
+(attached) 1806 5814 w
+(to) 2206 5814 w
+(the) 2328 5814 w
+(wire.) 2498 5814 w
+(Networks) 2756 5814 w
+(using) 3217 5814 w
+(wireless) 3491 5814 w
+(commu\255) 3885 5814 w
+(nication) 566 5934 w
+(are) 961 5934 w
+(similar,) 1134 5934 w
+(but) 1509 5934 w
+(use) 1691 5934 w
+(the) 1878 5934 w
+(air) 2053 5934 w
+(as) 2210 5934 w
+(their) 2343 5934 w
+11 /LucidaSansUnicode20 f
+(\034) 2586 5934 w
+11 /Times-Roman f
+(wire) 2627 5934 w
+11 /LucidaSansUnicode20 f
+(\035) 2821 5934 w
+11 /Times-Roman f
+(.) 2862 5934 w
+(We) 2932 5934 w
+(can) 3125 5934 w
+(use) 3318 5934 w
+(the) 3506 5934 w
+(file) 3682 5934 w
+(interface) 3870 5934 w
+(provided) 566 6054 w
+(by) 984 6054 w
+(Plan) 1122 6054 w
+(9) 1346 6054 w
+(for) 1429 6054 w
+(our) 1584 6054 w
+(ethernet) 1758 6054 w
+(device) 2138 6054 w
+(to) 2451 6054 w
+(find) 2565 6054 w
+(out) 2770 6054 w
+(which) 2939 6054 w
+(one) 3235 6054 w
+(is) 3421 6054 w
+(its) 3523 6054 w
+(address:) 3656 6054 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 1 1
+%%Page: 2 2
+/saveobj save def
+mark
+2 pagesetup
+11 /Times-Roman f
+(\255 2 \255) 2317 413 w
+10 /Courier f
+(; cat /net/ether0/addr) 786 676 w
+(000c292839fc;) 786 786 w
+11 /Times-Roman f
+(As) 566 1002 w
+(you) 722 1002 w
+(imagine,) 921 1002 w
+(this) 1337 1002 w
+(file) 1531 1002 w
+(is) 1711 1002 w
+(just) 1819 1002 w
+(an) 2013 1002 w
+(interface) 2150 1002 w
+(for) 2565 1002 w
+(using) 2726 1002 w
+(your) 2999 1002 w
+(ethernet) 3235 1002 w
+(device,) 3622 1002 w
+(in) 3970 1002 w
+(this) 4091 1002 w
+(case,) 566 1122 w
+(for) 809 1122 w
+(asking) 964 1122 w
+(for) 1279 1122 w
+(its) 1434 1122 w
+(address.) 1567 1122 w
+(Once) 816 1278 w
+(you) 1074 1278 w
+(have) 1267 1278 w
+(the) 1502 1278 w
+(hardware) 1665 1278 w
+(\(e.g.,) 2099 1278 w
+(the) 2351 1278 w
+(ethernet) 2514 1278 w
+(card\)) 2895 1278 w
+(for) 3147 1278 w
+(exchanging) 3303 1278 w
+(messages) 3837 1278 w
+(with) 566 1398 w
+(other) 805 1398 w
+(machines) 1073 1398 w
+(attached) 1530 1398 w
+(to) 1937 1398 w
+(the) 2066 1398 w
+(same) 2243 1398 w
+(medium) 2511 1398 w
+(\(wiring) 2915 1398 w
+(or) 3281 1398 w
+(air\),) 3415 1398 w
+(your) 3637 1398 w
+(machine) 3880 1398 w
+(and) 566 1518 w
+(exchange) 761 1518 w
+(bytes) 1210 1518 w
+(with) 1479 1518 w
+(them.) 1712 1518 w
+(The) 1997 1518 w
+(problem) 2205 1518 w
+(remains) 2609 1518 w
+(of) 2994 1518 w
+(how) 3123 1518 w
+(to) 3350 1518 w
+(send) 3474 1518 w
+(messages) 3713 1518 w
+(to) 4165 1518 w
+(any) 566 1638 w
+(machine) 779 1638 w
+(in) 1205 1638 w
+(the) 1346 1638 w
+(Internet,) 1535 1638 w
+(even) 1957 1638 w
+(if) 2217 1638 w
+(it) 2338 1638 w
+(is) 2454 1638 w
+(not) 2582 1638 w
+(attached) 2777 1638 w
+(to) 3195 1638 w
+(the) 3335 1638 w
+(same) 3523 1638 w
+(wire) 3802 1638 w
+(your) 4050 1638 w
+(machine) 566 1758 w
+(is) 979 1758 w
+(attached) 1095 1758 w
+(at.) 1501 1758 w
+(One) 1678 1758 w
+(protocol) 1902 1758 w
+(very) 2310 1758 w
+(important) 2546 1758 w
+(to) 3017 1758 w
+(the) 3146 1758 w
+(Internet,) 3323 1758 w
+(IP) 3734 1758 w
+(\(Internet) 3875 1758 w
+(Protocol\),) 566 1878 w
+(is) 1032 1878 w
+(provided) 1135 1878 w
+(in) 1554 1878 w
+(Plan) 1669 1878 w
+(9) 1894 1878 w
+(by) 1978 1878 w
+(a) 2117 1878 w
+(device) 2194 1878 w
+(driver) 2508 1878 w
+(called) 2798 1878 w
+(IP.) 3088 1878 w
+(This) 3270 1878 w
+(protocol) 3494 1878 w
+(is) 3888 1878 w
+(called) 3990 1878 w
+(a) 566 1998 w
+(network) 649 1998 w
+(protocol) 1043 1998 w
+(because) 1444 1998 w
+(it) 1824 1998 w
+(gives) 1921 1998 w
+(an) 2188 1998 w
+(address) 2326 1998 w
+(to) 2689 1998 w
+(each) 2810 1998 w
+(machine) 3044 1998 w
+(in) 3450 1998 w
+(the) 3572 1998 w
+(Internet,) 3742 1998 w
+(its) 4146 1998 w
+(IP\255address,) 566 2118 w
+(and) 1085 2118 w
+(it) 1271 2118 w
+(knows) 1361 2118 w
+(how) 1676 2118 w
+(to) 1893 2118 w
+(reach) 2007 2118 w
+(any) 2270 2118 w
+(machine,) 2456 2118 w
+(given) 2883 2118 w
+(its) 3155 2118 w
+(address.) 3288 2118 w
+(The) 3672 2118 w
+(interface) 3870 2118 w
+(for) 566 2238 w
+(the) 721 2238 w
+(IP) 883 2238 w
+(network) 1009 2238 w
+(in) 1396 2238 w
+(Plan) 1510 2238 w
+(9) 1734 2238 w
+(is) 1817 2238 w
+(similar) 1919 2238 w
+(to) 2253 2238 w
+(the) 2367 2238 w
+(one) 2529 2238 w
+(we) 2715 2238 w
+(saw) 2870 2238 w
+(for) 3068 2238 w
+(Ethernet:) 3223 2238 w
+10 /Courier f
+(; lc /net/ipifc) 786 2408 w
+(0) 786 2518 w
+(1) 1266 2518 w
+(clone) 1746 2518 w
+(stats) 2226 2518 w
+11 /Times-Roman f
+(This) 566 2734 w
+(is) 818 2734 w
+(not) 949 2734 w
+(yet) 1147 2734 w
+(enough) 1338 2734 w
+(for) 1718 2734 w
+(communicating) 1902 2734 w
+(with) 2643 2734 w
+(programs) 2896 2734 w
+(across) 3367 2734 w
+(the) 3697 2734 w
+(internet.) 3888 2734 w
+(Using) 566 2854 w
+(IP,) 878 2854 w
+(you) 1053 2854 w
+(may) 1267 2854 w
+(talk) 1505 2854 w
+(to) 1719 2854 w
+(one) 1854 2854 w
+(machine) 2061 2854 w
+(\(and) 2481 2854 w
+(IP) 2723 2854 w
+(cares) 2869 2854 w
+(about) 3140 2854 w
+(how) 3432 2854 w
+(to) 3669 2854 w
+(reach) 3803 2854 w
+(that) 4086 2854 w
+(machine) 566 2974 w
+(through) 976 2974 w
+(the) 1357 2974 w
+(many) 1530 2974 w
+(different) 1813 2974 w
+(wires) 2228 2974 w
+(and) 2505 2974 w
+(machines) 2703 2974 w
+(you) 3157 2974 w
+(need) 3362 2974 w
+(to) 3608 2974 w
+(cross\).) 3734 2974 w
+(But) 4091 2974 w
+(you) 566 3094 w
+(need) 760 3094 w
+(to) 995 3094 w
+(be) 1110 3094 w
+(able) 1242 3094 w
+(to) 1453 3094 w
+(talk) 1568 3094 w
+(to) 1761 3094 w
+(one) 1875 3094 w
+11 /Times-Italic f
+(process) 2061 3094 w
+11 /Times-Roman f
+(.) 2396 3094 w
+(This) 2480 3094 w
+(is) 2704 3094 w
+(achieved) 2806 3094 w
+(by) 3222 3094 w
+(using) 3360 3094 w
+(another) 3627 3094 w
+(proto\255) 3983 3094 w
+(col,) 566 3214 w
+(built) 774 3214 w
+(upon) 1023 3214 w
+(the) 1289 3214 w
+(network) 1469 3214 w
+(protocol.) 1874 3214 w
+(This) 2342 3214 w
+(kind) 2585 3214 w
+(of) 2828 3214 w
+(protocol) 2966 3214 w
+(gives) 3379 3214 w
+(addresses) 3658 3214 w
+(for) 4124 3214 w
+11 /LucidaSansUnicode20 f
+(\034) 566 3334 w
+11 /Times-Roman f
+(mailboxes) 607 3334 w
+11 /LucidaSansUnicode20 f
+(\035) 1059 3334 w
+11 /Times-Roman f
+(within) 1134 3334 w
+(each) 1450 3334 w
+(machine,) 1683 3334 w
+(called) 2116 3334 w
+11 /Times-Italic f
+(ports) 2411 3334 w
+11 /Times-Roman f
+(.) 2638 3334 w
+(Therefore,) 2728 3334 w
+(an) 3219 3334 w
+(address) 3355 3334 w
+(for) 3716 3334 w
+(this) 3876 3334 w
+(pro\255) 4069 3334 w
+(tocol) 566 3454 w
+(is) 825 3454 w
+(a) 939 3454 w
+(combination) 1027 3454 w
+(of) 1617 3454 w
+(a) 1748 3454 w
+(machine) 1836 3454 w
+(address) 2247 3454 w
+(\(used) 2615 3454 w
+(to) 2892 3454 w
+(reach) 3018 3454 w
+(that) 3293 3454 w
+(machine) 3498 3454 w
+(through) 3909 3454 w
+(the) 566 3574 w
+(underlying) 728 3574 w
+(network) 1232 3574 w
+(protocol\)) 1619 3574 w
+(and) 2049 3574 w
+(a) 2235 3574 w
+11 /Times-Italic f
+(port) 2311 3574 w
+11 /Times-Roman f
+(number.) 2523 3574 w
+(In) 816 3730 w
+(few) 954 3730 w
+(words,) 1164 3730 w
+(the) 1507 3730 w
+(network) 1688 3730 w
+(protocol) 2094 3730 w
+(gives) 2507 3730 w
+(addresses) 2786 3730 w
+(for) 3252 3730 w
+(each) 3427 3730 w
+(machine) 3674 3730 w
+(and) 4093 3730 w
+(knows) 566 3850 w
+(how) 887 3850 w
+(to) 1110 3850 w
+(exchange) 1230 3850 w
+(messages) 1676 3850 w
+(between) 2124 3850 w
+(machines.) 2522 3850 w
+(Today,) 2998 3850 w
+(you) 3339 3850 w
+(are) 3537 3850 w
+(going) 3702 3850 w
+(to) 3986 3850 w
+(use) 4105 3850 w
+(IP) 566 3970 w
+(as) 707 3970 w
+(your) 841 3970 w
+(network) 1085 3970 w
+(protocol.) 1487 3970 w
+(The) 1924 3970 w
+(transport) 2137 3970 w
+(protocol) 2570 3970 w
+(gives) 2979 3970 w
+(port) 3255 3970 w
+(numbers) 3476 3970 w
+(for) 3898 3970 w
+(pro\255) 4069 3970 w
+(cesses) 566 4090 w
+(to) 869 4090 w
+(use,) 985 4090 w
+(and) 1189 4090 w
+(knows) 1376 4090 w
+(how) 1692 4090 w
+(to) 1910 4090 w
+(deliver) 2025 4090 w
+(messages) 2358 4090 w
+(to) 2801 4090 w
+(a) 2916 4090 w
+(particular) 2993 4090 w
+(port) 3441 4090 w
+(at) 3647 4090 w
+(a) 3755 4090 w
+(particular) 3832 4090 w
+(machine.) 566 4210 w
+(Think) 1002 4210 w
+(of) 1302 4210 w
+(the) 1430 4210 w
+(network) 1601 4210 w
+(address) 1997 4210 w
+(as) 2362 4210 w
+(the) 2490 4210 w
+(address) 2661 4210 w
+(for) 3026 4210 w
+(a) 3190 4210 w
+(building,) 3275 4210 w
+(and) 3708 4210 w
+(the) 3903 4210 w
+(port) 4074 4210 w
+(number) 566 4330 w
+(as) 929 4330 w
+(the) 1048 4330 w
+(number) 1210 4330 w
+(for) 1573 4330 w
+(a) 1728 4330 w
+(mailbox) 1804 4330 w
+(in) 2193 4330 w
+(the) 2307 4330 w
+(building.) 2469 4330 w
+(Some) 816 4486 w
+(transport) 1101 4486 w
+(protocols) 1525 4486 w
+(provide) 1968 4486 w
+(an) 2337 4486 w
+(abstraction) 2474 4486 w
+(similar) 2989 4486 w
+(to) 3329 4486 w
+(the) 3449 4486 w
+(postal) 3617 4486 w
+(service.) 3914 4486 w
+(They) 566 4606 w
+(deliver) 833 4606 w
+(individual) 1179 4606 w
+(messages) 1668 4606 w
+(that) 2124 4606 w
+(may) 2331 4606 w
+(arrive) 2561 4606 w
+(out) 2856 4606 w
+(of) 3038 4606 w
+(order) 3170 4606 w
+(and) 3441 4606 w
+(may) 3640 4606 w
+(even) 3870 4606 w
+(get) 4117 4606 w
+(lost) 566 4726 w
+(in) 762 4726 w
+(the) 884 4726 w
+(way.) 1054 4726 w
+(Each) 1300 4726 w
+(such) 1554 4726 w
+(message) 1791 4726 w
+(is) 2198 4726 w
+(called) 2308 4726 w
+(a) 2605 4726 w
+11 /Times-Italic f
+(datagram) 2690 4726 w
+11 /Times-Roman f
+(,) 3118 4726 w
+(which) 3183 4726 w
+(is) 3488 4726 w
+(the) 3599 4726 w
+(abstraction) 3770 4726 w
+(provided) 566 4846 w
+(by) 994 4846 w
+(this) 1142 4846 w
+(kind) 1340 4846 w
+(of) 1574 4846 w
+(transport.) 1702 4846 w
+(In) 2157 4846 w
+(the) 2285 4846 w
+(Internet,) 2456 4846 w
+(the) 2861 4846 w
+(datagram) 3032 4846 w
+(service) 3476 4846 w
+(is) 3822 4846 w
+(usually) 3933 4846 w
+(UDP.) 566 4966 w
+(The) 850 4966 w
+(IP) 1056 4966 w
+(device) 1190 4966 w
+(driver) 1511 4966 w
+(in) 1808 4966 w
+(Plan) 1930 4966 w
+(9) 2162 4966 w
+(provides) 2253 4966 w
+(an) 2667 4966 w
+(interface) 2806 4966 w
+(for) 3223 4966 w
+(using) 3386 4966 w
+(UDP,) 3661 4966 w
+(similar) 3945 4966 w
+(to) 566 5086 w
+(the) 680 5086 w
+(ones) 842 5086 w
+(we) 1071 5086 w
+(saw) 1226 5086 w
+(for) 1424 5086 w
+(other) 1579 5086 w
+(protocols) 1832 5086 w
+(and) 2269 5086 w
+(network) 2455 5086 w
+(devices:) 2842 5086 w
+10 /Courier f
+(; lc /net/udp) 786 5256 w
+(0) 786 5366 w
+(1) 1266 5366 w
+(clone) 1746 5366 w
+(stats) 2226 5366 w
+11 /Times-Roman f
+(Other) 566 5582 w
+(transports) 846 5582 w
+(use) 1310 5582 w
+(the) 1487 5582 w
+(ability) 1652 5582 w
+(to) 1965 5582 w
+(send) 2082 5582 w
+(individual) 2315 5582 w
+(messages) 2794 5582 w
+(to) 3240 5582 w
+(build) 3358 5582 w
+(a) 3617 5582 w
+(more) 3697 5582 w
+(conve\255) 3954 5582 w
+(nient) 566 5702 w
+(abstraction) 839 5702 w
+(for) 1373 5702 w
+(maintaining) 1553 5702 w
+(dialogs,) 2132 5702 w
+(similar) 2531 5702 w
+(to) 2889 5702 w
+(a) 3027 5702 w
+(pipe.) 3127 5702 w
+(This) 3396 5702 w
+(abstraction) 3644 5702 w
+(is) 4177 5702 w
+(called) 566 5822 w
+(a) 856 5822 w
+11 /Times-Bold f
+(connection) 933 5822 w
+11 /Times-Roman f
+(.) 1440 5822 w
+(It) 1525 5822 w
+(is) 1621 5822 w
+(similar) 1724 5822 w
+(to) 2059 5822 w
+(a) 2174 5822 w
+(pipe,) 2251 5822 w
+(but) 2497 5822 w
+(differs) 2667 5822 w
+(from) 2981 5822 w
+(it) 3223 5822 w
+(in) 3314 5822 w
+(that) 3430 5822 w
+(it) 3625 5822 w
+(can) 3717 5822 w
+(go) 3898 5822 w
+(from) 4038 5822 w
+(one) 566 5942 w
+(port) 756 5942 w
+(at) 965 5942 w
+(one) 1076 5942 w
+(machine) 1266 5942 w
+(to) 1669 5942 w
+(another) 1787 5942 w
+(port) 2147 5942 w
+(at) 2356 5942 w
+(a) 2467 5942 w
+(different) 2546 5942 w
+(machine) 2953 5942 w
+(in) 3355 5942 w
+(the) 3472 5942 w
+(network.) 3637 5942 w
+(This) 4055 5942 w
+(type) 566 6062 w
+(of) 784 6062 w
+(communication) 904 6062 w
+(is) 1618 6062 w
+(similar) 1722 6062 w
+(to) 2058 6062 w
+(a) 2174 6062 w
+(phone) 2252 6062 w
+(call.) 2550 6062 w
+(Each) 2766 6062 w
+(end) 3014 6062 w
+(has) 3202 6062 w
+(an) 3378 6062 w
+(address) 3511 6062 w
+(\(a) 3869 6062 w
+(phone) 3983 6062 w
+(number\),) 566 6182 w
+(they) 999 6182 w
+(must) 1222 6182 w
+(establish) 1471 6182 w
+(a) 1890 6182 w
+(connection) 1972 6182 w
+(\(dial) 2487 6182 w
+(a) 2721 6182 w
+(number,) 2802 6182 w
+(pickup) 3198 6182 w
+(the) 3530 6182 w
+(phone\),) 3697 6182 w
+(then) 4062 6182 w
+(they) 566 6302 w
+(can) 803 6302 w
+(speak) 1002 6302 w
+(to) 1299 6302 w
+(each) 1433 6302 w
+(other,) 1681 6302 w
+(and) 1983 6302 w
+(finally,) 2190 6302 w
+(they) 2554 6302 w
+(hangup.) 2792 6302 w
+(The) 3192 6302 w
+(analogy) 3411 6302 w
+(cannot) 3807 6302 w
+(be) 4148 6302 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 2 2
+%%Page: 3 3
+/saveobj save def
+mark
+3 pagesetup
+11 /Times-Roman f
+(\255 3 \255) 2317 413 w
+(pushed) 566 686 w
+(too) 908 686 w
+(far,) 1080 686 w
+(for) 1259 686 w
+(example,) 1417 686 w
+(a) 1847 686 w
+(connection) 1926 686 w
+(may) 2438 686 w
+(be) 2658 686 w
+(established) 2792 686 w
+(if) 3310 686 w
+(both) 3407 686 w
+(ends) 3633 686 w
+(call) 3864 686 w
+(each) 4052 686 w
+(other,) 566 806 w
+(which) 847 806 w
+(would) 1143 806 w
+(not) 1447 806 w
+(be) 1617 806 w
+(feasible) 1749 806 w
+(when) 2118 806 w
+(making) 2384 806 w
+(a) 2743 806 w
+(phone) 2820 806 w
+(call.) 3117 806 w
+(But) 3332 806 w
+(you) 3521 806 w
+(get) 3715 806 w
+(the) 3878 806 w
+(idea.) 4041 806 w
+(In) 566 926 w
+(the) 690 926 w
+(Internet,) 857 926 w
+(the) 1258 926 w
+(most) 1425 926 w
+(popular) 1673 926 w
+(protocol) 2041 926 w
+(that) 2440 926 w
+(provides) 2638 926 w
+(connections) 3049 926 w
+(is) 3606 926 w
+(TCP,) 3712 926 w
+(it) 3975 926 w
+(pro\255) 4069 926 w
+(vides) 566 1046 w
+(them) 835 1046 w
+(using) 1092 1046 w
+(IP) 1368 1046 w
+(as) 1503 1046 w
+(the) 1631 1046 w
+(underlying) 1802 1046 w
+(transport) 2315 1046 w
+(protocol) 2742 1046 w
+(\(hence) 3145 1046 w
+(the) 3472 1046 w
+(name) 3644 1046 w
+(TCP/IP) 3919 1046 w
+(for) 566 1166 w
+(this) 722 1166 w
+(suite) 911 1166 w
+(of) 1148 1166 w
+(protocols\).) 1268 1166 w
+(The) 1798 1166 w
+(IP) 1997 1166 w
+(device) 2124 1166 w
+(driver) 2437 1166 w
+(in) 2726 1166 w
+(Plan) 2840 1166 w
+(9) 3064 1166 w
+(provides) 3147 1166 w
+(the) 3553 1166 w
+(interface) 3715 1166 w
+(for) 4124 1166 w
+(using) 566 1286 w
+(TCP.) 833 1286 w
+(It) 1092 1286 w
+(has) 1187 1286 w
+(the) 1361 1286 w
+(now) 1523 1286 w
+(familiar) 1740 1286 w
+(file) 2115 1286 w
+(interface) 2289 1286 w
+(for) 2698 1286 w
+(using) 2853 1286 w
+(a) 3120 1286 w
+(network) 3196 1286 w
+(in) 3583 1286 w
+(Plan) 3697 1286 w
+(9:) 3921 1286 w
+10 /Courier f
+(; lc /net/tcp) 786 1456 w
+(0) 786 1566 w
+(11) 1266 1566 w
+(14) 1746 1566 w
+(17) 2226 1566 w
+(2) 2706 1566 w
+(22) 3186 1566 w
+(stats) 3666 1566 w
+(1) 786 1676 w
+(12) 1266 1676 w
+(15) 1746 1676 w
+(18) 2226 1676 w
+(20) 2706 1676 w
+(23) 3186 1676 w
+(26) 3666 1676 w
+(10) 786 1786 w
+(13) 1266 1786 w
+(16) 1746 1786 w
+(19) 2226 1786 w
+(21) 2706 1786 w
+(24) 3186 1786 w
+(clone) 3666 1786 w
+11 /Times-Roman f
+(Each) 566 2002 w
+(network) 820 2002 w
+(is) 1215 2002 w
+(represented) 1326 2002 w
+(in) 1866 2002 w
+(Plan) 1989 2002 w
+(9) 2222 2002 w
+(as) 2314 2002 w
+(a) 2442 2002 w
+(directory,) 2527 2002 w
+(that) 2987 2002 w
+(has) 3189 2002 w
+(at) 3372 2002 w
+(least) 3488 2002 w
+(one) 3726 2002 w
+11 /Courier f
+(clone) 3921 2002 w
+11 /Times-Roman f
+(file,) 566 2122 w
+(and) 779 2122 w
+(several) 976 2122 w
+(other) 1324 2122 w
+(directories,) 1588 2122 w
+(called) 2117 2122 w
+11 /Times-Italic f
+(line) 2417 2122 w
+11 /Times-Roman f
+(directories.) 2621 2122 w
+(Opening) 3149 2122 w
+(the) 3565 2122 w
+11 /Courier f
+(clone) 3737 2122 w
+11 /Times-Roman f
+(file) 4105 2122 w
+(reserves) 566 2242 w
+(a) 959 2242 w
+(new) 1043 2242 w
+(connection,) 1261 2242 w
+(and) 1806 2242 w
+(creates) 2000 2242 w
+(a) 2338 2242 w
+(directory) 2422 2242 w
+(that) 2853 2242 w
+(represents) 3055 2242 w
+(the) 3535 2242 w
+(interface) 3706 2242 w
+(for) 4124 2242 w
+(the) 566 2362 w
+(new) 730 2362 w
+11 /Times-Italic f
+(line) 942 2362 w
+11 /Times-Roman f
+(used) 1137 2362 w
+(to) 1368 2362 w
+(establish) 1484 2362 w
+(a) 1899 2362 w
+(connection.) 1976 2362 w
+(Line) 2514 2362 w
+(directories) 2744 2362 w
+(are) 3235 2362 w
+(named) 3396 2362 w
+(with) 3717 2362 w
+(a) 3942 2362 w
+(num\255) 4019 2362 w
+(ber,) 566 2482 w
+(and) 763 2482 w
+(kept) 951 2482 w
+(within) 1170 2482 w
+(the) 1482 2482 w
+(directory) 1646 2482 w
+(for) 2071 2482 w
+(the) 2228 2482 w
+(network.) 2392 2482 w
+(For) 2809 2482 w
+(example,) 2992 2482 w
+11 /Courier f
+(/net/tcp/14) 3421 2482 w
+11 /Times-Roman f
+(is) 4177 2482 w
+(the) 566 2602 w
+(interface) 730 2602 w
+(for) 1141 2602 w
+(our) 1298 2602 w
+(TCP) 1473 2602 w
+(connection) 1705 2602 w
+(number) 2215 2602 w
+(14.) 2579 2602 w
+(It) 2746 2602 w
+(doesn't) 2842 2602 w
+(need) 3194 2602 w
+(to) 3429 2602 w
+(be) 3544 2602 w
+(a) 3676 2602 w
+(fully) 3753 2602 w
+(estab\255) 3990 2602 w
+(lished) 566 2722 w
+(connection,) 863 2722 w
+(it) 1406 2722 w
+(may) 1502 2722 w
+(be) 1725 2722 w
+(in) 1862 2722 w
+(the) 1982 2722 w
+(process) 2150 2722 w
+(of) 2512 2722 w
+(getting) 2637 2722 w
+(established.) 2977 2722 w
+(But) 3527 2722 w
+(in) 3722 2722 w
+(any) 3843 2722 w
+(case,) 4036 2722 w
+(the) 566 2842 w
+(directory) 734 2842 w
+(represents) 1163 2842 w
+(what) 1640 2842 w
+(can) 1886 2842 w
+(be) 2070 2842 w
+(a) 2206 2842 w
+(particular,) 2287 2842 w
+(individual,) 2767 2842 w
+(TCP) 3275 2842 w
+(connection.) 3511 2842 w
+(The) 4081 2842 w
+(program) 566 2962 w
+(that) 974 2962 w
+(opens) 1176 2962 w
+11 /Courier f
+(clone) 1469 2962 w
+11 /Times-Roman f
+(may) 1837 2962 w
+(read) 2064 2962 w
+(this) 2289 2962 w
+(file) 2487 2962 w
+(to) 2671 2962 w
+(discover) 2795 2962 w
+(the) 3204 2962 w
+(number) 3376 2962 w
+(assigned) 3749 2962 w
+(to) 4165 2962 w
+(the) 566 3082 w
+(line) 728 3082 w
+(directory) 921 3082 w
+(just) 1344 3082 w
+(created.) 1532 3082 w
+(As) 816 3238 w
+(shown) 979 3238 w
+(in) 1307 3238 w
+(figure) 1434 3238 w
+([[!network) 1736 3238 w
+(interface!]],) 2244 3238 w
+(for) 2802 3238 w
+(each) 2970 3238 w
+(connection) 3211 3238 w
+(Plan) 3734 3238 w
+(9) 3972 3238 w
+(pro\255) 4069 3238 w
+(vides) 566 3358 w
+(at) 826 3358 w
+(least) 933 3358 w
+(a) 1162 3358 w
+11 /Courier f
+(ctl) 1238 3358 w
+11 /Times-Roman f
+(file) 1464 3358 w
+(and) 1638 3358 w
+(a) 1824 3358 w
+11 /Courier f
+(data) 1900 3358 w
+11 /Times-Roman f
+(file.) 2192 3358 w
+(For) 2394 3358 w
+(example,) 2575 3358 w
+10 /Courier f
+(; lc /net/tcp/14) 786 3528 w
+(ctl) 786 3638 w
+(data) 1266 3638 w
+(err) 1746 3638 w
+(listen) 2226 3638 w
+(local) 2706 3638 w
+(remote) 3186 3638 w
+(status) 3666 3638 w
+11 /Times-Roman f
+(/net/tcp) 2243 3902 w
+(clone) 570 4392 w
+(0) 1037 4392 w
+(ctl) 794 4822 w
+(data) 1188 4822 w
+1028 4442 886 4727 Dl
+898 4674 886 4728 Dl
+921 4685 885 4726 Dl
+1100 4442 1242 4727 Dl
+1207 4685 1243 4726 Dl
+1231 4674 1243 4728 Dl
+(1) 1897 4392 w
+(ctl) 1654 4822 w
+(data) 2048 4822 w
+1888 4442 1746 4727 Dl
+1757 4674 1745 4728 Dl
+1781 4685 1745 4726 Dl
+1960 4442 2102 4727 Dl
+2067 4685 2103 4726 Dl
+2091 4674 2103 4728 Dl
+(2) 2756 4392 w
+(ctl) 2514 4822 w
+(data) 2908 4822 w
+2747 4442 2605 4727 Dl
+2617 4674 2605 4728 Dl
+2641 4685 2605 4726 Dl
+2819 4442 2961 4727 Dl
+2927 4685 2963 4726 Dl
+2950 4674 2962 4728 Dl
+(...) 3306 4607 w
+(n) 3885 4392 w
+(ctl) 3642 4822 w
+(data) 4036 4822 w
+3876 4442 3734 4727 Dl
+3745 4674 3733 4728 Dl
+3769 4685 3733 4726 Dl
+3948 4442 4090 4727 Dl
+4055 4685 4091 4726 Dl
+4079 4674 4091 4728 Dl
+2328 3956 767 4273 Dl
+817 4250 768 4273 Dl
+822 4276 767 4274 Dl
+2330 3960 1143 4268 Dl
+1191 4243 1143 4269 Dl
+1198 4268 1143 4268 Dl
+2342 3987 1990 4241 Dl
+2025 4200 1989 4242 Dl
+2041 4222 1990 4242 Dl
+2467 3995 2724 4234 Dl
+2676 4208 2724 4234 Dl
+2694 4188 2724 4234 Dl
+2486 3958 3833 4270 Dl
+3778 4272 3833 4272 Dl
+3784 4246 3832 4271 Dl
+(The) 566 5114 w
+(file) 767 5114 w
+(ctl) 944 5114 w
+(can) 1085 5114 w
+(be) 1267 5114 w
+(used) 1401 5114 w
+(to) 1634 5114 w
+(perform) 1752 5114 w
+(control) 2136 5114 w
+(operations) 2479 5114 w
+(to) 2968 5114 w
+(the) 3086 5114 w
+(connection.) 3252 5114 w
+(For) 3793 5114 w
+(exam\255) 3978 5114 w
+(ple,) 566 5234 w
+(to) 756 5234 w
+(hangup) 870 5234 w
+(\(break\)) 1221 5234 w
+(this) 1563 5234 w
+(connection,) 1751 5234 w
+(we) 2288 5234 w
+(can) 2443 5234 w
+(just) 2622 5234 w
+10 /Courier f
+(; echo hangup >/net/tcp/14) 786 5404 w
+11 /Times-Roman f
+(The) 566 5620 w
+11 /Courier f
+(data) 771 5620 w
+11 /Times-Roman f
+(file) 1070 5620 w
+(is) 1251 5620 w
+(used) 1360 5620 w
+(to) 1596 5620 w
+(send) 1717 5620 w
+(and) 1953 5620 w
+(receive) 2147 5620 w
+(bytes) 2497 5620 w
+(through) 2765 5620 w
+(the) 3143 5620 w
+(connection.) 3313 5620 w
+(It) 3858 5620 w
+(can) 3961 5620 w
+(be) 4148 5620 w
+(used) 566 5740 w
+(very) 815 5740 w
+(much) 1057 5740 w
+(like) 1349 5740 w
+(one) 1562 5740 w
+(end) 1768 5740 w
+(of) 1974 5740 w
+(a) 2113 5740 w
+(pipe.) 2208 5740 w
+(Writing) 2472 5740 w
+(to) 2861 5740 w
+(the) 2994 5740 w
+(data) 3175 5740 w
+(file) 3404 5740 w
+(delivers) 3625 5740 w
+(bytes) 4019 5740 w
+(through) 566 5860 w
+(the) 944 5860 w
+(connection) 1114 5860 w
+(that) 1631 5860 w
+(are) 1832 5860 w
+(to) 2000 5860 w
+(be) 2122 5860 w
+(received) 2261 5860 w
+(at) 2666 5860 w
+(the) 2781 5860 w
+(other) 2951 5860 w
+(end.) 3213 5860 w
+(Reading) 3464 5860 w
+(from) 3867 5860 w
+(the) 4117 5860 w
+(data) 566 5980 w
+(file) 786 5980 w
+(retrieves) 970 5980 w
+(bytes) 1384 5980 w
+(sent) 1654 5980 w
+(from) 1869 5980 w
+(the) 2120 5980 w
+(process) 2292 5980 w
+(writing) 2658 5980 w
+(at) 3014 5980 w
+(the) 3131 5980 w
+(other) 3303 5980 w
+(end.) 3566 5980 w
+(Just) 3790 5980 w
+(like) 4000 5980 w
+(a) 4203 5980 w
+(pipe.) 566 6100 w
+(Only) 848 6100 w
+(that,) 1105 6100 w
+(if) 1335 6100 w
+(a) 1439 6100 w
+(transport) 1524 6100 w
+(provides) 1951 6100 w
+(datagrams,) 2367 6100 w
+(each) 2883 6100 w
+(write) 3120 6100 w
+(to) 3383 6100 w
+(a) 3507 6100 w
+11 /Courier f
+(data) 3593 6100 w
+11 /Times-Roman f
+(file) 3895 6100 w
+(will) 4079 6100 w
+(send) 566 6220 w
+(a) 795 6220 w
+(different) 871 6220 w
+(datagram,) 1275 6220 w
+(and) 1738 6220 w
+(it) 1924 6220 w
+(may) 2014 6220 w
+(arrive) 2231 6220 w
+(out) 2513 6220 w
+(of) 2682 6220 w
+(order) 2801 6220 w
+(or) 3059 6220 w
+(get) 3178 6220 w
+(lost.) 3340 6220 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 3 3
+%%Page: 4 4
+/saveobj save def
+mark
+4 pagesetup
+11 /Times-Roman f
+(\255 4 \255) 2317 413 w
+(There) 816 686 w
+(are) 1111 686 w
+(more) 1284 686 w
+(differences.) 1550 686 w
+(An) 2103 686 w
+(important) 2278 686 w
+(one) 2747 686 w
+(is) 2946 686 w
+(that) 3061 686 w
+(many) 3267 686 w
+(transport) 3552 686 w
+(proto\255) 3983 686 w
+(cols,) 566 806 w
+(including) 804 806 w
+(TCP,) 1253 806 w
+(do) 1517 806 w
+(not) 1660 806 w
+(respect) 1834 806 w
+(message) 2176 806 w
+(boundaries.) 2580 806 w
+(This) 3122 806 w
+(means) 3351 806 w
+(that) 3663 806 w
+(data) 3860 806 w
+(sent) 4074 806 w
+(through) 566 926 w
+(a) 937 926 w
+(connection) 1015 926 w
+(by) 1526 926 w
+(several) 1666 926 w
+(writes) 2005 926 w
+(may) 2303 926 w
+(be) 2522 926 w
+(received) 2655 926 w
+(at) 3054 926 w
+(the) 3163 926 w
+(other) 3327 926 w
+(end) 3582 926 w
+(by) 3770 926 w
+(a) 3910 926 w
+(single) 3988 926 w
+(read.) 566 1046 w
+(If) 817 1046 w
+(your) 925 1046 w
+(program) 1162 1046 w
+(has) 1569 1046 w
+(to) 1751 1046 w
+(receive) 1872 1046 w
+(messages) 2221 1046 w
+(from) 2670 1046 w
+(a) 2918 1046 w
+(network) 3001 1046 w
+(connection,) 3395 1046 w
+(it) 3939 1046 w
+(must) 4036 1046 w
+(know) 566 1166 w
+(how) 845 1166 w
+(much) 1069 1166 w
+(to) 1349 1166 w
+(read) 1471 1166 w
+(for) 1694 1166 w
+(each) 1857 1166 w
+(message.) 2092 1166 w
+(A) 2527 1166 w
+(single) 2642 1166 w
+(call) 2941 1166 w
+(to) 3135 1166 w
+(read) 3257 1166 w
+(may) 3480 1166 w
+(return) 3705 1166 w
+(either) 4002 1166 w
+(part) 566 1286 w
+(of) 764 1286 w
+(a) 883 1286 w
+(message) 959 1286 w
+(or) 1358 1286 w
+(perhaps) 1477 1286 w
+(more) 1845 1286 w
+(than) 2098 1286 w
+(one) 2315 1286 w
+(message.) 2501 1286 w
+(In) 816 1442 w
+(the) 950 1442 w
+(line) 1127 1442 w
+(directory) 1335 1442 w
+(for) 1773 1442 w
+(our) 1943 1442 w
+(TCP) 2132 1442 w
+(connection,) 2378 1442 w
+(the) 2930 1442 w
+11 /Courier f
+(local) 3107 1442 w
+11 /Times-Roman f
+(file) 3480 1442 w
+(has) 3670 1442 w
+(the) 3860 1442 w
+(local) 4038 1442 w
+(address) 566 1562 w
+(\(including) 923 1562 w
+(the) 1404 1562 w
+(port) 1567 1562 w
+(number\)) 1773 1562 w
+(for) 2173 1562 w
+(the) 2329 1562 w
+(connection.) 2492 1562 w
+(This) 3029 1562 w
+(identifies) 3253 1562 w
+(the) 3690 1562 w
+(local) 3852 1562 w
+(end) 4093 1562 w
+(of) 566 1682 w
+(the) 685 1682 w
+11 /Times-Italic f
+(pipe) 847 1682 w
+11 /Times-Roman f
+(.) 1036 1682 w
+(The) 1120 1682 w
+11 /Courier f
+(remote) 1319 1682 w
+11 /Times-Roman f
+(file) 1744 1682 w
+(serves) 1919 1682 w
+(the) 2221 1682 w
+(same) 2384 1682 w
+(purpose) 2638 1682 w
+(for) 3014 1682 w
+(the) 3170 1682 w
+(other) 3333 1682 w
+(end) 3587 1682 w
+(of) 3774 1682 w
+(the) 3894 1682 w
+(con\255) 4057 1682 w
+(nection.) 566 1802 w
+(A) 816 1958 w
+(network) 935 1958 w
+(address) 1334 1958 w
+(in) 1702 1958 w
+(Plan) 1828 1958 w
+(9) 2064 1958 w
+(is) 2159 1958 w
+(a) 2273 1958 w
+(string) 2361 1958 w
+(that) 2652 1958 w
+(specifies) 2857 1958 w
+(the) 3280 1958 w
+(network) 3454 1958 w
+(\(e.g.,) 3853 1958 w
+(the) 4117 1958 w
+(protocol\)) 566 2078 w
+(to) 1039 2078 w
+(use,) 1196 2078 w
+(the) 1441 2078 w
+(machine) 1646 2078 w
+(address,) 2088 2078 w
+(and) 2515 2078 w
+(the) 2744 2078 w
+(port) 2949 2078 w
+(number.) 3196 2078 w
+(For) 3629 2078 w
+(example,) 3852 2078 w
+11 /Courier f
+(tcp!193.147.81.86!564) 566 2198 w
+11 /Times-Roman f
+(is) 1984 2198 w
+(a) 2090 2198 w
+(network) 2170 2198 w
+(address) 2561 2198 w
+(that) 2921 2198 w
+(says:) 3118 2198 w
+(Using) 3370 2198 w
+(the) 3666 2198 w
+(TCP) 3833 2198 w
+(pro\255) 4069 2198 w
+(tocol,) 566 2318 w
+(the) 858 2318 w
+(machine) 1036 2318 w
+(address) 1451 2318 w
+(is) 1823 2318 w
+(193.147.81.86,) 1941 2318 w
+(and) 2647 2318 w
+(the) 2848 2318 w
+(port) 3025 2318 w
+(number) 3245 2318 w
+(is) 3623 2318 w
+(564.) 3740 2318 w
+(Fortu\255) 3976 2318 w
+(nately,) 566 2438 w
+(in) 920 2438 w
+(most) 1065 2438 w
+(cases,) 1339 2438 w
+(we) 1656 2438 w
+(may) 1842 2438 w
+(use) 2090 2438 w
+(names) 2295 2438 w
+(as) 2634 2438 w
+(well.) 2784 2438 w
+(For) 3060 2438 w
+(example,) 3272 2438 w
+(the) 3730 2438 w
+(address) 3923 2438 w
+11 /Courier f
+(tcp!whale!9fs) 566 2558 w
+11 /Times-Roman f
+(is) 1462 2558 w
+(equivalent) 1574 2558 w
+(to) 2069 2558 w
+(the) 2193 2558 w
+(previous) 2365 2558 w
+(one,) 2780 2558 w
+(but) 3003 2558 w
+(uses) 3181 2558 w
+(the) 3407 2558 w
+(machine) 3578 2558 w
+(name,) 3986 2558 w
+11 /Courier f
+(whale) 566 2678 w
+11 /Times-Roman f
+(,) 896 2678 w
+(and) 953 2678 w
+(the) 1140 2678 w
+(service) 1303 2678 w
+(name,) 1641 2678 w
+11 /Courier f
+(9fs) 1935 2678 w
+11 /Times-Roman f
+(,) 2133 2678 w
+(instead) 2191 2678 w
+(of) 2532 2678 w
+(the) 2653 2678 w
+(raw) 2817 2678 w
+(addresses) 3010 2678 w
+(understood) 3459 2678 w
+(by) 3977 2678 w
+(the) 4117 2678 w
+(network) 566 2798 w
+(software.) 963 2798 w
+(Often,) 1433 2798 w
+(ports) 1748 2798 w
+(are) 2006 2798 w
+(used) 2176 2798 w
+(by) 2415 2798 w
+(programs) 2563 2798 w
+(to) 3015 2798 w
+(provide) 3139 2798 w
+(services) 3512 2798 w
+(to) 3902 2798 w
+(other) 4026 2798 w
+(programs) 566 2918 w
+(in) 1008 2918 w
+(the) 1122 2918 w
+(network.) 1284 2918 w
+(As) 1699 2918 w
+(a) 1849 2918 w
+(result,) 1925 2918 w
+(a) 2225 2918 w
+(port) 2301 2918 w
+(name) 2506 2918 w
+(is) 2771 2918 w
+(also) 2873 2918 w
+(known) 3078 2918 w
+(as) 3405 2918 w
+(a) 3524 2918 w
+11 /Times-Bold f
+(service) 3600 2918 w
+11 /Times-Roman f
+(name.) 3949 2918 w
+(From) 816 3074 w
+(the) 1084 3074 w
+(shell,) 1247 3074 w
+(it) 1512 3074 w
+(is) 1603 3074 w
+(very) 1706 3074 w
+(easy) 1929 3074 w
+(to) 2152 3074 w
+(create) 2267 3074 w
+(connections.) 2555 3074 w
+(The) 3136 3074 w
+11 /Courier f
+(srv) 3336 3074 w
+11 /Times-Roman f
+(program) 3564 3074 w
+(dials) 3965 3074 w
+(a) 4203 3074 w
+(network) 566 3194 w
+(address) 964 3194 w
+(and,) 1331 3194 w
+(once) 1556 3194 w
+(it) 1801 3194 w
+(has) 1902 3194 w
+(established) 2086 3194 w
+(a) 2612 3194 w
+(connection) 2698 3194 w
+(to) 3217 3194 w
+(that) 3341 3194 w
+(address,) 3544 3194 w
+(posts) 3938 3194 w
+(a) 4203 3194 w
+(file) 566 3314 w
+(descriptor) 740 3314 w
+(for) 1206 3314 w
+(the) 1361 3314 w
+(connection) 1524 3314 w
+(at) 2034 3314 w
+11 /Courier f
+(/srv) 2142 3314 w
+11 /Times-Roman f
+(.) 2406 3314 w
+(This) 2491 3314 w
+(descriptor) 2716 3314 w
+(comes) 3183 3314 w
+(from) 3492 3314 w
+(opening) 3734 3314 w
+(the) 4117 3314 w
+11 /Courier f
+(data) 566 3434 w
+11 /Times-Roman f
+(file) 863 3434 w
+(in) 1042 3434 w
+(the) 1160 3434 w
+(directory) 1326 3434 w
+(for) 1753 3434 w
+(the) 1912 3434 w
+(connection,) 2078 3434 w
+(but) 2619 3434 w
+(you) 2792 3434 w
+(may) 2989 3434 w
+(even) 3210 3434 w
+(forget) 3448 3434 w
+(this.) 3741 3434 w
+(There\255) 3961 3434 w
+(fore,) 566 3554 w
+10 /Courier f
+(; srv tcp!whale!9fs) 786 3724 w
+(post...) 786 3834 w
+11 /Times-Roman f
+(posts) 566 4050 w
+(at) 839 4050 w
+11 /Courier f
+(/srv/tcp!whale!9fs) 964 4050 w
+11 /Times-Roman f
+(a) 2198 4050 w
+(file) 2292 4050 w
+(descriptor) 2484 4050 w
+(that) 2968 4050 w
+(corresponds) 3179 4050 w
+(to) 3755 4050 w
+(an) 3888 4050 w
+(open) 4038 4050 w
+(network) 566 4170 w
+(connection) 978 4170 w
+(from) 1512 4170 w
+(this) 1778 4170 w
+(machine) 1991 4170 w
+(to) 2415 4170 w
+(the) 2554 4170 w
+(port) 2740 4170 w
+(named) 2969 4170 w
+11 /Courier f
+(9fs) 3313 4170 w
+11 /Times-Roman f
+(at) 3563 4170 w
+(the) 3694 4170 w
+(machine) 3880 4170 w
+(known) 566 4290 w
+(as) 893 4290 w
+11 /Courier f
+(whale) 1012 4290 w
+11 /Times-Roman f
+(,) 1342 4290 w
+(in) 1398 4290 w
+(the) 1512 4290 w
+(network) 1674 4290 w
+(speaking) 2061 4290 w
+(the) 2479 4290 w
+(protocol) 2641 4290 w
+11 /Courier f
+(tcp) 3035 4290 w
+11 /Times-Roman f
+(.) 3233 4290 w
+(To) 816 4446 w
+(connect) 966 4446 w
+(to) 1334 4446 w
+(the) 1448 4446 w
+(web) 1610 4446 w
+(server) 1820 4446 w
+(for) 2114 4446 w
+(LSUB,) 2269 4446 w
+(we) 2607 4446 w
+(may) 2762 4446 w
+(just) 2979 4446 w
+10 /Courier f
+(; srv tcp!lsub.org!http) 786 4616 w
+(post...) 786 4726 w
+11 /Times-Roman f
+(Here,) 566 4942 w
+11 /Courier f
+(tcp) 833 4942 w
+11 /Times-Roman f
+(is) 1059 4942 w
+(just) 1161 4942 w
+(a) 1349 4942 w
+(shorthand) 1425 4942 w
+(for) 1886 4942 w
+11 /Courier f
+(/net/tcp) 2041 4942 w
+11 /Times-Roman f
+(,) 2569 4942 w
+(which) 2626 4942 w
+(is) 2923 4942 w
+(the) 3026 4942 w
+(real) 3189 4942 w
+(\(file\)) 3381 4942 w
+(name) 3628 4942 w
+(for) 3894 4942 w
+(such) 4050 4942 w
+(network) 566 5062 w
+(in) 955 5062 w
+(Plan) 1070 5062 w
+(9.) 1295 5062 w
+(Now) 1435 5062 w
+(we) 1677 5062 w
+(can) 1833 5062 w
+(see) 2013 5062 w
+(that) 2181 5062 w
+11 /Courier f
+(/srv/tcp!lsub.org!http) 2375 5062 w
+11 /Times-Roman f
+(is) 3856 5062 w
+(indeed) 3959 5062 w
+(a) 566 5182 w
+(connection) 650 5182 w
+(to) 1167 5182 w
+(the) 1289 5182 w
+(web) 1459 5182 w
+(server) 1677 5182 w
+(at) 1980 5182 w
+11 /Courier f
+(lsub.org) 2096 5182 w
+11 /Times-Roman f
+(by) 2661 5182 w
+(writing) 2808 5182 w
+(an) 3163 5182 w
+(HTTP) 3303 5182 w
+(request) 3615 5182 w
+(to) 3968 5182 w
+(this) 4091 5182 w
+(file) 566 5302 w
+(and) 740 5302 w
+(reading) 926 5302 w
+(the) 1282 5302 w
+(server's) 1444 5302 w
+(reply.) 1817 5302 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 4 4
+%%Page: 5 5
+/saveobj save def
+mark
+5 pagesetup
+11 /Times-Roman f
+(\255 5 \255) 2317 413 w
+8 /Courier f
+(; echo GET /index.html) 786 676 w
+(>>/srv/tcp!lsub.org!http) 1938 676 w
+8 /Times-Italic f
+(Get the main web page) 3186 676 w
+8 /Courier f
+(; cat /srv/tcp!lsub.org!http) 786 786 w
+(<html>) 786 896 w
+(<head>) 786 1006 w
+(<title> Laboratorio de Sistemas \255\255\255 ls </title>) 786 1116 w
+(<link rev="made" href="mailto:ls@plan9.escet.urjc.es">) 786 1226 w
+(</head>) 786 1336 w
+(<body) 786 1446 w
+(BGCOLOR=white>) 1122 1446 w
+(<h1>) 786 1556 w
+(ls \255\255\255 Laboratorio de Sistemas [ubicuos] del GSyC) 1122 1556 w
+(</h1>) 3570 1556 w
+8 /Times-Italic f
+(...and more output omitted here...) 786 1666 w
+8 /Courier f
+(;) 786 1776 w
+11 /Times-Roman f
+(If) 566 1992 w
+(we) 674 1992 w
+(try) 837 1992 w
+(to) 995 1992 w
+(do) 1117 1992 w
+(the) 1263 1992 w
+(same) 1433 1992 w
+(again,) 1695 1992 w
+(it) 1997 1992 w
+(will) 2096 1992 w
+(not) 2305 1992 w
+(work,) 2483 1992 w
+(because) 2773 1992 w
+(the) 3155 1992 w
+(web) 3326 1992 w
+(server) 3545 1992 w
+(hangs) 3848 1992 w
+(up) 4141 1992 w
+(the) 566 2112 w
+(connection) 728 2112 w
+(after) 1237 2112 w
+(attending) 1464 2112 w
+(a) 1901 2112 w
+(request:) 1977 2112 w
+10 /Courier f
+(; echo GET / >>/srv/tcp!lsub.org!http) 786 2282 w
+(; cat /srv/tcp!lsub.org!http) 786 2392 w
+(cat: error reading /srv/tcp!lsub.org!http: Hangup) 786 2502 w
+(; echo GET / >>/srv/tcp!lsub.org!http) 786 2612 w
+(echo: write error: Hangup) 786 2722 w
+11 /Times-Roman f
+(And,) 566 2938 w
+(as) 819 2938 w
+(you) 946 2938 w
+(can) 1147 2938 w
+(see,) 1334 2938 w
+(it) 1537 2938 w
+(takes) 1635 2938 w
+(some) 1896 2938 w
+(time) 2164 2938 w
+(for) 2396 2938 w
+(our) 2559 2938 w
+(machine) 2741 2938 w
+(to) 3149 2938 w
+(notice.) 3272 2938 w
+(The) 3605 2938 w
+(first) 3812 2938 w
+(write) 4026 2938 w
+(seemed) 566 3058 w
+(to) 933 3058 w
+(succeed.) 1058 3058 w
+(Our) 1470 3058 w
+(machine) 1679 3058 w
+(was) 2089 3058 w
+(trying) 2298 3058 w
+(to) 2600 3058 w
+(send) 2725 3058 w
+(the) 2964 3058 w
+(string) 3136 3058 w
+11 /Courier f
+(GET) 3425 3058 w
+11 /Times-Roman f
+(...) 3623 3058 w
+(to) 3773 3058 w
+(the) 3897 3058 w
+(web) 4069 3058 w
+(server,) 566 3178 w
+(but) 903 3178 w
+(it) 1087 3178 w
+(couldn't) 1192 3178 w
+(really) 1601 3178 w
+(send) 1893 3178 w
+(it.) 2137 3178 w
+(The) 2270 3178 w
+(connection) 2483 3178 w
+(was) 3007 3178 w
+(closed) 3221 3178 w
+(and) 3545 3178 w
+(declared) 3747 3178 w
+(as) 4160 3178 w
+(hung) 566 3298 w
+(up.) 816 3298 w
+(Any) 984 3298 w
+(further) 1203 3298 w
+(attempt) 1530 3298 w
+(to) 1890 3298 w
+(use) 2006 3298 w
+(it) 2182 3298 w
+(will) 2274 3298 w
+(be) 2476 3298 w
+(futile.) 2609 3298 w
+(What) 2899 3298 w
+(remains) 3166 3298 w
+(is) 3542 3298 w
+(to) 3645 3298 w
+(remove) 3760 3298 w
+(the) 4117 3298 w
+(file) 566 3418 w
+(from) 740 3418 w
+11 /Courier f
+(/srv) 981 3418 w
+11 /Times-Roman f
+(.) 1245 3418 w
+10 /Courier f
+(; rm /srv/tcp!lsub.org!http) 786 3588 w
+11 /Times-Roman f
+(There) 566 3804 w
+(is) 855 3804 w
+(a) 964 3804 w
+(very) 1047 3804 w
+(popular) 1276 3804 w
+(command) 1646 3804 w
+(named) 2115 3804 w
+11 /Courier f
+(telnet) 2443 3804 w
+11 /Times-Roman f
+(,) 2839 3804 w
+(that) 2903 3804 w
+(can) 3104 3804 w
+(be) 3291 3804 w
+(used) 3430 3804 w
+(to) 3667 3804 w
+(connect) 3789 3804 w
+(to) 4165 3804 w
+(servers) 566 3924 w
+(in) 910 3924 w
+(the) 1031 3924 w
+(Internet) 1200 3924 w
+(and) 1575 3924 w
+(talk) 1768 3924 w
+(to) 1968 3924 w
+(them.) 2089 3924 w
+(It) 2372 3924 w
+(uses) 2474 3924 w
+(the,) 2698 3924 w
+(so) 2895 3924 w
+(called,) 3027 3924 w
+11 /Times-Italic f
+(telnet) 3350 3924 w
+(protocol) 3628 3924 w
+11 /Times-Roman f
+(.) 4001 3924 w
+(But) 4091 3924 w
+(in) 566 4044 w
+(few) 687 4044 w
+(words,) 885 4044 w
+(it) 1216 4044 w
+(dials) 1313 4044 w
+(an) 1556 4044 w
+(address,) 1694 4044 w
+(and) 2085 4044 w
+(thereafter) 2278 4044 w
+(it) 2730 4044 w
+(sends) 2827 4044 w
+(text) 3107 4044 w
+(from) 3308 4044 w
+(your) 3557 4044 w
+(console) 3794 4044 w
+(to) 4165 4044 w
+(the) 566 4164 w
+(remote) 739 4164 w
+(process) 1082 4164 w
+(at) 1449 4164 w
+(the) 1567 4164 w
+(other) 1740 4164 w
+(end) 2004 4164 w
+(of) 2201 4164 w
+(the) 2331 4164 w
+(connection,) 2504 4164 w
+(and) 3051 4164 w
+(writes) 3247 4164 w
+(to) 3553 4164 w
+(your) 3677 4164 w
+(console) 3916 4164 w
+(the) 566 4284 w
+(text) 740 4284 w
+(received.) 945 4284 w
+(For) 1410 4284 w
+(example,) 1603 4284 w
+(this) 2042 4284 w
+(command) 2242 4284 w
+(connects) 2715 4284 w
+(to) 3139 4284 w
+(the) 3266 4284 w
+(e\255mail) 3441 4284 w
+(server) 3762 4284 w
+(run\255) 4069 4284 w
+(ning) 566 4404 w
+(at) 790 4404 w
+11 /Courier f
+(lsub.org) 897 4404 w
+11 /Times-Roman f
+(,) 1425 4404 w
+(and) 1481 4404 w
+(we) 1667 4404 w
+(use) 1822 4404 w
+(our) 1996 4404 w
+(console) 2170 4404 w
+(to) 2533 4404 w
+(ask) 2647 4404 w
+(this) 2821 4404 w
+(server) 3009 4404 w
+(for) 3303 4404 w
+(help:) 3458 4404 w
+10 /Courier f
+(; telnet \255r tcp!lsub.org!smtp) 786 4574 w
+(connected to tcp!lsub.org!smtp on /net/tcp/52) 786 4684 w
+(220 lsub.org SMTP) 786 4794 w
+(!!help) 786 4904 w
+(250 Read rfc821 and stop wasting my time) 786 5014 w
+10 /Times-Bold f
+(Delete) 786 5124 w
+11 /Times-Roman f
+(We) 566 5340 w
+(gave) 746 5340 w
+(the) 981 5340 w
+(option) 1144 5340 w
+11 /Courier f
+(\255r) 1455 5340 w
+11 /Times-Roman f
+(to) 1616 5340 w
+11 /Courier f
+(telnet) 1731 5340 w
+11 /Times-Roman f
+(,) 2127 5340 w
+(to) 2184 5340 w
+(ask) 2299 5340 w
+(it) 2474 5340 w
+(not) 2566 5340 w
+(to) 2737 5340 w
+(print) 2853 5340 w
+11 /Times-Italic f
+(carriage\255return) 3091 5340 w
+11 /Times-Roman f
+(characters) 3810 5340 w
+(\(its) 566 5460 w
+(protocol) 746 5460 w
+(uses) 1151 5460 w
+(the) 1379 5460 w
+(same) 1551 5460 w
+(convention) 1814 5460 w
+(for) 2340 5460 w
+(new) 2505 5460 w
+(lines) 2725 5460 w
+(used) 2971 5460 w
+(by) 3210 5460 w
+(DOS\).) 3358 5460 w
+(When) 3708 5460 w
+(telnet) 4007 5460 w
+(connected) 566 5580 w
+(to) 1046 5580 w
+(the) 1169 5580 w
+(address) 1340 5580 w
+(we) 1705 5580 w
+(gave,) 1869 5580 w
+(it) 2140 5580 w
+(printed) 2239 5580 w
+(a) 2587 5580 w
+(diagnostic) 2672 5580 w
+(message) 3162 5580 w
+(to) 3571 5580 w
+(let) 3695 5580 w
+(us) 3843 5580 w
+(know,) 3979 5580 w
+(and) 566 5700 w
+(entered) 753 5700 w
+(a) 1103 5700 w
+(loop) 1180 5700 w
+(to) 1405 5700 w
+(send) 1520 5700 w
+(the) 1750 5700 w
+(text) 1913 5700 w
+(we) 2107 5700 w
+(type,) 2263 5700 w
+(and) 2509 5700 w
+(to) 2696 5700 w
+(print) 2810 5700 w
+(the) 3046 5700 w
+(text) 3208 5700 w
+(it) 3401 5700 w
+(receives) 3491 5700 w
+(from) 3876 5700 w
+(the) 4117 5700 w
+(other) 566 5820 w
+(end.) 821 5820 w
+(Our) 1037 5820 w
+(mail) 1237 5820 w
+(server) 1464 5820 w
+(wrote) 1761 5820 w
+(a) 2041 5820 w
+(salutation) 2120 5820 w
+(through) 2579 5820 w
+(the) 2952 5820 w
+(connection) 3117 5820 w
+(\(the) 3629 5820 w
+(line) 3830 5820 w
+(start\255) 4026 5820 w
+(ing) 566 5940 w
+11 /Courier f
+(220) 742 5940 w
+11 /Times-Roman f
+(...\),) 940 5940 w
+(and) 1123 5940 w
+(then) 1316 5940 w
+(we) 1540 5940 w
+(typed) 1701 5940 w
+11 /Courier f
+(help) 1979 5940 w
+11 /Times-Roman f
+(,) 2243 5940 w
+(which) 2305 5940 w
+(put) 2607 5940 w
+(our) 2782 5940 w
+(mail) 2962 5940 w
+(server) 3192 5940 w
+(into) 3492 5940 w
+(a) 3698 5940 w
+(bad) 3780 5940 w
+(mood.) 3972 5940 w
+(We) 566 6060 w
+(interrupted) 754 6060 w
+(this) 1272 6060 w
+(program) 1469 6060 w
+(by) 1877 6060 w
+(hitting) 2024 6060 w
+11 /Times-Italic f
+(Delete) 2351 6060 w
+11 /Times-Roman f
+(in) 2674 6060 w
+(the) 2798 6060 w
+(terminal,) 2970 6060 w
+(and) 3402 6060 w
+(the) 3598 6060 w
+(connection) 3770 6060 w
+(was) 566 6180 w
+(terminated) 764 6180 w
+(when) 1261 6180 w
+11 /Courier f
+(telnet) 1526 6180 w
+11 /Times-Roman f
+(died.) 1950 6180 w
+(A) 2195 6180 w
+(somewhat) 2302 6180 w
+(abrupt) 2775 6180 w
+(termination.) 3083 6180 w
+(It) 816 6336 w
+(is) 914 6336 w
+(interesting) 1019 6336 w
+(to) 1514 6336 w
+(open) 1632 6336 w
+(several) 1877 6336 w
+(windows,) 2218 6336 w
+(and) 2675 6336 w
+(connect) 2865 6336 w
+(from) 3237 6336 w
+(all) 3482 6336 w
+(of) 3624 6336 w
+(them) 3747 6336 w
+(to) 3999 6336 w
+(the) 4117 6336 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 5 5
+%%Page: 6 6
+/saveobj save def
+mark
+6 pagesetup
+11 /Times-Roman f
+(\255 6 \255) 2317 413 w
+(same) 566 686 w
+(address.) 827 686 w
+(Try) 1218 686 w
+(it.) 1411 686 w
+(Do) 1536 686 w
+(you) 1705 686 w
+(see) 1905 686 w
+(how) 2079 686 w
+11 /Times-Italic f
+(each) 2303 686 w
+11 /Courier f
+(telnet) 2544 686 w
+11 /Times-Roman f
+(is) 2975 686 w
+(using) 3084 686 w
+(its) 3358 686 w
+(own) 3498 686 w
+(connection?) 3722 686 w
+(Or,) 566 806 w
+(to) 746 806 w
+(put) 869 806 w
+(it) 1048 806 w
+(another) 1148 806 w
+(way,) 1514 806 w
+(all) 1762 806 w
+(the) 1910 806 w
+(connections) 2082 806 w
+(have) 2644 806 w
+(the) 2888 806 w
+11 /Times-Italic f
+(same) 3060 806 w
+11 /Times-Roman f
+(address) 3323 806 w
+(for) 3689 806 w
+(the) 3854 806 w
+(other) 4026 806 w
+(end) 566 926 w
+(of) 752 926 w
+(the) 871 926 w
+(connection,) 1033 926 w
+(yet) 1570 926 w
+(they) 1732 926 w
+(are) 1949 926 w
+11 /Times-Italic f
+(different) 2109 926 w
+11 /Times-Roman f
+(connections.) 2510 926 w
+(To) 816 1082 w
+(name) 974 1082 w
+(a) 1247 1082 w
+(connection,) 1331 1082 w
+(it) 1877 1082 w
+(does) 1976 1082 w
+(not) 2214 1082 w
+(suffice) 2392 1082 w
+(to) 2726 1082 w
+(name) 2849 1082 w
+(the) 3123 1082 w
+(address) 3294 1082 w
+(for) 3659 1082 w
+(one) 3823 1082 w
+(of) 4018 1082 w
+(its) 4146 1082 w
+(ends.) 566 1202 w
+(You) 857 1202 w
+11 /Times-Italic f
+(must) 1080 1202 w
+11 /Times-Roman f
+(give) 1322 1202 w
+(both) 1545 1202 w
+(addresses) 1775 1202 w
+(\(for) 2228 1202 w
+(the) 2425 1202 w
+(two) 2593 1202 w
+(ends\)) 2792 1202 w
+(to) 3063 1202 w
+(identify) 3183 1202 w
+(a) 3559 1202 w
+(connection.) 3641 1202 w
+(It) 4184 1202 w
+(is) 566 1322 w
+(the) 684 1322 w
+(four) 862 1322 w
+(identifiers) 1088 1322 w
+(local) 1577 1322 w
+(address,) 1835 1322 w
+(local) 2236 1322 w
+(port,) 2494 1322 w
+(remote) 2744 1322 w
+(address,) 3093 1322 w
+(and) 3494 1322 w
+(remote) 3697 1322 w
+(port,) 4046 1322 w
+(what) 566 1442 w
+(makes) 807 1442 w
+(a) 1115 1442 w
+(connection) 1191 1442 w
+(unique.) 1700 1442 w
+(It) 816 1598 w
+(is) 919 1598 w
+(very) 1029 1598 w
+(important) 1259 1598 w
+(to) 1723 1598 w
+(understand) 1846 1598 w
+(this) 2364 1598 w
+(clearly.) 2561 1598 w
+(For) 2923 1598 w
+(example,) 3113 1598 w
+(in) 3549 1598 w
+(our) 3672 1598 w
+11 /Courier f
+(telnet) 3855 1598 w
+11 /Times-Roman f
+(example,) 566 1718 w
+(you) 1001 1718 w
+(cannot) 1202 1718 w
+(know) 1530 1718 w
+(which) 1810 1718 w
+(connection) 2114 1718 w
+(are) 2631 1718 w
+(you) 2799 1718 w
+(talking) 3000 1718 w
+(about) 3342 1718 w
+(just) 3622 1718 w
+(by) 3818 1718 w
+(saying) 3964 1718 w
+11 /LucidaSansUnicode20 f
+(\034) 566 1838 w
+11 /Times-Roman f
+(The) 607 1838 w
+(connection) 812 1838 w
+(to) 1328 1838 w
+11 /Courier f
+(tcp!lsub.org!smtp) 1477 1838 w
+11 /LucidaSansUnicode20 f
+(\035) 2599 1838 w
+11 /Times-Roman f
+(.) 2640 1838 w
+(There) 2703 1838 w
+(can) 2992 1838 w
+(be) 3178 1838 w
+(a) 3316 1838 w
+(dozen) 3399 1838 w
+(of) 3695 1838 w
+(such) 3821 1838 w
+(con\255) 4057 1838 w
+(nections,) 566 1958 w
+(all) 992 1958 w
+(different,) 1134 1958 w
+(that) 1570 1958 w
+(happen) 1767 1958 w
+(to) 2115 1958 w
+(reach) 2232 1958 w
+(that) 2498 1958 w
+(particular) 2694 1958 w
+(address.) 3144 1958 w
+(They) 3531 1958 w
+(would) 3787 1958 w
+(dif\255) 4093 1958 w
+(fer) 566 2078 w
+(in) 714 2078 w
+(the) 828 2078 w
+(addresses) 990 2078 w
+(for) 1437 2078 w
+(their) 1592 2078 w
+(other) 1821 2078 w
+(extremes.) 2074 2078 w
+16 /Times-Bold f
+(6.2.) 566 2438 w
+(Names) 886 2438 w
+11 /Times-Roman f
+(Above,) 566 2594 w
+(we) 932 2594 w
+(have) 1105 2594 w
+(been) 1357 2594 w
+(using) 1609 2594 w
+(names) 1894 2594 w
+(for) 2220 2594 w
+(machines) 2393 2594 w
+(and) 2853 2594 w
+(services) 3057 2594 w
+(\(ports\).) 3456 2594 w
+(However,) 3823 2594 w
+(these) 566 2714 w
+(names) 843 2714 w
+(must) 1175 2714 w
+(be) 1442 2714 w
+(translated) 1597 2714 w
+(into) 2075 2714 w
+(addresses) 2299 2714 w
+(that) 2769 2714 w
+(the) 2985 2714 w
+(network) 3170 2714 w
+(software) 3580 2714 w
+(could) 4007 2714 w
+(understand.) 566 2834 w
+(For) 1144 2834 w
+(example,) 1338 2834 w
+(the) 1778 2834 w
+(machine) 1953 2834 w
+(name) 2365 2834 w
+11 /Courier f
+(whale) 2643 2834 w
+11 /Times-Roman f
+(must) 3014 2834 w
+(be) 3270 2834 w
+(translated) 3414 2834 w
+(to) 3881 2834 w
+(an) 4008 2834 w
+(IP) 4153 2834 w
+(address) 566 2954 w
+(like) 950 2954 w
+11 /Courier f
+(193.147.81.86) 1171 2954 w
+11 /Times-Roman f
+(.) 2029 2954 w
+(The) 2141 2954 w
+(network) 2367 2954 w
+(protocol) 2782 2954 w
+(\(IP) 3203 2954 w
+(in) 3392 2954 w
+(Internet\)) 3533 2954 w
+(knows) 3964 2954 w
+(nothing) 566 3074 w
+(about) 951 3074 w
+(names.) 1243 3074 w
+(It) 1600 3074 w
+(knows) 1716 3074 w
+(about) 2052 3074 w
+(machine) 2345 3074 w
+(addresses.) 2765 3074 w
+(In) 3261 3074 w
+(the) 3401 3074 w
+(same) 3584 3074 w
+(way,) 3858 3074 w
+(the) 4117 3074 w
+(transport) 566 3194 w
+(protocol) 993 3194 w
+(TCP) 1396 3194 w
+(knows) 1636 3194 w
+(nothing) 1960 3194 w
+(about) 2334 3194 w
+(the) 2615 3194 w
+(service) 2786 3194 w
+(with) 3132 3194 w
+(name) 3364 3194 w
+11 /Courier f
+(http) 3637 3194 w
+11 /Times-Roman f
+(.) 3901 3194 w
+(But) 3993 3194 w
+(it) 4189 3194 w
+(does) 566 3314 w
+(know) 801 3314 w
+(how) 1079 3314 w
+(to) 1302 3314 w
+(reach) 1422 3314 w
+(the) 1691 3314 w
+(port) 1859 3314 w
+(number) 2070 3314 w
+11 /Courier f
+(80) 2439 3314 w
+11 /Times-Roman f
+(,) 2571 3314 w
+(which) 2633 3314 w
+(is) 2935 3314 w
+(the) 3043 3314 w
+(one) 3211 3314 w
+(that) 3403 3314 w
+(corresponds) 3602 3314 w
+(to) 4165 3314 w
+(the) 566 3434 w
+(HTTP) 728 3434 w
+(service.) 1031 3434 w
+(Translating) 816 3590 w
+(names) 1358 3590 w
+(into) 1680 3590 w
+(addresses) 1894 3590 w
+(\(including) 2356 3590 w
+(machine) 2851 3590 w
+(and) 3265 3590 w
+(service) 3466 3590 w
+(names\)) 3818 3590 w
+(is) 4177 3590 w
+(done) 566 3710 w
+(in) 817 3710 w
+(a) 941 3710 w
+(different) 1027 3710 w
+(way) 1441 3710 w
+(for) 1661 3710 w
+(each) 1825 3710 w
+(kind) 2061 3710 w
+(of) 2294 3710 w
+(network.) 2422 3710 w
+(For) 2846 3710 w
+(example,) 3036 3710 w
+(the) 3472 3710 w
+(Internet) 3643 3710 w
+(has) 4020 3710 w
+(a) 4203 3710 w
+(name) 566 3830 w
+(service) 843 3830 w
+(known) 1192 3830 w
+(as) 1531 3830 w
+(DNS) 1662 3830 w
+(\(domain) 1922 3830 w
+(name) 2328 3830 w
+(service\)) 2605 3830 w
+(that) 2990 3830 w
+(knows) 3195 3830 w
+(how) 3523 3830 w
+(to) 3753 3830 w
+(translate) 3880 3830 w
+(from) 566 3950 w
+(a) 813 3950 w
+(name) 895 3950 w
+(like) 1165 3950 w
+11 /Courier f
+(whale.lsub.org) 1363 3950 w
+11 /Times-Roman f
+(into) 2320 3950 w
+(an) 2525 3950 w
+(IP) 2661 3950 w
+(address) 2792 3950 w
+(and) 3153 3950 w
+(vice\255versa.) 3344 3950 w
+(Besides,) 3881 3950 w
+(for) 566 4070 w
+(some) 723 4070 w
+(machines) 985 4070 w
+(and) 1429 4070 w
+(services) 1617 4070 w
+(there) 1999 4070 w
+(may) 2247 4070 w
+(be) 2467 4070 w
+(names) 2601 4070 w
+(that) 2912 4070 w
+(exist) 3108 4070 w
+(only) 3347 4070 w
+(within) 3574 4070 w
+(a) 3887 4070 w
+(partic\255) 3966 4070 w
+(ular) 566 4190 w
+(organization.) 781 4190 w
+(Your) 1430 4190 w
+(local) 1699 4190 w
+(system) 1956 4190 w
+(administrator) 2306 4190 w
+(may) 2936 4190 w
+(have) 3169 4190 w
+(assigned) 3419 4190 w
+(names) 3841 4190 w
+(to) 4165 4190 w
+(machines) 566 4310 w
+(that) 1018 4310 w
+(work) 1221 4310 w
+(only) 1484 4310 w
+(from) 1718 4310 w
+(within) 1969 4310 w
+(your) 2290 4310 w
+(department) 2530 4310 w
+(or) 3062 4310 w
+(laboratory.) 3192 4310 w
+(In) 3709 4310 w
+(any) 3839 4310 w
+(case,) 4036 4310 w
+(all) 566 4430 w
+(the) 714 4430 w
+(information) 886 4430 w
+(about) 1443 4430 w
+(names,) 1725 4430 w
+(addresses,) 2071 4430 w
+(and) 2556 4430 w
+(how) 2751 4430 w
+(to) 2977 4430 w
+(reach) 3100 4430 w
+(the) 3372 4430 w
+(Internet) 3543 4430 w
+(DNS) 3920 4430 w
+(is) 4177 4430 w
+(kept) 566 4550 w
+(in) 805 4550 w
+(a) 941 4550 w
+(\(textual\)) 1039 4550 w
+(database) 1460 4550 w
+(known) 1886 4550 w
+(as) 2235 4550 w
+(the) 2376 4550 w
+11 /Times-Italic f
+(network) 2560 4550 w
+(database) 2964 4550 w
+11 /Times-Roman f
+(,) 3361 4550 w
+(or) 3440 4550 w
+(just) 3582 4550 w
+11 /Courier f
+(ndb) 3793 4550 w
+11 /Times-Roman f
+(.) 3991 4550 w
+(For) 4098 4550 w
+(example,) 566 4670 w
+(this) 993 4670 w
+(is) 1181 4670 w
+(the) 1283 4670 w
+(entry) 1445 4670 w
+(in) 1698 4670 w
+(our) 1812 4670 w
+11 /Courier f
+(/lib/ndb/local) 1986 4670 w
+11 /Times-Roman f
+(file) 2938 4670 w
+(for) 3112 4670 w
+11 /Courier f
+(whale) 3267 4670 w
+11 /Times-Roman f
+(:) 3597 4670 w
+10 /Courier f
+(dom=whale.lsub.org ip=193.147.81.86 sys=whale) 786 4840 w
+11 /Times-Roman f
+(When) 566 5056 w
+(we) 883 5056 w
+(used) 1066 5056 w
+11 /Courier f
+(whale) 1323 5056 w
+11 /Times-Roman f
+(in) 1709 5056 w
+(the) 1851 5056 w
+(examples) 2041 5056 w
+(above,) 2511 5056 w
+(that) 2856 5056 w
+(name) 3077 5056 w
+(was) 3370 5056 w
+(translated) 3596 5056 w
+(into) 4079 5056 w
+11 /Courier f
+(193.147.81.86) 566 5176 w
+11 /Times-Roman f
+(and) 1469 5176 w
+(that) 1672 5176 w
+(was) 1882 5176 w
+(the) 2097 5176 w
+(address) 2276 5176 w
+(used.) 2649 5176 w
+(Also,) 2923 5176 w
+(this) 3204 5176 w
+(is) 3409 5176 w
+(the) 3528 5176 w
+(entry) 3706 5176 w
+(in) 3975 5176 w
+(our) 4105 5176 w
+11 /Courier f
+(/lib/ndb/common) 566 5296 w
+11 /Times-Roman f
+(file) 1589 5296 w
+(for) 1768 5296 w
+(the) 1928 5296 w
+(service) 2095 5296 w
+(known) 2437 5296 w
+(as) 2769 5296 w
+11 /Courier f
+(9fs) 2893 5296 w
+11 /Times-Roman f
+(when) 3124 5296 w
+(using) 3394 5296 w
+(the) 3666 5296 w
+(TCP) 3833 5296 w
+(pro\255) 4069 5296 w
+(tocol:) 566 5416 w
+10 /Courier f
+(tcp=9fs port=564) 786 5586 w
+11 /Times-Roman f
+(When) 566 5802 w
+(we) 861 5802 w
+(used) 1022 5802 w
+(the) 1257 5802 w
+(service) 1425 5802 w
+(name) 1768 5802 w
+11 /Courier f
+(9fs) 2039 5802 w
+11 /Times-Roman f
+(,) 2237 5802 w
+(this) 2299 5802 w
+(name) 2493 5802 w
+(was) 2765 5802 w
+(translated) 2970 5802 w
+(into) 3431 5802 w
+(the) 3638 5802 w
+(port) 3807 5802 w
+(num\255) 4019 5802 w
+(ber) 566 5922 w
+11 /Courier f
+(564) 806 5922 w
+11 /Times-Roman f
+(,) 1004 5922 w
+(that) 1133 5922 w
+(was) 1399 5922 w
+(the) 1670 5922 w
+(port) 1905 5922 w
+(number) 2183 5922 w
+(used.) 2618 5922 w
+(As) 2947 5922 w
+(a) 3169 5922 w
+(result,) 3317 5922 w
+(the) 3689 5922 w
+(address) 3923 5922 w
+11 /Courier f
+(tcp!whale!9fs) 566 6042 w
+11 /Times-Roman f
+(was) 1483 6042 w
+(translated) 1712 6042 w
+(into) 2197 6042 w
+11 /Courier f
+(tcp!193.147.81.86!564) 2428 6042 w
+11 /Times-Roman f
+(and) 3873 6042 w
+(this) 4091 6042 w
+(was) 566 6162 w
+(used) 775 6162 w
+(instead.) 1015 6162 w
+(Names) 1393 6162 w
+(are) 1736 6162 w
+(for) 1907 6162 w
+(humans,) 2073 6162 w
+(but) 2482 6162 w
+(\(sadly\)) 2662 6162 w
+(the) 3005 6162 w
+(actual) 3178 6162 w
+(network) 3478 6162 w
+(software) 3875 6162 w
+(prefers) 566 6282 w
+(to) 896 6282 w
+(use) 1010 6282 w
+(addresses.) 1184 6282 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 6 6
+%%Page: 7 7
+/saveobj save def
+mark
+7 pagesetup
+11 /Times-Roman f
+(\255 7 \255) 2317 413 w
+(All) 816 686 w
+(this) 1005 686 w
+(is) 1213 686 w
+(encapsulated) 1335 686 w
+(into) 1948 686 w
+(a) 2168 686 w
+(program) 2264 686 w
+(that) 2684 686 w
+(does) 2898 686 w
+(the) 3148 686 w
+(translation) 3331 686 w
+(by) 3844 686 w
+(itself,) 4003 686 w
+(relieving) 566 806 w
+(from) 1002 806 w
+(the) 1261 806 w
+(burden) 1441 806 w
+(to) 1790 806 w
+(all) 1921 806 w
+(other) 2076 806 w
+(programs.) 2346 806 w
+(This) 2861 806 w
+(program) 3102 806 w
+(is) 3518 806 w
+(known) 3637 806 w
+(as) 3981 806 w
+(the) 4117 806 w
+11 /Times-Italic f
+(connection) 566 926 w
+(server) 1096 926 w
+11 /Times-Roman f
+(,) 1369 926 w
+(or) 1446 926 w
+11 /Courier f
+(cs) 1586 926 w
+11 /Times-Roman f
+(.) 1718 926 w
+(We) 1823 926 w
+(can) 2023 926 w
+(query) 2223 926 w
+(the) 2522 926 w
+(connection) 2706 926 w
+(server) 3237 926 w
+(to) 3553 926 w
+(know) 3689 926 w
+(which) 3983 926 w
+(address) 566 1046 w
+(will) 930 1046 w
+(indeed) 1138 1046 w
+(be) 1466 1046 w
+(used) 1605 1046 w
+(when) 1842 1046 w
+(we) 2115 1046 w
+(write) 2278 1046 w
+(a) 2539 1046 w
+(particular) 2623 1046 w
+(network) 3078 1046 w
+(address.) 3473 1046 w
+(The) 3864 1046 w
+(pro\255) 4069 1046 w
+(gram) 566 1166 w
+11 /Courier f
+(csquery) 823 1166 w
+11 /Times-Roman f
+(does) 1317 1166 w
+(this.) 1550 1166 w
+(It) 1770 1166 w
+(is) 1869 1166 w
+(collected) 1975 1166 w
+(at) 2402 1166 w
+11 /Courier f
+(/bin/ndb) 2513 1166 w
+11 /Times-Roman f
+(along) 3073 1166 w
+(with) 3350 1166 w
+(other) 3579 1166 w
+(programs) 3837 1166 w
+(that) 566 1286 w
+(operate) 759 1286 w
+(with) 1108 1286 w
+(the) 1332 1286 w
+(network) 1494 1286 w
+(data) 1881 1286 w
+(base.) 2091 1286 w
+10 /Courier f
+(; ndb/csquery) 786 1456 w
+(> tcp!whale!9fs) 786 1566 w
+(/net/tcp/clone 193.147.81.86!564) 786 1676 w
+(>) 786 1786 w
+11 /Times-Roman f
+(The) 566 2002 w
+11 /LucidaSansUnicode20 f
+(\034) 766 2002 w
+11 /Courier f
+(>) 807 2002 w
+11 /LucidaSansUnicode20 f
+(\035) 873 2002 w
+11 /Times-Roman f
+(sign) 944 2002 w
+(is) 1158 2002 w
+(the) 1262 2002 w
+(prompt) 1426 2002 w
+(from) 1774 2002 w
+11 /Courier f
+(csquery) 2017 2002 w
+11 /Times-Roman f
+(,) 2479 2002 w
+(it) 2537 2002 w
+(suggests) 2629 2002 w
+(that) 3033 2002 w
+(we) 3229 2002 w
+(can) 3387 2002 w
+(type) 3569 2002 w
+(an) 3789 2002 w
+(address) 3923 2002 w
+(asking) 566 2122 w
+(for) 891 2122 w
+(its) 1056 2122 w
+(translation.) 1199 2122 w
+(As) 1729 2122 w
+(you) 1889 2122 w
+(can) 2092 2122 w
+(see,) 2281 2122 w
+(the) 2486 2122 w
+(connection) 2658 2122 w
+(server) 3177 2122 w
+(replied) 3481 2122 w
+(by) 3822 2122 w
+(giving) 3969 2122 w
+(the) 566 2242 w
+(path) 735 2242 w
+(for) 959 2242 w
+(the) 1121 2242 w
+11 /Courier f
+(clone) 1290 2242 w
+11 /Times-Roman f
+(file) 1655 2242 w
+(that) 1836 2242 w
+(can) 2036 2242 w
+(be) 2222 2242 w
+(used) 2360 2242 w
+(to) 2596 2242 w
+(create) 2717 2242 w
+(a) 3011 2242 w
+(new) 3094 2242 w
+(TCP) 3311 2242 w
+(connection,) 3549 2242 w
+(and) 4093 2242 w
+(the) 566 2362 w
+(address) 739 2362 w
+(as) 1106 2362 w
+(understood) 1236 2362 w
+(by) 1763 2362 w
+(TCP) 1912 2362 w
+(that) 2154 2362 w
+(corresponds) 2358 2362 w
+(to) 2926 2362 w
+(the) 3050 2362 w
+(one) 3222 2362 w
+(we) 3418 2362 w
+(typed.) 3583 2362 w
+(No) 3921 2362 w
+(one) 4093 2362 w
+(else) 566 2482 w
+(has) 783 2482 w
+(to) 976 2482 w
+(care) 1109 2482 w
+(about) 1336 2482 w
+(which) 1627 2482 w
+(particular) 1942 2482 w
+(network,) 2408 2482 w
+(address,) 2842 2482 w
+(or) 3245 2482 w
+(port) 3384 2482 w
+(number) 3609 2482 w
+(corre\255) 3992 2482 w
+(sponds) 566 2602 w
+(to) 900 2602 w
+(a) 1014 2602 w
+(network) 1090 2602 w
+(address.) 1477 2602 w
+(All) 816 2758 w
+(the) 992 2758 w
+(information) 1161 2758 w
+(regarding) 1715 2758 w
+(the) 2169 2758 w
+(connections) 2338 2758 w
+(in) 2898 2758 w
+(use) 3020 2758 w
+(at) 3202 2758 w
+(your) 3317 2758 w
+(machine) 3554 2758 w
+(can) 3961 2758 w
+(be) 4148 2758 w
+(obtained) 566 2878 w
+(by) 973 2878 w
+(looking) 1112 2878 w
+(at) 1477 2878 w
+(the) 1584 2878 w
+(files) 1746 2878 w
+(below) 1963 2878 w
+11 /Courier f
+(/net) 2259 2878 w
+11 /Times-Roman f
+(.) 2523 2878 w
+(Nevertheless,) 2607 2878 w
+(the) 3228 2878 w
+(program) 3390 2878 w
+11 /Courier f
+(netstat) 3789 2878 w
+11 /Times-Roman f
+(provides) 566 2998 w
+(a) 973 2998 w
+(convenient) 1050 2998 w
+(way) 1560 2998 w
+(for) 1771 2998 w
+(obtaining) 1927 2998 w
+(statistics) 2373 2998 w
+(about) 2783 2998 w
+(what) 3057 2998 w
+(is) 3300 2998 w
+(happening) 3404 2998 w
+(with) 3891 2998 w
+(the) 4117 2998 w
+(network.) 566 3118 w
+(For) 981 3118 w
+(example,) 1162 3118 w
+(this) 1589 3118 w
+(is) 1777 3118 w
+(what) 1879 3118 w
+(is) 2120 3118 w
+(happening) 2222 3118 w
+(now) 2707 3118 w
+(at) 2924 3118 w
+(my) 3031 3118 w
+(system:) 3200 3118 w
+8 /Courier f
+(; netstat) 786 3288 w
+(tcp) 786 3398 w
+(0) 1026 3398 w
+(nemo) 1266 3398 w
+(Listen) 1794 3398 w
+(audio) 2418 3398 w
+(0) 2946 3398 w
+(::) 3474 3398 w
+(tcp) 786 3508 w
+(1) 1026 3508 w
+(Established) 1794 3508 w
+(5757) 2418 3508 w
+(9fs) 2946 3508 w
+(whale.lsub.org) 3474 3508 w
+(tcp) 786 3618 w
+(2) 1026 3618 w
+(nemo) 1266 3618 w
+(Established) 1794 3618 w
+(5765) 2418 3618 w
+(ads) 2946 3618 w
+(whale.lsub.org) 3474 3618 w
+(tcp) 786 3728 w
+(3) 1026 3728 w
+(nemo) 1266 3728 w
+(Established) 1794 3728 w
+(5759) 2418 3728 w
+(9fs) 2946 3728 w
+(whale.lsub.org) 3474 3728 w
+(tcp) 786 3838 w
+(4) 1026 3838 w
+(nemo) 1266 3838 w
+(Listen) 1794 3838 w
+(what) 2418 3838 w
+(0) 2946 3838 w
+(::) 3474 3838 w
+(tcp) 786 3948 w
+(5) 1026 3948 w
+(nemo) 1266 3948 w
+(Established) 1794 3948 w
+(5761) 2418 3948 w
+(ads) 2946 3948 w
+(whale.lsub.org) 3474 3948 w
+(tcp) 786 4058 w
+(6) 1026 4058 w
+(nemo) 1266 4058 w
+(Established) 1794 4058 w
+(5766) 2418 4058 w
+(ads) 2946 4058 w
+(whale.lsub.org) 3474 4058 w
+(tcp) 786 4168 w
+(7) 1026 4168 w
+(nemo) 1266 4168 w
+(Established) 1794 4168 w
+(5763) 2418 4168 w
+(9fs) 2946 4168 w
+(whale.lsub.org) 3474 4168 w
+(tcp) 786 4278 w
+(8) 1026 4278 w
+(nemo) 1266 4278 w
+(Listen) 1794 4278 w
+(kbd) 2418 4278 w
+(0) 2946 4278 w
+(::) 3474 4278 w
+8 /Times-Italic f
+(...many other lines of output for tcp...) 786 4388 w
+8 /Courier f
+(udp) 786 4498 w
+(0) 1026 4498 w
+(network) 1266 4498 w
+(Closed) 1794 4498 w
+(0) 2418 4498 w
+(0) 2946 4498 w
+(::) 3474 4498 w
+(udp) 786 4608 w
+(1) 1026 4608 w
+(network) 1266 4608 w
+(Closed) 1794 4608 w
+(0) 2418 4608 w
+(0) 2946 4608 w
+(::) 3474 4608 w
+11 /Times-Roman f
+(Each) 566 4824 w
+(line) 817 4824 w
+(of) 1015 4824 w
+(output) 1139 4824 w
+(shows) 1454 4824 w
+(information) 1762 4824 w
+(for) 2314 4824 w
+(a) 2474 4824 w
+(particular) 2556 4824 w
+(line) 3009 4824 w
+(directory.) 3208 4824 w
+(For) 3665 4824 w
+(example,) 3852 4824 w
+(the) 566 4944 w
+(TCP) 741 4944 w
+(connection) 985 4944 w
+(number) 1507 4944 w
+(1) 1883 4944 w
+(\(i.e.,) 1979 4944 w
+(that) 2219 4944 w
+(in) 2425 4944 w
+11 /Courier f
+(/net/tcp/1) 2552 4944 w
+11 /Times-Roman f
+(\)) 3212 4944 w
+(is) 3289 4944 w
+(established.) 3404 4944 w
+(There\255) 3961 4944 w
+(fore,) 566 5064 w
+(it) 798 5064 w
+(is) 889 5064 w
+(probably) 992 5064 w
+(being) 1411 5064 w
+(used) 1685 5064 w
+(to) 1916 5064 w
+(exchange) 2032 5064 w
+(data.) 2474 5064 w
+(The) 2714 5064 w
+(local) 2914 5064 w
+(end) 3157 5064 w
+(for) 3345 5064 w
+(the) 3502 5064 w
+(connection) 3666 5064 w
+(is) 4177 5064 w
+(at) 566 5184 w
+(port) 682 5184 w
+(5757,) 896 5184 w
+(and) 1181 5184 w
+(the) 1376 5184 w
+(remote) 1547 5184 w
+(end) 1888 5184 w
+(for) 2083 5184 w
+(the) 2247 5184 w
+(connection) 2418 5184 w
+(is) 2936 5184 w
+(the) 3047 5184 w
+(port) 3217 5184 w
+(for) 3430 5184 w
+(service) 3593 5184 w
+11 /Courier f
+(9fs) 3938 5184 w
+11 /Times-Roman f
+(at) 4172 5184 w
+(the) 566 5304 w
+(machine) 747 5304 w
+(with) 1165 5304 w
+(name) 1408 5304 w
+11 /Courier f
+(whale.lsub.org) 1692 5304 w
+11 /Times-Roman f
+(.) 2616 5304 w
+(This) 2719 5304 w
+(is) 2963 5304 w
+(a) 3085 5304 w
+(connection) 3181 5304 w
+(used) 3710 5304 w
+(by) 3959 5304 w
+(the) 4117 5304 w
+(local) 566 5424 w
+(machine) 812 5424 w
+(to) 1215 5424 w
+(access) 1333 5424 w
+(the) 1643 5424 w
+(9P) 1809 5424 w
+(file) 1958 5424 w
+(server) 2136 5424 w
+(at) 2434 5424 w
+11 /Courier f
+(whale) 2545 5424 w
+11 /Times-Roman f
+(.) 2875 5424 w
+(It) 2963 5424 w
+(is) 3062 5424 w
+(being) 3168 5424 w
+(used) 3444 5424 w
+(to) 3677 5424 w
+(access) 3795 5424 w
+(our) 4105 5424 w
+(main) 566 5544 w
+(file) 827 5544 w
+(server) 1014 5544 w
+(from) 1321 5544 w
+(the) 1576 5544 w
+(terminal) 1752 5544 w
+(where) 2160 5544 w
+(I) 2468 5544 w
+(executed) 2546 5544 w
+11 /Courier f
+(netstat) 2976 5544 w
+11 /Times-Roman f
+(.) 3438 5544 w
+(The) 3536 5544 w
+(states) 3748 5544 w
+(for) 4034 5544 w
+(a) 4203 5544 w
+(connection) 566 5664 w
+(may) 1095 5664 w
+(depend) 1332 5664 w
+(on) 1696 5664 w
+(the) 1854 5664 w
+(particular) 2035 5664 w
+(protocol,) 2501 5664 w
+(and) 2942 5664 w
+(we) 3147 5664 w
+(do) 3321 5664 w
+(not) 3478 5664 w
+(discuss) 3666 5664 w
+(them) 4031 5664 w
+(here.) 566 5784 w
+(In) 816 5940 w
+(some) 937 5940 w
+(cases,) 1199 5940 w
+(there) 1487 5940 w
+(may) 1736 5940 w
+(be) 1956 5940 w
+(problems) 2090 5940 w
+(to) 2530 5940 w
+(reach) 2647 5940 w
+(the) 2913 5940 w
+(name) 3078 5940 w
+(service) 3346 5940 w
+(for) 3686 5940 w
+(the) 3844 5940 w
+(Inter\255) 4009 5940 w
+(net) 566 6060 w
+(\(our) 747 6060 w
+(DNS) 976 6060 w
+(server\),) 1243 6060 w
+(and) 1620 6060 w
+(it) 1825 6060 w
+(is) 1934 6060 w
+(very) 2055 6060 w
+(useful) 2295 6060 w
+(to) 2609 6060 w
+(call) 2741 6060 w
+11 /Courier f
+(netstat) 2945 6060 w
+11 /Times-Roman f
+(with) 3453 6060 w
+(the) 3695 6060 w
+11 /Courier f
+(\255n) 3875 6060 w
+11 /Times-Roman f
+(flag,) 4053 6060 w
+(which) 566 6180 w
+(makes) 878 6180 w
+(the) 1202 6180 w
+(program) 1380 6180 w
+(print) 1795 6180 w
+(just) 2047 6180 w
+(the) 2252 6180 w
+(addresses,) 2431 6180 w
+(without) 2923 6180 w
+(translating) 3305 6180 w
+(them) 3814 6180 w
+(into) 4079 6180 w
+(\(more) 566 6300 w
+(readable\)) 855 6300 w
+(names.) 1288 6300 w
+(For) 1624 6300 w
+(example,) 1805 6300 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 7 7
+%%Page: 8 8
+/saveobj save def
+mark
+8 pagesetup
+11 /Times-Roman f
+(\255 8 \255) 2317 413 w
+8 /Courier f
+(; netstat \255n) 786 676 w
+(tcp) 786 786 w
+(0) 1026 786 w
+(nemo) 1266 786 w
+(Listen) 1794 786 w
+(11004) 2418 786 w
+(0) 2946 786 w
+(::) 3474 786 w
+(tcp) 786 896 w
+(1) 1026 896 w
+(Established) 1794 896 w
+(5757) 2418 896 w
+(564) 2946 896 w
+(193.147.71.86) 3474 896 w
+(tcp) 786 1006 w
+(2) 1026 1006 w
+(nemo) 1266 1006 w
+(Established) 1794 1006 w
+(5765) 2418 1006 w
+(11010) 2946 1006 w
+(193.147.71.86) 3474 1006 w
+(tcp) 786 1116 w
+(3) 1026 1116 w
+(nemo) 1266 1116 w
+(Established) 1794 1116 w
+(5759) 2418 1116 w
+(564) 2946 1116 w
+(193.147.71.86) 3474 1116 w
+(tcp) 786 1226 w
+(4) 1026 1226 w
+(nemo) 1266 1226 w
+(Listen) 1794 1226 w
+(11003) 2418 1226 w
+(0) 2946 1226 w
+(::) 3474 1226 w
+(tcp) 786 1336 w
+(5) 1026 1336 w
+(nemo) 1266 1336 w
+(Established) 1794 1336 w
+(5761) 2418 1336 w
+(11010) 2946 1336 w
+(193.147.71.86) 3474 1336 w
+8 /Times-Italic f
+(...many other lines of output) 786 1446 w
+11 /Times-Roman f
+(It) 566 1662 w
+(is) 662 1662 w
+(very) 765 1662 w
+(instructive) 988 1662 w
+(to) 1481 1662 w
+(compare) 1596 1662 w
+(the) 2001 1662 w
+(time) 2164 1662 w
+(it) 2389 1662 w
+(takes) 2480 1662 w
+(for) 2734 1662 w
+(this) 2890 1662 w
+(program) 3079 1662 w
+(to) 3479 1662 w
+(complete) 3595 1662 w
+(with,) 4027 1662 w
+(and) 566 1782 w
+(without) 752 1782 w
+(using) 1117 1782 w
+11 /Courier f
+(\255n) 1384 1782 w
+11 /Times-Roman f
+(.) 1516 1782 w
+(To) 816 1938 w
+(add) 972 1938 w
+(yet) 1164 1938 w
+(another) 1332 1938 w
+(tool) 1694 1938 w
+(to) 1900 1938 w
+(your) 2020 1938 w
+(network) 2255 1938 w
+(survival) 2648 1938 w
+(kit,) 3036 1938 w
+(the) 3215 1938 w
+11 /Courier f
+(ip/ping) 3383 1938 w
+11 /Times-Roman f
+(program) 3880 1938 w
+(sends) 566 2058 w
+(particular) 848 2058 w
+(messages) 1305 2058 w
+(that) 1757 2058 w
+(behave) 1960 2058 w
+(like) 2307 2058 w
+(probes) 2510 2058 w
+(to) 2840 2058 w
+(a) 2964 2058 w
+(machine) 3050 2058 w
+(\(to) 3459 2058 w
+(an) 3619 2058 w
+(IP) 3760 2058 w
+(address,) 3895 2058 w
+(which) 566 2178 w
+(is) 862 2178 w
+(for) 964 2178 w
+(a) 1119 2178 w
+(network) 1195 2178 w
+(interface) 1583 2178 w
+(found) 1993 2178 w
+(at) 2278 2178 w
+(a) 2386 2178 w
+(machine,) 2463 2178 w
+(indeed\),) 2891 2178 w
+(and) 3276 2178 w
+(prints) 3463 2178 w
+(one) 3743 2178 w
+(line) 3930 2178 w
+(for) 4124 2178 w
+(each) 566 2298 w
+(probe) 803 2298 w
+(reporting) 1090 2298 w
+(what) 1530 2298 w
+(happen.) 1781 2298 w
+(It) 2191 2298 w
+(is) 2296 2298 w
+(very) 2408 2298 w
+(useful) 2640 2298 w
+(because) 2945 2298 w
+(it) 3327 2298 w
+(lets) 3426 2298 w
+(you) 3616 2298 w
+(know) 3818 2298 w
+(if) 4099 2298 w
+(a) 4203 2298 w
+(particular) 566 2418 w
+(machine) 1021 2418 w
+(seems) 1428 2418 w
+(to) 1732 2418 w
+(be) 1854 2418 w
+(alive.) 1993 2418 w
+(If) 2270 2418 w
+(it) 2378 2418 w
+(replies) 2476 2418 w
+(to) 2804 2418 w
+(a) 2926 2418 w
+(probe,) 3010 2418 w
+(the) 3323 2418 w
+(machine) 3493 2418 w
+(is) 3900 2418 w
+(alive,) 4010 2418 w
+(no) 566 2538 w
+(doubt.) 720 2538 w
+(If) 1043 2538 w
+(the) 1159 2538 w
+(machine) 1336 2538 w
+(does) 1750 2538 w
+(not) 1994 2538 w
+(reply) 2178 2538 w
+(to) 2446 2538 w
+(any) 2575 2538 w
+(of) 2776 2538 w
+(the) 2910 2538 w
+(probes,) 3087 2538 w
+(it) 3450 2538 w
+(might) 3555 2538 w
+(be) 3856 2538 w
+(either) 4002 2538 w
+(dead,) 566 2658 w
+(or) 829 2658 w
+(disconnected) 949 2658 w
+(from) 1550 2658 w
+(the) 1792 2658 w
+(network.) 1955 2658 w
+(Or) 2371 2658 w
+(perhaps,) 2515 2658 w
+(it) 2912 2658 w
+(is) 3003 2658 w
+(your) 3106 2658 w
+(machine) 3336 2658 w
+(the) 3736 2658 w
+(one) 3899 2658 w
+(dis\255) 4086 2658 w
+(connected.) 566 2778 w
+(If) 1069 2778 w
+(only) 1173 2778 w
+(some) 1401 2778 w
+(probes) 1665 2778 w
+(get) 1989 2778 w
+(replied,) 2155 2778 w
+(you) 2519 2778 w
+(are) 2716 2778 w
+(likely) 2880 2778 w
+(to) 3163 2778 w
+(have) 3281 2778 w
+(bad) 3519 2778 w
+(connectivity) 3708 2778 w
+(\(your) 566 2898 w
+(network) 831 2898 w
+(is) 1218 2898 w
+(losing) 1320 2898 w
+(too) 1618 2898 w
+(many) 1787 2898 w
+(packets\).) 2059 2898 w
+(Here) 2479 2898 w
+(is) 2718 2898 w
+(an) 2820 2898 w
+(example.) 2951 2898 w
+10 /Courier f
+(; ip/ping lsub.org) 786 3068 w
+(sending 32 64 byte messages 1000 ms apart) 786 3178 w
+(0: rtt 152 \265s, avg rtt 152 \265s, ttl = 255) 786 3288 w
+(1: rtt 151 \265s, avg rtt 151 \265s, ttl = 255) 786 3398 w
+(2: rtt 149 \265s, avg rtt 150 \265s, ttl = 255) 786 3508 w
+10 /Times-Italic f
+(...) 786 3618 w
+11 /Times-Roman f
+(In) 566 3834 w
+(the) 685 3834 w
+(output,) 847 3834 w
+11 /Courier f
+(rtt) 1185 3834 w
+11 /Times-Roman f
+(is) 1411 3834 w
+(for) 1513 3834 w
+11 /Times-Italic f
+(round) 1668 3834 w
+(trip) 1959 3834 w
+(time) 2147 3834 w
+11 /Times-Roman f
+(,) 2336 3834 w
+(the) 2392 3834 w
+(time) 2554 3834 w
+(for) 2778 3834 w
+(getting) 2934 3834 w
+(in) 3269 3834 w
+(touch) 3384 3834 w
+(and) 3657 3834 w
+(receiving) 3844 3834 w
+(the) 566 3954 w
+(reply.) 728 3954 w
+16 /Times-Bold f
+(6.3.) 566 4314 w
+(Making calls) 886 4314 w
+11 /Times-Roman f
+(For) 566 4470 w
+(using) 755 4470 w
+(the) 1030 4470 w
+(network) 1200 4470 w
+(from) 1595 4470 w
+(a) 1844 4470 w
+(C) 1928 4470 w
+(program,) 2039 4470 w
+(there) 2475 4470 w
+(is) 2730 4470 w
+(a) 2841 4470 w
+(simple) 2926 4470 w
+(library) 3257 4470 w
+(that) 3586 4470 w
+(provides) 3788 4470 w
+(a) 4203 4470 w
+(more) 566 4590 w
+(convenient) 833 4590 w
+(interface) 1356 4590 w
+(that) 1779 4590 w
+(the) 1986 4590 w
+(one) 2162 4590 w
+(provided) 2361 4590 w
+(by) 2792 4590 w
+(the) 2943 4590 w
+(file) 3118 4590 w
+(system) 3305 4590 w
+(from) 3652 4590 w
+(the) 3906 4590 w
+(net\255) 4081 4590 w
+(work) 566 4710 w
+(device.) 826 4710 w
+(For) 1174 4710 w
+(example,) 1362 4710 w
+(this) 1796 4710 w
+(is) 1991 4710 w
+(our) 2100 4710 w
+(simplified) 2281 4710 w
+(version) 2764 4710 w
+(for) 3123 4710 w
+11 /Courier f
+(srv) 3286 4710 w
+11 /Times-Roman f
+(.) 3484 4710 w
+(It) 3576 4710 w
+(dials) 3679 4710 w
+(a) 3923 4710 w
+(given) 4007 4710 w
+(network) 566 4830 w
+(address) 964 4830 w
+(to) 1331 4830 w
+(establish) 1456 4830 w
+(a) 1880 4830 w
+(connection) 1967 4830 w
+(and) 2487 4830 w
+(posts) 2684 4830 w
+(a) 2950 4830 w
+(file) 3037 4830 w
+(descriptor) 3222 4830 w
+(for) 3699 4830 w
+(the) 3865 4830 w
+(open) 4038 4830 w
+(connection) 566 4950 w
+(at) 1075 4950 w
+11 /Courier f
+(/srv) 1182 4950 w
+11 /Times-Roman f
+(.) 1446 4950 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 8 8
+%%Page: 9 9
+/saveobj save def
+mark
+9 pagesetup
+11 /Times-Roman f
+(\255 9 \255) 2317 413 w
+9 /S f
+(\347) 566 676 w
+9 /Times-Bold f
+(srv.c) 581 676 w
+9 /S f
+(\347) 779 676 w
+(`) 566 676 w
+(````) 599 676 w
+(_) 566 676 w
+(____) 599 676 w
+8 /Courier f
+(#include <u.h>) 786 784 w
+(#include <libc.h>) 786 892 w
+(void) 786 1108 w
+(main\(int argc, char* argv[]\)) 786 1216 w
+({) 786 1324 w
+(int) 1266 1432 w
+(fd, srvfd;) 1746 1432 w
+(char*) 1266 1540 w
+(addr;) 1746 1540 w
+(char) 1266 1648 w
+(fname[128];) 1746 1648 w
+(if \(argc != 2\){) 1266 1864 w
+(fprint\(2, "usage: %s netaddr\\n", argv[0]\);) 1746 1972 w
+(exits\("usage"\);) 1746 2080 w
+(}) 1266 2188 w
+(addr = netmkaddr\(argv[1], "tcp", "9fs"\);) 1266 2404 w
+(fd = dial\(addr, nil, nil, nil\);) 1266 2512 w
+(if \(fd < 0\)) 1266 2620 w
+(sysfatal\("dial: %s: %r", addr\);) 1746 2728 w
+(seprint\(fname, fname+sizeof\(fname\), "/srv/%s", argv[1]\);) 1266 2944 w
+(srvfd = create\(fname, OWRITE, 0664\);) 1266 3052 w
+(if \(srvfd < 0\)) 1266 3160 w
+(sysfatal\("can't post %s: %r", fname\);) 1746 3268 w
+(if \(fprint\(srvfd, "%d", fd\) < 0\)) 1266 3376 w
+(sysfatal\("can't post file descriptor: %r"\);) 1746 3484 w
+(close\(srvfd\);) 1266 3592 w
+(close\(fd\);) 1266 3700 w
+(exits\(nil\);) 1266 3808 w
+(}) 786 3916 w
+11 /Times-Roman f
+(Using) 566 4132 w
+11 /Courier f
+(argv[1]) 859 4132 w
+11 /Times-Roman f
+(verbatim) 1351 4132 w
+(as) 1771 4132 w
+(the) 1892 4132 w
+(network) 2056 4132 w
+(address) 2445 4132 w
+(to) 2803 4132 w
+(dial,) 2919 4132 w
+(would) 3142 4132 w
+(make) 3447 4132 w
+(the) 3715 4132 w
+(program) 3880 4132 w
+(work) 566 4252 w
+(only) 820 4252 w
+(when) 1045 4252 w
+(given) 1311 4252 w
+(a) 1584 4252 w
+(complete) 1661 4252 w
+(address.) 2092 4252 w
+(Including) 2477 4252 w
+(the) 2926 4252 w
+(network) 3088 4252 w
+(name) 3475 4252 w
+(and) 3740 4252 w
+(the) 3926 4252 w
+(ser\255) 4088 4252 w
+(vice) 566 4372 w
+(name.) 776 4372 w
+(Like,) 1069 4372 w
+(for) 1326 4372 w
+(example,) 1481 4372 w
+10 /Courier f
+(; 8.srv tcp!whale!9fs) 786 4542 w
+11 /Times-Roman f
+(Instead,) 566 4758 w
+(the) 951 4758 w
+(program) 1126 4758 w
+(calls) 1538 4758 w
+11 /Courier f
+(netmkaddr) 1780 4758 w
+11 /Times-Roman f
+(which) 2415 4758 w
+(is) 2724 4758 w
+(a) 2840 4758 w
+(standard) 2930 4758 w
+(Plan) 3343 4758 w
+(9) 3581 4758 w
+(function) 3678 4758 w
+(that) 4086 4758 w
+(may) 566 4878 w
+(take) 787 4878 w
+(an) 1001 4878 w
+(address) 1136 4878 w
+(with) 1496 4878 w
+(just) 1723 4878 w
+(the) 1914 4878 w
+(machine) 2079 4878 w
+(name,) 2481 4878 w
+(or) 2777 4878 w
+(perhaps) 2899 4878 w
+(the) 3270 4878 w
+(network) 3435 4878 w
+(name) 3825 4878 w
+(and) 4093 4878 w
+(the) 566 4998 w
+(machine) 730 4998 w
+(name.) 1131 4998 w
+(This) 1426 4998 w
+(function) 1652 4998 w
+(completes) 2048 4998 w
+(the) 2523 4998 w
+(address) 2687 4998 w
+(using) 3045 4998 w
+(default) 3314 4998 w
+(values) 3648 4998 w
+(for) 3959 4998 w
+(the) 4117 4998 w
+(network) 566 5118 w
+(and) 958 5118 w
+(the) 1149 5118 w
+(service,) 1316 5118 w
+(and) 1686 5118 w
+(returns) 1876 5118 w
+(a) 2212 5118 w
+(full) 2292 5118 w
+(address) 2477 5118 w
+(ready) 2837 5118 w
+(to) 3111 5118 w
+(use.) 3229 5118 w
+(We) 3435 5118 w
+(make) 3618 5118 w
+11 /Courier f
+(tcp) 3887 5118 w
+11 /Times-Roman f
+(the) 4117 5118 w
+(default) 566 5238 w
+(value) 898 5238 w
+(for) 1163 5238 w
+(the) 1318 5238 w
+(network) 1480 5238 w
+(\(protocol\)) 1867 5238 w
+(and) 2333 5238 w
+11 /Courier f
+(9fs) 2519 5238 w
+11 /Times-Roman f
+(as) 2745 5238 w
+(the) 2864 5238 w
+(default) 3026 5238 w
+(value) 3358 5238 w
+(for) 3623 5238 w
+(the) 3779 5238 w
+(service) 3942 5238 w
+(name.) 566 5358 w
+(Therefore,) 875 5358 w
+(the) 1376 5358 w
+(program) 1554 5358 w
+(admits) 1969 5358 w
+(any) 2307 5358 w
+(of) 2509 5358 w
+(the) 2644 5358 w
+(following,) 2821 5358 w
+(with) 3320 5358 w
+(the) 3559 5358 w
+(same) 3736 5358 w
+(effect) 4004 5358 w
+(that) 566 5478 w
+(the) 759 5478 w
+(previous) 921 5478 w
+(invocation:) 1327 5478 w
+10 /Courier f
+(; 8.srv tcp!whale) 786 5648 w
+(; 8.srv whale) 786 5758 w
+11 /Times-Roman f
+(The) 566 5974 w
+(actual) 788 5974 w
+(work) 1101 5974 w
+(is) 1378 5974 w
+(done) 1504 5974 w
+(by) 1769 5974 w
+11 /Courier f
+(dial) 1931 5974 w
+11 /Times-Roman f
+(.) 2195 5974 w
+(This) 2303 5974 w
+(function) 2551 5974 w
+(dials) 2969 5974 w
+(the) 3229 5974 w
+(given) 3415 5974 w
+(address) 3712 5974 w
+(and) 4093 5974 w
+(returns) 566 6094 w
+(an) 899 6094 w
+(open) 1031 6094 w
+(file) 1273 6094 w
+(descriptor) 1448 6094 w
+(for) 1915 6094 w
+(the) 2071 6094 w
+(connection's) 2234 6094 w
+(data) 2823 6094 w
+(file.) 3034 6094 w
+(A) 3237 6094 w
+(write) 3344 6094 w
+(to) 3597 6094 w
+(this) 3711 6094 w
+(descrip\255) 3899 6094 w
+(tor) 566 6214 w
+(sends) 732 6214 w
+(bytes) 1020 6214 w
+(through) 1296 6214 w
+(the) 1682 6214 w
+(connection,) 1860 6214 w
+(and) 2413 6214 w
+(a) 2615 6214 w
+(read) 2707 6214 w
+(can) 2939 6214 w
+(be) 3135 6214 w
+(used) 3283 6214 w
+(to) 3529 6214 w
+(receive) 3660 6214 w
+(bytes) 4019 6214 w
+(from) 566 6334 w
+(it.) 826 6334 w
+(The) 963 6334 w
+(function) 1180 6334 w
+(is) 1592 6334 w
+(used) 1712 6334 w
+(in) 1959 6334 w
+(the) 2091 6334 w
+(same) 2271 6334 w
+(way) 2542 6334 w
+(for) 2770 6334 w
+(both) 2943 6334 w
+(datagram) 3185 6334 w
+(protocols) 3638 6334 w
+(and) 4093 6334 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 9 9
+%%Page: 10 10
+/saveobj save def
+mark
+10 pagesetup
+11 /Times-Roman f
+(\255 10 \255) 2289 413 w
+(connection\255oriented) 566 686 w
+(protocols.) 1494 686 w
+(The) 1983 686 w
+(connection) 2205 686 w
+(will) 2738 686 w
+(be) 2962 686 w
+(open) 3117 686 w
+(as) 3382 686 w
+(long) 3525 686 w
+(as) 3774 686 w
+(the) 3918 686 w
+(file) 4105 686 w
+(descriptor) 566 806 w
+(returned) 1032 806 w
+(remains) 1424 806 w
+(open.) 1799 806 w
+9 /Courier f
+(; sig dial) 786 976 w
+(int dial\(char *addr, char *local, char *dir, int *cfdp\)) 1266 1086 w
+11 /Times-Roman f
+(The) 566 1302 w
+(parameter) 771 1302 w
+11 /Courier f
+(local) 1242 1302 w
+11 /Times-Roman f
+(permits) 1607 1302 w
+(specifying) 1972 1302 w
+(the) 2465 1302 w
+(local) 2635 1302 w
+(address) 2884 1302 w
+(\(for) 3248 1302 w
+(network) 3447 1302 w
+(protocols) 3842 1302 w
+(that) 566 1422 w
+(allow) 783 1422 w
+(doing) 1079 1422 w
+(so\).) 1382 1422 w
+(In) 1595 1422 w
+(most) 1737 1422 w
+(cases,) 2003 1422 w
+(given) 2312 1422 w
+11 /Courier f
+(nil) 2607 1422 w
+11 /Times-Roman f
+(suffices,) 2856 1422 w
+(and) 3275 1422 w
+(the) 3484 1422 w
+(network) 3669 1422 w
+(will) 4079 1422 w
+(choose) 566 1542 w
+(a) 902 1542 w
+(suitable) 982 1542 w
+(\(unused\)) 1357 1542 w
+(local) 1773 1542 w
+(port) 2019 1542 w
+(for) 2229 1542 w
+(the) 2389 1542 w
+(connection.) 2556 1542 w
+(When) 3098 1542 w
+11 /Courier f
+(dir) 3392 1542 w
+11 /Times-Roman f
+(is) 3623 1542 w
+(not) 3730 1542 w
+(nil,) 3904 1542 w
+(it) 4082 1542 w
+(is) 4177 1542 w
+(used) 566 1662 w
+(by) 800 1662 w
+(the) 943 1662 w
+(function) 1110 1662 w
+(as) 1509 1662 w
+(a) 1633 1662 w
+(buffer) 1713 1662 w
+(to) 2011 1662 w
+(copy) 2129 1662 w
+(the) 2374 1662 w
+(path) 2540 1662 w
+(for) 2761 1662 w
+(the) 2920 1662 w
+(line) 3086 1662 w
+(directory) 3283 1662 w
+(representing) 3710 1662 w
+(the) 566 1782 w
+(connection.) 729 1782 w
+(The) 1267 1782 w
+(buffer) 1466 1782 w
+(must) 1761 1782 w
+(be) 2005 1782 w
+(at) 2138 1782 w
+(least) 2247 1782 w
+(40) 2478 1782 w
+(bytes) 2618 1782 w
+(long.) 2880 1782 w
+(We) 3134 1782 w
+(changed) 3315 1782 w
+(the) 3709 1782 w
+(previous) 3873 1782 w
+(program) 566 1902 w
+(to) 965 1902 w
+(do) 1079 1902 w
+(print) 1217 1902 w
+(the) 1453 1902 w
+(path) 1615 1902 w
+(for) 1832 1902 w
+(the) 1987 1902 w
+(line) 2149 1902 w
+(directory) 2342 1902 w
+(used) 2765 1902 w
+(for) 2994 1902 w
+(the) 3149 1902 w
+(connection:) 3311 1902 w
+10 /Courier f
+(fd = dial\(addr, nil, dir, nil\);) 786 2072 w
+(if \(fd < 0\)) 786 2182 w
+(sysfatal\("dial: %s: %r", addr\);) 1266 2292 w
+(print\("dial: %s0, dir\);) 786 2402 w
+11 /Times-Roman f
+(And) 566 2618 w
+(this) 783 2618 w
+(is) 971 2618 w
+(what) 1073 2618 w
+(it) 1314 2618 w
+(said:) 1404 2618 w
+10 /Courier f
+(; 8.srv tcp!whale!9fs) 786 2788 w
+(dial: /net/tcp/24) 786 2898 w
+11 /Times-Roman f
+(The) 566 3114 w
+(last) 769 3114 w
+(parameter) 955 3114 w
+(for) 1424 3114 w
+(dial,) 1584 3114 w
+11 /Courier f
+(cfdp) 1810 3114 w
+11 /Times-Roman f
+(points) 2107 3114 w
+(to) 2410 3114 w
+(an) 2529 3114 w
+(integer) 2665 3114 w
+(which,) 3003 3114 w
+(when) 3333 3114 w
+(passing) 3604 3114 w
+(a) 3968 3114 w
+(non\255) 4050 3114 w
+(nil) 566 3234 w
+(value,) 721 3234 w
+(can) 1024 3234 w
+(be) 1213 3234 w
+(used) 1354 3234 w
+(to) 1593 3234 w
+(obtain) 1717 3234 w
+(an) 2030 3234 w
+(open) 2171 3234 w
+(file) 2422 3234 w
+(descriptor) 2606 3234 w
+(for) 3082 3234 w
+(the) 3246 3234 w
+(connection.) 3417 3234 w
+(In) 3963 3234 w
+(this) 4091 3234 w
+(case,) 566 3354 w
+(the) 811 3354 w
+(caller) 975 3354 w
+(is) 1247 3354 w
+(responsible) 1351 3354 w
+(for) 1881 3354 w
+(closing) 2039 3354 w
+(this) 2388 3354 w
+(descriptor) 2579 3354 w
+(when) 3048 3354 w
+(appropriate.) 3316 3354 w
+(This) 3873 3354 w
+(can) 4100 3354 w
+(be) 566 3474 w
+(used) 709 3474 w
+(to) 950 3474 w
+(write) 1076 3474 w
+(to) 1341 3474 w
+(the) 1467 3474 w
+(control) 1640 3474 w
+(file) 1990 3474 w
+(requests) 2175 3474 w
+(to) 2573 3474 w
+(tune) 2698 3474 w
+(properties) 2926 3474 w
+(for) 3403 3474 w
+(the) 3569 3474 w
+(connection,) 3742 3474 w
+(but) 566 3594 w
+(is) 735 3594 w
+(usually) 837 3594 w
+(unnecessary.) 1183 3594 w
+(There) 816 3750 w
+(is) 1100 3750 w
+(a) 1204 3750 w
+(lot) 1282 3750 w
+(of) 1429 3750 w
+(useful) 1550 3750 w
+(information) 1848 3750 w
+(that) 2397 3750 w
+(we) 2592 3750 w
+(may) 2749 3750 w
+(obtain) 2969 3750 w
+(about) 3275 3750 w
+(a) 3550 3750 w
+(connection) 3629 3750 w
+(by) 4141 3750 w
+(calling) 566 3870 w
+11 /Courier f
+(getnetconninfo) 927 3870 w
+11 /Times-Roman f
+(.) 1851 3870 w
+(This) 1968 3870 w
+(function) 2225 3870 w
+(returns) 2652 3870 w
+(nothing) 3017 3870 w
+(that) 3415 3870 w
+(could) 3641 3870 w
+(not) 3946 3870 w
+(be) 4148 3870 w
+(obtained) 566 3990 w
+(by) 976 3990 w
+(reading) 1118 3990 w
+(files) 1478 3990 w
+(from) 1699 3990 w
+(files) 1944 3990 w
+(in) 2165 3990 w
+(the) 2283 3990 w
+(line) 2449 3990 w
+(directory) 2647 3990 w
+(of) 3075 3990 w
+(the) 3199 3990 w
+(connection,) 3366 3990 w
+(but) 3908 3990 w
+(it) 4082 3990 w
+(is) 4177 3990 w
+(a) 566 4110 w
+(very) 646 4110 w
+(nice) 872 4110 w
+(wrap) 1086 4110 w
+(that) 1335 4110 w
+(makes) 1531 4110 w
+(things) 1842 4110 w
+(more) 2143 4110 w
+(convenient.) 2399 4110 w
+(In) 2939 4110 w
+(general,) 3061 4110 w
+(this) 3441 4110 w
+(is) 3632 4110 w
+(most) 3737 4110 w
+(useful) 3983 4110 w
+(in) 566 4230 w
+(servers,) 687 4230 w
+(to) 1059 4230 w
+(obtain) 1180 4230 w
+(information) 1490 4230 w
+(to) 2044 4230 w
+(try) 2165 4230 w
+(to) 2322 4230 w
+(identify) 2443 4230 w
+(the) 2820 4230 w
+(other) 2990 4230 w
+(end) 3251 4230 w
+(of) 3445 4230 w
+(the) 3572 4230 w
+(connection,) 3742 4230 w
+(\(i.e.,) 566 4350 w
+(the) 809 4350 w
+(client\).) 987 4350 w
+(However,) 1339 4350 w
+(because) 1811 4350 w
+(it) 2200 4350 w
+(is) 2306 4350 w
+(much) 2424 4350 w
+(easier) 2712 4350 w
+(to) 3010 4350 w
+(make) 3139 4350 w
+(a) 3419 4350 w
+(call) 3510 4350 w
+(than) 3711 4350 w
+(it) 3943 4350 w
+(is) 4048 4350 w
+(to) 4165 4350 w
+(receive) 566 4470 w
+(one,) 908 4470 w
+(we) 1122 4470 w
+(prefer) 1277 4470 w
+(to) 1564 4470 w
+(show) 1678 4470 w
+(this) 1938 4470 w
+(functionality) 2126 4470 w
+(here) 2716 4470 w
+(instead.) 2931 4470 w
+(Parameters) 816 4626 w
+(for) 1341 4626 w
+11 /Courier f
+(netconninfo) 1507 4626 w
+11 /Times-Roman f
+(are) 2272 4626 w
+(the) 2443 4626 w
+(path) 2616 4626 w
+(for) 2844 4626 w
+(a) 3010 4626 w
+(line) 3097 4626 w
+(directory,) 3301 4626 w
+(and) 3764 4626 w
+(one) 3962 4626 w
+(of) 4160 4626 w
+(the) 566 4746 w
+(descriptors) 734 4746 w
+(for) 1248 4746 w
+(either) 1408 4746 w
+(a) 1690 4746 w
+(control) 1771 4746 w
+(or) 2115 4746 w
+(a) 2239 4746 w
+(data) 2320 4746 w
+(file) 2535 4746 w
+(in) 2714 4746 w
+(the) 2833 4746 w
+(directory.) 3000 4746 w
+(When) 3456 4746 w
+(nil) 3750 4746 w
+(is) 3900 4746 w
+(given) 4007 4746 w
+(as) 566 4866 w
+(a) 694 4866 w
+(path,) 779 4866 w
+(the) 1033 4866 w
+(function) 1204 4866 w
+(uses) 1607 4866 w
+(the) 1833 4866 w
+(file) 2004 4866 w
+(descriptor) 2188 4866 w
+(to) 2664 4866 w
+(locate) 2788 4866 w
+(the) 3087 4866 w
+(directory,) 3259 4866 w
+(and) 3720 4866 w
+(read) 3916 4866 w
+(all) 4141 4866 w
+(the) 566 4986 w
+(information) 741 4986 w
+(to) 1301 4986 w
+(be) 1428 4986 w
+(returned) 1572 4986 w
+(to) 1977 4986 w
+(the) 2104 4986 w
+(caller.) 2279 4986 w
+(The) 2590 4986 w
+(function) 2801 4986 w
+(allocates) 3207 4986 w
+(memory) 3630 4986 w
+(for) 4036 4986 w
+(a) 4203 4986 w
+11 /Courier f
+(NetConnInfo) 566 5106 w
+11 /Times-Roman f
+(structure,) 1320 5106 w
+(fills) 1759 5106 w
+(it) 1959 5106 w
+(with) 2049 5106 w
+(relevant) 2273 5106 w
+(data,) 2653 5106 w
+(and) 2891 5106 w
+(returns) 3077 5106 w
+(a) 3409 5106 w
+(pointer) 3485 5106 w
+(to) 3824 5106 w
+(it) 3938 5106 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 10 10
+%%Page: 11 11
+/saveobj save def
+mark
+11 pagesetup
+11 /Times-Roman f
+(\255 11 \255) 2289 413 w
+10 /Courier f
+(typedef struct NetConnInfo NetConnInfo;) 786 676 w
+(struct NetConnInfo) 786 786 w
+({) 786 896 w
+(char) 1266 1006 w
+(*dir;) 1746 1006 w
+(/* connection directory */) 2706 1006 w
+(char) 1266 1116 w
+(*root;) 1746 1116 w
+(/* network root */) 2706 1116 w
+(char) 1266 1226 w
+(*spec;) 1746 1226 w
+(/* binding spec */) 2706 1226 w
+(char) 1266 1336 w
+(*lsys;) 1746 1336 w
+(/* local system */) 2706 1336 w
+(char) 1266 1446 w
+(*lserv;) 1746 1446 w
+(/* local service */) 2706 1446 w
+(char) 1266 1556 w
+(*rsys;) 1746 1556 w
+(/* remote system */) 2706 1556 w
+(char) 1266 1666 w
+(*rserv;) 1746 1666 w
+(/* remote service */) 2706 1666 w
+(char) 1266 1776 w
+(*laddr;) 1746 1776 w
+(/* local address */) 2706 1776 w
+(char) 1266 1886 w
+(*raddr;) 1746 1886 w
+(/* remote address */) 2706 1886 w
+(};) 786 1996 w
+11 /Times-Roman f
+(This) 566 2212 w
+(structure) 807 2212 w
+(must) 1235 2212 w
+(be) 1495 2212 w
+(released) 1643 2212 w
+(by) 2045 2212 w
+(a) 2200 2212 w
+(call) 2293 2212 w
+(to) 2496 2212 w
+11 /Courier f
+(freenetconninfo) 2627 2212 w
+11 /Times-Roman f
+(once) 3662 2212 w
+(it) 3913 2212 w
+(is) 4021 2212 w
+(no) 4141 2212 w
+(longer) 566 2332 w
+(necessary.) 878 2332 w
+(As) 1390 2332 w
+(an) 1544 2332 w
+(example,) 1679 2332 w
+(this) 2110 2332 w
+(program) 2301 2332 w
+(dials) 2703 2332 w
+(the) 2942 2332 w
+(address) 3107 2332 w
+(given) 3466 2332 w
+(as) 3741 2332 w
+(a) 3863 2332 w
+(param\255) 3942 2332 w
+(eter,) 566 2452 w
+(and) 788 2452 w
+(prints) 977 2452 w
+(all) 1259 2452 w
+(the) 1401 2452 w
+(information) 1567 2452 w
+(returned) 2118 2452 w
+(by) 2514 2452 w
+11 /Courier f
+(getnetconninfo) 2656 2452 w
+11 /Times-Roman f
+(.) 3580 2452 w
+(Its) 3668 2452 w
+(output) 3810 2452 w
+(for) 4124 2452 w
+(dialing) 566 2572 w
+11 /Courier f
+(tcp!whale!9fs) 900 2572 w
+11 /Times-Roman f
+(follows.) 1786 2572 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 11 11
+%%Page: 12 12
+/saveobj save def
+mark
+12 pagesetup
+11 /Times-Roman f
+(\255 12 \255) 2289 413 w
+9 /S f
+(\347) 566 676 w
+9 /Times-Bold f
+(conninfo.c) 581 676 w
+9 /S f
+(\347) 994 676 w
+(`) 566 676 w
+(`````````) 589 676 w
+(_) 566 676 w
+(_________) 589 676 w
+8 /Courier f
+(#include <u.h>) 786 784 w
+(#include <libc.h>) 786 892 w
+(void) 786 1108 w
+(main\(int argc, char* argv[]\)) 786 1216 w
+({) 786 1324 w
+(int) 1266 1432 w
+(fd, srvfd;) 1746 1432 w
+(char*) 1266 1540 w
+(addr;) 1746 1540 w
+(NetConnInfo*i;) 1266 1648 w
+(if \(argc != 2\){) 1266 1756 w
+(fprint\(2, "usage: %s netaddr\\n", argv[0]\);) 1746 1864 w
+(exits\("usage"\);) 1746 1972 w
+(}) 1266 2080 w
+(addr = netmkaddr\(argv[1], "tcp", "9fs"\);) 1266 2296 w
+(fd = dial\(addr, nil, nil, nil\);) 1266 2404 w
+(if \(fd < 0\)) 1266 2512 w
+(sysfatal\("dial: %s: %r", addr\);) 1746 2620 w
+(i = getnetconninfo\(nil, fd\);) 1266 2728 w
+(if \(i == nil\)) 1266 2836 w
+(sysfatal\("cannot get info: %r"\);) 1746 2944 w
+(print\("dir:\\t%s\\n", i\255>dir\);) 1266 3052 w
+(print\("root:\\t%s\\n", i\255>root\);) 1266 3160 w
+(print\("spec:\\t%s\\n", i\255>spec\);) 1266 3268 w
+(print\("lsys:\\t%s\\n", i\255>lsys\);) 1266 3376 w
+(print\("lserv:\\t%s\\n", i\255>lserv\);) 1266 3484 w
+(print\("rsys:\\t%s\\n", i\255>rsys\);) 1266 3592 w
+(print\("rserv:\\t%s\\n", i\255>rserv\);) 1266 3700 w
+(print\("laddr:\\t%s\\n", i\255>laddr\);) 1266 3808 w
+(print\("raddr:\\t%s\\n", i\255>raddr\);) 1266 3916 w
+(freenetconninfo\(i\);) 1266 4024 w
+(close\(fd\);) 1266 4132 w
+(exits\(nil\);) 1266 4240 w
+(}) 786 4348 w
+10 /Courier f
+(; 8.out tcp!whale!9fs) 786 4578 w
+(dir:) 786 4688 w
+(/net/tcp/46) 1266 4688 w
+(root:) 786 4798 w
+(/net) 1266 4798 w
+(spec:) 786 4908 w
+(#I0) 1266 4908 w
+(lsys:) 786 5018 w
+(212.128.4.124) 1266 5018 w
+(lserv:) 786 5128 w
+(6672) 1266 5128 w
+(rsys:) 786 5238 w
+(193.147.71.86) 1266 5238 w
+(rserv:) 786 5348 w
+(564) 1266 5348 w
+(laddr:) 786 5458 w
+(tcp!212.128.4.124!6672) 1266 5458 w
+(raddr:) 786 5568 w
+(tcp!193.147.71.86!564) 1266 5568 w
+11 /Times-Roman f
+(The) 566 5784 w
+(line) 775 5784 w
+(directory) 979 5784 w
+(for) 1413 5784 w
+(this) 1579 5784 w
+(connection) 1778 5784 w
+(was) 2298 5784 w
+11 /Courier f
+(/net/tcp/46) 2507 5784 w
+11 /Times-Roman f
+(,) 3233 5784 w
+(which) 3301 5784 w
+(belongs) 3609 5784 w
+(to) 3991 5784 w
+(the) 4117 5784 w
+(network) 566 5904 w
+(interface) 963 5904 w
+(at) 1382 5904 w
+11 /Courier f
+(/net) 1498 5904 w
+11 /Times-Roman f
+(.) 1762 5904 w
+(This) 1855 5904 w
+(connection) 2088 5904 w
+(was) 2606 5904 w
+(using) 2813 5904 w
+11 /Courier f
+(#I0) 3089 5904 w
+11 /Times-Roman f
+(,) 3287 5904 w
+(which) 3352 5904 w
+(is) 3657 5904 w
+(the) 3768 5904 w
+(first) 3939 5904 w
+(IP) 4153 5904 w
+(interface) 566 6024 w
+(for) 995 6024 w
+(the) 1170 6024 w
+(machine.) 1352 6024 w
+(The) 1827 6024 w
+(remaining) 2045 6024 w
+(output) 2538 6024 w
+(should) 2869 6024 w
+(be) 3212 6024 w
+(easy) 3364 6024 w
+(to) 3607 6024 w
+(understand,) 3742 6024 w
+(given) 566 6144 w
+(the) 838 6144 w
+(declaration) 1000 6144 w
+(of) 1514 6144 w
+(the) 1633 6144 w
+(structure) 1795 6144 w
+(above,) 2206 6144 w
+(and) 2523 6144 w
+(the) 2709 6144 w
+(example) 2871 6144 w
+(output) 3270 6144 w
+(shown.) 3580 6144 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 12 12
+%%Page: 13 13
+/saveobj save def
+mark
+13 pagesetup
+11 /Times-Roman f
+(\255 13 \255) 2289 413 w
+16 /Times-Bold f
+(6.4.) 566 686 w
+(Providing services) 886 686 w
+11 /Times-Roman f
+(We) 566 842 w
+(know) 749 842 w
+(how) 1025 842 w
+(to) 1246 842 w
+(connect) 1364 842 w
+(to) 1736 842 w
+(processes) 1854 842 w
+(in) 2305 842 w
+(the) 2423 842 w
+(network) 2589 842 w
+(that) 2980 842 w
+(may) 3177 842 w
+(be) 3398 842 w
+(providing) 3534 842 w
+(a) 3995 842 w
+(par\255) 4076 842 w
+(ticular) 566 962 w
+(service.) 884 962 w
+(However,) 1259 962 w
+(it) 1725 962 w
+(remains) 1824 962 w
+(to) 2208 962 w
+(be) 2331 962 w
+(seen) 2471 962 w
+(how) 2702 962 w
+(to) 2928 962 w
+(provide) 3051 962 w
+(a) 3423 962 w
+(service.) 3508 962 w
+(In) 3910 962 w
+(what) 4038 962 w
+(follows,) 566 1082 w
+(we) 952 1082 w
+(are) 1107 1082 w
+(going) 1267 1082 w
+(to) 1546 1082 w
+(implement) 1660 1082 w
+(an) 2160 1082 w
+(echo) 2292 1082 w
+(server.) 2527 1082 w
+(A) 2850 1082 w
+(client) 2958 1082 w
+(for) 3231 1082 w
+(this) 3387 1082 w
+(program) 3576 1082 w
+(would) 3976 1082 w
+(be) 566 1202 w
+(another) 706 1202 w
+(process) 1071 1202 w
+(connecting) 1436 1202 w
+(to) 1954 1202 w
+(this) 2077 1202 w
+(service) 2274 1202 w
+(to) 2620 1202 w
+(obtain) 2743 1202 w
+(an) 3055 1202 w
+11 /Times-Italic f
+(echo) 3194 1202 w
+(service) 3436 1202 w
+11 /Times-Roman f
+(.) 3745 1202 w
+(This) 3837 1202 w
+(pro\255) 4069 1202 w
+(gram) 566 1322 w
+(provides) 830 1322 w
+(the) 1247 1322 w
+(service) 1420 1322 w
+(\(i.e.,) 1768 1322 w
+(provides) 2006 1322 w
+(the) 2423 1322 w
+(echo\)) 2597 1322 w
+(and) 2879 1322 w
+(is) 3077 1322 w
+(therefore) 3191 1322 w
+(a) 3624 1322 w
+11 /Times-Italic f
+(server) 3712 1322 w
+11 /Times-Roman f
+(.) 3985 1322 w
+(The) 4081 1322 w
+(echo) 566 1442 w
+(service,) 811 1442 w
+(surprisingly) 1186 1442 w
+(enough,) 1750 1442 w
+(consists) 2139 1442 w
+(on) 2526 1442 w
+(doing) 2674 1442 w
+(echo) 2963 1442 w
+(of) 3207 1442 w
+(what) 3336 1442 w
+(a) 3587 1442 w
+(client) 3673 1442 w
+(writes.) 3955 1442 w
+(When) 566 1562 w
+(the) 861 1562 w
+(echo) 1029 1562 w
+(program) 1269 1562 w
+(reads) 1674 1562 w
+(something,) 1938 1562 w
+(writes) 2459 1562 w
+(it) 2762 1562 w
+(back) 2859 1562 w
+(through) 3100 1562 w
+(the) 3477 1562 w
+(same) 3646 1562 w
+(connec\255) 3906 1562 w
+(tion,) 566 1682 w
+(like) 794 1682 w
+(a) 987 1682 w
+(proper) 1063 1682 w
+(echo.) 1376 1682 w
+(The) 816 1838 w
+(first) 1024 1838 w
+(thing) 1239 1838 w
+(needed) 1504 1838 w
+(is) 1851 1838 w
+(to) 1963 1838 w
+11 /Times-Bold f
+(announce) 2087 1838 w
+11 /Times-Roman f
+(the) 2579 1838 w
+(new) 2751 1838 w
+(service) 2971 1838 w
+(to) 3318 1838 w
+(the) 3442 1838 w
+(system.) 3615 1838 w
+(Think) 3988 1838 w
+(about) 566 1958 w
+(it.) 855 1958 w
+(To) 990 1958 w
+(allow) 1157 1958 w
+(other) 1446 1958 w
+(processes) 1715 1958 w
+(to) 2178 1958 w
+11 /Times-Italic f
+(connect) 2308 1958 w
+11 /Times-Roman f
+(to) 2692 1958 w
+(our) 2822 1958 w
+(process,) 3012 1958 w
+(it) 3412 1958 w
+(needs) 3518 1958 w
+(a) 3811 1958 w
+(port) 3903 1958 w
+(for) 4124 1958 w
+(itself.) 566 2078 w
+(This) 859 2078 w
+(is) 1100 2078 w
+(like) 1219 2078 w
+(allocating) 1429 2078 w
+(a) 1907 2078 w
+11 /LucidaSansUnicode20 f
+(\034) 2000 2078 w
+11 /Times-Roman f
+(mailbox) 2041 2078 w
+11 /LucidaSansUnicode20 f
+(\035) 2402 2078 w
+11 /Times-Roman f
+(in) 2488 2078 w
+(the) 2620 2078 w
+11 /LucidaSansUnicode20 f
+(\034) 2800 2078 w
+11 /Times-Roman f
+(building) 2841 2078 w
+11 /LucidaSansUnicode20 f
+(\035) 3209 2078 w
+11 /Times-Roman f
+(to) 3296 2078 w
+(be) 3428 2078 w
+(able) 3577 2078 w
+(to) 3805 2078 w
+(receive) 3937 2078 w
+(mail.) 566 2198 w
+(The) 826 2198 w
+(function) 1032 2198 w
+11 /Courier f
+(announce) 1434 2198 w
+11 /Times-Roman f
+(receives) 1998 2198 w
+(a) 2391 2198 w
+(network) 2475 2198 w
+(address) 2870 2198 w
+(and) 3234 2198 w
+(announces) 3428 2198 w
+(it) 3925 2198 w
+(as) 4022 2198 w
+(an) 4148 2198 w
+(existing) 566 2318 w
+(place) 943 2318 w
+(where) 1201 2318 w
+(others) 1495 2318 w
+(may) 1791 2318 w
+(send) 2008 2318 w
+(messages.) 2237 2318 w
+(For) 2707 2318 w
+(example,) 2888 2318 w
+10 /Courier f
+(announce\("tcp!alboran!echo", dir\);) 786 2488 w
+11 /Times-Roman f
+(would) 566 2668 w
+(allocate) 877 2668 w
+(the) 1253 2668 w
+(TCP) 1423 2668 w
+(port) 1662 2668 w
+(for) 1875 2668 w
+(the) 2038 2668 w
+(service) 2209 2668 w
+(named) 2555 2668 w
+11 /Courier f
+(echo) 2884 2668 w
+11 /Times-Roman f
+(and) 3185 2668 w
+(the) 3380 2668 w
+(machine) 3551 2668 w
+(named) 3959 2668 w
+11 /Courier f
+(alboran) 566 2788 w
+11 /Times-Roman f
+(.) 1028 2788 w
+(This) 1130 2788 w
+(makes) 1372 2788 w
+(sense) 1698 2788 w
+(only) 1981 2788 w
+(when) 2223 2788 w
+(executed) 2506 2788 w
+(in) 2940 2788 w
+(that) 3072 2788 w
+(machine,) 3283 2788 w
+(because) 3727 2788 w
+(the) 4117 2788 w
+(port) 566 2908 w
+(being) 772 2908 w
+(created) 1045 2908 w
+(is) 1389 2908 w
+(an) 1493 2908 w
+(abstraction) 1626 2908 w
+(for) 2137 2908 w
+(getting) 2294 2908 w
+(in) 2630 2908 w
+(touch) 2746 2908 w
+(with) 3020 2908 w
+(a) 3246 2908 w
+(local) 3324 2908 w
+(process.) 3567 2908 w
+(To) 3953 2908 w
+(say) 4105 2908 w
+(it) 566 3028 w
+(in) 668 3028 w
+(another) 794 3028 w
+(way,) 1162 3028 w
+(the) 1412 3028 w
+(address) 1586 3028 w
+(given) 1954 3028 w
+(to) 2238 3028 w
+(announce) 2364 3028 w
+(must) 2823 3028 w
+(be) 3078 3028 w
+(a) 3221 3028 w
+(local) 3309 3028 w
+(address.) 3561 3028 w
+(It) 3984 3028 w
+(is) 4090 3028 w
+(a) 4203 3028 w
+(better) 566 3148 w
+(idea) 843 3148 w
+(to) 1053 3148 w
+(use) 1167 3148 w
+10 /Courier f
+(announce\("tcp!*!echo", dir\);) 786 3318 w
+11 /Times-Roman f
+(instead.) 566 3534 w
+(The) 936 3534 w
+(special) 1137 3534 w
+(machine) 1472 3534 w
+(name) 1874 3534 w
+11 /LucidaSansUnicode20 f
+(\034) 2143 3534 w
+11 /Courier f
+(*) 2184 3534 w
+11 /LucidaSansUnicode20 f
+(\035) 2250 3534 w
+11 /Times-Roman f
+(refers) 2323 3534 w
+(to) 2602 3534 w
+(any) 2720 3534 w
+(local) 2910 3534 w
+(address) 3155 3534 w
+(for) 3515 3534 w
+(our) 3674 3534 w
+(machine.) 3852 3534 w
+(This) 566 3654 w
+(call) 792 3654 w
+(reserves) 980 3654 w
+(the) 1367 3654 w
+(port) 1531 3654 w
+11 /Courier f
+(echo) 1738 3654 w
+11 /Times-Roman f
+(for) 2032 3654 w
+(any) 2188 3654 w
+(interface) 2375 3654 w
+(used) 2785 3654 w
+(by) 3015 3654 w
+(our) 3154 3654 w
+(machine) 3329 3654 w
+(\(not) 3729 3654 w
+(just) 3935 3654 w
+(for) 4124 3654 w
+(the) 566 3774 w
+(one) 729 3774 w
+(named) 916 3774 w
+11 /Courier f
+(alboran) 1237 3774 w
+11 /Times-Roman f
+(\).) 1699 3774 w
+(Besides,) 1820 3774 w
+(this) 2219 3774 w
+(call) 2408 3774 w
+(to) 2595 3774 w
+11 /Courier f
+(announce) 2710 3774 w
+11 /Times-Roman f
+(now) 3267 3774 w
+(works) 3485 3774 w
+(when) 3783 3774 w
+(used) 4050 3774 w
+(at) 566 3894 w
+(any) 673 3894 w
+(machine,) 859 3894 w
+(no) 1286 3894 w
+(matter) 1424 3894 w
+(its) 1732 3894 w
+(name.) 1865 3894 w
+(This) 816 4050 w
+(function) 1044 4050 w
+(returns) 1443 4050 w
+(an) 1780 4050 w
+(open) 1916 4050 w
+(file) 2162 4050 w
+(descriptor) 2341 4050 w
+(to) 2812 4050 w
+(the) 2931 4050 w
+11 /Courier f
+(ctl) 3098 4050 w
+11 /Times-Roman f
+(file) 3329 4050 w
+(of) 3508 4050 w
+(the) 3632 4050 w
+(line) 3799 4050 w
+(direc\255) 3997 4050 w
+(tory) 566 4170 w
+(used) 776 4170 w
+(to) 1010 4170 w
+(announce) 1129 4170 w
+(the) 1581 4170 w
+(port.) 1748 4170 w
+(The) 2014 4170 w
+(second) 2217 4170 w
+(parameter) 2554 4170 w
+(is) 3023 4170 w
+(updated) 3130 4170 w
+(with) 3509 4170 w
+(the) 3737 4170 w
+(path) 3903 4170 w
+(for) 4124 4170 w
+(the) 566 4290 w
+(directory.) 742 4290 w
+(Note) 1235 4290 w
+(that) 1490 4290 w
+(this) 1697 4290 w
+(line) 1900 4290 w
+(directory) 2108 4290 w
+(is) 2546 4290 w
+(an) 2663 4290 w
+(artifact) 2809 4290 w
+(which,) 3161 4290 w
+(although) 3500 4290 w
+(has) 3928 4290 w
+(the) 4117 4290 w
+(same) 566 4410 w
+(interface,) 820 4410 w
+(is) 1258 4410 w
+11 /Times-Italic f
+(not) 1361 4410 w
+11 /Times-Roman f
+(a) 1531 4410 w
+(connection.) 1608 4410 w
+(It) 2145 4410 w
+(is) 2240 4410 w
+(used) 2342 4410 w
+(just) 2571 4410 w
+(to) 2759 4410 w
+(maintain) 2873 4410 w
+(the) 3286 4410 w
+(reservation) 3448 4410 w
+(for) 3962 4410 w
+(the) 4117 4410 w
+(port) 566 4530 w
+(and) 778 4530 w
+(to) 971 4530 w
+(prepare) 1092 4530 w
+(for) 1453 4530 w
+(receiving) 1615 4530 w
+(incoming) 2057 4530 w
+(calls.) 2508 4530 w
+(When) 2772 4530 w
+(the) 3068 4530 w
+(port) 3237 4530 w
+(obtained) 3449 4530 w
+(by) 3863 4530 w
+(a) 4009 4530 w
+(call) 4093 4530 w
+(to) 566 4650 w
+11 /Courier f
+(announce) 686 4650 w
+11 /Times-Roman f
+(is) 1248 4650 w
+(no) 1356 4650 w
+(longer) 1500 4650 w
+(necessary,) 1814 4650 w
+(we) 2300 4650 w
+(can) 2461 4650 w
+(close) 2646 4650 w
+(the) 2905 4650 w
+(file) 3073 4650 w
+(descriptor) 3253 4650 w
+(for) 3725 4650 w
+(the) 3886 4650 w
+11 /Courier f
+(ctl) 4053 4650 w
+11 /Times-Roman f
+(file) 566 4770 w
+(that) 740 4770 w
+(it) 933 4770 w
+(returns,) 1023 4770 w
+(and) 1383 4770 w
+(the) 1569 4770 w
+(port) 1731 4770 w
+(will) 1936 4770 w
+(be) 2136 4770 w
+(released.) 2267 4770 w
+(This) 816 4926 w
+(program) 1053 4926 w
+(announces) 1465 4926 w
+(the) 1969 4926 w
+(port) 2145 4926 w
+(9988,) 2364 4926 w
+(and) 2654 4926 w
+(sleeps) 2854 4926 w
+(forever) 3164 4926 w
+(to) 3520 4926 w
+(let) 3648 4926 w
+(us) 3800 4926 w
+(inspect) 3940 4926 w
+(what) 566 5046 w
+(happen.) 807 5046 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 13 13
+%%Page: 14 14
+/saveobj save def
+mark
+14 pagesetup
+11 /Times-Roman f
+(\255 14 \255) 2289 413 w
+9 /S f
+(\347) 566 676 w
+9 /Times-Bold f
+(ann.c) 581 676 w
+9 /S f
+(\347) 804 676 w
+(`) 566 676 w
+(`````) 579 676 w
+(_) 566 676 w
+(_____) 579 676 w
+8 /Courier f
+(#include <u.h>) 786 784 w
+(#include <libc.h>) 786 892 w
+(void) 786 1108 w
+(main\(int argc, char* argv[]\)) 786 1216 w
+({) 786 1324 w
+(int) 1266 1432 w
+(cfd;) 1746 1432 w
+(char) 1266 1540 w
+(dir[40];) 1746 1540 w
+(cfd = announce\("tcp!*!9988", dir\);) 1266 1756 w
+(if \(cfd < 0\)) 1266 1864 w
+(sysfatal\("announce: %r"\);) 1746 1972 w
+(print\("announced in %s\\n", dir\);) 1266 2080 w
+(for\(;;\)) 1266 2188 w
+(sleep\(1000\);) 1746 2296 w
+(}) 786 2404 w
+11 /Times-Roman f
+(We) 566 2620 w
+(may) 745 2620 w
+(now) 962 2620 w
+(do) 1179 2620 w
+(this) 1317 2620 w
+10 /Courier f
+(; 8.ann &) 786 2790 w
+(; announced in /net/tcp/52) 786 2900 w
+10 /Times-Italic f
+(We typed return here, to let you see) 2731 2900 w
+10 /Courier f
+(; netstat | grep 9988) 786 3010 w
+(tcp) 786 3120 w
+(52) 1086 3120 w
+(nemo) 1386 3120 w
+(Listen) 2046 3120 w
+(9988) 2826 3120 w
+(0) 3486 3120 w
+(::) 4146 3120 w
+11 /Times-Roman f
+(According) 566 3336 w
+(to) 1057 3336 w
+11 /Courier f
+(netstat) 1172 3336 w
+11 /Times-Roman f
+(,) 1634 3336 w
+(the) 1691 3336 w
+(TCP) 1854 3336 w
+(port) 2086 3336 w
+(number) 2292 3336 w
+(9988) 2656 3336 w
+(is) 2905 3336 w
+(listening) 3009 3336 w
+(for) 3419 3336 w
+(incoming) 3576 3336 w
+(calls.) 4022 3336 w
+(Note) 566 3456 w
+(how) 807 3456 w
+(the) 1024 3456 w
+(path) 1186 3456 w
+(printed) 1403 3456 w
+(by) 1742 3456 w
+(our) 1880 3456 w
+(program) 2054 3456 w
+(corresponds) 2453 3456 w
+(to) 3010 3456 w
+(the) 3124 3456 w
+(TCP) 3286 3456 w
+(line) 3517 3456 w
+(number) 3710 3456 w
+(52.) 4073 3456 w
+(Now) 816 3612 w
+(let's) 1057 3612 w
+(try) 1274 3612 w
+(to) 1424 3612 w
+(run) 1538 3612 w
+(the) 1712 3612 w
+(program) 1874 3612 w
+(again,) 2273 3612 w
+(without) 2566 3612 w
+(killing) 2931 3612 w
+(the) 3248 3612 w
+(previous) 3410 3612 w
+(process.) 3816 3612 w
+10 /Courier f
+(; 8.out) 786 3782 w
+(announce: announce writing /net/tcp: address in use) 786 3892 w
+11 /Times-Roman f
+(It) 566 4072 w
+(fails!) 679 4072 w
+(Of) 950 4072 w
+(course,) 1111 4072 w
+(there) 1471 4072 w
+(is) 1736 4072 w
+(another) 1857 4072 w
+(process) 2232 4072 w
+(already) 2607 4072 w
+(using) 2975 4072 w
+(the) 3261 4072 w
+(TCP) 3442 4072 w
+(port) 3692 4072 w
+(number) 3916 4072 w
+(9988.) 566 4192 w
+(This) 874 4192 w
+(new) 1102 4192 w
+(process) 1316 4192 w
+(cannot) 1676 4192 w
+(announce) 2000 4192 w
+(that) 2451 4192 w
+(port) 2647 4192 w
+(number) 2855 4192 w
+(again.) 3221 4192 w
+(It) 3517 4192 w
+(will) 3615 4192 w
+(be) 3818 4192 w
+(able) 3952 4192 w
+(to) 4165 4192 w
+(do) 566 4312 w
+(so) 704 4312 w
+(only) 830 4312 w
+(when) 1054 4312 w
+(nobody) 1319 4312 w
+(else) 1677 4312 w
+(is) 1875 4312 w
+(using) 1977 4312 w
+(it:) 2244 4312 w
+10 /Courier f
+(; kill 8.ann|rc) 786 4482 w
+(; 8.ann &) 786 4592 w
+(; announced in /net/tcp/52) 786 4702 w
+11 /Times-Roman f
+(Our) 566 4918 w
+(program) 776 4918 w
+(must) 1187 4918 w
+(now) 1442 4918 w
+(await) 1671 4918 w
+(for) 1948 4918 w
+(an) 2115 4918 w
+(incoming) 2258 4918 w
+(call,) 2714 4918 w
+(and) 2940 4918 w
+(accept) 3138 4918 w
+(it,) 3456 4918 w
+(before) 3586 4918 w
+(it) 3904 4918 w
+(could) 4007 4918 w
+(exchange) 566 5038 w
+(data) 1014 5038 w
+(with) 1232 5038 w
+(the) 1464 5038 w
+(process) 1634 5038 w
+(at) 1998 5038 w
+(the) 2113 5038 w
+(other) 2282 5038 w
+(end) 2542 5038 w
+(of) 2735 5038 w
+(the) 2861 5038 w
+(connection.) 3030 5038 w
+(To) 3574 5038 w
+(wait) 3731 5038 w
+(for) 3955 5038 w
+(the) 4117 5038 w
+(next) 566 5158 w
+(call,) 785 5158 w
+(you) 1001 5158 w
+(may) 1196 5158 w
+(use) 1415 5158 w
+11 /Courier f
+(listen) 1592 5158 w
+11 /Times-Roman f
+(.) 1988 5158 w
+(This) 2075 5158 w
+(name) 2302 5158 w
+(is) 2570 5158 w
+(perhaps) 2675 5158 w
+(misleading) 3046 5158 w
+(because,) 3560 5158 w
+(as) 3964 5158 w
+(you) 4086 5158 w
+(could) 566 5278 w
+(see,) 861 5278 w
+(after) 1079 5278 w
+11 /Courier f
+(announce) 1329 5278 w
+11 /Times-Roman f
+(,) 1857 5278 w
+(the) 1936 5278 w
+(TCP) 2121 5278 w
+(line) 2375 5278 w
+(is) 2591 5278 w
+(already) 2716 5278 w
+(listening) 3088 5278 w
+(for) 3519 5278 w
+(calls.) 3697 5278 w
+(Listen) 3976 5278 w
+(needs) 566 5398 w
+(to) 847 5398 w
+(know) 965 5398 w
+(the) 1241 5398 w
+(line) 1407 5398 w
+(where) 1605 5398 w
+(it) 1904 5398 w
+(must) 1999 5398 w
+(wait) 2247 5398 w
+(for) 2469 5398 w
+(the) 2629 5398 w
+(call,) 2796 5398 w
+(and) 3015 5398 w
+(therefore) 3206 5398 w
+(it) 3632 5398 w
+(receives) 3727 5398 w
+(the) 4117 5398 w
+(directory) 566 5518 w
+(for) 989 5518 w
+(a) 1144 5518 w
+(previous) 1220 5518 w
+(announce.) 1626 5518 w
+(Now) 816 5674 w
+(comes) 1083 5674 w
+(an) 1417 5674 w
+(important) 1575 5674 w
+(point,) 2058 5674 w
+(to) 2368 5674 w
+(leave) 2509 5674 w
+(the) 2794 5674 w
+(line) 2983 5674 w
+(listening) 3203 5674 w
+(while) 3638 5674 w
+(we) 3937 5674 w
+(are) 4119 5674 w
+(attending) 566 5794 w
+(a) 1009 5794 w
+(call,) 1091 5794 w
+(calls) 1311 5794 w
+(are) 1546 5794 w
+(attended) 1712 5794 w
+(at) 2117 5794 w
+(a) 2230 5794 w
+11 /Times-Italic f
+(different) 2312 5794 w
+11 /Times-Roman f
+(line) 2719 5794 w
+(than) 2918 5794 w
+(the) 3141 5794 w
+(one) 3308 5794 w
+(used) 3499 5794 w
+(to) 3733 5794 w
+(listen) 3852 5794 w
+(for) 4124 5794 w
+(them.) 566 5914 w
+(This) 845 5914 w
+(is) 1073 5914 w
+(like) 1179 5914 w
+(an) 1376 5914 w
+(automatic) 1511 5914 w
+(transfer) 1976 5914 w
+(of) 2341 5914 w
+(a) 2464 5914 w
+(call) 2544 5914 w
+(to) 2734 5914 w
+(another) 2852 5914 w
+(phone) 3212 5914 w
+(line,) 3512 5914 w
+(to) 3737 5914 w
+(leave) 3855 5914 w
+(the) 4117 5914 w
+(original) 566 6034 w
+(line) 937 6034 w
+(undisturbed) 1131 6034 w
+(and) 1679 6034 w
+(ready) 1866 6034 w
+(for) 2137 6034 w
+(a) 2293 6034 w
+(next) 2370 6034 w
+(call.) 2588 6034 w
+(So,) 2803 6034 w
+(after) 2977 6034 w
+11 /Courier f
+(listen) 3205 6034 w
+11 /Times-Roman f
+(has) 3630 6034 w
+(received) 3805 6034 w
+(a) 4203 6034 w
+(call,) 566 6154 w
+(it) 780 6154 w
+(obtains) 870 6154 w
+(a) 1216 6154 w
+(new) 1292 6154 w
+(line) 1502 6154 w
+(directory) 1695 6154 w
+(for) 2118 6154 w
+(the) 2273 6154 w
+(call) 2435 6154 w
+(and) 2621 6154 w
+(returns) 2808 6154 w
+(it.) 3141 6154 w
+(In) 3260 6154 w
+(particular,) 3380 6154 w
+(it) 3856 6154 w
+(returns) 3947 6154 w
+(an) 566 6274 w
+(open) 697 6274 w
+(file) 938 6274 w
+(descriptor) 1112 6274 w
+(for) 1578 6274 w
+(its) 1733 6274 w
+11 /Courier f
+(ctl) 1866 6274 w
+11 /Times-Roman f
+(file) 2092 6274 w
+(and) 2266 6274 w
+(its) 2452 6274 w
+(path.) 2585 6274 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 14 14
+%%Page: 15 15
+/saveobj save def
+mark
+15 pagesetup
+11 /Times-Roman f
+(\255 15 \255) 2289 413 w
+(We) 816 686 w
+(have) 995 686 w
+(modified) 1229 686 w
+(our) 1654 686 w
+(program) 1828 686 w
+(to) 2227 686 w
+(wait) 2341 686 w
+(for) 2558 686 w
+(a) 2713 686 w
+(single) 2789 686 w
+(call.) 3080 686 w
+(This) 3294 686 w
+(is) 3518 686 w
+(the) 3620 686 w
+(result.) 3782 686 w
+9 /S f
+(\347) 566 856 w
+9 /Times-Bold f
+(listen.c) 581 856 w
+9 /S f
+(\347) 864 856 w
+(`) 566 856 w
+(``````) 594 856 w
+(_) 566 856 w
+(______) 594 856 w
+8 /Courier f
+(#include <u.h>) 786 964 w
+(#include <libc.h>) 786 1072 w
+(void) 786 1288 w
+(main\(int argc, char* argv[]\)) 786 1396 w
+({) 786 1504 w
+(int) 1266 1612 w
+(cfd, lfd;) 1746 1612 w
+(char) 1266 1720 w
+(adir[40];) 1746 1720 w
+(char) 1266 1828 w
+(dir[40];) 1746 1828 w
+(cfd = announce\("tcp!*!9988", adir\);) 1266 2044 w
+(if \(cfd < 0\)) 1266 2152 w
+(sysfatal\("announce: %r"\);) 1746 2260 w
+(print\("announced in %s \(cfd=%d\)\\n", adir, cfd\);) 1266 2368 w
+(lfd = listen\(adir, dir\);) 1266 2476 w
+(print\("attending call in %s \(lfd=%d\)\\n", dir, lfd\);) 1266 2584 w
+(for\(;;\)) 1266 2692 w
+(sleep\(1000\);) 1746 2800 w
+(// let us see) 2706 2800 w
+(}) 786 2908 w
+11 /Times-Roman f
+(When) 566 3124 w
+(we) 855 3124 w
+(run) 1010 3124 w
+(it,) 1184 3124 w
+(it) 1302 3124 w
+(waits) 1392 3124 w
+(until) 1652 3124 w
+(a) 1883 3124 w
+(call) 1959 3124 w
+(is) 2145 3124 w
+(received:) 2247 3124 w
+10 /Courier f
+(; 8.listen) 786 3294 w
+(announced in /net/tcp/52 \(cfd=10\)) 786 3404 w
+11 /Times-Roman f
+(At) 566 3620 w
+(this) 723 3620 w
+(point,) 930 3620 w
+(we) 1232 3620 w
+(can) 1406 3620 w
+(open) 1604 3620 w
+(a) 1864 3620 w
+(new) 1959 3620 w
+(window) 2189 3620 w
+(and) 2591 3620 w
+(run) 2797 3620 w
+11 /Courier f
+(telnet) 2991 3620 w
+11 /Times-Roman f
+(to) 3435 3620 w
+(connect) 3569 3620 w
+(to) 3957 3620 w
+(this) 4091 3620 w
+(address) 566 3740 w
+10 /Courier f
+(; telnet tcp!$sysname!9988) 786 3910 w
+(connected to tcp!alboran!9988 on /net/tcp/46) 786 4020 w
+11 /Times-Roman f
+(which) 566 4236 w
+(makes) 862 4236 w
+(our) 1170 4236 w
+(program) 1344 4236 w
+(receive) 1743 4236 w
+(the) 2085 4236 w
+(call:) 2247 4236 w
+10 /Courier f
+(attending call in /net/tcp/54 \(lfd=11\)) 786 4406 w
+11 /Times-Roman f
+(You) 566 4622 w
+(can) 784 4622 w
+(see) 964 4622 w
+(how) 1133 4622 w
+(there) 1352 4622 w
+(are) 1600 4622 w
+(two) 1762 4622 w
+(lines) 1957 4622 w
+(used.) 2195 4622 w
+(The) 2454 4622 w
+(line) 2654 4622 w
+(number) 2849 4622 w
+(52) 3214 4622 w
+(is) 3354 4622 w
+(still) 3458 4622 w
+(listening,) 3655 4622 w
+(and) 4093 4622 w
+(the) 566 4742 w
+(call) 729 4742 w
+(received) 916 4742 w
+(is) 1314 4742 w
+(placed) 1417 4742 w
+(at) 1731 4742 w
+(line) 1839 4742 w
+(54,) 2033 4742 w
+(where) 2200 4742 w
+(we) 2495 4742 w
+(might) 2651 4742 w
+(accept) 2938 4742 w
+(it.) 3245 4742 w
+(By) 3364 4742 w
+(the) 3522 4742 w
+(way,) 3685 4742 w
+(the) 3924 4742 w
+(line) 4086 4742 w
+(number) 566 4862 w
+(46) 929 4862 w
+(is) 1067 4862 w
+(the) 1169 4862 w
+(other) 1331 4862 w
+(end) 1584 4862 w
+(of) 1770 4862 w
+(the) 1889 4862 w
+(connection.) 2051 4862 w
+(Now) 816 5018 w
+(we) 1065 5018 w
+(can) 1228 5018 w
+(do) 1415 5018 w
+(something) 1561 5018 w
+(useful.) 2057 5018 w
+(If) 2390 5018 w
+(we) 2499 5018 w
+(accept) 2663 5018 w
+(the) 2978 5018 w
+(call) 3149 5018 w
+(by) 3344 5018 w
+(calling) 3491 5018 w
+11 /Courier f
+(accept) 3827 5018 w
+11 /Times-Roman f
+(,) 4223 5018 w
+(this) 566 5138 w
+(function) 760 5138 w
+(will) 1160 5138 w
+(provide) 1366 5138 w
+(an) 1735 5138 w
+(open) 1872 5138 w
+(file) 2119 5138 w
+(descriptor) 2299 5138 w
+(for) 2771 5138 w
+(the) 2932 5138 w
+11 /Courier f
+(data) 3100 5138 w
+11 /Times-Roman f
+(file) 3398 5138 w
+(for) 3578 5138 w
+(the) 3739 5138 w
+(connec\255) 3906 5138 w
+(tion,) 566 5258 w
+(and) 794 5258 w
+(we) 980 5258 w
+(can) 1135 5258 w
+(do) 1314 5258 w
+(our) 1452 5258 w
+(echo) 1626 5258 w
+(business.) 1860 5258 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 15 15
+%%Page: 16 16
+/saveobj save def
+mark
+16 pagesetup
+11 /Times-Roman f
+(\255 16 \255) 2289 413 w
+9 /S f
+(\347) 566 676 w
+9 /Times-Bold f
+(netecho.c) 581 676 w
+9 /S f
+(\347) 954 676 w
+(`) 566 676 w
+(````````) 594 676 w
+(_) 566 676 w
+(________) 594 676 w
+8 /Courier f
+(#include <u.h>) 786 784 w
+(#include <libc.h>) 786 892 w
+(void) 786 1108 w
+(main\(int argc, char* argv[]\)) 786 1216 w
+({) 786 1324 w
+(int) 1266 1432 w
+(cfd, lfd, dfd;) 1746 1432 w
+(long) 1266 1540 w
+(nr;) 1746 1540 w
+(char) 1266 1648 w
+(adir[40];) 1746 1648 w
+(char) 1266 1756 w
+(ldir[40];) 1746 1756 w
+(char) 1266 1864 w
+(buf[1024];) 1746 1864 w
+(cfd = announce\("tcp!*!9988", adir\);) 1266 2080 w
+(if \(cfd < 0\)) 1266 2188 w
+(sysfatal\("announce: %r"\);) 1746 2296 w
+(print\("announced tcp!*!9988 in %s\\n", adir\);) 1266 2404 w
+(for\(;;\){) 1266 2512 w
+(lfd = listen\(adir, ldir\);) 1746 2620 w
+(if \(lfd < 0\)) 1746 2728 w
+(sysfatal\("listen: %r"\);) 2226 2836 w
+(dfd = accept\(lfd, ldir\);) 1746 2944 w
+(if \(dfd < 0\)) 1746 3052 w
+(sysfatal\("can't accept: %r"\);) 2226 3160 w
+(close\(lfd\);) 1746 3268 w
+(print\("accepted call at %s\\n", ldir\);) 1746 3376 w
+(for\(;;\){) 1746 3484 w
+(nr = read\(dfd, buf, sizeof buf\);) 2226 3592 w
+(if \(nr <= 0\)) 2226 3700 w
+(break;) 2706 3808 w
+(write\(dfd, buf, nr\);) 2226 3916 w
+(}) 1746 4024 w
+(print\("terminated call at %s\\n", ldir\);) 1746 4132 w
+(close\(dfd\);) 1746 4240 w
+(}) 1266 4348 w
+(}) 786 4456 w
+11 /Times-Roman f
+(If) 566 4672 w
+(we) 678 4672 w
+(do) 845 4672 w
+(as) 995 4672 w
+(before,) 1127 4672 w
+(and) 1474 4672 w
+(use) 1673 4672 w
+11 /Courier f
+(telnet) 1860 4672 w
+11 /Times-Roman f
+(to) 2297 4672 w
+(connect) 2424 4672 w
+(to) 2805 4672 w
+(our) 2932 4672 w
+(server) 3119 4672 w
+(and) 3426 4672 w
+(ask) 3625 4672 w
+(for) 3812 4672 w
+(a) 3980 4672 w
+(nice) 4069 4672 w
+(echo,) 566 4792 w
+(we) 838 4792 w
+(get) 1003 4792 w
+(the) 1175 4792 w
+(echo) 1347 4792 w
+(back.) 1591 4792 w
+(After) 1863 4792 w
+(quitting) 2131 4792 w
+11 /Courier f
+(telnet) 2513 4792 w
+11 /Times-Roman f
+(,) 2909 4792 w
+(we) 2975 4792 w
+(can) 3140 4792 w
+(connect) 3329 4792 w
+(again) 3707 4792 w
+(to) 3982 4792 w
+(our) 4105 4792 w
+(server) 566 4912 w
+(and) 860 4912 w
+(it) 1046 4912 w
+(attends) 1136 4912 w
+(the) 1475 4912 w
+(new) 1637 4912 w
+(call.) 1847 4912 w
+10 /Courier f
+(; telnet \255r tcp!$sysname!9988) 786 5082 w
+(connected to tcp!alboran!9988 on /net/tcp/46) 786 5192 w
+(!!Hi there!) 786 5302 w
+(Hi there!) 786 5412 w
+10 /Times-Bold f
+(Delete) 786 5522 w
+10 /Courier f
+(; telnet \255r tcp!$sysname!9988) 786 5632 w
+(connected to tcp!alboran!9988 on /net/tcp/54) 786 5742 w
+(!!Echo echo...) 786 5852 w
+(Echo echo...) 786 5962 w
+10 /Times-Bold f
+(Delete) 786 6072 w
+10 /Courier f
+(;) 786 6182 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 16 16
+%%Page: 17 17
+/saveobj save def
+mark
+17 pagesetup
+11 /Times-Roman f
+(\255 17 \255) 2289 413 w
+(And) 566 686 w
+(this) 783 686 w
+(is) 971 686 w
+(what) 1073 686 w
+(our) 1314 686 w
+(server) 1488 686 w
+(said) 1782 686 w
+(in) 1987 686 w
+(its) 2101 686 w
+(standard) 2234 686 w
+(output:) 2633 686 w
+10 /Courier f
+(; 8.netecho) 786 856 w
+(announced tcp!*!9988 in /net/tcp/52) 786 966 w
+(accepted call at /net/tcp/54) 786 1076 w
+(terminated call at /net/tcp/54) 786 1186 w
+(accepted call at /net/tcp/55) 786 1296 w
+(terminated call at /net/tcp/55) 786 1406 w
+11 /Times-Roman f
+(The) 566 1622 w
+(program) 774 1622 w
+(is) 1183 1622 w
+(very) 1295 1622 w
+(simple.) 1527 1622 w
+(To) 1887 1622 w
+(announce) 2047 1622 w
+(our) 2504 1622 w
+(port,) 2688 1622 w
+(wait) 2931 1622 w
+(for) 3158 1622 w
+(call,) 3323 1622 w
+(and) 3547 1622 w
+(accept) 3743 1622 w
+(it,) 4060 1622 w
+(it) 4189 1622 w
+(has) 566 1742 w
+(to) 754 1742 w
+(call) 882 1742 w
+(just) 1082 1742 w
+11 /Courier f
+(announce) 1284 1742 w
+11 /Times-Roman f
+(,) 1812 1742 w
+11 /Courier f
+(listen) 1882 1742 w
+11 /Times-Roman f
+(,) 2278 1742 w
+(and) 2348 1742 w
+11 /Courier f
+(accept) 2548 1742 w
+11 /Times-Roman f
+(.) 2944 1742 w
+(At) 3042 1742 w
+(that) 3193 1742 w
+(point,) 3399 1742 w
+(you) 3695 1742 w
+(have) 3901 1742 w
+(an) 4148 1742 w
+(open) 566 1862 w
+(file) 814 1862 w
+(descriptor) 995 1862 w
+(that) 1468 1862 w
+(may) 1668 1862 w
+(be) 1892 1862 w
+(used) 2030 1862 w
+(as) 2266 1862 w
+(any) 2392 1862 w
+(other) 2585 1862 w
+(one.) 2845 1862 w
+(You) 3066 1862 w
+(just) 3290 1862 w
+(read) 3485 1862 w
+(and) 3707 1862 w
+(write) 3900 1862 w
+(as) 4160 1862 w
+(you) 566 1982 w
+(please.) 765 1982 w
+(When) 1100 1982 w
+(the) 1395 1982 w
+(other) 1563 1982 w
+(end) 1822 1982 w
+(of) 2014 1982 w
+(the) 2139 1982 w
+(connection) 2307 1982 w
+(gets) 2822 1982 w
+(closed,) 3032 1982 w
+(a) 3373 1982 w
+(reader) 3454 1982 w
+(receives) 3758 1982 w
+(an) 4148 1982 w
+(EOF) 566 2102 w
+(indication) 803 2102 w
+(in) 1272 2102 w
+(the) 1387 2102 w
+(conventional) 1550 2102 w
+(way.) 2146 2102 w
+(This) 2413 2102 w
+(means) 2638 2102 w
+(that) 2947 2102 w
+(connections) 3141 2102 w
+(are) 3694 2102 w
+(used) 3855 2102 w
+(like) 4086 2102 w
+(any) 566 2222 w
+(other) 752 2222 w
+(file.) 1005 2222 w
+(So,) 1235 2222 w
+(you) 1408 2222 w
+(already) 1601 2222 w
+(know) 1950 2222 w
+(how) 2222 2222 w
+(to) 2439 2222 w
+(use) 2553 2222 w
+(them.) 2727 2222 w
+(Our) 816 2378 w
+(program) 1020 2378 w
+(has) 1425 2378 w
+(one) 1605 2378 w
+(problem) 1797 2378 w
+(left) 2198 2378 w
+(to) 2379 2378 w
+(be) 2500 2378 w
+(addressed.) 2638 2378 w
+(When) 3132 2378 w
+(we) 3428 2378 w
+(connected) 3590 2378 w
+(to) 4068 2378 w
+(it) 4189 2378 w
+(using) 566 2498 w
+11 /Courier f
+(telnet) 847 2498 w
+11 /Times-Roman f
+(,) 1243 2498 w
+(there) 1313 2498 w
+(was) 1573 2498 w
+(only) 1785 2498 w
+(one) 2022 2498 w
+(client) 2221 2498 w
+(at) 2506 2498 w
+(a) 2626 2498 w
+(time.) 2715 2498 w
+(For) 2980 2498 w
+(this) 3174 2498 w
+(program,) 3375 2498 w
+(when) 3815 2498 w
+(one) 4093 2498 w
+(client) 566 2618 w
+(is) 853 2618 w
+(connected) 970 2618 w
+(and) 1456 2618 w
+(using) 1657 2618 w
+(the) 1939 2618 w
+(echo,) 2116 2618 w
+(nobody) 2393 2618 w
+(else) 2766 2618 w
+(is) 2979 2618 w
+(attended.) 3096 2618 w
+(Other) 3539 2618 w
+(processes) 3832 2618 w
+(might) 566 2738 w
+(connect,) 879 2738 w
+(but) 1302 2738 w
+(they) 1498 2738 w
+(will) 1742 2738 w
+(be) 1969 2738 w
+(kept) 2127 2738 w
+(on) 2371 2738 w
+(hold) 2536 2738 w
+(waiting) 2787 2738 w
+(for) 3172 2738 w
+(this) 3354 2738 w
+(process) 3569 2738 w
+(to) 3952 2738 w
+(call) 4093 2738 w
+11 /Courier f
+(listen) 566 2858 w
+11 /Times-Roman f
+(and) 1012 2858 w
+11 /Courier f
+(accept.) 1220 2858 w
+11 /Times-Roman f
+(This) 1732 2858 w
+(is) 1978 2858 w
+(what) 2102 2858 w
+(is) 2365 2858 w
+(called) 2489 2858 w
+(a) 2800 2858 w
+11 /Times-Bold f
+(sequential) 2898 2858 w
+(server) 3426 2858 w
+11 /Times-Roman f
+(,) 3716 2858 w
+(because) 3794 2858 w
+(it) 4189 2858 w
+(attends) 566 2978 w
+(one) 906 2978 w
+(client) 1093 2978 w
+(after) 1366 2978 w
+(another.) 1593 2978 w
+(You) 2005 2978 w
+(can) 2222 2978 w
+(double) 2401 2978 w
+(check) 2728 2978 w
+(this) 3010 2978 w
+(by) 3198 2978 w
+(connecting) 3336 2978 w
+(from) 3845 2978 w
+(two) 4086 2978 w
+(different) 566 3098 w
+(windows.) 979 3098 w
+(Only) 1441 3098 w
+(the) 1698 3098 w
+(first) 1869 3098 w
+(one) 2083 3098 w
+(will) 2278 3098 w
+(be) 2487 3098 w
+(echoing.) 2627 3098 w
+(The) 3039 3098 w
+(echo) 3246 3098 w
+(for) 3489 3098 w
+(the) 3653 3098 w
+(second) 3824 3098 w
+(to) 4165 3098 w
+(arrive) 566 3218 w
+(will) 848 3218 w
+(not) 1048 3218 w
+(be) 1217 3218 w
+(done) 1348 3218 w
+(until) 1589 3218 w
+(you) 1820 3218 w
+(terminate) 2013 3218 w
+(the) 2455 3218 w
+(first) 2617 3218 w
+(client.) 2822 3218 w
+(A) 816 3374 w
+(sensible) 937 3374 w
+(thing) 1333 3374 w
+(to) 1602 3374 w
+(do) 1730 3374 w
+(would) 1882 3374 w
+(be) 2200 3374 w
+(to) 2346 3374 w
+(fork) 2475 3374 w
+(a) 2700 3374 w
+(new) 2791 3374 w
+(process) 3016 3374 w
+(for) 3387 3374 w
+(each) 3557 3374 w
+(client) 3799 3374 w
+(that) 4086 3374 w
+(connects.) 566 3494 w
+(The) 1008 3494 w
+(parent) 1209 3494 w
+(process) 1513 3494 w
+(may) 1872 3494 w
+(be) 2091 3494 w
+(kept) 2224 3494 w
+(listening,) 2443 3494 w
+(waiting) 2881 3494 w
+(for) 3241 3494 w
+(a) 3398 3494 w
+(new) 3476 3494 w
+(client.) 3688 3494 w
+(When) 3990 3494 w
+(one) 566 3614 w
+(arrives,) 753 3614 w
+(a) 1107 3614 w
+(child) 1184 3614 w
+(may) 1433 3614 w
+(be) 1651 3614 w
+(spawned) 1783 3614 w
+(to) 2195 3614 w
+(serve) 2310 3614 w
+(it.) 2569 3614 w
+(This) 2688 3614 w
+(is) 2913 3614 w
+(called) 3017 3614 w
+(a) 3308 3614 w
+11 /Times-Bold f
+(concurrent) 3386 3614 w
+(server) 3933 3614 w
+11 /Times-Roman f
+(,) 4223 3614 w
+(because) 566 3734 w
+(it) 970 3734 w
+(attends) 1090 3734 w
+(multiple) 1459 3734 w
+(clients) 1885 3734 w
+(concurrently.) 2230 3734 w
+(The) 2897 3734 w
+(resulting) 3125 3734 w
+(code) 3568 3734 w
+(is) 3832 3734 w
+(shown) 3964 3734 w
+(below.) 566 3854 w
+(There) 816 4010 w
+(are) 1112 4010 w
+(some) 1286 4010 w
+(things) 1560 4010 w
+(to) 1872 4010 w
+(note.) 2000 4010 w
+(An) 2259 4010 w
+(important) 2435 4010 w
+(one) 2906 4010 w
+(is) 3107 4010 w
+(that,) 3224 4010 w
+(as) 3460 4010 w
+(you) 3594 4010 w
+(know,) 3802 4010 w
+(the) 4117 4010 w
+(child) 566 4130 w
+(process) 816 4130 w
+(has) 1174 4130 w
+(a) 1350 4130 w
+(copy) 1428 4130 w
+(of) 1671 4130 w
+(all) 1792 4130 w
+(the) 1932 4130 w
+(file) 2096 4130 w
+(descriptors) 2272 4130 w
+(open) 2783 4130 w
+(in) 3025 4130 w
+(the) 3140 4130 w
+(parent,) 3303 4130 w
+(by) 3633 4130 w
+(the) 3772 4130 w
+(time) 3935 4130 w
+(of) 4160 4130 w
+(the) 566 4250 w
+(fork.) 742 4250 w
+(Also,) 994 4250 w
+(the) 1272 4250 w
+(parent) 1448 4250 w
+(has) 1764 4250 w
+(the) 1953 4250 w
+(descriptor) 2130 4250 w
+(open) 2611 4250 w
+(for) 2867 4250 w
+(the) 3037 4250 w
+(new) 3214 4250 w
+(call) 3439 4250 w
+(received) 3640 4250 w
+(after) 4052 4250 w
+(calling) 566 4370 w
+11 /Courier f
+(listen) 902 4370 w
+11 /Times-Roman f
+(,) 1298 4370 w
+(even) 1363 4370 w
+(though) 1605 4370 w
+(it) 1947 4370 w
+(is) 2045 4370 w
+(going) 2155 4370 w
+(to) 2442 4370 w
+(be) 2564 4370 w
+(used) 2703 4370 w
+(just) 2940 4370 w
+(by) 3136 4370 w
+(the) 3282 4370 w
+(child) 3452 4370 w
+(process.) 3708 4370 w
+(We) 4100 4370 w
+(close) 566 4490 w
+11 /Courier f
+(lfd) 819 4490 w
+11 /Times-Roman f
+(in) 1045 4490 w
+(the) 1159 4490 w
+(parent,) 1321 4490 w
+(and) 1650 4490 w
+11 /Courier f
+(cfd) 1836 4490 w
+11 /Times-Roman f
+(in) 2062 4490 w
+(the) 2176 4490 w
+(child.) 2338 4490 w
+(We) 816 4646 w
+(might) 1002 4646 w
+(have) 1295 4646 w
+(left) 1536 4646 w
+11 /Courier f
+(cfd) 1717 4646 w
+11 /Times-Roman f
+(open) 1950 4646 w
+(in) 2198 4646 w
+(the) 2319 4646 w
+(child,) 2488 4646 w
+(because) 2771 4646 w
+(it) 3151 4646 w
+(would) 3248 4646 w
+(be) 3559 4646 w
+(closed) 3698 4646 w
+(when) 4014 4646 w
+(the) 566 4766 w
+(child) 734 4766 w
+(terminates) 988 4766 w
+(by) 1479 4766 w
+(calling) 1623 4766 w
+11 /Courier f
+(exits) 1956 4766 w
+11 /Times-Roman f
+(,) 2286 4766 w
+(after) 2348 4766 w
+(having) 2581 4766 w
+(received) 2914 4766 w
+(an) 3317 4766 w
+(end) 3453 4766 w
+(of) 3644 4766 w
+(file) 3768 4766 w
+(indica\255) 3947 4766 w
+(tion) 566 4886 w
+(for) 766 4886 w
+(its) 921 4886 w
+(connection.) 1054 4886 w
+(But) 1591 4886 w
+(in) 1779 4886 w
+(any) 1894 4886 w
+(case,) 2081 4886 w
+(it) 2325 4886 w
+(should) 2416 4886 w
+(be) 2739 4886 w
+(clear) 2871 4886 w
+(that) 3111 4886 w
+(the) 3305 4886 w
+(descriptor) 3468 4886 w
+(is) 3935 4886 w
+(open) 4038 4886 w
+(in) 566 5006 w
+(the) 680 5006 w
+(child) 842 5006 w
+(too.) 1090 5006 w
+(Another) 816 5162 w
+(important) 1206 5162 w
+(detail) 1665 5162 w
+(is) 1940 5162 w
+(that) 2045 5162 w
+(the) 2241 5162 w
+(child) 2406 5162 w
+(now) 2658 5162 w
+(calls) 2879 5162 w
+11 /Courier f
+(exits) 3112 5162 w
+11 /Times-Roman f
+(after) 3474 5162 w
+(attending) 3705 5162 w
+(its) 4146 5162 w
+(connection,) 566 5282 w
+(because) 1104 5282 w
+(that) 1478 5282 w
+(was) 1672 5282 w
+(its) 1871 5282 w
+(only) 2005 5282 w
+(purpose) 2230 5282 w
+(in) 2606 5282 w
+(life.) 2721 5282 w
+(Because) 2952 5282 w
+(this) 3344 5282 w
+(process) 3532 5282 w
+(has) 3888 5282 w
+(\(ini\255) 4062 5282 w
+(tially\)) 566 5402 w
+(all) 869 5402 w
+(the) 1019 5402 w
+(open) 1193 5402 w
+(file) 1446 5402 w
+(descriptors) 1632 5402 w
+(that) 2153 5402 w
+(the) 2358 5402 w
+(parent) 2532 5402 w
+(had,) 2845 5402 w
+(it) 3071 5402 w
+(may) 3173 5402 w
+(be) 3402 5402 w
+(a) 3545 5402 w
+(disaster) 3633 5402 w
+(if) 4009 5402 w
+(the) 4117 5402 w
+(child) 566 5522 w
+(somehow) 818 5522 w
+(terminates) 1271 5522 w
+(attending) 1760 5522 w
+(a) 2201 5522 w
+(client) 2281 5522 w
+(and) 2557 5522 w
+(goes) 2747 5522 w
+(back) 2980 5522 w
+(to) 3218 5522 w
+(call) 3336 5522 w
+11 /Courier f
+(listen) 3526 5522 w
+11 /Times-Roman f
+(.) 3922 5522 w
+(Well,) 4010 5522 w
+(it) 566 5642 w
+(would) 656 5642 w
+(be) 959 5642 w
+(disaster) 1090 5642 w
+(because) 1453 5642 w
+(it) 1826 5642 w
+(is) 1916 5642 w
+11 /Times-Italic f
+(not) 2018 5642 w
+11 /Times-Roman f
+(what) 2187 5642 w
+(you) 2428 5642 w
+(expect) 2621 5642 w
+(when) 2934 5642 w
+(you) 3199 5642 w
+(write) 3392 5642 w
+(the) 3645 5642 w
+(program.) 3807 5642 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 17 17
+%%Page: 18 18
+/saveobj save def
+mark
+18 pagesetup
+11 /Times-Roman f
+(\255 18 \255) 2289 413 w
+9 /S f
+(\347) 566 676 w
+9 /Times-Bold f
+(cecho.c) 581 676 w
+9 /S f
+(\347) 874 676 w
+(`) 566 676 w
+(``````) 604 676 w
+(_) 566 676 w
+(______) 604 676 w
+8 /Courier f
+(#include <u.h>) 786 784 w
+(#include <libc.h>) 786 892 w
+(void) 786 1108 w
+(main\(int argc, char* argv[]\)) 786 1216 w
+({) 786 1324 w
+(int) 1266 1432 w
+(cfd, lfd, dfd;) 1746 1432 w
+(long) 1266 1540 w
+(nr;) 1746 1540 w
+(char) 1266 1648 w
+(adir[40];) 1746 1648 w
+(char) 1266 1756 w
+(ldir[40];) 1746 1756 w
+(char) 1266 1864 w
+(buf[1024];) 1746 1864 w
+(cfd = announce\("tcp!*!9988", adir\);) 1266 2080 w
+(if \(cfd < 0\)) 1266 2188 w
+(sysfatal\("announce: %r"\);) 1746 2296 w
+(print\("announced tcp!*!9988 in %s\\n", adir\);) 1266 2404 w
+(for\(;;\){) 1266 2512 w
+(lfd = listen\(adir, ldir\);) 1746 2620 w
+(if \(lfd < 0\)) 1746 2728 w
+(sysfatal\("listen: %r"\);) 2226 2836 w
+(switch\(fork\(\)\){) 1746 2944 w
+(case \2551:) 1746 3052 w
+(sysfatal\("fork: %r"\);) 2226 3160 w
+(case 0:) 1746 3268 w
+(close\(cfd\);) 2226 3376 w
+(dfd = accept\(lfd, ldir\);) 2226 3484 w
+(if \(dfd < 0\)) 2226 3592 w
+(sysfatal\("can't accept: %r"\);) 2706 3700 w
+(close\(lfd\);) 2226 3808 w
+(print\("accepted call at %s\\n", ldir\);) 2226 3916 w
+(for\(;;\){) 2226 4024 w
+(nr = read\(dfd, buf, sizeof buf\);) 2706 4132 w
+(if \(nr <= 0\)) 2706 4240 w
+(break;) 3186 4348 w
+(write\(dfd, buf, nr\);) 2706 4456 w
+(}) 2226 4564 w
+(print\("terminated call at %s\\n", ldir\);) 2226 4672 w
+(exits\(nil\);) 2226 4780 w
+(default:) 1746 4888 w
+(close\(lfd\);) 2226 4996 w
+(}) 1746 5104 w
+(}) 1266 5212 w
+(}) 786 5320 w
+16 /Times-Bold f
+(6.5.) 566 5740 w
+(System) 886 5740 w
+(services) 1414 5740 w
+11 /Times-Roman f
+(You) 566 5896 w
+(know) 821 5896 w
+(that) 1131 5896 w
+(certain) 1362 5896 w
+(machines) 1725 5896 w
+(provide) 2206 5896 w
+(several) 2608 5896 w
+(services.) 2984 5896 w
+(For) 3431 5896 w
+(example,) 3651 5896 w
+(the) 4117 5896 w
+(machine) 566 6016 w
+(known) 983 6016 w
+(as) 1328 6016 w
+11 /Courier f
+(lsub.org) 1465 6016 w
+11 /Times-Roman f
+(in) 2038 6016 w
+(the) 2169 6016 w
+(Internet) 2348 6016 w
+(is) 2733 6016 w
+(a) 2852 6016 w
+(Plan) 2945 6016 w
+(9) 3186 6016 w
+(system.) 3286 6016 w
+(The) 3665 6016 w
+(machine) 3880 6016 w
+(name) 566 6136 w
+(is) 831 6136 w
+(indeed) 933 6136 w
+11 /Courier f
+(aquamar) 1253 6136 w
+11 /Times-Roman f
+(,) 1715 6136 w
+(but) 1771 6136 w
+(it) 1940 6136 w
+(is) 2030 6136 w
+(registered) 2132 6136 w
+(in) 2591 6136 w
+(DNS) 2705 6136 w
+(as) 2953 6136 w
+11 /Courier f
+(lsub.org) 3073 6136 w
+11 /Times-Roman f
+(.) 3601 6136 w
+(This) 3686 6136 w
+(particu\255) 3911 6136 w
+(lar) 566 6256 w
+(machine) 709 6256 w
+(provides) 1108 6256 w
+(web,) 1514 6256 w
+(mail,) 1752 6256 w
+(and) 2004 6256 w
+(several) 2190 6256 w
+(other) 2527 6256 w
+(services,) 2780 6256 w
+(including) 3188 6256 w
+(echo!) 3632 6256 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 18 18
+%%Page: 19 19
+/saveobj save def
+mark
+19 pagesetup
+11 /Times-Roman f
+(\255 19 \255) 2289 413 w
+10 /Courier f
+(; telnet tcp!lsub.org!echo) 786 676 w
+(!!Hi) 786 786 w
+(Hi) 786 896 w
+10 /Times-Bold f
+(Delete) 786 1006 w
+10 /Courier f
+(;) 786 1116 w
+11 /Times-Roman f
+(How) 566 1332 w
+(can) 808 1332 w
+(it) 988 1332 w
+(be?) 1079 1332 w
+(Before) 1259 1332 w
+(reading) 1585 1332 w
+(this) 1942 1332 w
+(book,) 2131 1332 w
+(you) 2408 1332 w
+(might) 2602 1332 w
+(think) 2889 1332 w
+(that) 3145 1332 w
+(the) 3339 1332 w
+(operating) 3502 1332 w
+(system) 3945 1332 w
+(was) 566 1452 w
+(arranging) 771 1452 w
+(for) 1225 1452 w
+(this) 1387 1452 w
+(services) 1582 1452 w
+(to) 1969 1452 w
+(run) 2090 1452 w
+(at) 2271 1452 w
+(that) 2385 1452 w
+(machine.) 2585 1452 w
+(But) 3019 1452 w
+(now) 3214 1452 w
+(you) 3438 1452 w
+(know) 3638 1452 w
+(that) 3917 1452 w
+(the) 4117 1452 w
+(operating) 566 1572 w
+(system) 1017 1572 w
+(is) 1360 1572 w
+(doing) 1471 1572 w
+(nothing,) 1759 1572 w
+(but) 2161 1572 w
+(for) 2339 1572 w
+(supplying) 2503 1572 w
+(the) 2975 1572 w
+(abstractions) 3146 1572 w
+(used) 3707 1572 w
+(to) 3945 1572 w
+(pro\255) 4069 1572 w
+(vide) 566 1692 w
+(such) 783 1692 w
+(services.) 1012 1692 w
+(When) 816 1848 w
+(this) 1115 1848 w
+(particular) 1314 1848 w
+(machine) 1772 1848 w
+(starts,) 2182 1848 w
+(Plan) 2481 1848 w
+(9) 2716 1848 w
+(executes) 2810 1848 w
+(an) 3225 1848 w
+11 /Courier f
+(rc) 3367 1848 w
+11 /Times-Roman f
+(script) 3538 1848 w
+(as) 3821 1848 w
+(part) 3951 1848 w
+(of) 4160 1848 w
+(the) 566 1968 w
+(normal) 729 1968 w
+(boot) 1069 1968 w
+(process.) 1294 1968 w
+(This) 1679 1968 w
+(script) 1904 1968 w
+(runs) 2177 1968 w
+(the) 2395 1968 w
+(program) 2558 1968 w
+11 /Courier f
+(aux/listen) 2957 1968 w
+11 /Times-Roman f
+(,) 3617 1968 w
+(which) 3673 1968 w
+(listens) 3969 1968 w
+(for) 566 2088 w
+(incoming) 724 2088 w
+(connections) 1171 2088 w
+(and) 1726 2088 w
+(executes) 1915 2088 w
+(programs) 2322 2088 w
+(to) 2767 2088 w
+(attend) 2884 2088 w
+(them.) 3184 2088 w
+(The) 3464 2088 w
+(machine) 3666 2088 w
+(pro\255) 4069 2088 w
+(vides) 566 2208 w
+(services) 831 2208 w
+(because) 1216 2208 w
+(certain) 1594 2208 w
+(programs) 1924 2208 w
+(are) 2371 2208 w
+(started) 2536 2208 w
+(to) 2861 2208 w
+(attend) 2979 2208 w
+(incoming) 3279 2208 w
+(connections) 3727 2208 w
+(targeted) 566 2328 w
+(to) 946 2328 w
+(ports.) 1060 2328 w
+(Following) 816 2484 w
+(the) 1312 2484 w
+(modular) 1488 2484 w
+(design) 1897 2484 w
+(of) 2227 2484 w
+(the) 2361 2484 w
+(rest) 2538 2484 w
+(of) 2739 2484 w
+(the) 2873 2484 w
+(system,) 3050 2484 w
+11 /Courier f
+(listen) 3427 2484 w
+11 /Times-Roman f
+(does) 3866 2484 w
+(not) 4110 2484 w
+(even) 566 2604 w
+(decide) 855 2604 w
+(which) 1223 2604 w
+(ports) 1574 2604 w
+(are) 1877 2604 w
+(to) 2092 2604 w
+(be) 2261 2604 w
+(listened.) 2447 2604 w
+(This) 2900 2604 w
+(program) 3179 2604 w
+(looks) 3633 2604 w
+(at) 3955 2604 w
+(the) 4117 2604 w
+11 /Courier f
+(/rc/bin/service) 566 2724 w
+11 /Times-Roman f
+(directory,) 1596 2724 w
+(for) 2060 2724 w
+(files) 2228 2724 w
+(with) 2458 2724 w
+(names) 2695 2724 w
+(like) 3016 2724 w
+11 /Courier f
+(tcp7) 3222 2724 w
+11 /Times-Roman f
+(,) 3486 2724 w
+11 /Courier f
+(tcp25) 3555 2724 w
+11 /Times-Roman f
+(,) 3885 2724 w
+(and) 3954 2724 w
+(so) 4153 2724 w
+(on.) 566 2844 w
+(Each) 733 2844 w
+(file) 980 2844 w
+(corresponds) 1155 2844 w
+(to) 1713 2844 w
+(a) 1827 2844 w
+(service) 1903 2844 w
+(provided) 2240 2844 w
+(by) 2658 2844 w
+(the) 2796 2844 w
+(machine,) 2958 2844 w
+(and) 3385 2844 w
+(has) 3571 2844 w
+(a) 3745 2844 w
+(name) 3821 2844 w
+(that) 4086 2844 w
+(corresponds) 566 2964 w
+(to) 1124 2964 w
+(the) 1239 2964 w
+(protocol) 1402 2964 w
+(and) 1797 2964 w
+(port) 1984 2964 w
+(number) 2190 2964 w
+(where) 2554 2964 w
+(connections) 2849 2964 w
+(for) 3402 2964 w
+(the) 3559 2964 w
+(service) 3723 2964 w
+(may) 4062 2964 w
+(arrive.) 566 3084 w
+10 /Courier f
+(; lc /rc/bin/service) 786 3254 w
+(il17007) 786 3364 w
+(tcp17007) 1746 3364 w
+(tcp220) 2706 3364 w
+(tcp9) 3666 3364 w
+(il17009) 786 3474 w
+(tcp17009) 1746 3474 w
+(tcp25) 2706 3474 w
+(tcp993) 3666 3474 w
+(il17010) 786 3584 w
+(tcp17010) 1746 3584 w
+(tcp53) 2706 3584 w
+(tcp995) 3666 3584 w
+(tcp113) 786 3694 w
+(tcp17013) 1746 3694 w
+(tcp565) 2706 3694 w
+(telcodata) 3666 3694 w
+(tcp143) 786 3804 w
+(tcp19) 1746 3804 w
+(tcp7) 2706 3804 w
+11 /Times-Roman f
+(For) 566 4020 w
+(many) 762 4020 w
+(services,) 1049 4020 w
+(there) 1472 4020 w
+(are) 1734 4020 w
+(conventions) 1910 4020 w
+(for) 2485 4020 w
+(which) 2656 4020 w
+(ports) 2968 4020 w
+(to) 3232 4020 w
+(use) 3362 4020 w
+(for) 3552 4020 w
+(them) 3723 4020 w
+(in) 3987 4020 w
+(the) 4117 4020 w
+(Internet) 566 4140 w
+(\(you) 936 4140 w
+(might) 1167 4140 w
+(call) 1455 4140 w
+(it) 1643 4140 w
+(a) 1735 4140 w
+(standard\).) 1813 4140 w
+(For) 2306 4140 w
+(example,) 2489 4140 w
+(TCP) 2918 4140 w
+(port) 3151 4140 w
+(7) 3358 4140 w
+(corresponds) 3443 4140 w
+(to) 4002 4140 w
+(the) 4117 4140 w
+(echo) 566 4260 w
+(service.) 800 4260 w
+(And) 1165 4260 w
+(this) 1382 4260 w
+(is) 1570 4260 w
+(how) 1672 4260 w
+(it) 1889 4260 w
+(is) 1979 4260 w
+(implemented) 2081 4260 w
+(in) 2683 4260 w
+(Plan) 2797 4260 w
+(9:) 3021 4260 w
+10 /Courier f
+(; cat /rc/bin/service/tcp7) 786 4430 w
+(#!/bin/rc) 786 4540 w
+(/bin/cat) 786 4650 w
+(;) 786 4760 w
+11 /Times-Roman f
+(Indeed,) 566 4976 w
+(each) 929 4976 w
+(one) 1166 4976 w
+(of) 1362 4976 w
+(the) 1491 4976 w
+(files) 1663 4976 w
+(in) 1890 4976 w
+(the) 2014 4976 w
+11 /Courier f
+(service) 2186 4976 w
+11 /Times-Roman f
+(directory) 2686 4976 w
+(is) 3119 4976 w
+(an) 3232 4976 w
+(executable) 3374 4976 w
+(program) 3880 4976 w
+(that) 566 5096 w
+(implements) 769 5096 w
+(a) 1321 5096 w
+(service.) 1407 5096 w
+(All) 1782 5096 w
+(that) 1961 5096 w
+11 /Courier f
+(listen) 2164 5096 w
+11 /Times-Roman f
+(has) 2598 5096 w
+(to) 2782 5096 w
+(do,) 2906 5096 w
+(is) 3082 5096 w
+(to) 3193 5096 w
+(listen) 3316 5096 w
+(for) 3592 5096 w
+(calls) 3756 5096 w
+(to) 3994 5096 w
+(the) 4117 5096 w
+(ports) 566 5216 w
+(determined) 823 5216 w
+(by) 1353 5216 w
+(the) 1500 5216 w
+(file) 1672 5216 w
+(names,) 1856 5216 w
+(and) 2202 5216 w
+(execute) 2398 5216 w
+(the) 2769 5216 w
+(files) 2941 5216 w
+(to) 3168 5216 w
+(attend) 3292 5216 w
+(each) 3598 5216 w
+(incoming) 3835 5216 w
+(call.) 566 5336 w
+(Listen) 794 5336 w
+(arranges) 1111 5336 w
+(for) 1522 5336 w
+(the) 1691 5336 w
+(standard) 1867 5336 w
+(input) 2280 5336 w
+(and) 2549 5336 w
+(output) 2749 5336 w
+(of) 3073 5336 w
+(the) 3206 5336 w
+(process) 3382 5336 w
+(attending) 3752 5336 w
+(a) 4203 5336 w
+(call) 566 5456 w
+(to) 762 5456 w
+(be) 886 5456 w
+(redirected) 1027 5456 w
+(to) 1501 5456 w
+(the) 1626 5456 w
+(connection) 1799 5456 w
+(itself.) 2319 5456 w
+(For) 2606 5456 w
+(a) 2798 5456 w
+(service,) 2885 5456 w
+(reading) 3261 5456 w
+(from) 3628 5456 w
+(standard) 3880 5456 w
+(input) 566 5576 w
+(is) 832 5576 w
+(reading) 945 5576 w
+(from) 1312 5576 w
+(the) 1564 5576 w
+(connection,) 1737 5576 w
+(and) 2285 5576 w
+(writing) 2482 5576 w
+(to) 2839 5576 w
+(standard) 2964 5576 w
+(output) 3374 5576 w
+(is) 3695 5576 w
+(writing) 3808 5576 w
+(to) 4165 5576 w
+(the) 566 5696 w
+(connection.) 728 5696 w
+(This) 816 5852 w
+(is) 1042 5852 w
+(a) 1146 5852 w
+(nice) 1224 5852 w
+(example) 1436 5852 w
+(of) 1837 5852 w
+(how) 1958 5852 w
+(simple) 2177 5852 w
+(things) 2501 5852 w
+(can) 2801 5852 w
+(be.) 2982 5852 w
+(Listen) 3143 5852 w
+(is) 3448 5852 w
+(in) 3552 5852 w
+(charge) 3668 5852 w
+(of) 3988 5852 w
+(lis\255) 4110 5852 w
+(tening) 566 5972 w
+(and) 880 5972 w
+(spawning) 1077 5972 w
+(processes) 1537 5972 w
+(for) 1995 5972 w
+(attending) 2161 5972 w
+(services.) 2609 5972 w
+(The) 3028 5972 w
+(directory) 3237 5972 w
+(keeps) 3670 5972 w
+(the) 3957 5972 w
+(set) 4129 5972 w
+(of) 566 6092 w
+(files) 693 6092 w
+(that) 919 6092 w
+(corresponds) 1121 6092 w
+(to) 1687 6092 w
+(services.) 1810 6092 w
+(We) 2227 6092 w
+(can) 2415 6092 w
+(use) 2603 6092 w
+(familiar) 2786 6092 w
+(programs) 3170 6092 w
+(like) 3621 6092 w
+11 /Courier f
+(lc) 3823 6092 w
+11 /Times-Roman f
+(to) 3992 6092 w
+(list) 4115 6092 w
+(them!) 566 6212 w
+(Each) 865 6212 w
+(service) 1126 6212 w
+(is) 1478 6212 w
+(provided) 1594 6212 w
+(by) 2026 6212 w
+(a) 2178 6212 w
+(separate,) 2268 6212 w
+(independent) 2695 6212 w
+(program.) 3273 6212 w
+(And) 3742 6212 w
+(every\255) 3973 6212 w
+(thing) 566 6332 w
+(fits) 821 6332 w
+(together.) 990 6332 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 19 19
+%%Page: 20 20
+/saveobj save def
+mark
+20 pagesetup
+11 /Times-Roman f
+(\255 20 \255) 2289 413 w
+(By) 816 686 w
+(the) 980 686 w
+(way,) 1149 686 w
+(there) 1394 686 w
+(is) 1647 686 w
+(an) 1756 686 w
+(important) 1894 686 w
+(lesson) 2357 686 w
+(to) 2667 686 w
+(be) 2788 686 w
+(learned) 2926 686 w
+(here.) 3282 686 w
+(It) 3533 686 w
+(is) 3636 686 w
+(much) 3746 686 w
+(more) 4026 686 w
+(simple) 566 806 w
+(to) 889 806 w
+(use) 1004 806 w
+11 /Courier f
+(cat) 1179 806 w
+11 /Times-Roman f
+(to) 1406 806 w
+(implement) 1521 806 w
+(an) 2021 806 w
+(echo) 2153 806 w
+(server) 2388 806 w
+(than) 2683 806 w
+(it) 2901 806 w
+(is) 2992 806 w
+(to) 3094 806 w
+(write) 3208 806 w
+(our) 3461 806 w
+(own) 3635 806 w
+(program.) 3852 806 w
+(If) 566 926 w
+(we) 669 926 w
+(do) 827 926 w
+(not) 968 926 w
+(search) 1140 926 w
+(the) 1449 926 w
+(manual) 1614 926 w
+(and) 1969 926 w
+(try) 2159 926 w
+(to) 2313 926 w
+(see) 2431 926 w
+(if) 2602 926 w
+(what) 2701 926 w
+(we) 2946 926 w
+(are) 3105 926 w
+(trying) 3269 926 w
+(to) 3564 926 w
+(do) 3682 926 w
+(is) 3824 926 w
+(already) 3930 926 w
+(done,) 566 1046 w
+(we) 835 1046 w
+(get) 990 1046 w
+(a) 1152 1046 w
+(lot) 1228 1046 w
+(of) 1373 1046 w
+(extra) 1492 1046 w
+(work) 1738 1046 w
+(as) 1991 1046 w
+(a) 2110 1046 w
+(penitence) 2186 1046 w
+(for) 2633 1046 w
+(this) 2788 1046 w
+(sin.) 2976 1046 w
+16 /Times-Bold f
+(6.6.) 566 1406 w
+(Distributed) 886 1406 w
+(computing) 1709 1406 w
+11 /Times-Roman f
+(The) 566 1562 w
+(time) 767 1562 w
+(has) 995 1562 w
+(come) 1173 1562 w
+(to) 1442 1562 w
+(reveal) 1560 1562 w
+(another) 1858 1562 w
+(lie) 2218 1562 w
+(we) 2360 1562 w
+(told.) 2519 1562 w
+(There) 2779 1562 w
+(are) 3065 1562 w
+11 /Times-Italic f
+(three) 3229 1562 w
+11 /Times-Roman f
+(kind) 3486 1562 w
+(of) 3714 1562 w
+(machines) 3837 1562 w
+(in) 566 1682 w
+(a) 703 1682 w
+(Plan) 802 1682 w
+(9) 1049 1682 w
+(network,) 1155 1682 w
+(not) 1593 1682 w
+(just) 1785 1682 w
+(two.) 1996 1682 w
+(You) 2240 1682 w
+(already) 2479 1682 w
+(know) 2850 1682 w
+(about) 3144 1682 w
+(terminals) 3438 1682 w
+(and) 3897 1682 w
+(file) 4105 1682 w
+(servers.) 566 1802 w
+(There) 931 1802 w
+(are) 1213 1802 w
+(also) 1373 1802 w
+11 /Times-Bold f
+(CPU) 1578 1802 w
+(servers) 1831 1802 w
+11 /Times-Roman f
+(.) 2164 1802 w
+(A) 2248 1802 w
+(CPU) 2355 1802 w
+(server) 2598 1802 w
+(is) 2892 1802 w
+(meant) 2994 1802 w
+(to) 3290 1802 w
+(let) 3405 1802 w
+(the) 3544 1802 w
+(user) 3707 1802 w
+(execute) 3918 1802 w
+(commands) 566 1922 w
+(on) 1074 1922 w
+(it,) 1216 1922 w
+(in) 1338 1922 w
+(particular,) 1456 1922 w
+(commands) 1935 1922 w
+(that) 2443 1922 w
+(make) 2640 1922 w
+(intensive) 2909 1922 w
+(use) 3338 1922 w
+(of) 3516 1922 w
+(the) 3639 1922 w
+(processor.) 3804 1922 w
+(Today,) 566 2042 w
+(with) 902 2042 w
+(the) 1126 2042 w
+(powerful) 1288 2042 w
+(machines) 1711 2042 w
+(that) 2153 2042 w
+(we) 2346 2042 w
+(have) 2501 2042 w
+(available,) 2735 2042 w
+(most) 3186 2042 w
+(terminals) 3429 2042 w
+(can) 3866 2042 w
+(cope) 4045 2042 w
+(with) 566 2162 w
+(anything) 790 2162 w
+(you) 1203 2162 w
+(might) 1396 2162 w
+(want) 1682 2162 w
+(to) 1923 2162 w
+(execute) 2037 2162 w
+(on) 2398 2162 w
+(them.) 2536 2162 w
+(But) 816 2318 w
+(CPU) 1016 2318 w
+(servers) 1271 2318 w
+(have) 1620 2318 w
+(found) 1867 2318 w
+(their) 2164 2318 w
+(way) 2406 2318 w
+(in) 2629 2318 w
+(this) 2756 2318 w
+(new) 2957 2318 w
+(world) 3180 2318 w
+(and) 3477 2318 w
+(are) 3676 2318 w
+(still) 3849 2318 w
+(very) 4057 2318 w
+(useful) 566 2438 w
+(for) 879 2438 w
+(running) 1051 2438 w
+(the) 1438 2438 w
+(file) 1617 2438 w
+(server) 1807 2438 w
+(program) 2117 2438 w
+(\(which) 2532 2438 w
+(used) 2880 2438 w
+(to) 3125 2438 w
+(be) 3255 2438 w
+(a) 3402 2438 w
+(different) 3494 2438 w
+(kernel\),) 3914 2438 w
+(executing) 566 2558 w
+(periodic) 1023 2558 w
+(user) 1413 2558 w
+(tasks) 1626 2558 w
+(automatically,) 1877 2558 w
+(and) 2534 2558 w
+(providing) 2723 2558 w
+(services) 3182 2558 w
+(like) 3565 2558 w
+(Web,) 3761 2558 w
+(mail,) 4027 2558 w
+(and) 566 2678 w
+(the) 752 2678 w
+(like.) 914 2678 w
+(A) 816 2834 w
+(CPU) 926 2834 w
+(server) 1172 2834 w
+(runs) 1469 2834 w
+(the) 1689 2834 w
+(same) 1854 2834 w
+(system) 2110 2834 w
+(software) 2447 2834 w
+(used) 2854 2834 w
+(in) 3086 2834 w
+(a) 3204 2834 w
+(terminal,) 3284 2834 w
+(however,) 3710 2834 w
+(its) 4146 2834 w
+(kernel) 566 2954 w
+(is) 896 2954 w
+(compiled) 1027 2954 w
+(with) 1493 2954 w
+(the) 1745 2954 w
+(variable) 1935 2954 w
+11 /Courier f
+(cpuserver) 2343 2954 w
+11 /Times-Roman f
+(set) 2993 2954 w
+(to) 3171 2954 w
+(true,) 3313 2954 w
+(and) 3567 2954 w
+(it) 3781 2954 w
+(behaves) 3899 2954 w
+(slightly) 566 3074 w
+(differently.) 944 3074 w
+(The) 1480 3074 w
+(main) 1696 3074 w
+(difference) 1963 3074 w
+(is) 2451 3074 w
+(that) 2572 3074 w
+(the) 2784 3074 w
+11 /Courier f
+(boot) 2965 3074 w
+11 /Times-Roman f
+(program) 3276 3074 w
+(executes) 3694 3074 w
+(the) 4117 3074 w
+(script) 566 3194 w
+11 /Courier f
+(/rc/bin/cpurc) 854 3194 w
+11 /Times-Roman f
+(instead) 1756 3194 w
+(of) 2110 3194 w
+11 /Courier f
+(/rc/bin/termrc) 2244 3194 w
+11 /Times-Roman f
+(to) 3211 3194 w
+(initialize) 3340 3194 w
+(the) 3768 3194 w
+(system) 3945 3194 w
+(for) 566 3314 w
+(operation.) 725 3314 w
+(You) 1199 3314 w
+(may) 1420 3314 w
+(remember) 1641 3314 w
+(that) 2116 3314 w
+(one) 2313 3314 w
+(of) 2504 3314 w
+(the) 2628 3314 w
+(things) 2795 3314 w
+(this) 3098 3314 w
+(script) 3291 3314 w
+(does) 3568 3314 w
+(is) 3802 3314 w
+(running) 3909 3314 w
+11 /Courier f
+(aux/listen) 566 3434 w
+11 /Times-Roman f
+(to) 1254 3434 w
+(run) 1368 3434 w
+(several) 1542 3434 w
+(system) 1879 3434 w
+(services) 2213 3434 w
+(upon) 2593 3434 w
+(incoming) 2841 3434 w
+(calls) 3285 3434 w
+(from) 3514 3434 w
+(clients.) 3755 3434 w
+(Other) 816 3590 w
+(systems,) 1102 3590 w
+(most) 1516 3590 w
+(notably) 1768 3590 w
+(UNIX,) 2135 3590 w
+(start) 2473 3590 w
+(most) 2699 3590 w
+(existing) 2951 3590 w
+(system) 3337 3590 w
+(services) 3680 3590 w
+(dur\255) 4069 3590 w
+(ing) 566 3710 w
+(the) 750 3710 w
+(boot) 927 3710 w
+(process,) 1166 3710 w
+(in) 1565 3710 w
+(a) 1694 3710 w
+(similar) 1785 3710 w
+(way.) 2134 3710 w
+(That) 2387 3710 w
+(is) 2631 3710 w
+(why) 2747 3710 w
+(you) 2978 3710 w
+(can) 3185 3710 w
+(connect) 3378 3710 w
+(to) 3760 3710 w
+(a) 3888 3710 w
+(UNIX) 3978 3710 w
+(machine) 566 3830 w
+(to) 970 3830 w
+(execute) 1089 3830 w
+(commands) 1455 3830 w
+(on) 1964 3830 w
+(it) 2108 3830 w
+(\(e.g.,) 2204 3830 w
+(using) 2461 3830 w
+11 /Courier f
+(telnet) 2734 3830 w
+11 /Times-Roman f
+(or) 3164 3830 w
+11 /Courier f
+(ssh) 3289 3830 w
+11 /Times-Roman f
+(\),) 3487 3830 w
+(but) 3585 3830 w
+(you) 3760 3830 w
+(cannot) 3959 3830 w
+(do) 566 3950 w
+(the) 707 3950 w
+(same) 872 3950 w
+(to) 1128 3950 w
+(your) 1245 3950 w
+(Plan) 1477 3950 w
+(9) 1704 3950 w
+(terminal.) 1790 3950 w
+(If) 2215 3950 w
+(you) 2318 3950 w
+(want) 2514 3950 w
+(to) 2758 3950 w
+(connect) 2875 3950 w
+(to) 3246 3950 w
+(your) 3362 3950 w
+(terminal) 3593 3950 w
+(to) 3989 3950 w
+(use) 4105 3950 w
+(a) 566 4070 w
+(particular) 644 4070 w
+(service,) 1093 4070 w
+(you) 1460 4070 w
+(must) 1655 4070 w
+(start) 1900 4070 w
+(that) 2119 4070 w
+(service) 2314 4070 w
+(first) 2653 4070 w
+(\(i.e.,) 2860 4070 w
+(run) 3089 4070 w
+11 /Courier f
+(listen) 3265 4070 w
+11 /Times-Roman f
+(or) 3691 4070 w
+(its) 3812 4070 w
+(variant) 3947 4070 w
+(that) 566 4190 w
+(listens) 759 4190 w
+(just) 1069 4190 w
+(for) 1257 4190 w
+(one) 1412 4190 w
+(service,) 1598 4190 w
+11 /Courier f
+(listen1) 1963 4190 w
+11 /Times-Roman f
+(\).) 2425 4190 w
+(By) 816 4346 w
+(the) 973 4346 w
+(way,) 1136 4346 w
+(if) 1375 4346 w
+(you) 1471 4346 w
+(ever) 1665 4346 w
+(wondered) 1881 4346 w
+(what) 2341 4346 w
+(is) 2583 4346 w
+(the) 2686 4346 w
+(difference) 2849 4346 w
+(between) 3319 4346 w
+(the) 3712 4346 w
+(different) 3875 4346 w
+(flavors) 566 4466 w
+(of) 914 4466 w
+(Windows) 1049 4466 w
+(running) 1514 4466 w
+(on) 1900 4466 w
+(a) 2054 4466 w
+(PC,) 2146 4466 w
+(it) 2353 4466 w
+(is) 2458 4466 w
+(the) 2575 4466 w
+(same.) 2752 4466 w
+(They) 3048 4466 w
+(compiled) 3316 4466 w
+(the) 3768 4466 w
+(system) 3945 4466 w
+(with) 566 4586 w
+(different) 798 4586 w
+(parameters) 1210 4586 w
+(for) 1725 4586 w
+11 /LucidaSansUnicode20 f
+(\034) 1888 4586 w
+11 /Times-Roman f
+(optimizing) 1929 4586 w
+11 /LucidaSansUnicode20 f
+(\035) 2407 4586 w
+11 /Times-Roman f
+(the) 2484 4586 w
+(system) 2654 4586 w
+(for) 2996 4586 w
+(different) 3159 4586 w
+(kinds) 3571 4586 w
+(of) 3846 4586 w
+(usage.) 3974 4586 w
+(Also,) 566 4706 w
+(they) 834 4706 w
+(arranged) 1055 4706 w
+(for) 1468 4706 w
+(the) 1627 4706 w
+(system) 1793 4706 w
+(to) 2131 4706 w
+(start) 2249 4706 w
+(different) 2470 4706 w
+(services) 2878 4706 w
+(depending) 3261 4706 w
+(on) 3749 4706 w
+(the) 3890 4706 w
+(kind) 4055 4706 w
+(of) 566 4826 w
+(edition.) 685 4826 w
+(The) 816 4982 w
+11 /Courier f
+(cpu) 1014 4982 w
+11 /Times-Roman f
+(command) 1240 4982 w
+(makes) 1701 4982 w
+(a) 2009 4982 w
+(connection) 2085 4982 w
+(to) 2594 4982 w
+(a) 2708 4982 w
+(CPU) 2784 4982 w
+(server,) 3027 4982 w
+(using) 3349 4982 w
+(by) 3616 4982 w
+(default) 3754 4982 w
+(that) 4086 4982 w
+(named) 566 5102 w
+(by) 900 5102 w
+11 /Courier f
+($cpu) 1052 5102 w
+11 /Times-Roman f
+(,) 1316 5102 w
+(as) 1385 5102 w
+(set) 1517 5102 w
+(by) 1680 5102 w
+(your) 1831 5102 w
+(system) 2073 5102 w
+(administrator.) 2420 5102 w
+(The) 3075 5102 w
+(connection) 3286 5102 w
+(is) 3808 5102 w
+(used) 3923 5102 w
+(to) 4165 5102 w
+(run) 566 5222 w
+(a) 742 5222 w
+(program) 820 5222 w
+(in) 1221 5222 w
+(the) 1337 5222 w
+(CPU) 1501 5222 w
+(server,) 1746 5222 w
+(which) 2070 5222 w
+(is) 2369 5222 w
+11 /Courier f
+(rc) 2474 5222 w
+11 /Times-Roman f
+(by) 2637 5222 w
+(default.) 2778 5222 w
+(The) 3141 5222 w
+(net) 3342 5222 w
+(effect) 3507 5222 w
+(is) 3785 5222 w
+(that) 3890 5222 w
+(you) 4086 5222 w
+(can) 566 5342 w
+(connect) 746 5342 w
+(to) 1115 5342 w
+(a) 1230 5342 w
+(shell) 1307 5342 w
+(at) 1543 5342 w
+(any) 1650 5342 w
+(CPU) 1836 5342 w
+(server,) 2079 5342 w
+(and) 2401 5342 w
+(run) 2587 5342 w
+(commands) 2761 5342 w
+(on) 3265 5342 w
+(it.) 3403 5342 w
+(This) 3521 5342 w
+(is) 3745 5342 w
+(an) 3847 5342 w
+(exam\255) 3978 5342 w
+(ple:) 566 5462 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 20 20
+%%Page: 21 21
+/saveobj save def
+mark
+21 pagesetup
+11 /Times-Roman f
+(\255 21 \255) 2289 413 w
+10 /Courier f
+(; echo $sysname) 786 676 w
+(alboran) 786 786 w
+(; cpu) 786 896 w
+(cpu% !!echo $sysname) 786 1006 w
+(aquamar) 786 1116 w
+10 /Times-Bold f
+(control\255d) 786 1226 w
+10 /Courier f
+(; echo $sysname) 786 1336 w
+(alboran) 786 1446 w
+11 /Times-Roman f
+(Your) 566 1662 w
+11 /Courier f
+(profile) 824 1662 w
+11 /Times-Roman f
+(,) 1286 1662 w
+(executed) 1347 1662 w
+(each) 1768 1662 w
+(time) 2001 1662 w
+(you) 2231 1662 w
+(enter) 2430 1662 w
+(the) 2682 1662 w
+(system,) 2850 1662 w
+(changes) 3218 1662 w
+(the) 3604 1662 w
+(prompt) 3772 1662 w
+(for) 4124 1662 w
+(the) 566 1782 w
+(shell) 731 1782 w
+(to) 970 1782 w
+(advise) 1087 1782 w
+(you) 1398 1782 w
+(that) 1594 1782 w
+(it) 1790 1782 w
+(is) 1883 1782 w
+(not) 1988 1782 w
+(running) 2160 1782 w
+(at) 2533 1782 w
+(your) 2643 1782 w
+(terminal.) 2875 1782 w
+(When) 3328 1782 w
+(an) 3620 1782 w
+(initial) 3754 1782 w
+(shell) 4043 1782 w
+(is) 566 1902 w
+(started) 682 1902 w
+(for) 1016 1902 w
+(you) 1185 1902 w
+(at) 1392 1902 w
+(a) 1513 1902 w
+(machine) 1603 1902 w
+(\(a) 2016 1902 w
+(CPU) 2142 1902 w
+(server,) 2399 1902 w
+(a) 2736 1902 w
+(terminal,) 2827 1902 w
+(etc.\),) 3264 1902 w
+(it) 3526 1902 w
+(executes) 3631 1902 w
+(your) 4050 1902 w
+11 /Courier f
+($home/lib/profile) 566 2022 w
+11 /Times-Roman f
+(file.) 1748 2022 w
+(Now,) 1982 2022 w
+(the) 2283 2022 w
+(process) 2477 2022 w
+(that) 2865 2022 w
+(started) 3089 2022 w
+(the) 3440 2022 w
+(shell) 3633 2022 w
+(for) 3900 2022 w
+(you) 4086 2022 w
+(defined) 566 2142 w
+(a) 923 2142 w
+(environment) 1000 2142 w
+(variable) 1584 2142 w
+(to) 1965 2142 w
+(indicate) 2080 2142 w
+(which) 2456 2142 w
+(kind) 2753 2142 w
+(of) 2978 2142 w
+(session) 3098 2142 w
+(you) 3445 2142 w
+(are) 3639 2142 w
+(using.) 3801 2142 w
+(For) 4098 2142 w
+(terminals,) 566 2262 w
+(the) 1041 2262 w
+(variable) 1213 2262 w
+11 /Courier f
+(service) 1603 2262 w
+11 /Times-Roman f
+(has) 2103 2262 w
+11 /Courier f
+(terminal) 2287 2262 w
+11 /Times-Roman f
+(as) 2852 2262 w
+(its) 2980 2262 w
+(value.) 3122 2262 w
+(However,) 3424 2262 w
+(on) 3889 2262 w
+(CPU) 4036 2262 w
+(servers) 566 2382 w
+(this) 906 2382 w
+(variable) 1097 2382 w
+(may) 1480 2382 w
+(have) 1700 2382 w
+11 /Courier f
+(cpu) 1937 2382 w
+11 /Times-Roman f
+(or) 2166 2382 w
+11 /Courier f
+(rx) 2288 2382 w
+11 /Times-Roman f
+(as) 2451 2382 w
+(its) 2574 2382 w
+(value,) 2711 2382 w
+(depending) 3008 2382 w
+(on) 3497 2382 w
+(how) 3639 2382 w
+(you) 3860 2382 w
+(con\255) 4057 2382 w
+(nected) 566 2502 w
+(to) 885 2502 w
+(the) 1005 2502 w
+(CPU) 1173 2502 w
+(server.) 1422 2502 w
+(Your) 1778 2502 w
+(profile) 2037 2502 w
+(may) 2363 2502 w
+(do) 2586 2502 w
+(different) 2730 2502 w
+(things) 3140 2502 w
+(\(like) 3444 2502 w
+(adjusting) 3679 2502 w
+(the) 4117 2502 w
+(shell) 566 2622 w
+(prompt\),) 802 2622 w
+(depending) 1212 2622 w
+(on) 1697 2622 w
+11 /Courier f
+($terminal) 1835 2622 w
+11 /Times-Roman f
+(.) 2429 2622 w
+(A) 816 2778 w
+(more) 924 2778 w
+(rudimentary) 1178 2778 w
+(alternative) 1743 2778 w
+(is) 2234 2778 w
+(provided,) 2337 2778 w
+(for) 2784 2778 w
+(those) 2940 2778 w
+(cases) 3201 2778 w
+(when) 3460 2778 w
+(you) 3727 2778 w
+(want) 3922 2778 w
+(to) 4165 2778 w
+(execute) 566 2898 w
+(just) 954 2898 w
+(one) 1169 2898 w
+(command) 1382 2898 w
+(at) 1870 2898 w
+(another) 2003 2898 w
+(machine.) 2385 2898 w
+(It) 2838 2898 w
+(is) 2959 2898 w
+(called) 3087 2898 w
+11 /Courier f
+(rx) 3402 2898 w
+11 /Times-Roman f
+(,) 3534 2898 w
+(and) 3616 2898 w
+(accepts) 3828 2898 w
+(a) 4203 2898 w
+(machine) 566 3018 w
+(name) 965 3018 w
+(and) 1230 3018 w
+(a) 1416 3018 w
+(command) 1492 3018 w
+(to) 1953 3018 w
+(run) 2067 3018 w
+(on) 2241 3018 w
+(it.) 2379 3018 w
+10 /Courier f
+(; rx aquamar 'echo $sysname') 786 3188 w
+(aquamar) 786 3298 w
+(;) 786 3408 w
+11 /Times-Roman f
+(Note) 566 3624 w
+(how) 814 3624 w
+(we) 1038 3624 w
+(had) 1200 3624 w
+(to) 1393 3624 w
+(quote) 1514 3624 w
+(the) 1793 3624 w
+(whole) 1962 3624 w
+(command,) 2265 3624 w
+(which) 2762 3624 w
+(is) 3066 3624 w
+(to) 3176 3624 w
+(be) 3298 3624 w
+(executed) 3437 3624 w
+(verbatim) 3861 3624 w
+(by) 566 3744 w
+(the) 704 3744 w
+(remote) 866 3744 w
+(machine,) 1198 3744 w
+11 /Times-Bold f
+(Problems) 566 3984 w
+11 /Times-Roman f
+(1) 566 4140 w
+(Use) 816 4140 w
+11 /Courier f
+(/net) 1023 4140 w
+11 /Times-Roman f
+(to) 1324 4140 w
+(see) 1447 4140 w
+(which) 1624 4140 w
+(networks) 1930 4140 w
+(are) 2370 4140 w
+(available) 2540 4140 w
+(at) 2973 4140 w
+(your) 3090 4140 w
+(terminal.) 3329 4140 w
+(Determine) 3789 4140 w
+(the) 816 4260 w
+(local) 978 4260 w
+(address) 1219 4260 w
+(for) 1575 4260 w
+(your) 1730 4260 w
+(terminal) 1959 4260 w
+(for) 2353 4260 w
+(each) 2508 4260 w
+(one) 2735 4260 w
+(of) 2921 4260 w
+(the) 3040 4260 w
+(networks.) 3202 4260 w
+(2) 566 4416 w
+(Repeat) 816 4416 w
+(the) 1163 4416 w
+(second) 1340 4416 w
+(problem) 1687 4416 w
+(of) 2096 4416 w
+(chapter) 2230 4416 w
+(1) 2594 4416 w
+(for) 2692 4416 w
+(the) 2862 4416 w
+(terminals) 3039 4416 w
+(in) 3491 4416 w
+(your) 3620 4416 w
+(network.) 3864 4416 w
+(Use) 816 4536 w
+11 /Courier f
+(/lib/ndb/local) 1014 4536 w
+11 /Times-Roman f
+(to) 1966 4536 w
+(locate) 2080 4536 w
+(other) 2369 4536 w
+(terminals.) 2622 4536 w
+(3) 566 4692 w
+(Start) 816 4692 w
+(the) 1059 4692 w
+(echo) 1228 4692 w
+(server) 1469 4692 w
+(implemented) 1770 4692 w
+(in) 2380 4692 w
+(this) 2502 4692 w
+(chapter,) 2698 4692 w
+(and) 3083 4692 w
+(try) 3277 4692 w
+(to) 3435 4692 w
+(hangup) 3557 4692 w
+(its) 3916 4692 w
+(con\255) 4057 4692 w
+(nection) 816 4812 w
+(using) 1167 4812 w
+(the) 1434 4812 w
+(shell.) 1596 4812 w
+(4) 566 4968 w
+(Which) 816 4968 w
+(processes) 1138 4968 w
+(are) 1587 4968 w
+(listening) 1749 4968 w
+(to) 2159 4968 w
+(the) 2276 4968 w
+(network) 2441 4968 w
+(in) 2831 4968 w
+(your) 2948 4968 w
+(terminal?) 3180 4968 w
+(What) 3653 4968 w
+(do) 3921 4968 w
+(they) 4062 4968 w
+(do?) 816 5088 w
+(\(use) 1002 5088 w
+(the) 1212 5088 w
+(manual\)) 1374 5088 w
+(5) 566 5244 w
+(Which) 816 5244 w
+(one) 1138 5244 w
+(is) 1326 5244 w
+(the) 1430 5244 w
+(IP) 1594 5244 w
+(address) 1723 5244 w
+(for) 2082 5244 w
+11 /Courier f
+(google.com) 2240 5244 w
+11 /Times-Roman f
+(?) 2900 5244 w
+(Is) 3007 5244 w
+(the) 3117 5244 w
+(machine) 3282 5244 w
+(alive?) 3684 5244 w
+(Try) 3976 5244 w
+(to) 4165 5244 w
+(determine) 816 5364 w
+(that) 1282 5364 w
+(in) 1475 5364 w
+(several) 1589 5364 w
+(different) 1926 5364 w
+(ways.) 2330 5364 w
+(6) 566 5520 w
+(Implement) 816 5520 w
+(a) 1329 5520 w
+(time) 1414 5520 w
+(of) 1647 5520 w
+(day) 1775 5520 w
+(service.) 1970 5520 w
+(It) 2345 5520 w
+(must) 2450 5520 w
+(return) 2703 5520 w
+(the) 3002 5520 w
+(local) 3174 5520 w
+(time) 3425 5520 w
+(to) 3659 5520 w
+(any) 3783 5520 w
+(client.) 3979 5520 w
+(Use) 816 5640 w
+11 /Courier f
+(telnet) 1014 5640 w
+11 /Times-Roman f
+(to) 1438 5640 w
+(test) 1552 5640 w
+(it.) 1733 5640 w
+(7) 566 5796 w
+(Implement) 816 5796 w
+(a) 1320 5796 w
+(client) 1396 5796 w
+(program) 1668 5796 w
+(for) 2067 5796 w
+(the) 2222 5796 w
+(server) 2384 5796 w
+(from) 2678 5796 w
+(the) 2919 5796 w
+(previous) 3081 5796 w
+(problem.) 3487 5796 w
+(8) 566 5952 w
+(Print) 816 5952 w
+(all) 1065 5952 w
+(the) 1209 5952 w
+(information) 1377 5952 w
+(you) 1930 5952 w
+(can) 2129 5952 w
+(determine) 2314 5952 w
+(for) 2786 5952 w
+(all) 2947 5952 w
+(clients) 3091 5952 w
+(connecting) 3413 5952 w
+(to) 3929 5952 w
+(your) 4050 5952 w
+(time) 816 6072 w
+(of) 1040 6072 w
+(day) 1159 6072 w
+(server.) 1345 6072 w
+(9) 566 6228 w
+(Change) 816 6228 w
+(your) 1179 6228 w
+(server) 1408 6228 w
+(so) 1702 6228 w
+(it) 1828 6228 w
+(could) 1918 6228 w
+(be) 2190 6228 w
+(started) 2321 6228 w
+(using) 2641 6228 w
+11 /Courier f
+(aux/listen1) 2908 6228 w
+11 /Times-Roman f
+(.) 3634 6228 w
+(Test) 3718 6228 w
+(it.) 3935 6228 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 21 21
+%%Page: 22 22
+/saveobj save def
+mark
+22 pagesetup
+11 /Times-Roman f
+(\255 22 \255) 2289 413 w
+(10) 566 686 w
+(Change) 816 686 w
+(your) 1203 686 w
+(profile) 1456 686 w
+(to) 1800 686 w
+(adjust) 1938 686 w
+(the) 2253 686 w
+(shell) 2439 686 w
+(prompt) 2699 686 w
+(according) 3070 686 w
+(to) 3554 686 w
+(the) 3693 686 w
+(machine) 3880 686 w
+(name.) 816 806 w
+(It) 1109 806 w
+(must) 1204 806 w
+(work) 1447 806 w
+(both) 1700 806 w
+(for) 1924 806 w
+(terminals) 2079 806 w
+(and) 2516 806 w
+(connections) 2702 806 w
+(to) 3254 806 w
+(CPU) 3368 806 w
+(servers.) 3611 806 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 22 22
+%%Page: 23 23
+/saveobj save def
+mark
+23 pagesetup
+11 /Times-Roman f
+(\255 23 \255) 2289 413 w
+cleartomark
+showpage
+saveobj restore
+%%EndPage: 23 23
+%%Trailer
+done
+%%DocumentFonts: Times-Roman LucidaSansUnicode20 Times-Italic Times-Bold Courier S1 S
+%%Pages: 23

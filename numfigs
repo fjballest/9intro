@@ -1,0 +1,14 @@
+#!/bin/rc
+if ( ! test -f $1 ){
+	n="^$1^"
+	shift
+}
+if not
+	n='""'
+
+grep '^.LE' $*  |  awk '
+	BEGIN { nf=0; nt=0; np=0; }
+	$0 ~ /\.LE F/ {printf("%s%d %s\n", '$n', ++nf, $0);}
+	$0 ~ /\.LE T/ {printf("%s%d %s\n", '$n', ++nt, $0);}
+	$0 ~ /\.LE P/ {printf("%s%d %s\n", '$n', ++np, $0);}'
+exit ''

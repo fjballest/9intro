@@ -1,0 +1,16 @@
+#!/bin/rc
+rfork ne
+
+# with see also
+idx/final.sort \
+	<{ idx/doclean $* | idx/deroman | idx/range.prep  | idx/rotate |
+	idx/range.sort | idx/range.collapse | idx/reroman | idx/num.collapse |
+	idx/gen.key } \
+	<{idx/see.prep seealso.idx | idx/gen.key} | 
+	idx/hierarchy | idx/format | idx/macros
+exit ''
+
+# without see also
+idx/doclean $* | idx/deroman | idx/range.prep  | idx/rotate |
+	idx/range.sort | idx/range.collapse | idx/reroman | idx/num.collapse |
+	idx/gen.key | idx/final.sort | idx/hierarchy | idx/format | idx/macros

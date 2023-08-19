@@ -1,0 +1,12 @@
+#!/bin/rc
+cat <<!
+.c 1
+.LG
+.B "Index"
+.NS
+.2C
+!
+cat $* |
+sed -e 's/^.YY .(.*)/.SH\n\1\n.LP/' -e 's/^\.[XZ][XZ]/.br/' -e 's/^\\&//' \
+	-e 's/^    /        /'
+echo .1C
